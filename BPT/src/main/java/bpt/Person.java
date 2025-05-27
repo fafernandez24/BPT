@@ -4,15 +4,19 @@
  */
 package bpt;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Freddy A. Fernández
  */
 public abstract class Person {
     
+    Scanner dataEnter = new Scanner(System.in);
+    
     // Atributtes
     
-    protected String id;
+    protected int id;
     protected String name;
     protected String password;
     
@@ -24,11 +28,11 @@ public abstract class Person {
     public Person(){};
     
     // Constructor #2
-    public Person(String id, String name, String password){};
+    public Person(int id, String name, String password){};
     
     // Getters methods
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -42,7 +46,7 @@ public abstract class Person {
     
     // Setter methods
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -56,12 +60,47 @@ public abstract class Person {
     
     // Validations
     
-    public boolean validateId(){
-        return id.matches("[0-9]") && (id.length() > 0 && id.length() < 100000000);
+    public boolean validateId(String numberString){
+        return numberString.matches("[0-9]") && (numberString.length() > 0 && numberString.length() < 9);
     }
     
     public boolean validateName(){
         return name.matches("/^[a-zA-ZÀ-ÿñÑ]+(([,\\. -][a-zA-ZÀ-ÿñÑ ])?[a-zA-ZÀ-ÿñÑ]*)*[^\\w\\s\\d\\(\\)\\[\\]\\?]$/");
+    }
+    
+    public boolean validatePassword(){
+        return name.matches("^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\\#\\$\\.\\%\\&\\*])(?=.*[a-zA-Z]).{8,16}$");
+    }
+    
+    // Read Methods
+    
+    public void readId(){
+        String numberString = "";
+        do{
+            try{
+                System.out.print("Ingresar cedula de identidad: ");
+                numberString = dataEnter.nextLine();
+                id = Integer.parseInt(numberString);
+            } catch (NumberFormatException error){
+                System.out.println("ERROR. Ingresar el numero de tu cedula de identidad.");
+            }
+        } while (!validateId(numberString));
+    }
+    
+    public void readName(){
+        do{
+            System.out.print("Ingresar nombre: ");
+            name = dataEnter.nextLine();
+            if (!validateName()) System.out.println("ERROR. Ingresar un nombre valido.");
+        } while (!validateName());
+    }
+    
+    public void readPassword(){
+        do{
+            System.out.println("Ingresar clave de acceso: ");
+            password = dataEnter.nextLine();
+            if (!validatePassword()) System.out.println("ERROR. La clave debe tener: \n- Minimo 8 caracteres\n- Un caracter especial\n- Un numero\n- Una letra mayuscula\n- Una letra minuscula");
+        } while (!validatePassword());
     }
     
     // Others Methods
