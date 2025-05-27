@@ -106,6 +106,6 @@ public abstract class Person {
     // Others Methods
     
     public abstract void readData();
-    public abstract void showData();
+    public abstract String showData();
     
 }
