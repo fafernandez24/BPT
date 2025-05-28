@@ -31,7 +31,8 @@ public class Player extends Person{
     public Player(){};
     
     // Constructor #2
-    public Player(int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
+    public Player(int id, String name, String password, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
+        super(id, name, password);
         this.matchesPlayed = matchesPlayed;
         this.matchesWon = matchesWon;
         this.matchesLost = matchesLost;
