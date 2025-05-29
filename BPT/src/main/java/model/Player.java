@@ -4,7 +4,6 @@
  */
 package model;
 
-import model.Person;
 import java.util.List;
 
 /**
@@ -13,7 +12,7 @@ import java.util.List;
  */
 public class Player extends Person{
    
-    // Atributtes
+    // Attributes
     
     protected int matchesPlayed;
     protected int matchesWon;

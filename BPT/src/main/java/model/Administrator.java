@@ -4,8 +4,6 @@
  */
 package model;
 
-import model.Person;
-import model.Player;
 import java.util.List;
 
 /**
@@ -14,7 +12,7 @@ import java.util.List;
  */
 public class Administrator extends Person {
     
-    // Atributtes
+    // Attributes
     
     private String email;
     private List<Player> playerList;

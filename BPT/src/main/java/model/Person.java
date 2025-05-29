@@ -14,15 +14,13 @@ public abstract class Person {
     
     Scanner dataEnter = new Scanner(System.in);
     
-    // Atributtes
+    // Attributes
     
     protected int id;
     protected String name;
     protected String password;
     
     // Methods
-    
-    // Constructors
     
     // Constructor #1
     public Person(){};
