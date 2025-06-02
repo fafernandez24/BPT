@@ -6,7 +6,6 @@ package view;
 
 import java.awt.Color;
 
-
 /**
  *
  * @author Freddy A. Fernández
@@ -37,9 +36,16 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel73 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel83 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel84 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         backgroundMenu = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        IconoCalendario = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -54,8 +60,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        NombreOrganizador = new javax.swing.JLabel();
-        FotoPerfil = new javax.swing.JLabel();
+        IconoCalendario2 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         IconoTorneo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -104,8 +109,6 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         IconoCalendario1 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -122,34 +125,11 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        jLabel70 = new javax.swing.JLabel();
-        jPanel22 = new javax.swing.JPanel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jPanel23 = new javax.swing.JPanel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
-        jPanel24 = new javax.swing.JPanel();
-        jLabel71 = new javax.swing.JLabel();
-        jLabel60 = new javax.swing.JLabel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel73 = new javax.swing.JLabel();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel74 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel83 = new javax.swing.JLabel();
-        jPanel29 = new javax.swing.JPanel();
-        jLabel84 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        NombreOrganizador = new javax.swing.JLabel();
+        FotoPerfil = new javax.swing.JLabel();
+        IconoCalendario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -161,6 +141,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, 70));
 
         jLabel53.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
         jLabel53.setText("TORNEOS");
         jPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, 60));
 
@@ -176,14 +157,102 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jPanel1.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 0, 20, 40));
         jPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 10, -1, -1));
 
+        jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel73.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel73.setText("buscar jugador");
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(429, 429, 429)
+                .addComponent(jLabel73)
+                .addContainerGap(464, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(253, 253, 253)
+                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(382, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab2", jPanel20);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel83.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel83.setText("ver torneos en curso");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jLabel83)
+                .addContainerGap(436, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab4", jPanel2);
+
+        jPanel29.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel84.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel84.setText("calendario");
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(450, 450, 450)
+                .addComponent(jLabel84)
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel29Layout.createSequentialGroup()
+                .addGap(257, 257, 257)
+                .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("tab5", jPanel29);
+
+        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
+
         backgroundMenu.setBackground(new java.awt.Color(204, 204, 255));
         backgroundMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        IconoCalendario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
-        jPanel3.add(IconoCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
 
         jLabel6.setText("jLabel6");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, -60, 80, 20));
@@ -241,14 +310,10 @@ public class OrganizatorMenu extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 350, 60));
 
+        IconoCalendario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
+        jPanel3.add(IconoCalendario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
+
         backgroundMenu.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 350, 60));
-
-        NombreOrganizador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        NombreOrganizador.setText("ORGANIZADOR");
-        backgroundMenu.add(NombreOrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 210, 110, -1));
-
-        FotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/da7ed7b0-5f66-4f97-a610-51100d3b9fd2 (1) (1) (1).png"))); // NOI18N
-        backgroundMenu.add(FotoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -40, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
         jPanel7.setForeground(new java.awt.Color(153, 153, 153));
@@ -267,7 +332,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         });
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconoTorneo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy (1).png"))); // NOI18N
+        IconoTorneo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneo.png"))); // NOI18N
         jPanel7.add(IconoTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
 
         jLabel18.setText("jLabel6");
@@ -331,7 +396,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(204, 204, 255));
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconoBuscarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/job-seeker.png"))); // NOI18N
+        IconoBuscarJugador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoBuscarJugadorPequenio.png"))); // NOI18N
         jPanel11.add(IconoBuscarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
 
         jLabel30.setText("jLabel6");
@@ -395,7 +460,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jPanel15.setBackground(new java.awt.Color(204, 204, 255));
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconoFaseEliminacionDirecta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/award.png"))); // NOI18N
+        IconoFaseEliminacionDirecta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoEliminacionDirectapequenio.png"))); // NOI18N
         jPanel15.add(IconoFaseEliminacionDirecta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
 
         jLabel42.setText("jLabel6");
@@ -456,21 +521,10 @@ public class OrganizatorMenu extends javax.swing.JFrame {
 
         backgroundMenu.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 350, 60));
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel58.setText("X");
-        backgroundMenu.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 0, 20, 40));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        backgroundMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 360, 250));
-
         jPanel25.setBackground(new java.awt.Color(204, 204, 255));
         jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        IconoCalendario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy (4).png"))); // NOI18N
+        IconoCalendario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoEnCurso.png"))); // NOI18N
         jPanel25.add(IconoCalendario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 40, 40));
 
         jLabel17.setText("jLabel6");
@@ -531,243 +585,29 @@ public class OrganizatorMenu extends javax.swing.JFrame {
 
         backgroundMenu.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 350, 60));
 
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel58.setText("X");
+        backgroundMenu.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 0, 20, 40));
+
+        NombreOrganizador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        NombreOrganizador.setForeground(new java.awt.Color(255, 255, 255));
+        NombreOrganizador.setText("ORGANIZADOR");
+        backgroundMenu.add(NombreOrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 110, -1));
+
+        FotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/da7ed7b0-5f66-4f97-a610-51100d3b9fd2 (1) (1) (1).png"))); // NOI18N
+        backgroundMenu.add(FotoPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, -40, -1, -1));
+
+        IconoCalendario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotoPerfilPequenio.png"))); // NOI18N
+        backgroundMenu.add(IconoCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 230, 200));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        backgroundMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 360, 250));
+
         jPanel1.add(backgroundMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 780));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
-
-        jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
-
-        jPanel19.setBackground(new java.awt.Color(250, 250, 250));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogo-Photoroom (2) (2).png"))); // NOI18N
-        jPanel19.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
-
-        jLabel64.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel64.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel64.setText("EQUIPOS");
-        jPanel19.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, -1, 60));
-
-        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roger_team (1).jpg"))); // NOI18N
-        jLabel55.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel19.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 230, 180));
-
-        jLabel65.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dkocovik (2).jpg"))); // NOI18N
-        jLabel65.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel19.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 240, 150));
-
-        jLabel66.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel66.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Laver Cup (1).jpg"))); // NOI18N
-        jLabel66.setToolTipText("");
-        jLabel66.setAutoscrolls(true);
-        jPanel19.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 230, 150));
-
-        jLabel67.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel67.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel67.setText("como organizador TE INVITO A creaR un torneo...");
-        jPanel19.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, 60));
-
-        jLabel69.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel69.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel69.setText("DOBLES");
-        jPanel19.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, 60));
-
-        jLabel70.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel70.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel70.setText("SINGLES");
-        jPanel19.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 60));
-
-        jPanel22.setBackground(new java.awt.Color(30, 25, 161));
-
-        jLabel72.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel72.setText("CREAR TORNEO");
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
-            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                    .addContainerGap(20, Short.MAX_VALUE)
-                    .addComponent(jLabel72)
-                    .addContainerGap(21, Short.MAX_VALUE)))
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                    .addContainerGap(8, Short.MAX_VALUE)
-                    .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
-        jPanel19.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 460, 130, 40));
-
-        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadrao (2).png"))); // NOI18N
-        jPanel19.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(759, 146, 315, 389));
-
-        jPanel23.setBackground(new java.awt.Color(30, 25, 161));
-        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel68.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel68.setText("CREAR TORNEO");
-        jPanel23.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
-
-        jPanel19.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
-
-        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadrao (2).png"))); // NOI18N
-        jPanel19.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 146, 315, 389));
-
-        jPanel24.setBackground(new java.awt.Color(30, 25, 161));
-
-        jLabel71.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
-        jLabel71.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel71.setText("CREAR TORNEO");
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
-            .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                    .addContainerGap(20, Short.MAX_VALUE)
-                    .addComponent(jLabel71)
-                    .addContainerGap(21, Short.MAX_VALUE)))
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-            .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
-                    .addContainerGap(8, Short.MAX_VALUE)
-                    .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
-        jPanel19.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 130, 40));
-
-        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadrao (2).png"))); // NOI18N
-        jPanel19.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 146, 315, 389));
-
-        jTabbedPane2.addTab("tab1", jPanel19);
-
-        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel73.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel73.setText("buscar jugador");
-
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(429, 429, 429)
-                .addComponent(jLabel73)
-                .addContainerGap(464, Short.MAX_VALUE))
-        );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(382, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("tab2", jPanel20);
-
-        jPanel21.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel74.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel74.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel74.setText("fase eliminacion directa");
-
-        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
-        jPanel21.setLayout(jPanel21Layout);
-        jPanel21Layout.setHorizontalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel74)
-                .addContainerGap(399, Short.MAX_VALUE))
-        );
-        jPanel21Layout.setVerticalGroup(
-            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel21Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("tab3", jPanel21);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel83.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel83.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel83.setText("ver torneos en curso");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel83)
-                .addContainerGap(436, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("tab4", jPanel2);
-
-        jPanel29.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel84.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel84.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel84.setText("calendario");
-
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(jLabel84)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(jLabel84, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
-
-        jTabbedPane2.addTab("tab5", jPanel29);
-
-        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -783,12 +623,12 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BannerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BannerMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BannerMouseClicked
+    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
+        jPanel7.setBackground( new Color(255,255,255));
+    }//GEN-LAST:event_jPanel7MouseExited
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
-  
+
         jTabbedPane2.setSelectedIndex(0);
     }//GEN-LAST:event_jPanel7MouseClicked
 
@@ -796,9 +636,9 @@ public class OrganizatorMenu extends javax.swing.JFrame {
         jPanel7.setBackground( new Color(255,255,255));
     }//GEN-LAST:event_jPanel7MouseMoved
 
-    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
-        jPanel7.setBackground( new Color(255,255,255));
-    }//GEN-LAST:event_jPanel7MouseExited
+    private void BannerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BannerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BannerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -816,15 +656,14 @@ public class OrganizatorMenu extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(OrganizatorMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(OrganizatorMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(OrganizatorMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(OrganizatorMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -839,6 +678,7 @@ public class OrganizatorMenu extends javax.swing.JFrame {
     private javax.swing.JLabel IconoBuscarJugador;
     private javax.swing.JLabel IconoCalendario;
     private javax.swing.JLabel IconoCalendario1;
+    private javax.swing.JLabel IconoCalendario2;
     private javax.swing.JLabel IconoFaseEliminacionDirecta;
     private javax.swing.JLabel IconoTorneo;
     private javax.swing.JLabel NombreOrganizador;
@@ -889,28 +729,13 @@ public class OrganizatorMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
@@ -933,13 +758,8 @@ public class OrganizatorMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;

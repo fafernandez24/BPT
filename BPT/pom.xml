@@ -24,6 +24,23 @@
             <version>2.4.0</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>com.dukescript.presenters</groupId>
+            <artifactId>renderer</artifactId>
+            <version>1.6.3</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>br.com.neppo.jlibs</groupId>
+            <artifactId>exceptions</artifactId>
+            <version>0.0.1</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.2</version>
+        </dependency>
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

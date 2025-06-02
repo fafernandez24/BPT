@@ -4,7 +4,11 @@
 
 package tamanaco.tennis.league.bpt;
 
-import view.Start;
+import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import view.Organizator;
+//import view.Start;
 
 /**
  *
@@ -12,14 +16,18 @@ import view.Start;
  */
 public class BPT {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedLookAndFeelException {
         
-        // URL location = 
-
-        Start openOrganizatorMenu = new Start();
-        openOrganizatorMenu.setVisible(true);
-      
-
+        // Permite que la interfaz grafica se vea un poco mejor.
+        UIManager.setLookAndFeel(new FlatLightLaf());
+        ///////////////////////////////////////////////////////////
+        
+        
+        Organizator openOrganizator = new Organizator();
+        openOrganizator.setVisible(true);
+        
+        //Start openStart = new Start();
+        //openStart.setVisible(true);
         
     }
 

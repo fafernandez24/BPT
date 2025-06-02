@@ -14,7 +14,9 @@ public class Start extends javax.swing.JFrame {
      * Creates new form start
      */
     public Start() {
+        this.setUndecorated(true);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -69,6 +71,7 @@ public class Start extends javax.swing.JFrame {
         jLabel7.setText("TAMANACO TENNIS LEAGUE");
         jLabel7.setToolTipText("");
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel6.setText("BREAK POINT TAMANACO");
         jLabel6.setToolTipText("");
@@ -162,6 +165,7 @@ public class Start extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Bebas Neue", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Iniciar sección");
         jButton1.setAlignmentY(0.0F);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
