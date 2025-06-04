@@ -7,8 +7,7 @@ package tamanaco.tennis.league.bpt;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import view.Organizator;
-//import view.Start;
+import view.MenuAdministrator;
 
 /**
  *
@@ -21,13 +20,11 @@ public class BPT {
         // Permite que la interfaz grafica se vea un poco mejor.
         UIManager.setLookAndFeel(new FlatLightLaf());
         ///////////////////////////////////////////////////////////
-        
-        
-        Organizator openOrganizator = new Organizator();
+       
+        MenuAdministrator openOrganizator = new MenuAdministrator();
         openOrganizator.setVisible(true);
         
-        //Start openStart = new Start();
-        //openStart.setVisible(true);
+
         
     }
 
