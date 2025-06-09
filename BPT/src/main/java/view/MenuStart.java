@@ -32,26 +32,26 @@ public class MenuStart extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         background = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        iniciarSeccionIngresarCedula = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        iniciarSeccionIngresarPassword = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        checkBoxOrganizator = new javax.swing.JCheckBox();
+        checkBoxJugador = new javax.swing.JCheckBox();
+        checkBoxAdministrador = new javax.swing.JCheckBox();
+        botonIniciarSeccion = new javax.swing.JButton();
+        botonMinimizar1 = new javax.swing.JLabel();
+        botonSalida1 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -60,206 +60,207 @@ public class MenuStart extends javax.swing.JFrame {
         background.setBackground(new java.awt.Color(255, 255, 255));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel8.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("USUARIO:");
-        jLabel8.setToolTipText("");
-
-        jPanel1.setBackground(new java.awt.Color(0, 51, 255));
-
-        jLabel7.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("TAMANACO TENNIS LEAGUE");
-        jLabel7.setToolTipText("");
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("BREAK POINT TAMANACO");
-        jLabel6.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6))
-                .addContainerGap(88, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addContainerGap())
-        );
-
-        jLabel9.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("INICIAR SECcIÓN:");
-        jLabel9.setToolTipText("");
-
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextField1.setText("Ingresar cedula de identidad");
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("CONTRASEÑA:");
-        jLabel10.setToolTipText("");
-
-        jPasswordField1.setBackground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(null);
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setAutoscrolls(true);
-
-        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox1.setFont(new java.awt.Font("Bebas Neue", 0, 12)); // NOI18N
-        jCheckBox1.setText("Organizador");
-        jCheckBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox2.setFont(new java.awt.Font("Bebas Neue", 0, 12)); // NOI18N
-        jCheckBox2.setText("Jugador");
-        jCheckBox2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-
-        jCheckBox3.setBackground(new java.awt.Color(255, 255, 255));
-        jCheckBox3.setFont(new java.awt.Font("Bebas Neue", 0, 12)); // NOI18N
-        jCheckBox3.setText("Administrador");
-        jCheckBox3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1.setFont(new java.awt.Font("Bebas Neue", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Iniciar sección");
-        jButton1.setAlignmentY(0.0F);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jCheckBox1)
-                        .addGap(32, 32, 32)
-                        .addComponent(jCheckBox2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jCheckBox3))
-                    .addComponent(jButton1)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel9)
-                .addGap(36, 36, 36)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-
-        background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 580));
-
-        jLabel1.setText("jLabel1");
-        background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel2.setText("jLabel2");
-        background.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel3.setBackground(new Color(0,0,0,99));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogo.png"))); // NOI18N
-        background.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 350, 250));
-
-        jPanel3.setBackground(new Color(0,0,0,99));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(131, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(89, 89, 89))
         );
 
-        background.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 420, 580));
+        background.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 420, 470));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancha_tenis.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
-        background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, 510, 580));
+        background.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 420, 470));
+
+        jLabel6.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("TAMANACO TENNIS LEAGUE");
+        background.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 430, -1));
+
+        jLabel9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Break Point Tamanaco");
+        jLabel9.setToolTipText("");
+        background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 150, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("USUARIO:");
+        jLabel8.setToolTipText("");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("INICIAR SECcIÓN:");
+        jLabel11.setToolTipText("");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 160, -1));
+
+        iniciarSeccionIngresarCedula.setBackground(new java.awt.Color(255, 255, 255));
+        iniciarSeccionIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+        iniciarSeccionIngresarCedula.setBorder(null);
+        iniciarSeccionIngresarCedula.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                iniciarSeccionIngresarCedulaFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                iniciarSeccionIngresarCedulaFocusLost(evt);
+            }
+        });
+        iniciarSeccionIngresarCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarSeccionIngresarCedulaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(iniciarSeccionIngresarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("CONTRASEÑA:");
+        jLabel10.setToolTipText("");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
+
+        iniciarSeccionIngresarPassword.setBackground(new java.awt.Color(255, 255, 255));
+        iniciarSeccionIngresarPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        iniciarSeccionIngresarPassword.setText("jPasswordField1");
+        iniciarSeccionIngresarPassword.setBorder(null);
+        iniciarSeccionIngresarPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                iniciarSeccionIngresarPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                iniciarSeccionIngresarPasswordFocusLost(evt);
+            }
+        });
+        iniciarSeccionIngresarPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarSeccionIngresarPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(iniciarSeccionIngresarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 206, -1));
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 312, 16));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setAutoscrolls(true);
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 312, 16));
+
+        checkBoxOrganizator.setBackground(new java.awt.Color(255, 255, 255));
+        checkBoxOrganizator.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        checkBoxOrganizator.setText("Organizador");
+        checkBoxOrganizator.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxOrganizator.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxOrganizatorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(checkBoxOrganizator, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+
+        checkBoxJugador.setBackground(new java.awt.Color(255, 255, 255));
+        checkBoxJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        checkBoxJugador.setText("Jugador");
+        checkBoxJugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxJugadorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(checkBoxJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
+
+        checkBoxAdministrador.setBackground(new java.awt.Color(255, 255, 255));
+        checkBoxAdministrador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        checkBoxAdministrador.setText("Administrador");
+        checkBoxAdministrador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxAdministrador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxAdministradorActionPerformed(evt);
+            }
+        });
+        jPanel2.add(checkBoxAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
+
+        botonIniciarSeccion.setBackground(new java.awt.Color(0, 0, 255));
+        botonIniciarSeccion.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonIniciarSeccion.setForeground(new java.awt.Color(255, 255, 255));
+        botonIniciarSeccion.setText("Iniciar sección");
+        botonIniciarSeccion.setAlignmentY(0.0F);
+        botonIniciarSeccion.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonIniciarSeccionMouseMoved(evt);
+            }
+        });
+        botonIniciarSeccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonIniciarSeccionMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonIniciarSeccionMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonIniciarSeccionMouseExited(evt);
+            }
+        });
+        botonIniciarSeccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIniciarSeccionActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botonIniciarSeccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 120, 40));
+
+        botonMinimizar1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonMinimizar1.setForeground(new java.awt.Color(255, 255, 255));
+        botonMinimizar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botonMinimizar1.setText("__");
+        botonMinimizar1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        botonMinimizar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMinimizar1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(botonMinimizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, 30, 40));
+
+        botonSalida1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSalida1.setForeground(new java.awt.Color(255, 255, 255));
+        botonSalida1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botonSalida1.setText("X");
+        botonSalida1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSalida1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(botonSalida1, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 30, 40));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel2.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 110));
+
+        background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,29 +276,86 @@ public class MenuStart extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void botonIniciarSeccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarSeccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_botonIniciarSeccionActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void checkBoxAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxAdministradorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_checkBoxAdministradorActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void checkBoxJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_checkBoxJugadorActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void checkBoxOrganizatorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxOrganizatorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_checkBoxOrganizatorActionPerformed
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void iniciarSeccionIngresarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_iniciarSeccionIngresarPasswordActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void iniciarSeccionIngresarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_iniciarSeccionIngresarCedulaActionPerformed
+
+    private void BannerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BannerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BannerMouseClicked
+
+    private void botonMinimizar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizar1MouseClicked
+        this.setExtendedState(1);
+    }//GEN-LAST:event_botonMinimizar1MouseClicked
+
+    private void botonSalida1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalida1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_botonSalida1MouseClicked
+
+    private void iniciarSeccionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusGained
+        iniciarSeccionIngresarCedula.setText("");
+    }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusGained
+
+    private void iniciarSeccionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusLost
+        iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+    }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusLost
+
+    private void iniciarSeccionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusGained
+        iniciarSeccionIngresarPassword.setText("");
+    }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusGained
+
+    private void iniciarSeccionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusLost
+        iniciarSeccionIngresarPassword.setText("iniciarSeccionIngresarPassword.setText(\"\");");
+    }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusLost
+
+    private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
+        if (checkBoxOrganizator.isSelected()){
+            MenuOrganizator openMenu = new MenuOrganizator();
+            openMenu.setVisible(true);
+        }
+        else if (checkBoxJugador.isSelected()){
+            MenuPlayer openMenu = new MenuPlayer();
+            openMenu.setVisible(true);
+        }
+        else if (checkBoxAdministrador.isSelected()){
+            MenuAdministrator openMenu = new MenuAdministrator();
+            openMenu.setVisible(true);  
+        }
+        
+        
+    }//GEN-LAST:event_botonIniciarSeccionMouseClicked
+
+    private void botonIniciarSeccionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseEntered
+
+    }//GEN-LAST:event_botonIniciarSeccionMouseEntered
+
+    private void botonIniciarSeccionMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseMoved
+        botonIniciarSeccion.setBackground(new Color(30,25,161));
+    }//GEN-LAST:event_botonIniciarSeccionMouseMoved
+
+    private void botonIniciarSeccionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseExited
+         botonIniciarSeccion.setBackground(new Color(0,0,255));
+    }//GEN-LAST:event_botonIniciarSeccionMouseExited
 
     /**
      * @param args the command line arguments
@@ -342,27 +400,27 @@ public class MenuStart extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Banner;
     private javax.swing.JPanel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton botonIniciarSeccion;
+    private javax.swing.JLabel botonMinimizar1;
+    private javax.swing.JLabel botonSalida1;
+    private javax.swing.JCheckBox checkBoxAdministrador;
+    private javax.swing.JCheckBox checkBoxJugador;
+    private javax.swing.JCheckBox checkBoxOrganizator;
+    private javax.swing.JTextField iniciarSeccionIngresarCedula;
+    private javax.swing.JPasswordField iniciarSeccionIngresarPassword;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

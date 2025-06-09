@@ -5,6 +5,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 /**
  *
@@ -18,7 +19,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     public MenuOrganizator() {
         this.setUndecorated(true);
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setResizable(true);
+       
     }
 
     /**
@@ -63,7 +65,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         tituloSuperior = new javax.swing.JLabel();
         botonSalida = new javax.swing.JLabel();
-        botonMinimizar = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         NombreOrganizador = new javax.swing.JLabel();
         IconoCalendario = new javax.swing.JLabel();
@@ -83,6 +84,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonMenuFaseEliminacionDirecta = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
@@ -112,11 +114,193 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
-        jLabel90 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        textoBuscarJugador = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        IconoCalendario1 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel40 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
         jPanel31 = new javax.swing.JPanel();
         jLabel91 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        calendar1 = new raven.calendar.Calendar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        pestaniaCrearTorneoInicio = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        entradaNombreTorneo = new javax.swing.JTextField();
+        pestaniaCrearTorneoInicio1 = new javax.swing.JPanel();
+        entradaNombreTorneo2 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        entradaNombreTorneo3 = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        entradaNombreTorneo4 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        entradaNombreTorneo1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        botonSeguirIngresarDatosTorneo = new javax.swing.JButton();
+        botonRegresarIngresarDatosTorneo = new javax.swing.JButton();
+        jLabel42 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jSeparator15 = new javax.swing.JSeparator();
+        entradaNombreTorneo11 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        entradaNombreTorneo12 = new javax.swing.JTextField();
+        jSeparator16 = new javax.swing.JSeparator();
+        jLabel30 = new javax.swing.JLabel();
+        jSeparator17 = new javax.swing.JSeparator();
+        entradaNombreTorneo13 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jSeparator18 = new javax.swing.JSeparator();
+        entradaNombreTorneo14 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        entradaNombreTorneo15 = new javax.swing.JTextField();
+        entradaNombreTorneo16 = new javax.swing.JTextField();
+        jSeparator19 = new javax.swing.JSeparator();
+        jSeparator20 = new javax.swing.JSeparator();
+        jSeparator21 = new javax.swing.JSeparator();
+        entradaNombreTorneo17 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jSeparator22 = new javax.swing.JSeparator();
+        entradaNombreTorneo18 = new javax.swing.JTextField();
+        jLabel46 = new javax.swing.JLabel();
+        entradaNombreTorneo19 = new javax.swing.JTextField();
+        jSeparator23 = new javax.swing.JSeparator();
+        jLabel47 = new javax.swing.JLabel();
+        jSeparator24 = new javax.swing.JSeparator();
+        entradaNombreTorneo20 = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jSeparator25 = new javax.swing.JSeparator();
+        entradaNombreTorneo21 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        entradaNombreTorneo22 = new javax.swing.JTextField();
+        entradaNombreTorneo23 = new javax.swing.JTextField();
+        jSeparator26 = new javax.swing.JSeparator();
+        jSeparator27 = new javax.swing.JSeparator();
+        jSeparator28 = new javax.swing.JSeparator();
+        entradaNombreTorneo24 = new javax.swing.JTextField();
+        jLabel52 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jButton12 = new javax.swing.JButton();
+        jSeparator29 = new javax.swing.JSeparator();
+        entradaNombreTorneo25 = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        entradaNombreTorneo26 = new javax.swing.JTextField();
+        jSeparator30 = new javax.swing.JSeparator();
+        jLabel58 = new javax.swing.JLabel();
+        jSeparator31 = new javax.swing.JSeparator();
+        entradaNombreTorneo27 = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        jSeparator32 = new javax.swing.JSeparator();
+        entradaNombreTorneo28 = new javax.swing.JTextField();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
+        entradaNombreTorneo29 = new javax.swing.JTextField();
+        entradaNombreTorneo31 = new javax.swing.JTextField();
+        jSeparator34 = new javax.swing.JSeparator();
+        jSeparator35 = new javax.swing.JSeparator();
+        jSeparator39 = new javax.swing.JSeparator();
+        entradaNombreTorneo36 = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
+        jLabel100 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jPanel11 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jSeparator33 = new javax.swing.JSeparator();
+        entradaNombreTorneo30 = new javax.swing.JTextField();
+        jLabel105 = new javax.swing.JLabel();
+        entradaNombreTorneo32 = new javax.swing.JTextField();
+        jSeparator36 = new javax.swing.JSeparator();
+        jLabel106 = new javax.swing.JLabel();
+        jSeparator37 = new javax.swing.JSeparator();
+        entradaNombreTorneo33 = new javax.swing.JTextField();
+        jLabel107 = new javax.swing.JLabel();
+        jSeparator38 = new javax.swing.JSeparator();
+        entradaNombreTorneo34 = new javax.swing.JTextField();
+        jLabel108 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        entradaNombreTorneo35 = new javax.swing.JTextField();
+        jSeparator40 = new javax.swing.JSeparator();
+        jSeparator41 = new javax.swing.JSeparator();
+        entradaNombreTorneo37 = new javax.swing.JTextField();
+        jLabel111 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jLabel112 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jButton19 = new javax.swing.JButton();
+        jSeparator42 = new javax.swing.JSeparator();
+        entradaNombreTorneo38 = new javax.swing.JTextField();
+        jLabel114 = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -359,7 +543,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tituloSuperior.setText("CREAR TORNEO");
         jPanel1.add(tituloSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, 50));
 
-        botonSalida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        botonSalida.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSalida.setForeground(new java.awt.Color(255, 255, 255));
         botonSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         botonSalida.setText("X");
@@ -368,19 +552,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 botonSalidaMouseClicked(evt);
             }
         });
-        jPanel1.add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 0, 20, 40));
-
-        botonMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        botonMinimizar.setForeground(new java.awt.Color(255, 255, 255));
-        botonMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        botonMinimizar.setText("__");
-        botonMinimizar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        botonMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonMinimizarMouseClicked(evt);
-            }
-        });
-        jPanel1.add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 0, 50, 40));
+        jPanel1.add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 0, 20, 40));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -535,8 +707,20 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 780));
 
+        botonMinimizar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonMinimizar.setForeground(new java.awt.Color(255, 255, 255));
+        botonMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botonMinimizar.setText("__");
+        botonMinimizar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        botonMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMinimizarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 0, 50, 40));
+
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
-        jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 80));
+        jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
 
         Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
@@ -547,7 +731,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 BannerMouseClicked(evt);
             }
         });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
@@ -559,37 +743,37 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel76.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel76.setForeground(new java.awt.Color(153, 153, 153));
         jLabel76.setText("EQUIPOS");
-        jPanel25.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 330, -1, 60));
+        jPanel25.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 390, -1, 60));
 
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rogerDobles.jpg"))); // NOI18N
         jLabel56.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel25.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 230, 180));
+        jPanel25.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 230, 180));
 
         jLabel77.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dkocovik.jpg"))); // NOI18N
         jLabel77.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel25.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 240, 150));
+        jPanel25.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 240, 150));
 
         jLabel78.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/equipoTenis.jpg"))); // NOI18N
         jLabel78.setToolTipText("");
         jLabel78.setAutoscrolls(true);
-        jPanel25.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 170, 230, 150));
+        jPanel25.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 230, 150));
 
         jLabel79.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel79.setForeground(new java.awt.Color(153, 153, 153));
         jLabel79.setText("como organizador TE INVITO A creaR un torneo...");
-        jPanel25.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, 60));
+        jPanel25.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, -1, 60));
 
         jLabel80.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(153, 153, 153));
         jLabel80.setText("DOBLES");
-        jPanel25.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, -1, 60));
+        jPanel25.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, 60));
 
         jLabel81.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel81.setForeground(new java.awt.Color(153, 153, 153));
         jLabel81.setText("SINGLES");
-        jPanel25.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 60));
+        jPanel25.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, 60));
 
         botonCrearTorneoDoble.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoDoble.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -612,10 +796,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel86.setText("CREAR TORNEO");
         botonCrearTorneoDoble.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jPanel25.add(botonCrearTorneoDoble, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, 130, 40));
+        jPanel25.add(botonCrearTorneoDoble, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 130, 40));
 
         jLabel89.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        jPanel25.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 146, 315, 389));
+        jPanel25.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 315, 389));
 
         botonCrearTorneoEquipo.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoEquipo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -648,10 +832,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         botonCrearTorneoEquipo.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel25.add(botonCrearTorneoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 460, 130, 40));
+        jPanel25.add(botonCrearTorneoEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 130, 40));
 
         jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        jPanel25.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(759, 146, 315, 389));
+        jPanel25.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 315, 389));
 
         botonCrearTorneoSingle.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoSingle.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -684,13 +868,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         botonCrearTorneoSingle.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel25.add(botonCrearTorneoSingle, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        jPanel25.add(botonCrearTorneoSingle, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 130, 40));
 
         jLabel87.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        jPanel25.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 146, 315, 389));
+        jPanel25.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 315, 389));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
-        jPanel25.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
+        jPanel25.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
 
         jTabbedPane.addTab("tab1", jPanel25);
 
@@ -707,7 +891,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel92)
-                .addContainerGap(436, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -717,32 +901,231 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 .addContainerGap(389, Short.MAX_VALUE))
         );
 
-        jTabbedPane.addTab("tab4", jPanel3);
+        jTabbedPane.addTab("tab2", jPanel3);
 
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel90.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel90.setText("buscar jugador");
+        jButton1.setBackground(new java.awt.Color(30, 25, 161));
+        jButton1.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Buscar");
+        jPanel30.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 40));
 
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGap(429, 429, 429)
-                .addComponent(jLabel90)
-                .addContainerGap(464, Short.MAX_VALUE))
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(382, Short.MAX_VALUE))
-        );
+        textoBuscarJugador.setBackground(new java.awt.Color(255, 255, 255));
+        textoBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        textoBuscarJugador.setForeground(new java.awt.Color(153, 153, 153));
+        textoBuscarJugador.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        textoBuscarJugador.setText("Ingresar cedula o nombre del jugador a buscar...");
+        textoBuscarJugador.setToolTipText("");
+        textoBuscarJugador.setBorder(null);
+        textoBuscarJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textoBuscarJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                textoBuscarJugadorFocusLost(evt);
+            }
+        });
+        textoBuscarJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoBuscarJugadorActionPerformed(evt);
+            }
+        });
+        jPanel30.add(textoBuscarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 800, 40));
+        jPanel30.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 540, 820, 10));
 
-        jTabbedPane.addTab("tab2", jPanel30);
+        IconoCalendario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotoPerfilPequenio.png"))); // NOI18N
+        jPanel30.add(IconoCalendario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 230, 200));
+
+        jLabel21.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel21.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel21.setText("Equipo en otro torneo");
+        jPanel30.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 410, -1, 30));
+
+        jLabel23.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel23.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel23.setText("ficha DEL JUGADOR: ");
+        jPanel30.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+
+        jLabel24.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel24.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel24.setText("FECHA DE NACIMIENTO");
+        jPanel30.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, -1, 30));
+
+        jLabel25.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel25.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel25.setText("NÚMERO DE CEDULA");
+        jPanel30.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, -1, 30));
+
+        jLabel26.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel26.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel26.setText("CORREO ELECTRÓNICO");
+        jPanel30.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, -1, 30));
+
+        jLabel27.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel27.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel27.setText("TORNEOS EN LOS QUE PARTICIPA:");
+        jPanel30.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 570, -1, 30));
+
+        jLabel37.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel37.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel37.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel37.setText("CATEGORIA");
+        jPanel30.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, -1, 30));
+
+        jLabel38.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel38.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel38.setText("Partidos JUGADOS:");
+        jPanel30.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 490, -1, 30));
+
+        jLabel39.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel39.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel39.setText("Partidos GANADOS:");
+        jPanel30.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 490, -1, 30));
+
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField2.setText("DD/MM/YYYY");
+        jTextField2.setBorder(null);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 140, -1));
+
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField3.setText("CORREO ELECTRONICO");
+        jTextField3.setBorder(null);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 140, -1));
+
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField4.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField4.setText("Nombre del Jugador");
+        jTextField4.setBorder(null);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 370, -1));
+
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField5.setText("TAMANACO TEAM");
+        jTextField5.setBorder(null);
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 140, -1));
+
+        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField6.setText("CEDULA DE IDENTIDAD");
+        jTextField6.setBorder(null);
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 140, -1));
+
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField7.setText("999");
+        jTextField7.setBorder(null);
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 40, 30));
+
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField8.setText("CATEGORIA");
+        jTextField8.setBorder(null);
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 140, -1));
+
+        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField9.setText("TORNEOS EN LOS QUE PARTICIPA EL JUGADOR");
+        jTextField9.setBorder(null);
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 370, 30));
+
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField10.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField10.setText("999");
+        jTextField10.setBorder(null);
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 490, 50, 30));
+        jPanel30.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 77, 820, -1));
+
+        jLabel40.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel40.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel40.setText("Número de telefono");
+        jPanel30.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, 30));
+
+        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTextField11.setForeground(new java.awt.Color(0, 0, 0));
+        jTextField11.setText("Numero de telefono");
+        jTextField11.setBorder(null);
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 140, -1));
+
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadradoMasGrande.png"))); // NOI18N
+        jLabel22.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel30.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 1010, 510));
+        jPanel30.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 820, 10));
+
+        jTabbedPane.addTab("tab3", jPanel30);
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -757,7 +1140,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel91)
-                .addContainerGap(399, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -767,40 +1150,1070 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 .addContainerGap(389, Short.MAX_VALUE))
         );
 
-        jTabbedPane.addTab("tab3", jPanel31);
+        jTabbedPane.addTab("tab4", jPanel31);
 
         jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel93.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel93.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel93.setText("calendario");
+        jLabel43.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel43.setText("VISUALIZAR CALENDARIO...");
+        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 60));
 
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(jLabel93)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 900, 10));
+        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 530, 410));
+
+        jTable2.setBackground(new java.awt.Color(255, 255, 255));
+        jTable2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "JugadorA", "JugadorB", "Fecha"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
+        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 200, 350, 410));
+
+        jButton8.setBackground(new java.awt.Color(36, 20, 188));
+        jButton8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("AGREGAR PARTIDO");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        jPanel32.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 140, 40));
+
+        jButton9.setBackground(new java.awt.Color(36, 20, 188));
+        jButton9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(255, 255, 255));
+        jButton9.setText("ELIMINAR PARTIDO");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        jPanel32.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
+
+        jButton10.setBackground(new java.awt.Color(36, 20, 188));
+        jButton10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
+        jButton10.setText("MODIFICAR PARTIDO");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+        jPanel32.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 630, 140, 40));
 
         jTabbedPane.addTab("tab5", jPanel32);
 
-        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
+        pestaniaCrearTorneoInicio.setBackground(new java.awt.Color(255, 255, 255));
+        pestaniaCrearTorneoInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel14.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel14.setText("Ingresar nombre del torneo:");
+        pestaniaCrearTorneoInicio.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
+
+        entradaNombreTorneo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo.setText("Ingresar nombre del torneo");
+        entradaNombreTorneo.setBorder(null);
+        entradaNombreTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneoActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(entradaNombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+
+        pestaniaCrearTorneoInicio1.setBackground(new java.awt.Color(255, 255, 255));
+        pestaniaCrearTorneoInicio1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pestaniaCrearTorneoInicio.add(pestaniaCrearTorneoInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, -1, -1));
+
+        entradaNombreTorneo2.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo2.setText("Ingresar UN NUMERO");
+        entradaNombreTorneo2.setBorder(null);
+        entradaNombreTorneo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo2ActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(entradaNombreTorneo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, -1, -1));
+
+        jLabel17.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel17.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel17.setText("Ingresar CANTIDAD de GRUPOS EN EL torneo:");
+        pestaniaCrearTorneoInicio.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, 30));
+
+        entradaNombreTorneo3.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo3.setText("Ingresar un numero");
+        entradaNombreTorneo3.setBorder(null);
+        entradaNombreTorneo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo3ActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(entradaNombreTorneo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, -1));
+        pestaniaCrearTorneoInicio.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 420, 350, 10));
+
+        jLabel18.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel18.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel18.setText("Ingresar CANTIDAD DE JUGADORES POR GRUPO:");
+        pestaniaCrearTorneoInicio.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, 30));
+        pestaniaCrearTorneoInicio.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 350, 10));
+        pestaniaCrearTorneoInicio.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
+        pestaniaCrearTorneoInicio.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 350, 10));
+        pestaniaCrearTorneoInicio.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 350, 10));
+
+        entradaNombreTorneo4.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo4.setText("Ingresar COSTO DEL TORNEO");
+        entradaNombreTorneo4.setBorder(null);
+        entradaNombreTorneo4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo4ActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(entradaNombreTorneo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, 220, -1));
+
+        jLabel19.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel19.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel19.setText("RONDAS DE ELIMINACION DIRECTA:");
+        pestaniaCrearTorneoInicio.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, -1, 30));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        pestaniaCrearTorneoInicio.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+
+        jLabel82.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel82.setText("Ingresar datos del torneo...");
+        pestaniaCrearTorneoInicio.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
+
+        entradaNombreTorneo1.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo1.setText("Ingresar un numero");
+        entradaNombreTorneo1.setBorder(null);
+        entradaNombreTorneo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo1ActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(entradaNombreTorneo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+
+        jLabel16.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel16.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("INGRESAR CANTIDAD DE JUGADORES/DUPLAS: ");
+        pestaniaCrearTorneoInicio.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, 30));
+
+        botonSeguirIngresarDatosTorneo.setBackground(new java.awt.Color(36, 20, 188));
+        botonSeguirIngresarDatosTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSeguirIngresarDatosTorneo.setForeground(new java.awt.Color(255, 255, 255));
+        botonSeguirIngresarDatosTorneo.setText("SEGUIR");
+        botonSeguirIngresarDatosTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSeguirIngresarDatosTorneoMouseClicked(evt);
+            }
+        });
+        botonSeguirIngresarDatosTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSeguirIngresarDatosTorneoActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(botonSeguirIngresarDatosTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 620, 140, 40));
+
+        botonRegresarIngresarDatosTorneo.setBackground(new java.awt.Color(36, 20, 188));
+        botonRegresarIngresarDatosTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonRegresarIngresarDatosTorneo.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegresarIngresarDatosTorneo.setText("REGRESAR");
+        botonRegresarIngresarDatosTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosTorneoMouseClicked(evt);
+            }
+        });
+        botonRegresarIngresarDatosTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarIngresarDatosTorneoActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(botonRegresarIngresarDatosTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 620, 140, 40));
+
+        jLabel42.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel42.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel42.setText("INGRESAR COSTO DEL TORNEO:");
+        pestaniaCrearTorneoInicio.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, 30));
+
+        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DIECISEISAVOS", "OCTAVOS", "CUARTOS", "SEMIFINALES", "FINAL" }));
+        jComboBox1.setToolTipText("");
+        jComboBox1.setBorder(null);
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        pestaniaCrearTorneoInicio.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 521, 250, 30));
+
+        jTabbedPane.addTab("tab6", pestaniaCrearTorneoInicio);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel98.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel98.setText("Ingresar DATOS DE LOS JUGADORES PARTICIPANTES DEL torneo...");
+        jPanel6.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
+
+        entradaNombreTorneo11.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo11.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo11.setBorder(null);
+        entradaNombreTorneo11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo11ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+
+        jLabel29.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel29.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel29.setText("Ingresar nombre deL JUGADOR:");
+        jPanel6.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
+
+        entradaNombreTorneo12.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo12.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo12.setText("Ingresar NÚMERO de CEDULA JUGADOR");
+        entradaNombreTorneo12.setBorder(null);
+        entradaNombreTorneo12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo12ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
+        jPanel6.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 350, 10));
+
+        jLabel30.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel30.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel30.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR:");
+        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, -1, 30));
+        jPanel6.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
+
+        entradaNombreTorneo13.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo13.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo13.setText("Ingresar NUMERO DE TELEFONO DEL JUGADOR");
+        entradaNombreTorneo13.setBorder(null);
+        entradaNombreTorneo13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo13ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+
+        jLabel31.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel31.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR:");
+        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
+        jPanel6.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 350, 10));
+
+        entradaNombreTorneo14.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo14.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo14.setText("INGRESAR CORREO DEL JUGADOR");
+        entradaNombreTorneo14.setBorder(null);
+        entradaNombreTorneo14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo14ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, -1, -1));
+
+        jLabel32.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel32.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel32.setText("Ingresar CORREO deL JUGADOR:");
+        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, 30));
+
+        jLabel33.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel33.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel33.setText("Ingresar CATEGORÍA deL JUGADOR:");
+        jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
+
+        jLabel34.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel34.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel34.setText("Ingresar EQUIPO deL JUGADOR:");
+        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, 30));
+
+        entradaNombreTorneo15.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo15.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo15.setText("INGRESAR CATEGORIA DEL JUGADOR");
+        entradaNombreTorneo15.setBorder(null);
+        entradaNombreTorneo15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo15ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+
+        entradaNombreTorneo16.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo16.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo16.setText("INGRESAR EQUIPO EXTERNO DEL JUGADOR");
+        entradaNombreTorneo16.setBorder(null);
+        entradaNombreTorneo16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo16ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, 20));
+        jPanel6.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 350, 10));
+        jPanel6.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 350, 10));
+        jPanel6.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 610, 350, 10));
+
+        entradaNombreTorneo17.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo17.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo17.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
+        entradaNombreTorneo17.setBorder(null);
+        entradaNombreTorneo17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo17ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaNombreTorneo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, -1, -1));
+
+        jLabel35.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel35.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel35.setText("VISTA DE JUGADORES YA AGREGADOS:");
+        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 740, -1, 30));
+
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setBackground(new java.awt.Color(204, 204, 204));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Cedula", "Categoria"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, 840, 320));
+
+        jButton2.setBackground(new java.awt.Color(36, 20, 188));
+        jButton2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("SUBIR FOTO");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
+
+        jButton3.setBackground(new java.awt.Color(36, 20, 188));
+        jButton3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("REGRESAR");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 40));
+
+        jButton4.setBackground(new java.awt.Color(36, 20, 188));
+        jButton4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("AGREGAR JUGADOR");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, 140, 40));
+
+        jLabel36.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel36.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel36.setText("SUBIR FOTO DEL JUGADOR:");
+        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 580, -1, 30));
+
+        jLabel41.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel41.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel41.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel41.setText("Ingresar fecha de nacimiento deL JUGADOR:");
+        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, -1, 30));
+
+        jButton6.setBackground(new java.awt.Color(36, 20, 188));
+        jButton6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("SEGUIR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 670, 140, 40));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 1260));
+
+        jScrollPane1.setViewportView(jPanel5);
+
+        jTabbedPane.addTab("tab7", jScrollPane1);
+
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel99.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel99.setText("Ingresar DATOS DE LAS DUPLAS PARTICIPANTES DEL torneo...");
+        jPanel10.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
+
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel10.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        jPanel10.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
+
+        entradaNombreTorneo18.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo18.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo18.setBorder(null);
+        entradaNombreTorneo18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo18ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+
+        jLabel46.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel46.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel46.setText("Ingresar nombre deL JUGADOR A:");
+        jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
+
+        entradaNombreTorneo19.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo19.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo19.setText("Ingresar NÚMERO de CEDULA JUGADOR");
+        entradaNombreTorneo19.setBorder(null);
+        entradaNombreTorneo19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo19ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo19, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        jPanel10.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
+
+        jLabel47.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel47.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel47.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR A:");
+        jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
+        jPanel10.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 710, 350, 10));
+
+        entradaNombreTorneo20.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo20.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo20.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo20.setBorder(null);
+        entradaNombreTorneo20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo20ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo20, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 680, -1, -1));
+
+        jLabel48.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel48.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel48.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR A:");
+        jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, 30));
+        jPanel10.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 350, 10));
+
+        entradaNombreTorneo21.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo21.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo21.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo21.setBorder(null);
+        entradaNombreTorneo21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo21ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+
+        jLabel49.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel49.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel49.setText("Ingresar CORREO deL JUGADOR A:");
+        jPanel10.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, 30));
+
+        jLabel50.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel50.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel50.setText("Ingresar CATEGORÍA deL JUGADOR A:");
+        jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 750, -1, 30));
+
+        jLabel51.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel51.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel51.setText("Ingresar EQUIPO deL JUGADOR A:");
+        jPanel10.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, 30));
+
+        entradaNombreTorneo22.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo22.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo22.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo22.setBorder(null);
+        entradaNombreTorneo22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo22ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, -1, -1));
+
+        entradaNombreTorneo23.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo23.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo23.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo23.setBorder(null);
+        entradaNombreTorneo23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo23ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 570, -1, 20));
+        jPanel10.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 600, 350, 10));
+        jPanel10.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 350, 10));
+        jPanel10.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 930, 350, 10));
+
+        entradaNombreTorneo24.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo24.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo24.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
+        entradaNombreTorneo24.setBorder(null);
+        entradaNombreTorneo24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo24ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 900, -1, -1));
+
+        jLabel52.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel52.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel52.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel52.setText("VISTA DE JUGADORES YA AGREGADOS:");
+        jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1120, -1, 30));
+
+        jTable3.setAutoCreateRowSorter(true);
+        jTable3.setBackground(new java.awt.Color(204, 204, 204));
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Cedula", "Categoria"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable3);
+
+        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1170, 840, 320));
+
+        jButton5.setBackground(new java.awt.Color(36, 20, 188));
+        jButton5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("SUBIR FOTO");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 970, 130, 30));
+
+        jButton7.setBackground(new java.awt.Color(36, 20, 188));
+        jButton7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setText("REGRESAR");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 140, 40));
+
+        jButton11.setBackground(new java.awt.Color(36, 20, 188));
+        jButton11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
+        jButton11.setText("AGREGAR JUGADOR");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 1050, 140, 40));
+
+        jLabel53.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel53.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel53.setText("SUBIR FOTO DEL JUGADOR A:");
+        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 970, -1, 30));
+
+        jLabel54.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel54.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel54.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel54.setText("Ingresar fecha de nacimiento deL JUGADOR A:");
+        jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 860, -1, 30));
+
+        jButton12.setBackground(new java.awt.Color(36, 20, 188));
+        jButton12.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
+        jButton12.setText("SEGUIR");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 1050, 140, 40));
+        jPanel10.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 350, 10));
+
+        entradaNombreTorneo25.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo25.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo25.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo25.setBorder(null);
+        entradaNombreTorneo25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo25ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo25, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, -1, -1));
+
+        jLabel57.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel57.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel57.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel57.setText("Ingresar nombre deL JUGADOR B:");
+        jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, 30));
+
+        entradaNombreTorneo26.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo26.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo26.setText("Ingresar NÚMERO de CEDULA JUGADOR");
+        entradaNombreTorneo26.setBorder(null);
+        entradaNombreTorneo26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo26ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo26, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, -1, -1));
+        jPanel10.add(jSeparator30, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 350, 10));
+
+        jLabel58.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel58.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel58.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR B:");
+        jPanel10.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, 30));
+        jPanel10.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 710, 350, 10));
+
+        entradaNombreTorneo27.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo27.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo27.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo27.setBorder(null);
+        entradaNombreTorneo27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo27ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo27, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 680, -1, -1));
+
+        jLabel59.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel59.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel59.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR B:");
+        jPanel10.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, 30));
+        jPanel10.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 350, 10));
+
+        entradaNombreTorneo28.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo28.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo28.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo28.setBorder(null);
+        entradaNombreTorneo28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo28ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo28, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, -1, -1));
+
+        jLabel88.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel88.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel88.setText("Ingresar CORREO deL JUGADOR B:");
+        jPanel10.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 30));
+
+        jLabel90.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel90.setText("Ingresar CATEGORÍA deL JUGADOR B:");
+        jPanel10.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 750, -1, 30));
+
+        jLabel93.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel93.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel93.setText("Ingresar EQUIPO deL JUGADOR B:");
+        jPanel10.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, -1, 30));
+
+        entradaNombreTorneo29.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo29.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo29.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo29.setBorder(null);
+        entradaNombreTorneo29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo29ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo29, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 790, -1, -1));
+
+        entradaNombreTorneo31.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo31.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo31.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo31.setBorder(null);
+        entradaNombreTorneo31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo31ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo31, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 570, -1, 20));
+        jPanel10.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, 350, 10));
+        jPanel10.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 820, 350, 10));
+        jPanel10.add(jSeparator39, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 930, 350, 10));
+
+        entradaNombreTorneo36.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo36.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo36.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
+        entradaNombreTorneo36.setBorder(null);
+        entradaNombreTorneo36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo36ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(entradaNombreTorneo36, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 900, -1, -1));
+
+        jButton14.setBackground(new java.awt.Color(36, 20, 188));
+        jButton14.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton14.setForeground(new java.awt.Color(255, 255, 255));
+        jButton14.setText("SUBIR FOTO");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+        jPanel10.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 970, 130, 30));
+
+        jLabel100.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel100.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel100.setText("SUBIR FOTO DEL JUGADOR B:");
+        jPanel10.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 970, -1, 30));
+
+        jLabel102.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel102.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel102.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel102.setText("Ingresar fecha de nacimiento deL JUGADOR B:");
+        jPanel10.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 860, -1, 30));
+
+        jPanel8.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 1260));
+
+        jScrollPane4.setViewportView(jPanel8);
+
+        jTabbedPane.addTab("tab8", jScrollPane4);
+
+        jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel101.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel101.setText("Ingresar DATOS DE LOS EQUIPOS PARTICIPANTES DEL torneo...");
+        jPanel12.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
+
+        jLabel103.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel12.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        jPanel12.add(jSeparator33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 350, 10));
+
+        entradaNombreTorneo30.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo30.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo30.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo30.setBorder(null);
+        entradaNombreTorneo30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo30ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo30, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        jLabel105.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel105.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel105.setText("Ingresar nombre deL CAPITAN:");
+        jPanel12.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
+
+        entradaNombreTorneo32.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo32.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo32.setText("Ingresar NÚMERO de CEDULA JUGADOR");
+        entradaNombreTorneo32.setBorder(null);
+        entradaNombreTorneo32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo32ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
+        jPanel12.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 350, 10));
+
+        jLabel106.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel106.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel106.setText("Ingresar NÚMERO DE CEDULA DEL CAPITAN:");
+        jPanel12.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, 30));
+        jPanel12.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 350, 10));
+
+        entradaNombreTorneo33.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo33.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo33.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo33.setBorder(null);
+        entradaNombreTorneo33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo33ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
+
+        jLabel107.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel107.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel107.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel107.setText("Ingresar NÚMERO DE TELEFONO deL CAPITAN:");
+        jPanel12.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, 30));
+        jPanel12.add(jSeparator38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 350, 10));
+
+        entradaNombreTorneo34.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo34.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo34.setText("INGRESAR CORREO DEL CAPITAN");
+        entradaNombreTorneo34.setBorder(null);
+        entradaNombreTorneo34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo34ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, -1));
+
+        jLabel108.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel108.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel108.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel108.setText("Ingresar CORREO deL CAPITAN:");
+        jPanel12.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, 30));
+
+        jLabel109.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel109.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel109.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel109.setText("Ingresar CATEGORÍA deL CAPITAN:");
+        jPanel12.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, 30));
+
+        entradaNombreTorneo35.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo35.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo35.setText("Ingresar nombre del JUGADOR");
+        entradaNombreTorneo35.setBorder(null);
+        entradaNombreTorneo35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo35ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
+        jPanel12.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 350, 10));
+        jPanel12.add(jSeparator41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, 350, 10));
+
+        entradaNombreTorneo37.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo37.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo37.setText("Ingresar nombre del EQUIPO");
+        entradaNombreTorneo37.setBorder(null);
+        entradaNombreTorneo37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo37ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+
+        jLabel111.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel111.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel111.setText("VISTA DE JUGADORES YA AGREGADOS:");
+        jPanel12.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 740, -1, 30));
+
+        jTable5.setAutoCreateRowSorter(true);
+        jTable5.setBackground(new java.awt.Color(204, 204, 204));
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Cedula", "Categoria"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable5);
+
+        jPanel12.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 780, 840, 320));
+
+        jButton13.setBackground(new java.awt.Color(36, 20, 188));
+        jButton13.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
+        jButton13.setText("SUBIR FOTO");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 140, 30));
+
+        jButton17.setBackground(new java.awt.Color(36, 20, 188));
+        jButton17.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton17.setForeground(new java.awt.Color(255, 255, 255));
+        jButton17.setText("REGRESAR");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, 140, 40));
+
+        jButton18.setBackground(new java.awt.Color(36, 20, 188));
+        jButton18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton18.setForeground(new java.awt.Color(255, 255, 255));
+        jButton18.setText("AGREGAR EQUIPO");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, 140, 40));
+
+        jLabel112.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel112.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel112.setText("SUBIR FOTO DEL CAPITAN:");
+        jPanel12.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, 30));
+
+        jLabel113.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel113.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel113.setText("INGRESAR NOMBRE DEL EQUIPO:");
+        jPanel12.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, -1, 30));
+
+        jButton19.setBackground(new java.awt.Color(36, 20, 188));
+        jButton19.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jButton19.setForeground(new java.awt.Color(255, 255, 255));
+        jButton19.setText("SEGUIR");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 140, 40));
+        jPanel12.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 350, 10));
+
+        entradaNombreTorneo38.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNombreTorneo38.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreTorneo38.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
+        entradaNombreTorneo38.setBorder(null);
+        entradaNombreTorneo38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreTorneo38ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreTorneo38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, -1, -1));
+
+        jLabel114.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel114.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel114.setText("Ingresar NÚMERO DE TELEFONO deL CAPITAN:");
+        jPanel12.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, 30));
+
+        jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 1260));
+
+        jScrollPane7.setViewportView(jPanel11);
+
+        jTabbedPane.addTab("tab9", jScrollPane7);
+
+        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -888,42 +2301,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonMenuVerCalendario.setBackground(new Color(204,204,255));
     }//GEN-LAST:event_botonMenuVerCalendarioMouseExited
 
-    private void botonCrearTorneoSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseClicked
-       // AQUI VA EL METODO DE CREAR TORNEO PARA SINGLE
-    }//GEN-LAST:event_botonCrearTorneoSingleMouseClicked
-
-    private void botonCrearTorneoSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseMoved
-        botonCrearTorneoSingle.setBackground(new Color(102,102,255));
-    }//GEN-LAST:event_botonCrearTorneoSingleMouseMoved
-
-    private void botonCrearTorneoSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseExited
-        botonCrearTorneoSingle.setBackground(new Color(30,25,161));
-    }//GEN-LAST:event_botonCrearTorneoSingleMouseExited
-
-    private void botonCrearTorneoDobleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseClicked
-        // AQUI VA EL METODO DE CREAR TORNEO PARA DOBLES
-    }//GEN-LAST:event_botonCrearTorneoDobleMouseClicked
-
-    private void botonCrearTorneoDobleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseMoved
-        botonCrearTorneoDoble.setBackground(new Color(102,102,255));
-    }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
-
-    private void botonCrearTorneoDobleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseExited
-        botonCrearTorneoDoble.setBackground(new Color(30,25,161));
-    }//GEN-LAST:event_botonCrearTorneoDobleMouseExited
-
-    private void botonCrearTorneoEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseClicked
-        // AQUI VA EL METODO DE CREAR TORNEO PARA EQUIPOS
-    }//GEN-LAST:event_botonCrearTorneoEquipoMouseClicked
-
-    private void botonCrearTorneoEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseMoved
-        botonCrearTorneoEquipo.setBackground(new Color(102,102,255));
-    }//GEN-LAST:event_botonCrearTorneoEquipoMouseMoved
-
-    private void botonCrearTorneoEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseExited
-        botonCrearTorneoEquipo.setBackground(new Color(30,25,161));
-    }//GEN-LAST:event_botonCrearTorneoEquipoMouseExited
-
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
         System.exit(0);
     }//GEN-LAST:event_botonSalidaMouseClicked
@@ -931,6 +2308,326 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizarMouseClicked
         this.setExtendedState(1);
     }//GEN-LAST:event_botonMinimizarMouseClicked
+
+    private void entradaNombreTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo1ActionPerformed
+
+    private void entradaNombreTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo4ActionPerformed
+
+    private void entradaNombreTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo3ActionPerformed
+
+    private void entradaNombreTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo2ActionPerformed
+
+    private void entradaNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneoActionPerformed
+
+    private void botonCrearTorneoSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseExited
+        botonCrearTorneoSingle.setBackground(new Color(30,25,161));
+    }//GEN-LAST:event_botonCrearTorneoSingleMouseExited
+
+    private void botonCrearTorneoSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonCrearTorneoSingleMouseClicked
+
+    private void botonCrearTorneoSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseMoved
+        botonCrearTorneoSingle.setBackground(new Color(102,102,255));
+    }//GEN-LAST:event_botonCrearTorneoSingleMouseMoved
+
+    private void botonCrearTorneoEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseExited
+        botonCrearTorneoEquipo.setBackground(new Color(30,25,161));
+    }//GEN-LAST:event_botonCrearTorneoEquipoMouseExited
+
+    private void botonCrearTorneoEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonCrearTorneoEquipoMouseClicked
+
+    private void botonCrearTorneoEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseMoved
+        botonCrearTorneoEquipo.setBackground(new Color(102,102,255));
+    }//GEN-LAST:event_botonCrearTorneoEquipoMouseMoved
+
+    private void botonCrearTorneoDobleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseExited
+        botonCrearTorneoDoble.setBackground(new Color(30,25,161));
+    }//GEN-LAST:event_botonCrearTorneoDobleMouseExited
+
+    private void botonCrearTorneoDobleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonCrearTorneoDobleMouseClicked
+
+    private void botonCrearTorneoDobleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseMoved
+        botonCrearTorneoDoble.setBackground(new Color(102,102,255));
+    }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
+
+    private void entradaNombreTorneo11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo11ActionPerformed
+
+    private void entradaNombreTorneo12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo12ActionPerformed
+
+    private void entradaNombreTorneo13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo13ActionPerformed
+
+    private void entradaNombreTorneo14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo14ActionPerformed
+
+    private void entradaNombreTorneo15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo15ActionPerformed
+
+    private void entradaNombreTorneo16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo16ActionPerformed
+
+    private void entradaNombreTorneo17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo17ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void botonSeguirIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoActionPerformed
+
+    private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoBuscarJugadorActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseClicked
+        jTabbedPane.setSelectedIndex(0);
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
+
+    private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
+        jTabbedPane.setSelectedIndex(6);
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void entradaNombreTorneo18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo18ActionPerformed
+
+    private void entradaNombreTorneo19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo19ActionPerformed
+
+    private void entradaNombreTorneo20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo20ActionPerformed
+
+    private void entradaNombreTorneo21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo21ActionPerformed
+
+    private void entradaNombreTorneo22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo22ActionPerformed
+
+    private void entradaNombreTorneo23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo23ActionPerformed
+
+    private void entradaNombreTorneo24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo24ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void entradaNombreTorneo30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo30ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo30ActionPerformed
+
+    private void entradaNombreTorneo32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo32ActionPerformed
+
+    private void entradaNombreTorneo33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo33ActionPerformed
+
+    private void entradaNombreTorneo34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo34ActionPerformed
+
+    private void entradaNombreTorneo35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo35ActionPerformed
+
+    private void entradaNombreTorneo37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo37ActionPerformed
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void entradaNombreTorneo38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo38ActionPerformed
+
+    private void entradaNombreTorneo25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo25ActionPerformed
+
+    private void entradaNombreTorneo26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo26ActionPerformed
+
+    private void entradaNombreTorneo27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo27ActionPerformed
+
+    private void entradaNombreTorneo28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo28ActionPerformed
+
+    private void entradaNombreTorneo29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo29ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo29ActionPerformed
+
+    private void entradaNombreTorneo31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo31ActionPerformed
+
+    private void entradaNombreTorneo36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneo36ActionPerformed
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
+        textoBuscarJugador.setText("");
+    }//GEN-LAST:event_textoBuscarJugadorFocusGained
+
+    private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
+        textoBuscarJugador.setText("Ingresar cedula o nombre del jugador a buscar...");
+    }//GEN-LAST:event_textoBuscarJugadorFocusLost
         
     /**
      * @param args the command line arguments
@@ -969,6 +2666,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
+    private javax.swing.JLabel IconoCalendario1;
     private javax.swing.JLabel NombreOrganizador;
     private javax.swing.JPanel botonCrearTorneoDoble;
     private javax.swing.JPanel botonCrearTorneoEquipo;
@@ -979,20 +2677,130 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel botonMenuVerCalendario;
     private javax.swing.JPanel botonMenuVerTorneos;
     private javax.swing.JLabel botonMinimizar;
+    private javax.swing.JButton botonRegresarIngresarDatosTorneo;
     private javax.swing.JLabel botonSalida;
+    private javax.swing.JButton botonSeguirIngresarDatosTorneo;
+    private raven.calendar.Calendar calendar1;
+    private javax.swing.JTextField entradaNombreTorneo;
+    private javax.swing.JTextField entradaNombreTorneo1;
+    private javax.swing.JTextField entradaNombreTorneo11;
+    private javax.swing.JTextField entradaNombreTorneo12;
+    private javax.swing.JTextField entradaNombreTorneo13;
+    private javax.swing.JTextField entradaNombreTorneo14;
+    private javax.swing.JTextField entradaNombreTorneo15;
+    private javax.swing.JTextField entradaNombreTorneo16;
+    private javax.swing.JTextField entradaNombreTorneo17;
+    private javax.swing.JTextField entradaNombreTorneo18;
+    private javax.swing.JTextField entradaNombreTorneo19;
+    private javax.swing.JTextField entradaNombreTorneo2;
+    private javax.swing.JTextField entradaNombreTorneo20;
+    private javax.swing.JTextField entradaNombreTorneo21;
+    private javax.swing.JTextField entradaNombreTorneo22;
+    private javax.swing.JTextField entradaNombreTorneo23;
+    private javax.swing.JTextField entradaNombreTorneo24;
+    private javax.swing.JTextField entradaNombreTorneo25;
+    private javax.swing.JTextField entradaNombreTorneo26;
+    private javax.swing.JTextField entradaNombreTorneo27;
+    private javax.swing.JTextField entradaNombreTorneo28;
+    private javax.swing.JTextField entradaNombreTorneo29;
+    private javax.swing.JTextField entradaNombreTorneo3;
+    private javax.swing.JTextField entradaNombreTorneo30;
+    private javax.swing.JTextField entradaNombreTorneo31;
+    private javax.swing.JTextField entradaNombreTorneo32;
+    private javax.swing.JTextField entradaNombreTorneo33;
+    private javax.swing.JTextField entradaNombreTorneo34;
+    private javax.swing.JTextField entradaNombreTorneo35;
+    private javax.swing.JTextField entradaNombreTorneo36;
+    private javax.swing.JTextField entradaNombreTorneo37;
+    private javax.swing.JTextField entradaNombreTorneo38;
+    private javax.swing.JTextField entradaNombreTorneo4;
     private javax.swing.JLabel iconoSuperior;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -1018,11 +2826,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
@@ -1033,7 +2843,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -1050,9 +2865,73 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator23;
+    private javax.swing.JSeparator jSeparator24;
+    private javax.swing.JSeparator jSeparator25;
+    private javax.swing.JSeparator jSeparator26;
+    private javax.swing.JSeparator jSeparator27;
+    private javax.swing.JSeparator jSeparator28;
+    private javax.swing.JSeparator jSeparator29;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator30;
+    private javax.swing.JSeparator jSeparator31;
+    private javax.swing.JSeparator jSeparator32;
+    private javax.swing.JSeparator jSeparator33;
+    private javax.swing.JSeparator jSeparator34;
+    private javax.swing.JSeparator jSeparator35;
+    private javax.swing.JSeparator jSeparator36;
+    private javax.swing.JSeparator jSeparator37;
+    private javax.swing.JSeparator jSeparator38;
+    private javax.swing.JSeparator jSeparator39;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator40;
+    private javax.swing.JSeparator jSeparator41;
+    private javax.swing.JSeparator jSeparator42;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JPanel pestaniaCrearTorneoInicio;
+    private javax.swing.JPanel pestaniaCrearTorneoInicio1;
+    private javax.swing.JTextField textoBuscarJugador;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables
 }
