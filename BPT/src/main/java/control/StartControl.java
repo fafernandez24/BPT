@@ -13,12 +13,17 @@ import view.MenuOrganizator;
  */
 public class StartControl {
     
+    public static boolean validateDeveloper(String id, String password){
+        return (id.equals("31703150") && password.equals("0406")) || 
+                (id.equals("31307188") && password.equals("Carlospinto2005")) || (id.equals("31101453") && password.equals("Messi48"));
+    }
+    
     public static boolean validateOrganizator(String id, String password){
-        return id.equals("11032757") && password.equals("1234");
+        return id.equals("11032757") && password.equals("11032757");
     }
     
     public static boolean validateAdministrator(String id, String password){
-        return id.equals("31703150") && password.equals("4321");
+        return id.equals("11032757") && password.equals("11032757");
     }
     
     public static void openMenuOrganizator(String id, String password){
