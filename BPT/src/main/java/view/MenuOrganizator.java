@@ -62,6 +62,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        modelDate1 = new raven.calendar.model.ModelDate();
+        modelMonth1 = new raven.calendar.model.ModelMonth();
         jPanel1 = new javax.swing.JPanel();
         tituloSuperior = new javax.swing.JLabel();
         botonSalida = new javax.swing.JLabel();
@@ -86,7 +88,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -152,6 +153,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        calendar1 = new raven.calendar.Calendar();
         pestaniaCrearTorneoInicio = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         entradaNombreTorneo = new javax.swing.JTextField();
@@ -300,6 +302,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator42 = new javax.swing.JSeparator();
         entradaNombreTorneo38 = new javax.swing.JTextField();
         jLabel114 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -720,17 +723,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
@@ -1219,6 +1211,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         });
         jPanel32.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 630, 140, 40));
+        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 520, 410));
 
         jTabbedPane.addTab("tab5", jPanel32);
 
@@ -2210,6 +2203,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2681,6 +2685,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonRegresarIngresarDatosTorneo;
     private javax.swing.JLabel botonSalida;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo;
+    private raven.calendar.Calendar calendar1;
     private javax.swing.JTextField entradaNombreTorneo;
     private javax.swing.JTextField entradaNombreTorneo1;
     private javax.swing.JTextField entradaNombreTorneo11;
@@ -2929,6 +2934,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private raven.calendar.model.ModelDate modelDate1;
+    private raven.calendar.model.ModelMonth modelMonth1;
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
     private javax.swing.JTextField textoBuscarJugador;

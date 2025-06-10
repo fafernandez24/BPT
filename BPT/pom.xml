@@ -41,7 +41,11 @@
             <artifactId>flatlaf</artifactId>
             <version>3.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>calendar-windows10-style</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
     </dependencies>
     
     <properties>
