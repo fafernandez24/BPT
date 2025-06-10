@@ -28,7 +28,8 @@ public class StartControl {
     
     public static void openMenuOrganizator(String id, String password){
         boolean bol = validateOrganizator(id, password);
-        if (bol){
+        boolean bolDev = validateDeveloper(id, password);
+        if (bol == true || bolDev == true ){
             MenuOrganizator openMenu = new MenuOrganizator();
             openMenu.setVisible(true);
         } 
@@ -50,7 +51,8 @@ public class StartControl {
     
     public static void openMenuAdministrator(String id, String password){
         boolean bol = validateAdministrator(id, password);
-        if (bol){
+        boolean bolDev = validateDeveloper(id, password);
+        if (bol == true || bolDev == true ){
             MenuAdministrator openMenu = new MenuAdministrator();
             openMenu.setVisible(true);
         } 
