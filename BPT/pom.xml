@@ -46,6 +46,12 @@
             <artifactId>calendar-windows10-style</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>unknown.binary</groupId>
+            <artifactId>CalendarW</artifactId>
+            <version>SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
     
     <properties>

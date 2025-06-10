@@ -24,10 +24,11 @@ public class Team extends Player{
     public Team(){}
     
     // Constructor #2
-    public Team(List<Player> teamList, int id, String name, String password, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
-        super(id, name, password, matchesPlayed, matchesWon, matchesLost, setsWon, setsLost, gamesWon, gamesLost, matchAverage, setAverage, gameAverage);
+    public Team(List<Player> teamList, int id, String name, String password, String email, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
+        super(id, name, password, email, matchesPlayed, matchesWon, matchesLost, setsWon, setsLost, gamesWon, gamesLost, matchAverage, setAverage, gameAverage);
         this.teamList = teamList;
     }
+    
     
     // Getter Methods
 

@@ -14,7 +14,6 @@ public class Administrator extends Person {
     
     // Attributes
     
-    private String email;
     private List<Player> playerList;
     
     // Methods
@@ -24,26 +23,17 @@ public class Administrator extends Person {
     
     // Constructor #2
     public Administrator(int id, String name, String password, String email, List<Player> playerList) {
-        super(id, name, password);
-        this.email = email;
+        super(id, name, password, email);
         this.playerList = playerList;
     }
         
     // Getter Methods
-
-    public String getEmail() {
-        return email;
-    }
 
     public List<Player> getPlayerList() {
         return playerList;
     }
     
     // Setter Methods
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;

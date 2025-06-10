@@ -19,6 +19,7 @@ public abstract class Person {
     protected int id;
     protected String name;
     protected String password;
+    protected String email;
     
     // Methods
     
@@ -26,7 +27,7 @@ public abstract class Person {
     public Person(){};
     
     // Constructor #2
-    public Person(int id, String name, String password){};
+    public Person(int id, String name, String password, String email){};
     
     // Getters methods
 
@@ -41,6 +42,10 @@ public abstract class Person {
     public String getPassword() {
         return password;
     }
+
+    public String getEmail() {
+        return email;
+    }
     
     // Setter methods
 
@@ -54,6 +59,10 @@ public abstract class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     // Validations

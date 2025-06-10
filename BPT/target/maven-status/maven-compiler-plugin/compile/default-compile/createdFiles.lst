@@ -38,6 +38,7 @@ view\MenuOrganizator$78.class
 view\MenuPlayer$2.class
 view\MenuOrganizator$70.class
 view\MenuOrganizator$60.class
+view\MenuOrganizator$90.class
 view\MenuOrganizator$40.class
 model\Group.class
 view\prueba$5.class
@@ -61,12 +62,15 @@ view\MenuOrganizator$59.class
 view\MenuStart$7.class
 view\MenuOrganizator$85.class
 view\prueba$3.class
+view\MenuOrganizator$92.class
 view\MenuOrganizator$4.class
 view\MenuOrganizator.class
 view\MenuOrganizator$86.class
 view\MenuStart$8.class
 view\MenuPlayer.class
+control\StartControl.class
 view\MenuStart$16.class
+view\MenuOrganizator$91.class
 view\MenuOrganizator$11.class
 view\MenuOrganizator$35.class
 view\prueba$4.class
@@ -120,6 +124,7 @@ view\MenuPlayer$8.class
 view\MenuStart$12.class
 view\MenuOrganizator$48.class
 view\MenuOrganizator$76.class
+model\Organizator.class
 view\MenuOrganizator$25.class
 view\MenuOrganizator$45.class
 view\MenuOrganizator$16.class

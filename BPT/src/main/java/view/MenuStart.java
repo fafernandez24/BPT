@@ -4,8 +4,10 @@
  */
 package view;
 
+import static control.StartControl.openMenuOrganizator;
+import static control.StartControl.openMenuAdministrator;
 import java.awt.Color;
-import javax.swing.Icon;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -22,6 +24,12 @@ public class MenuStart extends javax.swing.JFrame {
         initComponents();
         this.setResizable(true);
         this.setLocationRelativeTo(null);
+        newIcon();
+    }
+    
+    private void newIcon(){
+        Image icon = new ImageIcon(getClass().getResource("/images/tamanacoLogoUltraPequenio.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -348,17 +356,13 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida1MouseClicked
 
     private void iniciarSeccionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusGained
-        if (iniciarSeccionIngresarCedula.getText().equals("Ingresar cedula de identidad")){
-            iniciarSeccionIngresarCedula.setText("");
-        }
+        if (iniciarSeccionIngresarCedula.getText().equals("Ingresar cedula de identidad")) iniciarSeccionIngresarCedula.setText("");
     }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusGained
 
     private void iniciarSeccionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusLost
         String cedula = iniciarSeccionIngresarCedula.getText();
-        if (cedula.trim().isEmpty()){
-            iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
-        }else
-            System.out.println(cedula);
+        if (cedula.trim().isEmpty()) iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+        else System.out.println(cedula);
     }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusLost
 
     private void iniciarSeccionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusGained
@@ -377,19 +381,17 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
+        String id = iniciarSeccionIngresarCedula.getText(), password = iniciarSeccionIngresarPassword.getText();
         if (checkBoxOrganizator.isSelected()){
-            MenuOrganizator openMenu = new MenuOrganizator();
-            openMenu.setVisible(true);
+            openMenuOrganizator(id, password);
         }
         else if (checkBoxJugador.isSelected()){
             MenuPlayer openMenu = new MenuPlayer();
             openMenu.setVisible(true);
         }
         else if (checkBoxAdministrador.isSelected()){
-            MenuAdministrator openMenu = new MenuAdministrator();
-            openMenu.setVisible(true);  
+            openMenuAdministrator(id, password);
         }
-        
         
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 

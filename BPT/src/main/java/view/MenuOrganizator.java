@@ -11,6 +11,10 @@ import java.awt.Color;
  * @author Freddy A. Fernández
  */
 public class MenuOrganizator extends javax.swing.JFrame {
+    
+    // Atributtes
+    
+    int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
 
     /**
      * Creates new form Organizator
@@ -62,8 +66,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        modelDate1 = new raven.calendar.model.ModelDate();
-        modelMonth1 = new raven.calendar.model.ModelMonth();
         jPanel1 = new javax.swing.JPanel();
         tituloSuperior = new javax.swing.JLabel();
         botonSalida = new javax.swing.JLabel();
@@ -88,6 +90,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -206,7 +209,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonRegresarIngresarDatosSingle = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
@@ -240,7 +243,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        botonRegresarIngresarDatosDobles = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
@@ -294,7 +297,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
         jButton13 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        botonRegresarIngresarDatosEquipo = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jLabel112 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
@@ -302,7 +305,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator42 = new javax.swing.JSeparator();
         entradaNombreTorneo38 = new javax.swing.JTextField();
         jLabel114 = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -723,6 +725,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
@@ -1372,6 +1385,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab6", pestaniaCrearTorneoInicio);
 
+        jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -1547,16 +1561,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
 
-        jButton3.setBackground(new java.awt.Color(36, 20, 188));
-        jButton3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("REGRESAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        botonRegresarIngresarDatosSingle.setBackground(new java.awt.Color(36, 20, 188));
+        botonRegresarIngresarDatosSingle.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonRegresarIngresarDatosSingle.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegresarIngresarDatosSingle.setText("REGRESAR");
+        botonRegresarIngresarDatosSingle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosSingleMouseClicked(evt);
             }
         });
-        jPanel6.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 40));
+        botonRegresarIngresarDatosSingle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarIngresarDatosSingleActionPerformed(evt);
+            }
+        });
+        jPanel6.add(botonRegresarIngresarDatosSingle, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 40));
 
         jButton4.setBackground(new java.awt.Color(36, 20, 188));
         jButton4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1598,6 +1617,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab7", jScrollPane1);
 
+        jScrollPane4.setBorder(null);
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         jScrollPane4.setPreferredSize(new java.awt.Dimension(1032, 1600));
@@ -1758,7 +1778,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         ));
         jScrollPane6.setViewportView(jTable3);
 
-        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1170, 840, 320));
+        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1170, 840, 430));
 
         jButton5.setBackground(new java.awt.Color(36, 20, 188));
         jButton5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1776,16 +1796,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel10.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 970, 130, 30));
 
-        jButton7.setBackground(new java.awt.Color(36, 20, 188));
-        jButton7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("REGRESAR");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+        botonRegresarIngresarDatosDobles.setBackground(new java.awt.Color(36, 20, 188));
+        botonRegresarIngresarDatosDobles.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonRegresarIngresarDatosDobles.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegresarIngresarDatosDobles.setText("REGRESAR");
+        botonRegresarIngresarDatosDobles.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosDoblesMouseClicked(evt);
             }
         });
-        jPanel10.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 140, 40));
+        botonRegresarIngresarDatosDobles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarIngresarDatosDoblesActionPerformed(evt);
+            }
+        });
+        jPanel10.add(botonRegresarIngresarDatosDobles, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 140, 40));
 
         jButton11.setBackground(new java.awt.Color(36, 20, 188));
         jButton11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1969,12 +1994,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel102.setText("Ingresar fecha de nacimiento deL JUGADOR B:");
         jPanel10.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 860, -1, 30));
 
-        jPanel8.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 1260));
+        jPanel8.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1020, 1700));
 
         jScrollPane4.setViewportView(jPanel8);
 
         jTabbedPane.addTab("tab8", jScrollPane4);
 
+        jScrollPane7.setBorder(null);
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -2132,16 +2158,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel12.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 140, 30));
 
-        jButton17.setBackground(new java.awt.Color(36, 20, 188));
-        jButton17.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton17.setForeground(new java.awt.Color(255, 255, 255));
-        jButton17.setText("REGRESAR");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+        botonRegresarIngresarDatosEquipo.setBackground(new java.awt.Color(36, 20, 188));
+        botonRegresarIngresarDatosEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonRegresarIngresarDatosEquipo.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegresarIngresarDatosEquipo.setText("REGRESAR");
+        botonRegresarIngresarDatosEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosEquipoMouseClicked(evt);
             }
         });
-        jPanel12.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, 140, 40));
+        botonRegresarIngresarDatosEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegresarIngresarDatosEquipoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(botonRegresarIngresarDatosEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, 140, 40));
 
         jButton18.setBackground(new java.awt.Color(36, 20, 188));
         jButton18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2202,17 +2233,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jTabbedPane.addTab("tab9", jScrollPane7);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2340,6 +2360,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
     private void botonCrearTorneoSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseClicked
         jTabbedPane.setSelectedIndex(5);
+        opcionCrearTorneo = 1;
     }//GEN-LAST:event_botonCrearTorneoSingleMouseClicked
 
     private void botonCrearTorneoSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseMoved
@@ -2352,6 +2373,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
     private void botonCrearTorneoEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseClicked
         jTabbedPane.setSelectedIndex(5);
+        opcionCrearTorneo = 3;
     }//GEN-LAST:event_botonCrearTorneoEquipoMouseClicked
 
     private void botonCrearTorneoEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseMoved
@@ -2364,6 +2386,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
     private void botonCrearTorneoDobleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseClicked
         jTabbedPane.setSelectedIndex(5);
+        opcionCrearTorneo = 2;
     }//GEN-LAST:event_botonCrearTorneoDobleMouseClicked
 
     private void botonCrearTorneoDobleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseMoved
@@ -2402,9 +2425,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonRegresarIngresarDatosSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -2487,7 +2510,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
 
     private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
-        jTabbedPane.setSelectedIndex(6);
+        switch(opcionCrearTorneo){
+            case 1 -> jTabbedPane.setSelectedIndex(6);
+            case 2 -> jTabbedPane.setSelectedIndex(7);
+            case 3 -> jTabbedPane.setSelectedIndex(8);
+            default -> jTabbedPane.setSelectedIndex(0);
+        }
+        
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
@@ -2530,9 +2559,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
@@ -2574,9 +2603,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void botonRegresarIngresarDatosEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
@@ -2627,12 +2656,26 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
-        textoBuscarJugador.setText("");
+        if (textoBuscarJugador.getText().equals("Ingresar cedula o nombre del jugador a buscar...")) textoBuscarJugador.setText("");
     }//GEN-LAST:event_textoBuscarJugadorFocusGained
 
     private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
-        textoBuscarJugador.setText("Ingresar cedula o nombre del jugador a buscar...");
+        String cedula = textoBuscarJugador.getText();
+        if (!cedula.trim().isEmpty()) System.out.println(cedula);
+        else textoBuscarJugador.setText("Ingresar cedula o nombre del jugador a buscar...");
     }//GEN-LAST:event_textoBuscarJugadorFocusLost
+
+    private void botonRegresarIngresarDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseClicked
+
+    private void botonRegresarIngresarDatosDoblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseClicked
+
+    private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
         
     /**
      * @param args the command line arguments
@@ -2682,6 +2725,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel botonMenuVerCalendario;
     private javax.swing.JPanel botonMenuVerTorneos;
     private javax.swing.JLabel botonMinimizar;
+    private javax.swing.JButton botonRegresarIngresarDatosDobles;
+    private javax.swing.JButton botonRegresarIngresarDatosEquipo;
+    private javax.swing.JButton botonRegresarIngresarDatosSingle;
     private javax.swing.JButton botonRegresarIngresarDatosTorneo;
     private javax.swing.JLabel botonSalida;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo;
@@ -2726,15 +2772,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -2934,8 +2977,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private raven.calendar.model.ModelDate modelDate1;
-    private raven.calendar.model.ModelMonth modelMonth1;
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
     private javax.swing.JTextField textoBuscarJugador;

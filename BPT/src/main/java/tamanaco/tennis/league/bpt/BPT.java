@@ -21,8 +21,8 @@ public class BPT {
         UIManager.setLookAndFeel(new FlatLightLaf());
         ///////////////////////////////////////////////////////////
        
-        MenuStart openOrganizator = new MenuStart();
-        openOrganizator.setVisible(true);
+        MenuStart openStart = new MenuStart();
+        openStart.setVisible(true);
            
     }
 }
