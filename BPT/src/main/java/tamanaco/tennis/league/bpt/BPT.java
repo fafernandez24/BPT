@@ -25,5 +25,4 @@ public class BPT {
         openOrganizator.setVisible(true);
            
     }
-
 }

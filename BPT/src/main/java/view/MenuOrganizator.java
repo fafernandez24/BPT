@@ -5,7 +5,6 @@
 package view;
 
 import java.awt.Color;
-import java.awt.Dimension;
 
 /**
  *
@@ -20,6 +19,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         this.setResizable(true);
+        this.setLocationRelativeTo(null);
        
     }
 
@@ -147,7 +147,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        calendar1 = new raven.calendar.Calendar();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton8 = new javax.swing.JButton();
@@ -1164,7 +1163,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
         jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
         jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 900, 10));
-        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 530, 410));
 
         jTable2.setBackground(new java.awt.Color(255, 255, 255));
         jTable2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1609,10 +1607,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(1032, 1600));
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel10.setPreferredSize(new java.awt.Dimension(938, 1600));
+        jPanel10.setRequestFocusEnabled(false);
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel99.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
@@ -2680,7 +2681,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonRegresarIngresarDatosTorneo;
     private javax.swing.JLabel botonSalida;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo;
-    private raven.calendar.Calendar calendar1;
     private javax.swing.JTextField entradaNombreTorneo;
     private javax.swing.JTextField entradaNombreTorneo1;
     private javax.swing.JTextField entradaNombreTorneo11;

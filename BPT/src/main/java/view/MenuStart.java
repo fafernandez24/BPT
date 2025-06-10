@@ -5,6 +5,8 @@
 package view;
 
 import java.awt.Color;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,6 +20,7 @@ public class MenuStart extends javax.swing.JFrame {
     public MenuStart() {
         this.setUndecorated(true);
         initComponents();
+        this.setResizable(true);
         this.setLocationRelativeTo(null);
     }
 
@@ -52,6 +55,7 @@ public class MenuStart extends javax.swing.JFrame {
         botonMinimizar1 = new javax.swing.JLabel();
         botonSalida1 = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
+        botonVerPassword = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -103,13 +107,13 @@ public class MenuStart extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("USUARIO:");
+        jLabel8.setText("cédula:");
         jLabel8.setToolTipText("");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("INICIAR SECcIÓN:");
+        jLabel11.setText("INICIAR SEsiÓN:");
         jLabel11.setToolTipText("");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 160, -1));
 
@@ -139,8 +143,8 @@ public class MenuStart extends javax.swing.JFrame {
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
         iniciarSeccionIngresarPassword.setBackground(new java.awt.Color(255, 255, 255));
-        iniciarSeccionIngresarPassword.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        iniciarSeccionIngresarPassword.setText("jPasswordField1");
+        iniciarSeccionIngresarPassword.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSeccionIngresarPassword.setText("Ingresar contraseña");
         iniciarSeccionIngresarPassword.setBorder(null);
         iniciarSeccionIngresarPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -169,6 +173,11 @@ public class MenuStart extends javax.swing.JFrame {
         checkBoxOrganizator.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         checkBoxOrganizator.setText("Organizador");
         checkBoxOrganizator.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxOrganizator.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxOrganizatorMouseClicked(evt);
+            }
+        });
         checkBoxOrganizator.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBoxOrganizatorActionPerformed(evt);
@@ -180,17 +189,27 @@ public class MenuStart extends javax.swing.JFrame {
         checkBoxJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         checkBoxJugador.setText("Jugador");
         checkBoxJugador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxJugadorMouseClicked(evt);
+            }
+        });
         checkBoxJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBoxJugadorActionPerformed(evt);
             }
         });
-        jPanel2.add(checkBoxJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
+        jPanel2.add(checkBoxJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         checkBoxAdministrador.setBackground(new java.awt.Color(255, 255, 255));
         checkBoxAdministrador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         checkBoxAdministrador.setText("Administrador");
         checkBoxAdministrador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        checkBoxAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkBoxAdministradorMouseClicked(evt);
+            }
+        });
         checkBoxAdministrador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkBoxAdministradorActionPerformed(evt);
@@ -198,10 +217,10 @@ public class MenuStart extends javax.swing.JFrame {
         });
         jPanel2.add(checkBoxAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, -1));
 
-        botonIniciarSeccion.setBackground(new java.awt.Color(0, 0, 255));
+        botonIniciarSeccion.setBackground(new java.awt.Color(30, 25, 161));
         botonIniciarSeccion.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonIniciarSeccion.setForeground(new java.awt.Color(255, 255, 255));
-        botonIniciarSeccion.setText("Iniciar sección");
+        botonIniciarSeccion.setText("Iniciar sesión");
         botonIniciarSeccion.setAlignmentY(0.0F);
         botonIniciarSeccion.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -260,6 +279,22 @@ public class MenuStart extends javax.swing.JFrame {
         });
         jPanel2.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 110));
 
+        botonVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view.png"))); // NOI18N
+        botonVerPassword.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonVerPasswordMouseMoved(evt);
+            }
+        });
+        botonVerPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonVerPasswordMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonVerPasswordMouseExited(evt);
+            }
+        });
+        jPanel2.add(botonVerPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, -1, 30));
+
         background.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -313,19 +348,32 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida1MouseClicked
 
     private void iniciarSeccionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusGained
-        iniciarSeccionIngresarCedula.setText("");
+        if (iniciarSeccionIngresarCedula.getText().equals("Ingresar cedula de identidad")){
+            iniciarSeccionIngresarCedula.setText("");
+        }
     }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusGained
 
     private void iniciarSeccionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusLost
-        iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+        String cedula = iniciarSeccionIngresarCedula.getText();
+        if (cedula.trim().isEmpty()){
+            iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+        }else
+            System.out.println(cedula);
     }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusLost
 
     private void iniciarSeccionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusGained
-        iniciarSeccionIngresarPassword.setText("");
+        if (iniciarSeccionIngresarPassword.getText().equals("Ingresar contraseña")){
+            iniciarSeccionIngresarPassword.setText("");
+        }
     }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusGained
 
     private void iniciarSeccionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusLost
-        iniciarSeccionIngresarPassword.setText("iniciarSeccionIngresarPassword.setText(\"\");");
+        String password = iniciarSeccionIngresarPassword.getText();
+        if (password.trim().isEmpty()){
+            iniciarSeccionIngresarPassword.setText("ingresar contraseña");
+        }
+        else
+        System.out.println(password);
     }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
@@ -350,12 +398,46 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonIniciarSeccionMouseEntered
 
     private void botonIniciarSeccionMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseMoved
-        botonIniciarSeccion.setBackground(new Color(30,25,161));
+        botonIniciarSeccion.setBackground(new Color(102,102,255));
     }//GEN-LAST:event_botonIniciarSeccionMouseMoved
 
     private void botonIniciarSeccionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseExited
-         botonIniciarSeccion.setBackground(new Color(0,0,255));
+         botonIniciarSeccion.setBackground(new Color(30,25,161));
     }//GEN-LAST:event_botonIniciarSeccionMouseExited
+
+    private void botonVerPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseClicked
+
+    }//GEN-LAST:event_botonVerPasswordMouseClicked
+
+    @SuppressWarnings("empty-statement")
+    private void botonVerPasswordMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseMoved
+        botonVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hidden.png")));
+        iniciarSeccionIngresarPassword.setEchoChar((char)0); ;
+    }//GEN-LAST:event_botonVerPasswordMouseMoved
+
+    @SuppressWarnings("empty-statement")
+    private void botonVerPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseExited
+        botonVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view.png")));
+        iniciarSeccionIngresarPassword.setEchoChar((char)'•'); ;
+    }//GEN-LAST:event_botonVerPasswordMouseExited
+
+    private void checkBoxOrganizatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxOrganizatorMouseClicked
+        checkBoxOrganizator.setSelected(true);
+        checkBoxJugador.setSelected(false);
+        checkBoxAdministrador.setSelected(false);
+    }//GEN-LAST:event_checkBoxOrganizatorMouseClicked
+
+    private void checkBoxJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxJugadorMouseClicked
+        checkBoxJugador.setSelected(true);
+        checkBoxOrganizator.setSelected(false);
+        checkBoxAdministrador.setSelected(false);
+    }//GEN-LAST:event_checkBoxJugadorMouseClicked
+
+    private void checkBoxAdministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxAdministradorMouseClicked
+        checkBoxAdministrador.setSelected(true);
+        checkBoxOrganizator.setSelected(false);
+        checkBoxJugador.setSelected(false);
+    }//GEN-LAST:event_checkBoxAdministradorMouseClicked
 
     /**
      * @param args the command line arguments
@@ -405,6 +487,7 @@ public class MenuStart extends javax.swing.JFrame {
     private javax.swing.JButton botonIniciarSeccion;
     private javax.swing.JLabel botonMinimizar1;
     private javax.swing.JLabel botonSalida1;
+    private javax.swing.JLabel botonVerPassword;
     private javax.swing.JCheckBox checkBoxAdministrador;
     private javax.swing.JCheckBox checkBoxJugador;
     private javax.swing.JCheckBox checkBoxOrganizator;
