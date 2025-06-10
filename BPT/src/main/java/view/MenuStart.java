@@ -114,19 +114,17 @@ public class MenuStart extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("cédula:");
         jLabel8.setToolTipText("");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("INICIAR SEsiÓN:");
         jLabel11.setToolTipText("");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 160, -1));
 
-        iniciarSeccionIngresarCedula.setBackground(new java.awt.Color(255, 255, 255));
         iniciarSeccionIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSeccionIngresarCedula.setForeground(new java.awt.Color(153, 153, 153));
         iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
         iniciarSeccionIngresarCedula.setBorder(null);
         iniciarSeccionIngresarCedula.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -145,13 +143,12 @@ public class MenuStart extends javax.swing.JFrame {
         jPanel2.add(iniciarSeccionIngresarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("CONTRASEÑA:");
         jLabel10.setToolTipText("");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
-        iniciarSeccionIngresarPassword.setBackground(new java.awt.Color(255, 255, 255));
         iniciarSeccionIngresarPassword.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSeccionIngresarPassword.setForeground(new java.awt.Color(153, 153, 153));
         iniciarSeccionIngresarPassword.setText("Ingresar contraseña");
         iniciarSeccionIngresarPassword.setBorder(null);
         iniciarSeccionIngresarPassword.addFocusListener(new java.awt.event.FocusAdapter() {
