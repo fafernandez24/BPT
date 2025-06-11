@@ -5,6 +5,8 @@
 package view;
 
 import static control.MenuOrganizatorControl.addPlayerSingleSingleTournament;
+import static control.MenuOrganizatorControl.organizatorFocusGained;
+import static control.MenuOrganizatorControl.organizatorFocusLost;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import model.Player;
@@ -99,6 +101,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -126,7 +129,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jPanel30 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        botonBuscarJugador = new javax.swing.JButton();
         textoBuscarJugador = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         IconoCalendario1 = new javax.swing.JLabel();
@@ -196,7 +199,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator15 = new javax.swing.JSeparator();
         entradaNombreJugador = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        entradaIdJugador = new javax.swing.JTextField();
+        entradaIDJugador = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         jLabel30 = new javax.swing.JLabel();
         jSeparator17 = new javax.swing.JSeparator();
@@ -214,12 +217,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaJugadoresAgregados = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        botonSubirFotoJugador = new javax.swing.JButton();
         botonRegresarIngresarDatosSingle = new javax.swing.JButton();
         botonAgregarJugador = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        botonSeguirIngresarJugador = new javax.swing.JButton();
         opcionesCategoriaJugador = new javax.swing.JComboBox<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
@@ -282,38 +285,33 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel101 = new javax.swing.JLabel();
         jLabel103 = new javax.swing.JLabel();
         jSeparator33 = new javax.swing.JSeparator();
-        entradaNombreTorneo30 = new javax.swing.JTextField();
+        entradaNombreCapitan = new javax.swing.JTextField();
         jLabel105 = new javax.swing.JLabel();
-        entradaNombreTorneo32 = new javax.swing.JTextField();
+        entradaCedulaCapitan = new javax.swing.JTextField();
         jSeparator36 = new javax.swing.JSeparator();
         jLabel106 = new javax.swing.JLabel();
         jSeparator37 = new javax.swing.JSeparator();
-        entradaNombreTorneo33 = new javax.swing.JTextField();
+        entradaNumeroTelefonoCapitan = new javax.swing.JTextField();
         jLabel107 = new javax.swing.JLabel();
         jSeparator38 = new javax.swing.JSeparator();
-        entradaNombreTorneo34 = new javax.swing.JTextField();
+        entradaCorreoCapitan = new javax.swing.JTextField();
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
-        entradaNombreTorneo35 = new javax.swing.JTextField();
-        jSeparator40 = new javax.swing.JSeparator();
         jSeparator41 = new javax.swing.JSeparator();
-        entradaNombreTorneo37 = new javax.swing.JTextField();
+        entradaNombreEquipo = new javax.swing.JTextField();
         jLabel111 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
-        jButton13 = new javax.swing.JButton();
+        botonFotoCapitan = new javax.swing.JButton();
         botonRegresarIngresarDatosEquipo = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
+        botonAgregarEquipo = new javax.swing.JButton();
         jLabel112 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
-        jButton19 = new javax.swing.JButton();
+        botonSeguirEquipo = new javax.swing.JButton();
         jSeparator42 = new javax.swing.JSeparator();
-        entradaNombreTorneo38 = new javax.swing.JTextField();
+        entradaFechaNacimientoCapitan = new javax.swing.JTextField();
         jLabel114 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
-        Banner = new javax.swing.JLabel();
+        opcionesCategoriaCapitan = new javax.swing.JComboBox<>();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -734,6 +732,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel25.setBackground(new java.awt.Color(250, 250, 250));
@@ -891,7 +900,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel92)
-                .addContainerGap(391, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -906,13 +915,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
         jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(30, 25, 161));
-        jButton1.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Buscar");
-        jPanel30.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 40));
+        botonBuscarJugador.setBackground(new java.awt.Color(30, 25, 161));
+        botonBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        botonBuscarJugador.setForeground(new java.awt.Color(255, 255, 255));
+        botonBuscarJugador.setText("Buscar");
+        jPanel30.add(botonBuscarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 40));
 
-        textoBuscarJugador.setBackground(new java.awt.Color(255, 255, 255));
         textoBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         textoBuscarJugador.setForeground(new java.awt.Color(153, 153, 153));
         textoBuscarJugador.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -992,7 +1000,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel39.setText("Partidos GANADOS:");
         jPanel30.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 490, -1, 30));
 
-        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
         jTextField2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField2.setText("DD/MM/YYYY");
         jTextField2.setBorder(null);
@@ -1003,7 +1010,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 140, -1));
 
-        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
         jTextField3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField3.setText("CORREO ELECTRONICO");
         jTextField3.setBorder(null);
@@ -1014,7 +1020,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 140, -1));
 
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jTextField4.setText("Nombre del Jugador");
         jTextField4.setBorder(null);
@@ -1025,7 +1030,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 370, -1));
 
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
         jTextField5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField5.setText("TAMANACO TEAM");
         jTextField5.setBorder(null);
@@ -1036,7 +1040,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 140, -1));
 
-        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
         jTextField6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField6.setText("CEDULA DE IDENTIDAD");
         jTextField6.setBorder(null);
@@ -1047,7 +1050,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 140, -1));
 
-        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         jTextField7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField7.setText("999");
         jTextField7.setBorder(null);
@@ -1058,7 +1060,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 40, 30));
 
-        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField8.setText("CATEGORIA");
         jTextField8.setBorder(null);
@@ -1069,7 +1070,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 140, -1));
 
-        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
         jTextField9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField9.setText("TORNEOS EN LOS QUE PARTICIPA EL JUGADOR");
         jTextField9.setBorder(null);
@@ -1080,7 +1080,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 370, 30));
 
-        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         jTextField10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField10.setText("999");
         jTextField10.setBorder(null);
@@ -1098,7 +1097,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel40.setText("Número de telefono");
         jPanel30.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, 30));
 
-        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField11.setText("Numero de telefono");
         jTextField11.setBorder(null);
@@ -1130,7 +1128,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel91)
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1218,11 +1216,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel14.setBackground(new java.awt.Color(51, 51, 51));
         jLabel14.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Ingresar nombre del torneo:");
         pestaniaCrearTorneoInicio.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaNombreTorneo.setBackground(new java.awt.Color(255, 255, 255));
         entradaNombreTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaNombreTorneo.setForeground(new java.awt.Color(153, 153, 153));
         entradaNombreTorneo.setText("Ingresar nombre del torneo");
@@ -1246,10 +1242,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         pestaniaCrearTorneoInicio1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         pestaniaCrearTorneoInicio.add(pestaniaCrearTorneoInicio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, -1, -1));
 
-        entradaCantidadGrupos.setBackground(new java.awt.Color(255, 255, 255));
         entradaCantidadGrupos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCantidadGrupos.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadGrupos.setText("Ingresar UN NUMERO");
+        entradaCantidadGrupos.setText("Ingresar un numero");
         entradaCantidadGrupos.setBorder(null);
         entradaCantidadGrupos.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1268,11 +1263,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel17.setBackground(new java.awt.Color(51, 51, 51));
         jLabel17.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Ingresar CANTIDAD de GRUPOS EN EL torneo:");
         pestaniaCrearTorneoInicio.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, 30));
 
-        entradaCantidadParticipantesGrupos.setBackground(new java.awt.Color(255, 255, 255));
         entradaCantidadParticipantesGrupos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCantidadParticipantesGrupos.setForeground(new java.awt.Color(153, 153, 153));
         entradaCantidadParticipantesGrupos.setText("Ingresar un numero");
@@ -1295,7 +1288,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(51, 51, 51));
         jLabel18.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Ingresar CANTIDAD DE participantes POR GRUPO:");
         pestaniaCrearTorneoInicio.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, 30));
         pestaniaCrearTorneoInicio.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 350, 10));
@@ -1303,10 +1295,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         pestaniaCrearTorneoInicio.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, 350, 10));
         pestaniaCrearTorneoInicio.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, 350, 10));
 
-        entradaCostoTorneo.setBackground(new java.awt.Color(255, 255, 255));
         entradaCostoTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCostoTorneo.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCostoTorneo.setText("Ingresar COSTO DEL TORNEO");
+        entradaCostoTorneo.setText("Ingresar costo del torneo");
         entradaCostoTorneo.setBorder(null);
         entradaCostoTorneo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1325,7 +1316,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel19.setBackground(new java.awt.Color(51, 51, 51));
         jLabel19.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
         jLabel19.setText("RONDAS DE ELIMINACION DIRECTA:");
         pestaniaCrearTorneoInicio.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, -1, 30));
 
@@ -1337,7 +1327,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel82.setText("Ingresar datos del torneo...");
         pestaniaCrearTorneoInicio.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
 
-        entradaCantidadJugadores.setBackground(new java.awt.Color(255, 255, 255));
         entradaCantidadJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCantidadJugadores.setForeground(new java.awt.Color(153, 153, 153));
         entradaCantidadJugadores.setText("Ingresar un numero");
@@ -1359,7 +1348,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel16.setBackground(new java.awt.Color(51, 51, 51));
         jLabel16.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("INGRESAR CANTIDAD DE JUGADORES/DUPLAS/equipos: ");
         pestaniaCrearTorneoInicio.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, -1, 30));
 
@@ -1397,11 +1385,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel42.setBackground(new java.awt.Color(51, 51, 51));
         jLabel42.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("INGRESAR COSTO DEL TORNEO:");
         pestaniaCrearTorneoInicio.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, 30));
 
-        ingresarRondaEliminacionDirecta.setBackground(new java.awt.Color(255, 255, 255));
         ingresarRondaEliminacionDirecta.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         ingresarRondaEliminacionDirecta.setForeground(new java.awt.Color(153, 153, 153));
         ingresarRondaEliminacionDirecta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DIECISEISAVOS", "OCTAVOS", "CUARTOS", "SEMIFINALES", "FINAL" }));
@@ -1434,10 +1420,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
         jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
 
-        entradaNombreJugador.setBackground(new java.awt.Color(255, 255, 255));
         entradaNombreJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreJugador.setText("Ingresar nombre del JUGADOR");
+        entradaNombreJugador.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNombreJugador.setText("Ingresar nombre del jugador");
         entradaNombreJugador.setBorder(null);
+        entradaNombreJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNombreJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNombreJugadorFocusLost(evt);
+            }
+        });
         entradaNombreJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaNombreJugadorActionPerformed(evt);
@@ -1447,33 +1441,47 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel29.setBackground(new java.awt.Color(51, 51, 51));
         jLabel29.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Ingresar nombre deL JUGADOR:");
         jPanel6.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaIdJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaIdJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaIdJugador.setText("Ingresar NÚMERO de CEDULA JUGADOR");
-        entradaIdJugador.setBorder(null);
-        entradaIdJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaIdJugadorActionPerformed(evt);
+        entradaIDJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaIDJugador.setForeground(new java.awt.Color(153, 153, 153));
+        entradaIDJugador.setText("Ingresar numero de cedula del jugador");
+        entradaIDJugador.setBorder(null);
+        entradaIDJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaIDJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaIDJugadorFocusLost(evt);
             }
         });
-        jPanel6.add(entradaIdJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
+        entradaIDJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaIDJugadorActionPerformed(evt);
+            }
+        });
+        jPanel6.add(entradaIDJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
         jPanel6.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 350, 10));
 
         jLabel30.setBackground(new java.awt.Color(51, 51, 51));
         jLabel30.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR:");
         jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, -1, 30));
         jPanel6.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
 
-        entradaNumeroTelefonoJugador.setBackground(new java.awt.Color(255, 255, 255));
         entradaNumeroTelefonoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNumeroTelefonoJugador.setText("Ingresar NUMERO DE TELEFONO DEL JUGADOR");
+        entradaNumeroTelefonoJugador.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNumeroTelefonoJugador.setText("Ingresar numero de telefono del jugador");
         entradaNumeroTelefonoJugador.setBorder(null);
+        entradaNumeroTelefonoJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNumeroTelefonoJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNumeroTelefonoJugadorFocusLost(evt);
+            }
+        });
         entradaNumeroTelefonoJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaNumeroTelefonoJugadorActionPerformed(evt);
@@ -1483,15 +1491,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel31.setBackground(new java.awt.Color(51, 51, 51));
         jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR:");
         jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
         jPanel6.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 350, 10));
 
-        entradaEmailJugador.setBackground(new java.awt.Color(255, 255, 255));
         entradaEmailJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaEmailJugador.setText("INGRESAR CORREO DEL JUGADOR");
+        entradaEmailJugador.setForeground(new java.awt.Color(153, 153, 153));
+        entradaEmailJugador.setText("Ingresar correo del jugador");
         entradaEmailJugador.setBorder(null);
+        entradaEmailJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaEmailJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaEmailJugadorFocusLost(evt);
+            }
+        });
         entradaEmailJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaEmailJugadorActionPerformed(evt);
@@ -1501,26 +1516,31 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel32.setBackground(new java.awt.Color(51, 51, 51));
         jLabel32.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("Ingresar CORREO deL JUGADOR:");
         jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, 30));
 
         jLabel33.setBackground(new java.awt.Color(51, 51, 51));
         jLabel33.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Ingresar CATEGORÍA deL JUGADOR:");
         jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
 
         jLabel34.setBackground(new java.awt.Color(51, 51, 51));
         jLabel34.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("Ingresar EQUIPO deL JUGADOR:");
         jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, 30));
 
-        entradaEquipoJugador.setBackground(new java.awt.Color(255, 255, 255));
         entradaEquipoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaEquipoJugador.setText("INGRESAR EQUIPO EXTERNO DEL JUGADOR");
+        entradaEquipoJugador.setForeground(new java.awt.Color(153, 153, 153));
+        entradaEquipoJugador.setText("Ingresar equipo externo del jugador");
         entradaEquipoJugador.setBorder(null);
+        entradaEquipoJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaEquipoJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaEquipoJugadorFocusLost(evt);
+            }
+        });
         entradaEquipoJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaEquipoJugadorActionPerformed(evt);
@@ -1530,10 +1550,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 350, 10));
         jPanel6.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 610, 350, 10));
 
-        entradaFechaNacimientoJugador.setBackground(new java.awt.Color(255, 255, 255));
         entradaFechaNacimientoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaFechaNacimientoJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaFechaNacimientoJugador.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
         entradaFechaNacimientoJugador.setBorder(null);
+        entradaFechaNacimientoJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorFocusLost(evt);
+            }
+        });
         entradaFechaNacimientoJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaFechaNacimientoJugadorActionPerformed(evt);
@@ -1550,7 +1578,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados.setAutoCreateRowSorter(true);
         tablaJugadoresAgregados.setBackground(new java.awt.Color(204, 204, 204));
         tablaJugadoresAgregados.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
-        tablaJugadoresAgregados.setForeground(new java.awt.Color(0, 0, 0));
         tablaJugadoresAgregados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1566,21 +1593,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, 840, 410));
 
-        jButton2.setBackground(new java.awt.Color(36, 20, 188));
-        jButton2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("SUBIR FOTO");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonSubirFotoJugador.setBackground(new java.awt.Color(36, 20, 188));
+        botonSubirFotoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSubirFotoJugador.setForeground(new java.awt.Color(255, 255, 255));
+        botonSubirFotoJugador.setText("SUBIR FOTO");
+        botonSubirFotoJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                botonSubirFotoJugadorMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonSubirFotoJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonSubirFotoJugadorActionPerformed(evt);
             }
         });
-        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
+        jPanel6.add(botonSubirFotoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
 
         botonRegresarIngresarDatosSingle.setBackground(new java.awt.Color(36, 20, 188));
         botonRegresarIngresarDatosSingle.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1616,29 +1643,27 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel36.setBackground(new java.awt.Color(51, 51, 51));
         jLabel36.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
         jLabel36.setText("SUBIR FOTO DEL JUGADOR:");
         jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 580, -1, 30));
 
         jLabel41.setBackground(new java.awt.Color(51, 51, 51));
         jLabel41.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Ingresar fecha de nacimiento deL JUGADOR:");
         jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, -1, 30));
 
-        jButton6.setBackground(new java.awt.Color(36, 20, 188));
-        jButton6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("SEGUIR");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        botonSeguirIngresarJugador.setBackground(new java.awt.Color(36, 20, 188));
+        botonSeguirIngresarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSeguirIngresarJugador.setForeground(new java.awt.Color(255, 255, 255));
+        botonSeguirIngresarJugador.setText("SEGUIR");
+        botonSeguirIngresarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                botonSeguirIngresarJugadorActionPerformed(evt);
             }
         });
-        jPanel6.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 670, 140, 40));
+        jPanel6.add(botonSeguirIngresarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 670, 140, 40));
 
-        opcionesCategoriaJugador.setBackground(new java.awt.Color(255, 255, 255));
         opcionesCategoriaJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        opcionesCategoriaJugador.setForeground(new java.awt.Color(153, 153, 153));
         opcionesCategoriaJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
         opcionesCategoriaJugador.setBorder(null);
         opcionesCategoriaJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -1676,10 +1701,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
         jPanel10.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
 
-        entradaNombreJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaNombreJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaNombreJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreJugadorA.setText("Ingresar nombre del JUGADOR");
+        entradaNombreJugadorA.setText("Ingresar nombre del jugador");
         entradaNombreJugadorA.setBorder(null);
         entradaNombreJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1698,14 +1722,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel46.setBackground(new java.awt.Color(255, 255, 255));
         jLabel46.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(0, 0, 0));
         jLabel46.setText("Ingresar nombre deL JUGADOR A:");
         jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaCedulaJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaCedulaJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCedulaJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCedulaJugadorA.setText("Ingresar NuMERO de CEDULA JUGADOR");
+        entradaCedulaJugadorA.setText("Ingresar numero de cedula jugador");
         entradaCedulaJugadorA.setBorder(null);
         entradaCedulaJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1725,16 +1747,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel47.setBackground(new java.awt.Color(255, 255, 255));
         jLabel47.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
         jLabel47.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR A:");
         jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
         jPanel10.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 710, 350, 10));
 
-        entradaTelefonoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaTelefonoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaTelefonoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaTelefonoJugadorA.setText("Ingresar numero de telefono del JUGADOR");
+        entradaTelefonoJugadorA.setText("Ingresar numero de telefono del jugador");
         entradaTelefonoJugadorA.setBorder(null);
+        entradaTelefonoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaTelefonoJugadorAFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaTelefonoJugadorAFocusLost(evt);
+            }
+        });
         entradaTelefonoJugadorA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaTelefonoJugadorAActionPerformed(evt);
@@ -1744,15 +1772,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel48.setBackground(new java.awt.Color(255, 255, 255));
         jLabel48.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR A:");
         jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, 30));
         jPanel10.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 350, 10));
 
-        entradaCorreoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaCorreoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCorreoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCorreoJugadorA.setText("Ingresar correo del JUGADOR");
+        entradaCorreoJugadorA.setText("Ingresar correo del jugador");
+        entradaCorreoJugadorA.setToolTipText("");
         entradaCorreoJugadorA.setBorder(null);
         entradaCorreoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1771,26 +1798,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel49.setForeground(new java.awt.Color(0, 0, 0));
         jLabel49.setText("Ingresar CORREO deL JUGADOR A:");
         jPanel10.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, -1, 30));
 
         jLabel50.setBackground(new java.awt.Color(51, 51, 51));
         jLabel50.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setText("Ingresar CATEGORÍA deL JUGADOR A:");
         jPanel10.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 750, -1, 30));
 
         jLabel51.setBackground(new java.awt.Color(255, 255, 255));
         jLabel51.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setText("Ingresar EQUIPO deL JUGADOR A:");
         jPanel10.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, 30));
 
-        entradaEquipoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaEquipoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaEquipoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaEquipoJugadorA.setText("Ingresar equipo del JUGADOR");
+        entradaEquipoJugadorA.setText("Ingresar equipo del jugador");
         entradaEquipoJugadorA.setBorder(null);
         entradaEquipoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1809,11 +1832,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jSeparator26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 600, 350, 10));
         jPanel10.add(jSeparator28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 930, 350, 10));
 
-        entradaFechaNacimientoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         entradaFechaNacimientoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaFechaNacimientoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
         entradaFechaNacimientoJugadorA.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
         entradaFechaNacimientoJugadorA.setBorder(null);
+        entradaFechaNacimientoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorAFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorAFocusLost(evt);
+            }
+        });
         entradaFechaNacimientoJugadorA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaFechaNacimientoJugadorAActionPerformed(evt);
@@ -1895,7 +1925,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel54.setBackground(new java.awt.Color(51, 51, 51));
         jLabel54.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
         jLabel54.setText("Ingresar fecha de nacimiento deL JUGADOR A:");
         jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 860, -1, 30));
 
@@ -1911,10 +1940,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(botonSeguirDuplas, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 1050, 140, 40));
         jPanel10.add(jSeparator29, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 350, 10));
 
-        entradaNombreJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaNombreJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaNombreJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreJugadorB.setText("Ingresar nombre del JUGADOR");
+        entradaNombreJugadorB.setText("Ingresar nombre del jugador");
         entradaNombreJugadorB.setBorder(null);
         entradaNombreJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1933,14 +1961,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel57.setBackground(new java.awt.Color(255, 255, 255));
         jLabel57.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
         jLabel57.setText("Ingresar nombre deL JUGADOR B:");
         jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, 30));
 
-        entradaCedulaJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaCedulaJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCedulaJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCedulaJugadorB.setText("Ingresar NÚMERO de CEDULA JUGADOR");
+        entradaCedulaJugadorB.setText("Ingresar numero de cedula jugador");
         entradaCedulaJugadorB.setBorder(null);
         entradaCedulaJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -1960,16 +1986,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel58.setBackground(new java.awt.Color(255, 255, 255));
         jLabel58.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(0, 0, 0));
         jLabel58.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR B:");
         jPanel10.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, 30));
         jPanel10.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 710, 350, 10));
 
-        entradaTelefonoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaTelefonoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaTelefonoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaTelefonoJugadorB.setText("Ingresar numero de telefono del JUGADOR");
+        entradaTelefonoJugadorB.setText("Ingresar numero de telefono del jugador");
         entradaTelefonoJugadorB.setBorder(null);
+        entradaTelefonoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaTelefonoJugadorBFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaTelefonoJugadorBFocusLost(evt);
+            }
+        });
         entradaTelefonoJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaTelefonoJugadorBActionPerformed(evt);
@@ -1979,15 +2011,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel59.setBackground(new java.awt.Color(255, 255, 255));
         jLabel59.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(0, 0, 0));
         jLabel59.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR B:");
         jPanel10.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, 30));
         jPanel10.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 350, 10));
 
-        entradaCorreoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaCorreoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaCorreoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCorreoJugadorB.setText("Ingresar correo del JUGADOR");
+        entradaCorreoJugadorB.setText("Ingresar correo del jugador");
         entradaCorreoJugadorB.setBorder(null);
         entradaCorreoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -2006,27 +2036,31 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel88.setBackground(new java.awt.Color(255, 255, 255));
         jLabel88.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel88.setForeground(new java.awt.Color(0, 0, 0));
         jLabel88.setText("Ingresar CORREO deL JUGADOR B:");
         jPanel10.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, -1, 30));
 
         jLabel90.setBackground(new java.awt.Color(51, 51, 51));
         jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel90.setForeground(new java.awt.Color(0, 0, 0));
         jLabel90.setText("Ingresar CATEGORÍA deL JUGADOR B:");
         jPanel10.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 750, -1, 30));
 
         jLabel93.setBackground(new java.awt.Color(255, 255, 255));
         jLabel93.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
         jLabel93.setText("Ingresar EQUIPO deL JUGADOR B:");
         jPanel10.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, -1, 30));
 
-        entradaEquipoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaEquipoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaEquipoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaEquipoJugadorB.setText("Ingresar equipo del JUGADOR");
+        entradaEquipoJugadorB.setText("Ingresar equipo del jugador");
         entradaEquipoJugadorB.setBorder(null);
+        entradaEquipoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaEquipoJugadorBFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaEquipoJugadorBFocusLost(evt);
+            }
+        });
         entradaEquipoJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaEquipoJugadorBActionPerformed(evt);
@@ -2036,11 +2070,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jSeparator34, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 600, 350, 10));
         jPanel10.add(jSeparator39, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 930, 350, 10));
 
-        entradaFechaNacimientoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         entradaFechaNacimientoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaFechaNacimientoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
         entradaFechaNacimientoJugadorB.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
         entradaFechaNacimientoJugadorB.setBorder(null);
+        entradaFechaNacimientoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorBFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoJugadorBFocusLost(evt);
+            }
+        });
         entradaFechaNacimientoJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 entradaFechaNacimientoJugadorBActionPerformed(evt);
@@ -2072,12 +2113,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jLabel102.setBackground(new java.awt.Color(51, 51, 51));
         jLabel102.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel102.setForeground(new java.awt.Color(0, 0, 0));
         jLabel102.setText("Ingresar fecha de nacimiento deL JUGADOR B:");
         jPanel10.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 860, -1, 30));
 
-        opcionesCategoriaJugadorA.setBackground(new java.awt.Color(255, 255, 255));
         opcionesCategoriaJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        opcionesCategoriaJugadorA.setForeground(new java.awt.Color(153, 153, 153));
         opcionesCategoriaJugadorA.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
         opcionesCategoriaJugadorA.setBorder(null);
         opcionesCategoriaJugadorA.addActionListener(new java.awt.event.ActionListener() {
@@ -2087,8 +2127,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel10.add(opcionesCategoriaJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, 350, 30));
 
-        opcionesCategoriaJugadorB.setBackground(new java.awt.Color(255, 255, 255));
         opcionesCategoriaJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        opcionesCategoriaJugadorB.setForeground(new java.awt.Color(153, 153, 153));
         opcionesCategoriaJugadorB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
         opcionesCategoriaJugadorB.setBorder(null);
         opcionesCategoriaJugadorB.addActionListener(new java.awt.event.ActionListener() {
@@ -2122,106 +2162,130 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel12.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
         jPanel12.add(jSeparator33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 350, 10));
 
-        entradaNombreTorneo30.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo30.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo30.setText("Ingresar nombre del JUGADOR");
-        entradaNombreTorneo30.setBorder(null);
-        entradaNombreTorneo30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo30ActionPerformed(evt);
+        entradaNombreCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNombreCapitan.setText("Ingresar nombre del capitan");
+        entradaNombreCapitan.setBorder(null);
+        entradaNombreCapitan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNombreCapitanFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNombreCapitanFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo30, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        entradaNombreCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         jLabel105.setBackground(new java.awt.Color(51, 51, 51));
         jLabel105.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel105.setForeground(new java.awt.Color(0, 0, 0));
         jLabel105.setText("Ingresar nombre deL CAPITAN:");
         jPanel12.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, 30));
 
-        entradaNombreTorneo32.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo32.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo32.setText("Ingresar NÚMERO de CEDULA JUGADOR");
-        entradaNombreTorneo32.setBorder(null);
-        entradaNombreTorneo32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo32ActionPerformed(evt);
+        entradaCedulaCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCedulaCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCedulaCapitan.setText("Ingresar numero de cedula capitan");
+        entradaCedulaCapitan.setBorder(null);
+        entradaCedulaCapitan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaCedulaCapitanFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaCedulaCapitanFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
+        entradaCedulaCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaCedulaCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaCedulaCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, -1, -1));
         jPanel12.add(jSeparator36, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 350, 10));
 
         jLabel106.setBackground(new java.awt.Color(51, 51, 51));
         jLabel106.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel106.setForeground(new java.awt.Color(0, 0, 0));
         jLabel106.setText("Ingresar NÚMERO DE CEDULA DEL CAPITAN:");
         jPanel12.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 200, -1, 30));
         jPanel12.add(jSeparator37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 350, 10));
 
-        entradaNombreTorneo33.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo33.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo33.setText("Ingresar nombre del JUGADOR");
-        entradaNombreTorneo33.setBorder(null);
-        entradaNombreTorneo33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo33ActionPerformed(evt);
+        entradaNumeroTelefonoCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNumeroTelefonoCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNumeroTelefonoCapitan.setText("Ingresar numero de telefono del capitan");
+        entradaNumeroTelefonoCapitan.setBorder(null);
+        entradaNumeroTelefonoCapitan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNumeroTelefonoCapitanFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNumeroTelefonoCapitanFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
+        entradaNumeroTelefonoCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNumeroTelefonoCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNumeroTelefonoCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, -1, -1));
 
         jLabel107.setBackground(new java.awt.Color(51, 51, 51));
         jLabel107.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel107.setForeground(new java.awt.Color(0, 0, 0));
         jLabel107.setText("Ingresar NÚMERO DE TELEFONO deL CAPITAN:");
         jPanel12.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, 30));
         jPanel12.add(jSeparator38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 370, 350, 10));
 
-        entradaNombreTorneo34.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo34.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo34.setText("INGRESAR CORREO DEL CAPITAN");
-        entradaNombreTorneo34.setBorder(null);
-        entradaNombreTorneo34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo34ActionPerformed(evt);
+        entradaCorreoCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCorreoCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCorreoCapitan.setText("Ingresar correo capitan");
+        entradaCorreoCapitan.setToolTipText("");
+        entradaCorreoCapitan.setBorder(null);
+        entradaCorreoCapitan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaCorreoCapitanFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaCorreoCapitanFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, -1));
+        entradaCorreoCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaCorreoCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaCorreoCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, -1, -1));
 
         jLabel108.setBackground(new java.awt.Color(51, 51, 51));
         jLabel108.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel108.setForeground(new java.awt.Color(0, 0, 0));
         jLabel108.setText("Ingresar CORREO deL CAPITAN:");
         jPanel12.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, 30));
 
         jLabel109.setBackground(new java.awt.Color(51, 51, 51));
         jLabel109.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel109.setForeground(new java.awt.Color(0, 0, 0));
         jLabel109.setText("Ingresar CATEGORÍA deL CAPITAN:");
         jPanel12.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, 30));
-
-        entradaNombreTorneo35.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo35.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo35.setText("Ingresar nombre del JUGADOR");
-        entradaNombreTorneo35.setBorder(null);
-        entradaNombreTorneo35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo35ActionPerformed(evt);
-            }
-        });
-        jPanel12.add(entradaNombreTorneo35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, -1, -1));
-        jPanel12.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, 350, 10));
         jPanel12.add(jSeparator41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 590, 350, 10));
 
-        entradaNombreTorneo37.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo37.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo37.setText("Ingresar nombre del EQUIPO");
-        entradaNombreTorneo37.setBorder(null);
-        entradaNombreTorneo37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo37ActionPerformed(evt);
+        entradaNombreEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNombreEquipo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNombreEquipo.setText("Ingresar nombre del equipo");
+        entradaNombreEquipo.setBorder(null);
+        entradaNombreEquipo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaNombreEquipoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaNombreEquipoFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
+        entradaNombreEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaNombreEquipoActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaNombreEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, -1));
 
         jLabel111.setBackground(new java.awt.Color(51, 51, 51));
         jLabel111.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2246,21 +2310,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel12.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 780, 840, 320));
 
-        jButton13.setBackground(new java.awt.Color(36, 20, 188));
-        jButton13.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton13.setForeground(new java.awt.Color(255, 255, 255));
-        jButton13.setText("SUBIR FOTO");
-        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonFotoCapitan.setBackground(new java.awt.Color(36, 20, 188));
+        botonFotoCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonFotoCapitan.setForeground(new java.awt.Color(255, 255, 255));
+        botonFotoCapitan.setText("SUBIR FOTO");
+        botonFotoCapitan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton13MouseClicked(evt);
+                botonFotoCapitanMouseClicked(evt);
             }
         });
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        botonFotoCapitan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                botonFotoCapitanActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 140, 30));
+        jPanel12.add(botonFotoCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 140, 30));
 
         botonRegresarIngresarDatosEquipo.setBackground(new java.awt.Color(36, 20, 188));
         botonRegresarIngresarDatosEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2278,57 +2342,73 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel12.add(botonRegresarIngresarDatosEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, 140, 40));
 
-        jButton18.setBackground(new java.awt.Color(36, 20, 188));
-        jButton18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton18.setForeground(new java.awt.Color(255, 255, 255));
-        jButton18.setText("AGREGAR EQUIPO");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        botonAgregarEquipo.setBackground(new java.awt.Color(36, 20, 188));
+        botonAgregarEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonAgregarEquipo.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregarEquipo.setText("AGREGAR EQUIPO");
+        botonAgregarEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                botonAgregarEquipoActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, 140, 40));
+        jPanel12.add(botonAgregarEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, 140, 40));
 
         jLabel112.setBackground(new java.awt.Color(51, 51, 51));
         jLabel112.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel112.setForeground(new java.awt.Color(102, 102, 102));
         jLabel112.setText("SUBIR FOTO DEL CAPITAN:");
         jPanel12.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 560, -1, 30));
 
         jLabel113.setBackground(new java.awt.Color(51, 51, 51));
         jLabel113.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel113.setForeground(new java.awt.Color(0, 0, 0));
         jLabel113.setText("INGRESAR NOMBRE DEL EQUIPO:");
         jPanel12.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 520, -1, 30));
 
-        jButton19.setBackground(new java.awt.Color(36, 20, 188));
-        jButton19.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton19.setForeground(new java.awt.Color(255, 255, 255));
-        jButton19.setText("SEGUIR");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
+        botonSeguirEquipo.setBackground(new java.awt.Color(36, 20, 188));
+        botonSeguirEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSeguirEquipo.setForeground(new java.awt.Color(255, 255, 255));
+        botonSeguirEquipo.setText("SEGUIR");
+        botonSeguirEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
+                botonSeguirEquipoActionPerformed(evt);
             }
         });
-        jPanel12.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 140, 40));
+        jPanel12.add(botonSeguirEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 140, 40));
         jPanel12.add(jSeparator42, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 480, 350, 10));
 
-        entradaNombreTorneo38.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo38.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo38.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
-        entradaNombreTorneo38.setBorder(null);
-        entradaNombreTorneo38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo38ActionPerformed(evt);
+        entradaFechaNacimientoCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaFechaNacimientoCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        entradaFechaNacimientoCapitan.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
+        entradaFechaNacimientoCapitan.setBorder(null);
+        entradaFechaNacimientoCapitan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoCapitanFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                entradaFechaNacimientoCapitanFocusLost(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, -1, -1));
+        entradaFechaNacimientoCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entradaFechaNacimientoCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(entradaFechaNacimientoCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 450, -1, -1));
 
         jLabel114.setBackground(new java.awt.Color(51, 51, 51));
         jLabel114.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
         jLabel114.setText("Ingresar NÚMERO DE TELEFONO deL CAPITAN:");
         jPanel12.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, -1, 30));
+
+        opcionesCategoriaCapitan.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        opcionesCategoriaCapitan.setForeground(new java.awt.Color(153, 153, 153));
+        opcionesCategoriaCapitan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
+        opcionesCategoriaCapitan.setBorder(null);
+        opcionesCategoriaCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                opcionesCategoriaCapitanActionPerformed(evt);
+            }
+        });
+        jPanel12.add(opcionesCategoriaCapitan, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 350, 30));
 
         jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 1260));
 
@@ -2336,27 +2416,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab9", jScrollPane7);
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane5.setViewportView(jTree1);
-
-        jPanel9.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 370, -1));
-
-        jTabbedPane.addTab("tab10", jPanel9);
-
-        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -2458,25 +2518,409 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setExtendedState(1);
     }//GEN-LAST:event_botonMinimizarMouseClicked
 
+    private void entradaFechaNacimientoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaFechaNacimientoCapitanActionPerformed
+
+    private void botonSeguirEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirEquipoActionPerformed
+
+    private void botonAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarEquipoActionPerformed
+
+    private void botonRegresarIngresarDatosEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoActionPerformed
+
+    private void botonRegresarIngresarDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseClicked
+
+    private void botonFotoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoCapitanActionPerformed
+
+    private void botonFotoCapitanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFotoCapitanMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoCapitanMouseClicked
+
+    private void entradaNombreEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreEquipoActionPerformed
+
+    private void entradaCorreoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCorreoCapitanActionPerformed
+
+    private void entradaNumeroTelefonoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNumeroTelefonoCapitanActionPerformed
+
+    private void entradaCedulaCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCedulaCapitanActionPerformed
+
+    private void entradaNombreCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreCapitanActionPerformed
+
+    private void opcionesCategoriaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcionesCategoriaJugadorBActionPerformed
+
+    private void opcionesCategoriaJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcionesCategoriaJugadorAActionPerformed
+
+    private void botonFotoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoJugadorBActionPerformed
+
+    private void botonFotoJugadorBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFotoJugadorBMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoJugadorBMouseClicked
+
+    private void entradaFechaNacimientoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorBActionPerformed
+
+    private void entradaEquipoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaEquipoJugadorBActionPerformed
+
+    private void entradaCorreoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCorreoJugadorBActionPerformed
+
+    private void entradaCorreoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusLost
+        organizatorFocusLost(entradaCorreoJugadorB, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaCorreoJugadorBFocusLost
+
+    private void entradaCorreoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusGained
+        organizatorFocusGained (entradaCorreoJugadorB, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaCorreoJugadorBFocusGained
+
+    private void entradaTelefonoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaTelefonoJugadorBActionPerformed
+
+    private void entradaCedulaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCedulaJugadorBActionPerformed
+
+    private void entradaCedulaJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusLost
+        organizatorFocusLost(entradaCedulaJugadorB, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaCedulaJugadorBFocusLost
+
+    private void entradaCedulaJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusGained
+        organizatorFocusGained (entradaCedulaJugadorB, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaCedulaJugadorBFocusGained
+
+    private void entradaNombreJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreJugadorBActionPerformed
+
+    private void entradaNombreJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBFocusLost
+        organizatorFocusLost(entradaNombreJugadorB, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorBFocusLost
+
+    private void entradaNombreJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBFocusGained
+        organizatorFocusGained (entradaNombreJugadorB, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorBFocusGained
+
+    private void botonSeguirDuplasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirDuplasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirDuplasActionPerformed
+
+    private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarJugadoresDuplaActionPerformed
+
+    private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesActionPerformed
+
+    private void botonRegresarIngresarDatosDoblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseClicked
+
+    private void botonFotoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoJugadorAActionPerformed
+
+    private void botonFotoJugadorAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFotoJugadorAMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonFotoJugadorAMouseClicked
+
+    private void entradaFechaNacimientoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorAActionPerformed
+
+    private void entradaEquipoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaEquipoJugadorAActionPerformed
+
+    private void entradaEquipoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAFocusLost
+        organizatorFocusLost(entradaEquipoJugadorA, "Ingresar equipo del  jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorAFocusLost
+
+    private void entradaEquipoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAFocusGained
+        organizatorFocusGained (entradaEquipoJugadorA, "Ingresar equipo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorAFocusGained
+
+    private void entradaCorreoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCorreoJugadorAActionPerformed
+
+    private void entradaCorreoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusLost
+        organizatorFocusLost(entradaCorreoJugadorA, "Ingresar correo jugador");
+    }//GEN-LAST:event_entradaCorreoJugadorAFocusLost
+
+    private void entradaCorreoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusGained
+        organizatorFocusGained (entradaCorreoJugadorA, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaCorreoJugadorAFocusGained
+
+    private void entradaTelefonoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaTelefonoJugadorAActionPerformed
+
+    private void entradaCedulaJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCedulaJugadorAActionPerformed
+
+    private void entradaCedulaJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusLost
+        organizatorFocusLost(entradaCedulaJugadorA, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaCedulaJugadorAFocusLost
+
+    private void entradaCedulaJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusGained
+        organizatorFocusGained (entradaCedulaJugadorA, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaCedulaJugadorAFocusGained
+
+    private void entradaNombreJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreJugadorAActionPerformed
+
+    private void entradaNombreJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAFocusLost
+        organizatorFocusLost(entradaNombreJugadorA, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorAFocusLost
+
+    private void entradaNombreJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAFocusGained
+        organizatorFocusGained (entradaNombreJugadorA, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorAFocusGained
+
+    private void opcionesCategoriaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorActionPerformed
+
+    }//GEN-LAST:event_opcionesCategoriaJugadorActionPerformed
+
+    private void botonSeguirIngresarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirIngresarJugadorActionPerformed
+
+    private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
+        Player player = addPlayerSingleSingleTournament(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
+
+        cells[0] = entradaNombreJugador.getText();
+        cells[1] = entradaIDJugador.getText();
+        cells[2] = entradaNumeroTelefonoJugador.getText();
+        cells[3] = opcionesCategoriaJugador.getSelectedItem();
+        tablaJugadoresIngresados.addRow(cells);
+    }//GEN-LAST:event_botonAgregarJugadorActionPerformed
+
+    private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarJugadorMouseClicked
+
+    private void botonRegresarIngresarDatosSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
+
+    private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
+        jTabbedPane.setSelectedIndex(5);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
+
+    private void botonSubirFotoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSubirFotoJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSubirFotoJugadorActionPerformed
+
+    private void botonSubirFotoJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSubirFotoJugadorMouseClicked
+
+    }//GEN-LAST:event_botonSubirFotoJugadorMouseClicked
+
+    private void entradaFechaNacimientoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorActionPerformed
+
+    private void entradaEquipoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaEquipoJugadorActionPerformed
+
+    private void entradaEmailJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaEmailJugadorActionPerformed
+
+    private void entradaNumeroTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorActionPerformed
+
+    private void entradaIDJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIDJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaIDJugadorActionPerformed
+
+    private void entradaNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreJugadorActionPerformed
+
+    private void ingresarRondaEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirectaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresarRondaEliminacionDirectaActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseClicked
+        jTabbedPane.setSelectedIndex(0);
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
+
+    private void botonSeguirIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoActionPerformed
+
+    private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
+        switch(opcionCrearTorneo){
+            case 1 -> jTabbedPane.setSelectedIndex(6);
+            case 2 -> jTabbedPane.setSelectedIndex(7);
+            case 3 -> jTabbedPane.setSelectedIndex(8);
+            default -> jTabbedPane.setSelectedIndex(0);
+        }
+
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
+
     private void entradaCantidadJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCantidadJugadoresActionPerformed
+
+    private void entradaCantidadJugadoresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusLost
+        organizatorFocusLost (entradaCantidadJugadores, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresFocusLost
+
+    private void entradaCantidadJugadoresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusGained
+        organizatorFocusGained (entradaCantidadJugadores, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresFocusGained
 
     private void entradaCostoTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCostoTorneoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCostoTorneoActionPerformed
 
+    private void entradaCostoTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusLost
+        organizatorFocusLost (entradaCostoTorneo, "Ingresar costo del torneo");
+    }//GEN-LAST:event_entradaCostoTorneoFocusLost
+
+    private void entradaCostoTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusGained
+        organizatorFocusGained (entradaCostoTorneo, "Ingresar costo del torneo");
+    }//GEN-LAST:event_entradaCostoTorneoFocusGained
+
     private void entradaCantidadParticipantesGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadParticipantesGruposActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCantidadParticipantesGruposActionPerformed
+
+    private void entradaCantidadParticipantesGruposFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadParticipantesGruposFocusLost
+        organizatorFocusLost (entradaCantidadParticipantesGrupos, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadParticipantesGruposFocusLost
+
+    private void entradaCantidadParticipantesGruposFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadParticipantesGruposFocusGained
+        organizatorFocusGained (entradaCantidadParticipantesGrupos, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadParticipantesGruposFocusGained
 
     private void entradaCantidadGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadGruposActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCantidadGruposActionPerformed
 
+    private void entradaCantidadGruposFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadGruposFocusLost
+        organizatorFocusLost (entradaCantidadGrupos, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadGruposFocusLost
+
+    private void entradaCantidadGruposFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadGruposFocusGained
+        organizatorFocusGained (entradaCantidadGrupos, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadGruposFocusGained
+
     private void entradaNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNombreTorneoActionPerformed
+
+    private void entradaNombreTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusLost
+        organizatorFocusLost (entradaNombreTorneo, "Ingresar nombre del torneo");
+    }//GEN-LAST:event_entradaNombreTorneoFocusLost
+
+    private void entradaNombreTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusGained
+        organizatorFocusGained (entradaNombreTorneo, "Ingresar nombre del torneo");
+    }//GEN-LAST:event_entradaNombreTorneoFocusGained
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoBuscarJugadorActionPerformed
+
+    private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
+        organizatorFocusLost (textoBuscarJugador, "Ingresar cedula o nombre del jugador a buscar...");
+    }//GEN-LAST:event_textoBuscarJugadorFocusLost
+
+    private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
+        organizatorFocusGained (textoBuscarJugador, "Ingresar cedula o nombre del jugador a buscar...");
+    }//GEN-LAST:event_textoBuscarJugadorFocusGained
 
     private void botonCrearTorneoSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseExited
         botonCrearTorneoSingle.setBackground(new Color(30,25,161));
@@ -2517,442 +2961,145 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonCrearTorneoDoble.setBackground(new Color(102,102,255));
     }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
 
-    private void entradaNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorActionPerformed
+    private void entradaEquipoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusGained
+        organizatorFocusGained (entradaEquipoJugadorB, "Ingresar equipo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorBFocusGained
+
+    private void entradaEquipoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusLost
+        organizatorFocusLost (entradaEquipoJugadorB, "Ingresar equipo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorBFocusLost
+
+    private void entradaTelefonoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAFocusGained
+        organizatorFocusGained (entradaTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaTelefonoJugadorAFocusGained
+
+    private void entradaTelefonoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAFocusLost
+        organizatorFocusLost (entradaTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaTelefonoJugadorAFocusLost
+
+    private void entradaTelefonoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBFocusGained
+        organizatorFocusGained (entradaTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaTelefonoJugadorBFocusGained
+
+    private void entradaTelefonoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBFocusLost
+        organizatorFocusLost (entradaTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaTelefonoJugadorBFocusLost
+
+    private void entradaFechaNacimientoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusGained
+
+    private void entradaFechaNacimientoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusLost
+
+    private void entradaFechaNacimientoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusGained
+
+    private void entradaFechaNacimientoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusLost
+
+    private void entradaNombreJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusGained
+        organizatorFocusGained (entradaNombreJugador, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorFocusGained
+
+    private void entradaNombreJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusLost
+        organizatorFocusLost (entradaNombreJugador, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorFocusLost
+
+    private void entradaIDJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusGained
+        organizatorFocusGained (entradaIDJugador, "Ingresar numero de cedula del jugador");
+    }//GEN-LAST:event_entradaIDJugadorFocusGained
+
+    private void entradaIDJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusLost
+        organizatorFocusLost (entradaIDJugador, "Ingresar numero de cedula del jugador");
+    }//GEN-LAST:event_entradaIDJugadorFocusLost
+
+    private void entradaNumeroTelefonoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusGained
+
+    private void entradaNumeroTelefonoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusLost
+
+    private void entradaEmailJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusGained
+        organizatorFocusGained (entradaEmailJugador, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorFocusGained
+
+    private void entradaEmailJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusLost
+        organizatorFocusLost (entradaEmailJugador, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorFocusLost
+
+    private void entradaEquipoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusGained
+        organizatorFocusGained (entradaEquipoJugador, "Ingresar equipo externo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorFocusGained
+
+    private void entradaEquipoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusLost
+        organizatorFocusLost (entradaEquipoJugador, "Ingresar equipo externo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorFocusLost
+
+    private void entradaFechaNacimientoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusGained
+
+    private void entradaFechaNacimientoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusLost
+
+    private void opcionesCategoriaCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaCapitanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreJugadorActionPerformed
-
-    private void entradaIdJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaIdJugadorActionPerformed
-
-    private void entradaNumeroTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorActionPerformed
-
-    private void entradaEmailJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEmailJugadorActionPerformed
-
-    private void entradaEquipoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEquipoJugadorActionPerformed
-
-    private void entradaFechaNacimientoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void botonRegresarIngresarDatosSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
-
-    private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
-        Player player = addPlayerSingleSingleTournament(entradaNombreJugador, entradaIdJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
-        
-        cells[0] = entradaNombreJugador.getText();
-        cells[1] = entradaIdJugador.getText();
-        cells[2] = entradaNumeroTelefonoJugador.getText();
-        cells[3] = opcionesCategoriaJugador.getSelectedItem();
-        tablaJugadoresIngresados.addRow(cells);
-    }//GEN-LAST:event_botonAgregarJugadorActionPerformed
-
-    private void botonSeguirIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoActionPerformed
-
-    private void botonRegresarIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoActionPerformed
-
-    private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoBuscarJugadorActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void ingresarRondaEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirectaActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirectaActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void botonRegresarIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseClicked
-        jTabbedPane.setSelectedIndex(0);
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
-
-    private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
-        switch(opcionCrearTorneo){
-            case 1 -> jTabbedPane.setSelectedIndex(6);
-            case 2 -> jTabbedPane.setSelectedIndex(7);
-            case 3 -> jTabbedPane.setSelectedIndex(8);
-            default -> jTabbedPane.setSelectedIndex(0);
-        }
-        
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void entradaNombreJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreJugadorAActionPerformed
-
-    private void entradaCedulaJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCedulaJugadorAActionPerformed
-
-    private void entradaTelefonoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaTelefonoJugadorAActionPerformed
-
-    private void entradaCorreoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCorreoJugadorAActionPerformed
-
-    private void entradaEquipoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEquipoJugadorAActionPerformed
-
-    private void entradaFechaNacimientoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorAActionPerformed
-
-    private void botonFotoJugadorAMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFotoJugadorAMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonFotoJugadorAMouseClicked
-
-    private void botonFotoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonFotoJugadorAActionPerformed
-
-    private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesActionPerformed
-
-    private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarJugadoresDuplaActionPerformed
-
-    private void botonSeguirDuplasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirDuplasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonSeguirDuplasActionPerformed
-
-    private void entradaNombreTorneo30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo30ActionPerformed
-
-    private void entradaNombreTorneo32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo32ActionPerformed
-
-    private void entradaNombreTorneo33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo33ActionPerformed
-
-    private void entradaNombreTorneo34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo34ActionPerformed
-
-    private void entradaNombreTorneo35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo35ActionPerformed
-
-    private void entradaNombreTorneo37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo37ActionPerformed
-
-    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13MouseClicked
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void botonRegresarIngresarDatosEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoActionPerformed
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
-
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void entradaNombreTorneo38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo38ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo38ActionPerformed
-
-    private void entradaNombreJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreJugadorBActionPerformed
-
-    private void entradaCedulaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCedulaJugadorBActionPerformed
-
-    private void entradaTelefonoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaTelefonoJugadorBActionPerformed
-
-    private void entradaCorreoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCorreoJugadorBActionPerformed
-
-    private void entradaEquipoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEquipoJugadorBActionPerformed
-
-    private void entradaFechaNacimientoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorBActionPerformed
-
-    private void botonFotoJugadorBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFotoJugadorBMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonFotoJugadorBMouseClicked
-
-    private void botonFotoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonFotoJugadorBActionPerformed
-
-    private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
-        if (textoBuscarJugador.getText().equals("Ingresar cedula o nombre del jugador a buscar...")) textoBuscarJugador.setText("");
-    }//GEN-LAST:event_textoBuscarJugadorFocusGained
-
-    private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
-        String cedula = textoBuscarJugador.getText();
-        if (!cedula.trim().isEmpty()) System.out.println(cedula);
-        else textoBuscarJugador.setText("Ingresar cedula o nombre del jugador a buscar...");
-    }//GEN-LAST:event_textoBuscarJugadorFocusLost
-
-    private void botonRegresarIngresarDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseClicked
-        jTabbedPane.setSelectedIndex(5);
-    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseClicked
-
-    private void botonRegresarIngresarDatosDoblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseClicked
-        jTabbedPane.setSelectedIndex(5);
-    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseClicked
-
-    private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
-        jTabbedPane.setSelectedIndex(5);
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
-
-    private void entradaNombreTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusGained
-        if (entradaNombreTorneo.getText().equals("Ingresar nombre del torneo")) entradaNombreTorneo.setText("");
-    }//GEN-LAST:event_entradaNombreTorneoFocusGained
-
-    private void entradaNombreTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusLost
-        String nombreTorneo = entradaNombreTorneo.getText();
-        if (nombreTorneo.trim().isEmpty()){
-            entradaNombreTorneo.setText("Ingresar nombre del torneo");
-        } else
-            System.out.println(nombreTorneo);
-    }//GEN-LAST:event_entradaNombreTorneoFocusLost
-
-    private void entradaCantidadGruposFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadGruposFocusGained
-        if (entradaCantidadGrupos.getText().equals("Ingresar un numero")) entradaCantidadGrupos.setText("");
-    }//GEN-LAST:event_entradaCantidadGruposFocusGained
-
-    private void entradaCantidadGruposFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadGruposFocusLost
-        String cantidadGrupos = entradaCantidadGrupos.getText();
-        if (cantidadGrupos.trim().isEmpty()){
-            entradaCantidadGrupos.setText("Ingresar un numero");
-        } else
-            System.out.println(cantidadGrupos);
-    }//GEN-LAST:event_entradaCantidadGruposFocusLost
-
-    private void entradaCostoTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusGained
-        if (entradaCostoTorneo.getText().equals("Ingresar costo del torneo")) entradaCostoTorneo.setText("");
-    }//GEN-LAST:event_entradaCostoTorneoFocusGained
-
-    private void entradaCostoTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusLost
-        String costoTorneo = entradaCostoTorneo.getText();
-        if (costoTorneo.trim().isEmpty()){
-            entradaCantidadGrupos.setText("Ingresar costo del torneo");
-        } else
-            System.out.println(costoTorneo);
-    }//GEN-LAST:event_entradaCostoTorneoFocusLost
-
-    private void entradaCantidadJugadoresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusGained
-        if (entradaCantidadJugadores.getText().equals("Ingresar un numero")) entradaCantidadJugadores.setText("");
-    }//GEN-LAST:event_entradaCantidadJugadoresFocusGained
-
-    private void entradaCantidadJugadoresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusLost
-        String cantidadJugadores = entradaCantidadJugadores.getText();
-        if (cantidadJugadores.trim().isEmpty()){
-            entradaCantidadGrupos.setText("Ingresar un numero");
-        } else
-            System.out.println(cantidadJugadores);
-    }//GEN-LAST:event_entradaCantidadJugadoresFocusLost
-
-    private void entradaCantidadParticipantesGruposFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadParticipantesGruposFocusGained
-        if (entradaCantidadParticipantesGrupos.getText().equals("Ingresar un numero")) entradaCantidadParticipantesGrupos.setText("");
-    }//GEN-LAST:event_entradaCantidadParticipantesGruposFocusGained
-
-    private void entradaCantidadParticipantesGruposFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadParticipantesGruposFocusLost
-        String cantidadParticipantes = entradaCantidadParticipantesGrupos.getText();
-        if (cantidadParticipantes.trim().isEmpty()){
-            entradaCantidadGrupos.setText("Ingresar un numero");
-        } else
-            System.out.println(cantidadParticipantes);
-    }//GEN-LAST:event_entradaCantidadParticipantesGruposFocusLost
-
-    private void opcionesCategoriaJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcionesCategoriaJugadorAActionPerformed
-
-    private void opcionesCategoriaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcionesCategoriaJugadorBActionPerformed
-
-    private void entradaNombreJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAFocusGained
-        if (entradaNombreJugadorA.getText().equals("Ingresar nombre del jugador")) entradaNombreJugadorA.setText("");
-    }//GEN-LAST:event_entradaNombreJugadorAFocusGained
-
-    private void entradaNombreJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAFocusLost
-        String nombreJugadorA = entradaNombreJugadorA.getText();
-        if (nombreJugadorA.trim().isEmpty()){
-            entradaNombreJugadorA.setText("Ingresar nombre del jugador");
-        } else
-            System.out.println(nombreJugadorA);
-    }//GEN-LAST:event_entradaNombreJugadorAFocusLost
-
-    private void entradaNombreJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBFocusGained
-        if (entradaNombreJugadorB.getText().equals("Ingresar nombre del jugador")) entradaNombreJugadorB.setText("");
-    }//GEN-LAST:event_entradaNombreJugadorBFocusGained
-
-    private void entradaNombreJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBFocusLost
-        String nombreJugadorB = entradaNombreJugadorB.getText();
-        if (nombreJugadorB.trim().isEmpty()){
-            entradaNombreJugadorB.setText("Ingresar nombre del jugador");
-        } else
-            System.out.println(nombreJugadorB);
-    }//GEN-LAST:event_entradaNombreJugadorBFocusLost
-
-    private void entradaCedulaJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusGained
-        if (entradaCedulaJugadorA.getText().equals("Ingresar numero de cedula jugador")) entradaCedulaJugadorA.setText("");
-    }//GEN-LAST:event_entradaCedulaJugadorAFocusGained
-
-    private void entradaCedulaJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusLost
-        String cedulaJugadorA = entradaNombreJugadorA.getText();
-        if (cedulaJugadorA.trim().isEmpty()){
-            entradaNombreJugadorA.setText("Ingresar numero de cedula jugador");
-        } else
-            System.out.println(cedulaJugadorA);
-    }//GEN-LAST:event_entradaCedulaJugadorAFocusLost
-
-    private void entradaCedulaJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusGained
-        if (entradaCedulaJugadorB.getText().equals("Ingresar numero de cedula jugador")) entradaCedulaJugadorB.setText("");
-    }//GEN-LAST:event_entradaCedulaJugadorBFocusGained
-
-    private void entradaCedulaJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusLost
-        String cedulaJugadorB = entradaNombreJugadorB.getText();
-        if (cedulaJugadorB.trim().isEmpty()){
-            entradaNombreJugadorB.setText("Ingresar numero de cedula jugador");
-        } else
-            System.out.println(cedulaJugadorB);
-    }//GEN-LAST:event_entradaCedulaJugadorBFocusLost
-
-    private void entradaCorreoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusGained
-        if (entradaCorreoJugadorA.getText().equals("Ingresar correo del jugador")) entradaCorreoJugadorA.setText("");
-    }//GEN-LAST:event_entradaCorreoJugadorAFocusGained
-
-    private void entradaCorreoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusLost
-        String correoJugadorA = entradaCorreoJugadorA.getText();
-        if (correoJugadorA.trim().isEmpty()){
-            entradaCorreoJugadorA.setText("Ingresar correo del jugador");
-        } else
-            System.out.println(correoJugadorA);
-    }//GEN-LAST:event_entradaCorreoJugadorAFocusLost
-
-    private void entradaCorreoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusGained
-        if (entradaCorreoJugadorB.getText().equals("Ingresar correo del jugador")) entradaCorreoJugadorB.setText("");
-    }//GEN-LAST:event_entradaCorreoJugadorBFocusGained
-
-    private void entradaCorreoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusLost
-        String correoJugadorB = entradaCorreoJugadorB.getText();
-        if (correoJugadorB.trim().isEmpty()){
-            entradaCorreoJugadorB.setText("Ingresar correo del jugador");
-        } else
-            System.out.println(correoJugadorB);    }//GEN-LAST:event_entradaCorreoJugadorBFocusLost
-
-    private void entradaEquipoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAFocusGained
-        if (entradaEquipoJugadorA.getText().equals("Ingresar equipo del jugador")) entradaEquipoJugadorA.setText("");
-    }//GEN-LAST:event_entradaEquipoJugadorAFocusGained
-
-    private void entradaEquipoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAFocusLost
-        String equipoJugadorB = entradaEquipoJugadorA.getText();
-        if (equipoJugadorB.trim().isEmpty()){
-            entradaEquipoJugadorA.setText("Ingresar equipo del jugador");
-        } else
-            System.out.println(equipoJugadorB);
-    }//GEN-LAST:event_entradaEquipoJugadorAFocusLost
-
-    private void opcionesCategoriaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorActionPerformed
-   
-    }//GEN-LAST:event_opcionesCategoriaJugadorActionPerformed
-
-    private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarJugadorMouseClicked
+    }//GEN-LAST:event_opcionesCategoriaCapitanActionPerformed
+
+    private void entradaNumeroTelefonoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
+    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusGained
+
+    private void entradaNumeroTelefonoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
+    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusLost
+
+    private void entradaCorreoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusGained
+        organizatorFocusGained (entradaCorreoCapitan, "Ingresar correo capitan");
+    }//GEN-LAST:event_entradaCorreoCapitanFocusGained
+
+    private void entradaCorreoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusLost
+        organizatorFocusLost (entradaCorreoCapitan, "Ingresar correo capitan");
+    }//GEN-LAST:event_entradaCorreoCapitanFocusLost
+
+    private void entradaFechaNacimientoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusGained
+        organizatorFocusGained (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusGained
+
+    private void entradaFechaNacimientoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusLost
+        organizatorFocusLost (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusLost
+
+    private void entradaNombreEquipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusGained
+        organizatorFocusGained (entradaNombreEquipo, "Ingresar nombre del equipo");
+    }//GEN-LAST:event_entradaNombreEquipoFocusGained
+
+    private void entradaNombreEquipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusLost
+        organizatorFocusLost (entradaNombreEquipo, "Ingresar nombre del equipo");
+    }//GEN-LAST:event_entradaNombreEquipoFocusLost
+
+    private void entradaNombreCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusGained
+        organizatorFocusGained (entradaNombreCapitan, "Ingresar nombre del capitan");
+    }//GEN-LAST:event_entradaNombreCapitanFocusGained
+
+    private void entradaNombreCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusLost
+        organizatorFocusLost (entradaNombreCapitan, "Ingresar nombre del capitan");
+    }//GEN-LAST:event_entradaNombreCapitanFocusLost
+
+    private void entradaCedulaCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusGained
+        organizatorFocusGained (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
+    }//GEN-LAST:event_entradaCedulaCapitanFocusGained
+
+    private void entradaCedulaCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusLost
+        organizatorFocusLost (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
+    }//GEN-LAST:event_entradaCedulaCapitanFocusLost
         
     /**
      * @param args the command line arguments
@@ -2993,11 +3140,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel IconoCalendario;
     private javax.swing.JLabel IconoCalendario1;
     private javax.swing.JLabel NombreOrganizador;
+    private javax.swing.JButton botonAgregarEquipo;
     private javax.swing.JButton botonAgregarJugador;
     private javax.swing.JButton botonAgregarJugadoresDupla;
+    private javax.swing.JButton botonBuscarJugador;
     private javax.swing.JPanel botonCrearTorneoDoble;
     private javax.swing.JPanel botonCrearTorneoEquipo;
     private javax.swing.JPanel botonCrearTorneoSingle;
+    private javax.swing.JButton botonFotoCapitan;
     private javax.swing.JButton botonFotoJugadorA;
     private javax.swing.JButton botonFotoJugadorB;
     private javax.swing.JPanel botonMenuBuscarJugador;
@@ -3012,13 +3162,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonRegresarIngresarDatosTorneo;
     private javax.swing.JLabel botonSalida;
     private javax.swing.JButton botonSeguirDuplas;
+    private javax.swing.JButton botonSeguirEquipo;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo;
+    private javax.swing.JButton botonSeguirIngresarJugador;
+    private javax.swing.JButton botonSubirFotoJugador;
     private raven.calendar.Calendar calendar1;
     private javax.swing.JTextField entradaCantidadGrupos;
     private javax.swing.JTextField entradaCantidadJugadores;
     private javax.swing.JTextField entradaCantidadParticipantesGrupos;
+    private javax.swing.JTextField entradaCedulaCapitan;
     private javax.swing.JTextField entradaCedulaJugadorA;
     private javax.swing.JTextField entradaCedulaJugadorB;
+    private javax.swing.JTextField entradaCorreoCapitan;
     private javax.swing.JTextField entradaCorreoJugadorA;
     private javax.swing.JTextField entradaCorreoJugadorB;
     private javax.swing.JTextField entradaCostoTorneo;
@@ -3026,33 +3181,24 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField entradaEquipoJugador;
     private javax.swing.JTextField entradaEquipoJugadorA;
     private javax.swing.JTextField entradaEquipoJugadorB;
+    private javax.swing.JTextField entradaFechaNacimientoCapitan;
     private javax.swing.JTextField entradaFechaNacimientoJugador;
     private javax.swing.JTextField entradaFechaNacimientoJugadorA;
     private javax.swing.JTextField entradaFechaNacimientoJugadorB;
-    private javax.swing.JTextField entradaIdJugador;
+    private javax.swing.JTextField entradaIDJugador;
+    private javax.swing.JTextField entradaNombreCapitan;
+    private javax.swing.JTextField entradaNombreEquipo;
     private javax.swing.JTextField entradaNombreJugador;
     private javax.swing.JTextField entradaNombreJugadorA;
     private javax.swing.JTextField entradaNombreJugadorB;
     private javax.swing.JTextField entradaNombreTorneo;
-    private javax.swing.JTextField entradaNombreTorneo30;
-    private javax.swing.JTextField entradaNombreTorneo32;
-    private javax.swing.JTextField entradaNombreTorneo33;
-    private javax.swing.JTextField entradaNombreTorneo34;
-    private javax.swing.JTextField entradaNombreTorneo35;
-    private javax.swing.JTextField entradaNombreTorneo37;
-    private javax.swing.JTextField entradaNombreTorneo38;
+    private javax.swing.JTextField entradaNumeroTelefonoCapitan;
     private javax.swing.JTextField entradaNumeroTelefonoJugador;
     private javax.swing.JTextField entradaTelefonoJugadorA;
     private javax.swing.JTextField entradaTelefonoJugadorB;
     private javax.swing.JLabel iconoSuperior;
     private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -3191,12 +3337,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -3226,7 +3370,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator38;
     private javax.swing.JSeparator jSeparator39;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator40;
     private javax.swing.JSeparator jSeparator41;
     private javax.swing.JSeparator jSeparator42;
     private javax.swing.JSeparator jSeparator5;
@@ -3248,7 +3391,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JComboBox<String> opcionesCategoriaCapitan;
     private javax.swing.JComboBox<String> opcionesCategoriaJugador;
     private javax.swing.JComboBox<String> opcionesCategoriaJugadorA;
     private javax.swing.JComboBox<String> opcionesCategoriaJugadorB;
