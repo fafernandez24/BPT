@@ -99,7 +99,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -311,6 +310,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator42 = new javax.swing.JSeparator();
         entradaNombreTorneo38 = new javax.swing.JTextField();
         jLabel114 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -731,17 +734,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel25.setBackground(new java.awt.Color(250, 250, 250));
@@ -920,6 +912,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jButton1.setText("Buscar");
         jPanel30.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 40));
 
+        textoBuscarJugador.setBackground(new java.awt.Color(255, 255, 255));
         textoBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         textoBuscarJugador.setForeground(new java.awt.Color(153, 153, 153));
         textoBuscarJugador.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -999,6 +992,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel39.setText("Partidos GANADOS:");
         jPanel30.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 490, -1, 30));
 
+        jTextField2.setBackground(new java.awt.Color(255, 255, 255));
         jTextField2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField2.setText("DD/MM/YYYY");
         jTextField2.setBorder(null);
@@ -1009,6 +1003,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 140, -1));
 
+        jTextField3.setBackground(new java.awt.Color(255, 255, 255));
         jTextField3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField3.setText("CORREO ELECTRONICO");
         jTextField3.setBorder(null);
@@ -1019,6 +1014,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, 140, -1));
 
+        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
         jTextField4.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jTextField4.setText("Nombre del Jugador");
         jTextField4.setBorder(null);
@@ -1029,6 +1025,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 370, -1));
 
+        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
         jTextField5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField5.setText("TAMANACO TEAM");
         jTextField5.setBorder(null);
@@ -1039,6 +1036,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 140, -1));
 
+        jTextField6.setBackground(new java.awt.Color(255, 255, 255));
         jTextField6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField6.setText("CEDULA DE IDENTIDAD");
         jTextField6.setBorder(null);
@@ -1049,6 +1047,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 140, -1));
 
+        jTextField7.setBackground(new java.awt.Color(255, 255, 255));
         jTextField7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField7.setText("999");
         jTextField7.setBorder(null);
@@ -1059,6 +1058,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 40, 30));
 
+        jTextField8.setBackground(new java.awt.Color(255, 255, 255));
         jTextField8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField8.setText("CATEGORIA");
         jTextField8.setBorder(null);
@@ -1069,6 +1069,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 140, -1));
 
+        jTextField9.setBackground(new java.awt.Color(255, 255, 255));
         jTextField9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField9.setText("TORNEOS EN LOS QUE PARTICIPA EL JUGADOR");
         jTextField9.setBorder(null);
@@ -1079,6 +1080,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel30.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 370, 30));
 
+        jTextField10.setBackground(new java.awt.Color(255, 255, 255));
         jTextField10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField10.setText("999");
         jTextField10.setBorder(null);
@@ -1096,6 +1098,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel40.setText("Número de telefono");
         jPanel30.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, -1, 30));
 
+        jTextField11.setBackground(new java.awt.Color(255, 255, 255));
         jTextField11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTextField11.setText("Numero de telefono");
         jTextField11.setBorder(null);
@@ -2333,7 +2336,27 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab9", jScrollPane7);
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane5.setViewportView(jTree1);
+
+        jPanel9.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 370, -1));
+
+        jTabbedPane.addTab("tab10", jPanel9);
+
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -3168,10 +3191,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -3223,6 +3248,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    private javax.swing.JTree jTree1;
     private javax.swing.JComboBox<String> opcionesCategoriaJugador;
     private javax.swing.JComboBox<String> opcionesCategoriaJugadorA;
     private javax.swing.JComboBox<String> opcionesCategoriaJugadorB;

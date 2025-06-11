@@ -7,10 +7,12 @@ package control;
 import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateDeveloper;
 import static control.ValidationControl.validateOrganizator;
+import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import view.MenuAdministrator;
 import view.MenuOrganizator;
+import view.MenuPlayer;
 
 /**
  *
@@ -70,7 +72,21 @@ public class StartControl {
         String password = new String(dataEnter.getPassword());
         if (password.trim().isEmpty()) dataEnter.setText(message);
     }
+        
+    // Boton Iniciar sesion
     
-    ////////////////////////////////////////////////////////////////////////////
+    public static void startLoging(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword){
+        String id = dataEnterId.getText(), password = new String(dataEnterPassword.getPassword());
+        if (checkBoxOrganizator.isSelected()){
+            openMenuOrganizator(id, password);
+        }
+        else if (checkBoxPlayer.isSelected()){
+            MenuPlayer openMenu = new MenuPlayer();
+            openMenu.setVisible(true);
+        }
+        else if (checkBoxAdministrator.isSelected()){
+            openMenuAdministrator(id, password);
+        }
+    }
     
 }

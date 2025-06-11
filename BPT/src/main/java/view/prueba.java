@@ -36,37 +36,9 @@ public class prueba extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel98 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jSeparator15 = new javax.swing.JSeparator();
-        entradaNombreJugador = new javax.swing.JTextField();
-        jLabel29 = new javax.swing.JLabel();
-        entradaIdJugador = new javax.swing.JTextField();
-        jSeparator16 = new javax.swing.JSeparator();
-        jLabel30 = new javax.swing.JLabel();
-        jSeparator17 = new javax.swing.JSeparator();
-        entradaNumeroTelefonoJugador = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        jSeparator18 = new javax.swing.JSeparator();
-        entradaEmailJugador = new javax.swing.JTextField();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        entradaEquipoJugador = new javax.swing.JTextField();
-        jSeparator19 = new javax.swing.JSeparator();
-        jSeparator21 = new javax.swing.JSeparator();
-        entradaFechaNacimientoJugador = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tablaJugadoresAgregados = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        botonRegresarIngresarDatosSingle = new javax.swing.JButton();
-        botonAgregarJugador = new javax.swing.JButton();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
-        opcionesCategoriaJugador = new javax.swing.JComboBox<>();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,325 +47,48 @@ public class prueba extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel98.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel98.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel98.setText("Ingresar DATOS DE LOS JUGADORES PARTICIPANTES DEL torneo...");
-        jPanel6.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
-
-        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
-        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
-        jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
-
-        entradaNombreJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreJugador.setText("Ingresar nombre del JUGADOR");
-        entradaNombreJugador.setBorder(null);
-        entradaNombreJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaNombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
-
-        jLabel29.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel29.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel29.setText("Ingresar nombre deL JUGADOR:");
-        jPanel6.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
-
-        entradaIdJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaIdJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaIdJugador.setText("Ingresar NÚMERO de CEDULA JUGADOR");
-        entradaIdJugador.setBorder(null);
-        entradaIdJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaIdJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaIdJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, -1, -1));
-        jPanel6.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 290, 350, 10));
-
-        jLabel30.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel30.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel30.setText("Ingresar NÚMERO DE CEDULA DEL JUGADOR:");
-        jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, -1, 30));
-        jPanel6.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
-
-        entradaNumeroTelefonoJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNumeroTelefonoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNumeroTelefonoJugador.setText("Ingresar NUMERO DE TELEFONO DEL JUGADOR");
-        entradaNumeroTelefonoJugador.setBorder(null);
-        entradaNumeroTelefonoJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNumeroTelefonoJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaNumeroTelefonoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
-
-        jLabel31.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("Ingresar NÚMERO DE TELEFONO deL JUGADOR:");
-        jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
-        jPanel6.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 350, 10));
-
-        entradaEmailJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaEmailJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaEmailJugador.setText("INGRESAR CORREO DEL JUGADOR");
-        entradaEmailJugador.setBorder(null);
-        entradaEmailJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaEmailJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaEmailJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, -1, -1));
-
-        jLabel32.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel32.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Ingresar CORREO deL JUGADOR:");
-        jPanel6.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, -1, 30));
-
-        jLabel33.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel33.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel33.setText("Ingresar CATEGORÍA deL JUGADOR:");
-        jPanel6.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
-
-        jLabel34.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel34.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel34.setText("Ingresar EQUIPO deL JUGADOR:");
-        jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, 30));
-
-        entradaEquipoJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaEquipoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaEquipoJugador.setText("INGRESAR EQUIPO EXTERNO DEL JUGADOR");
-        entradaEquipoJugador.setBorder(null);
-        entradaEquipoJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaEquipoJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaEquipoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, 20));
-        jPanel6.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 350, 10));
-        jPanel6.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 610, 350, 10));
-
-        entradaFechaNacimientoJugador.setBackground(new java.awt.Color(255, 255, 255));
-        entradaFechaNacimientoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaFechaNacimientoJugador.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
-        entradaFechaNacimientoJugador.setBorder(null);
-        entradaFechaNacimientoJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaFechaNacimientoJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(entradaFechaNacimientoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, -1, -1));
-
-        jLabel35.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel35.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel35.setText("VISTA DE JUGADORES YA AGREGADOS:");
-        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 740, -1, 30));
-
-        tablaJugadoresAgregados.setAutoCreateRowSorter(true);
-        tablaJugadoresAgregados.setBackground(new java.awt.Color(204, 204, 204));
-        tablaJugadoresAgregados.setForeground(new java.awt.Color(0, 0, 0));
-        tablaJugadoresAgregados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Cedula", "Email", "Categoria"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tablaJugadoresAgregados);
-
-        jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, 840, 320));
-
-        jButton2.setBackground(new java.awt.Color(36, 20, 188));
-        jButton2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("SUBIR FOTO");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
-
-        botonRegresarIngresarDatosSingle.setBackground(new java.awt.Color(36, 20, 188));
-        botonRegresarIngresarDatosSingle.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonRegresarIngresarDatosSingle.setForeground(new java.awt.Color(255, 255, 255));
-        botonRegresarIngresarDatosSingle.setText("REGRESAR");
-        botonRegresarIngresarDatosSingle.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonRegresarIngresarDatosSingleMouseClicked(evt);
-            }
-        });
-        botonRegresarIngresarDatosSingle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegresarIngresarDatosSingleActionPerformed(evt);
-            }
-        });
-        jPanel6.add(botonRegresarIngresarDatosSingle, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 40));
-
-        botonAgregarJugador.setBackground(new java.awt.Color(36, 20, 188));
-        botonAgregarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
-        botonAgregarJugador.setText("AGREGAR JUGADOR");
-        botonAgregarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonAgregarJugadorMouseClicked(evt);
-            }
-        });
-        botonAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(botonAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 670, 140, 40));
-
-        jLabel36.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel36.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel36.setText("SUBIR FOTO DEL JUGADOR:");
-        jPanel6.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 580, -1, 30));
-
-        jLabel41.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel41.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel41.setText("Ingresar fecha de nacimiento deL JUGADOR:");
-        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, -1, 30));
-
-        jButton6.setBackground(new java.awt.Color(36, 20, 188));
-        jButton6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("SEGUIR");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-        jPanel6.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 670, 140, 40));
-
-        opcionesCategoriaJugador.setBackground(new java.awt.Color(255, 255, 255));
-        opcionesCategoriaJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        opcionesCategoriaJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
-        opcionesCategoriaJugador.setBorder(null);
-        opcionesCategoriaJugador.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                opcionesCategoriaJugadorActionPerformed(evt);
-            }
-        });
-        jPanel6.add(opcionesCategoriaJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 350, 30));
-
-        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 1260));
-
         jScrollPane1.setViewportView(jPanel5);
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane5.setViewportView(jTree1);
+
+        jPanel9.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 370, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+            .addGap(0, 1035, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 1035, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void entradaNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreJugadorActionPerformed
-
-    private void entradaIdJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaIdJugadorActionPerformed
-
-    private void entradaNumeroTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorActionPerformed
-
-    private void entradaEmailJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEmailJugadorActionPerformed
-
-    private void entradaEquipoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaEquipoJugadorActionPerformed
-
-    private void entradaFechaNacimientoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorActionPerformed
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
-
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
-
-    private void botonRegresarIngresarDatosSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
-
-    private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarJugadorMouseClicked
-
-    private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
-        Player player = addPlayerSingleSingleTournament(entradaNombreJugador, entradaIdJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
-        cells[0] = player.getName();
-        cells[1] = player.getId();
-        cells[2] = player.getEmail();
-        cells[3] = player.getCategory();
-        tablaJugadoresIngresados.addRow(cells);
-    }//GEN-LAST:event_botonAgregarJugadorActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void opcionesCategoriaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorActionPerformed
-
-    }//GEN-LAST:event_opcionesCategoriaJugadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -431,38 +126,10 @@ public class prueba extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAgregarJugador;
-    private javax.swing.JButton botonRegresarIngresarDatosSingle;
-    private javax.swing.JTextField entradaEmailJugador;
-    private javax.swing.JTextField entradaEquipoJugador;
-    private javax.swing.JTextField entradaFechaNacimientoJugador;
-    private javax.swing.JTextField entradaIdJugador;
-    private javax.swing.JTextField entradaNombreJugador;
-    private javax.swing.JTextField entradaNumeroTelefonoJugador;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel98;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator15;
-    private javax.swing.JSeparator jSeparator16;
-    private javax.swing.JSeparator jSeparator17;
-    private javax.swing.JSeparator jSeparator18;
-    private javax.swing.JSeparator jSeparator19;
-    private javax.swing.JSeparator jSeparator21;
-    private javax.swing.JComboBox<String> opcionesCategoriaJugador;
-    private javax.swing.JTable tablaJugadoresAgregados;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,6 +8,7 @@ import static control.StartControl.StartFocusGained;
 import static control.StartControl.StartFocusLost;
 import static control.StartControl.openMenuOrganizator;
 import static control.StartControl.openMenuAdministrator;
+import static control.StartControl.startLoging;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -373,18 +374,7 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
-        String id = iniciarSesionIngresarCedula.getText(), password = iniciarSesionIngresarPassword.getText();
-        if (checkBoxOrganizator.isSelected()){
-            openMenuOrganizator(id, password);
-        }
-        else if (checkBoxJugador.isSelected()){
-            MenuPlayer openMenu = new MenuPlayer();
-            openMenu.setVisible(true);
-        }
-        else if (checkBoxAdministrador.isSelected()){
-            openMenuAdministrator(id, password);
-        }
-        
+        startLoging(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword);
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 
     private void botonIniciarSeccionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseEntered
