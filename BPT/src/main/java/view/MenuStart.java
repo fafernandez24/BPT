@@ -4,6 +4,8 @@
  */
 package view;
 
+import static control.StartControl.StartFocusGained;
+import static control.StartControl.StartFocusLost;
 import static control.StartControl.openMenuOrganizator;
 import static control.StartControl.openMenuAdministrator;
 import java.awt.Color;
@@ -24,7 +26,7 @@ public class MenuStart extends javax.swing.JFrame {
         initComponents();
         this.setResizable(true);
         this.setLocationRelativeTo(null);
-        newIcon();
+        this.newIcon();
     }
     
     private void newIcon(){
@@ -355,28 +357,19 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida1MouseClicked
 
     private void iniciarSesionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusGained
-        if (iniciarSesionIngresarCedula.getText().equals("Ingresar cedula de identidad")) iniciarSesionIngresarCedula.setText("");
+        StartFocusGained(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
     }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusGained
 
     private void iniciarSesionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusLost
-        String cedula = iniciarSesionIngresarCedula.getText();
-        if (cedula.trim().isEmpty()) iniciarSesionIngresarCedula.setText("Ingresar cedula de identidad");
-        else System.out.println(cedula);
+        StartFocusLost(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
     }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusLost
 
     private void iniciarSesionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusGained
-        if (iniciarSesionIngresarPassword.getText().equals("Ingresar contraseña")){
-            iniciarSesionIngresarPassword.setText("");
-        }
+        StartFocusGained(iniciarSesionIngresarPassword, "Ingresar contraseña");
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusGained
 
     private void iniciarSesionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusLost
-        String password = iniciarSesionIngresarPassword.getText();
-        if (password.trim().isEmpty()){
-            iniciarSesionIngresarPassword.setText("ingresar contraseña");
-        }
-        else
-        System.out.println(password);
+        StartFocusLost(iniciarSesionIngresarPassword, "Ingresar contraseña");
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
@@ -456,13 +449,7 @@ public class MenuStart extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuStart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuStart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuStart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuStart.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -473,12 +460,19 @@ public class MenuStart extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuStart().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new MenuStart().setVisible(true);
         });
     }
 

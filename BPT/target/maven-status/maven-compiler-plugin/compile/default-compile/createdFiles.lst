@@ -87,6 +87,7 @@ view\MenuOrganizator$62.class
 view\MenuOrganizator$59.class
 view\MenuStart$7.class
 view\MenuOrganizator$85.class
+control\ValidationControl.class
 view\prueba$3.class
 view\MenuConfigurations$29.class
 view\MenuOrganizator$92.class
@@ -127,7 +128,6 @@ view\MenuOrganizator$94.class
 view\MenuOrganizator$14.class
 view\MenuOrganizator$87.class
 view\MenuAdministrator$4.class
-view\MenuStart$19.class
 view\MenuOrganizator$61.class
 view\MenuOrganizator$81.class
 view\MenuOrganizator$21.class

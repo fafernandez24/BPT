@@ -7,6 +7,7 @@ package control;
 import static control.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import model.Player;
 
@@ -25,6 +26,15 @@ public class MenuOrganizatorControl {
         String teamName = team.getText();
         LocalDate date = StringBecomeLocalDate(dateBirth.getText());   
         return new Player(cellPhoneNumber, level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, identification, gmail, date); 
+    }
+    
+    public static void OrganizatorFocusGained(JTextField dataEnter, String message){
+        if (dataEnter.getText().equals(message)) dataEnter.setText("");
+    }
+    
+    public static void OrganizatorFocusGained(JPasswordField dataEnter, String message){
+        String password = new String(dataEnter.getPassword());
+        if (password.equals(message)) dataEnter.setText("");
     }
     
 }

@@ -85,25 +85,13 @@ public abstract class Person {
     
     // Read Methods
     
-    public void readName(){
-        do{
-            System.out.print("Ingresar nombre: ");
-            name = dataEnter.nextLine();
-            if (!validateName()) System.out.println("ERROR. Ingresar un nombre valido.");
-        } while (!validateName());
-    }
-    
-    public void readPassword(){
-        do{
-            System.out.println("Ingresar clave de acceso: ");
-            password = dataEnter.nextLine();
-            if (!validatePassword()) System.out.println("ERROR. La clave debe tener: \n- Minimo 8 caracteres\n- Un caracter especial\n- Un numero\n- Una letra mayuscula\n- Una letra minuscula");
-        } while (!validatePassword());
-    }
-    
     // Others Methods
     
     public abstract void readData();
     public abstract String showData();
+
+    private boolean validateName(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

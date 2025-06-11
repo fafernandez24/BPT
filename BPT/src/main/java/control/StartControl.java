@@ -7,6 +7,8 @@ package control;
 import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateDeveloper;
 import static control.ValidationControl.validateOrganizator;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import view.MenuAdministrator;
 import view.MenuOrganizator;
 
@@ -47,5 +49,28 @@ public class StartControl {
             openMenu.setVisible(true);
         } 
     }
+    
+    // FOCUS GAINED AND LOST METHODS
+    
+    public static void StartFocusGained(JTextField dataEnter, String message){
+        if (dataEnter.getText().equals(message)) dataEnter.setText("");
+    }
+    
+    public static void StartFocusGained(JPasswordField dataEnter, String message){
+        String password = new String(dataEnter.getPassword());
+        if (password.equals(message)) dataEnter.setText("");
+    }
+     
+    public static void StartFocusLost(JTextField dataEnter, String message){
+        String id = dataEnter.getText();
+        if (id.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    public static void StartFocusLost(JPasswordField dataEnter, String message){
+        String password = new String(dataEnter.getPassword());
+        if (password.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////
     
 }
