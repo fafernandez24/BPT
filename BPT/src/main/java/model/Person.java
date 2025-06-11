@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -16,10 +17,11 @@ public abstract class Person {
     
     // Attributes
     
-    protected int id;
+    protected String id;
     protected String name;
     protected String password;
     protected String email;
+    protected LocalDate dateBirth;
     
     // Methods
     
@@ -27,11 +29,11 @@ public abstract class Person {
     public Person(){};
     
     // Constructor #2
-    public Person(int id, String name, String password, String email){};
+    public Person(String id, String name, String password, String email, LocalDate dateBirth){};
     
     // Getters methods
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -46,10 +48,14 @@ public abstract class Person {
     public String getEmail() {
         return email;
     }
+
+    public LocalDate getDateBirth() {
+        return dateBirth;
+    }
     
     // Setter methods
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -64,6 +70,10 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setDateBirth(LocalDate dateBirth) {
+        this.dateBirth = dateBirth;
+    }
     
     // Validations
     
@@ -71,28 +81,9 @@ public abstract class Person {
         return numberString.matches("[0-9]") && (numberString.length() > 0 && numberString.length() < 9);
     }
     
-    public boolean validateName(){
-        return name.matches("/^[a-zA-ZÀ-ÿñÑ]+(([,\\. -][a-zA-ZÀ-ÿñÑ ])?[a-zA-ZÀ-ÿñÑ]*)*[^\\w\\s\\d\\(\\)\\[\\]\\?]$/");
-    }
-    
-    public boolean validatePassword(){
-        return name.matches("^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\\#\\$\\.\\%\\&\\*])(?=.*[a-zA-Z]).{8,16}$");
-    }
+
     
     // Read Methods
-    
-    public void readId(){
-        String numberString = "";
-        do{
-            try{
-                System.out.print("Ingresar cedula de identidad: ");
-                numberString = dataEnter.nextLine();
-                id = Integer.parseInt(numberString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar el numero de tu cedula de identidad.");
-            }
-        } while (!validateId(numberString));
-    }
     
     public void readName(){
         do{

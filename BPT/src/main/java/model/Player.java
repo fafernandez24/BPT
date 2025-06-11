@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.util.List;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,7 +13,9 @@ import java.util.List;
 public class Player extends Person{
    
     // Attributes
-    
+    protected String phoneNumber;
+    protected String category;
+    protected String teamName;
     protected int matchesPlayed;
     protected int matchesWon;
     protected int matchesLost;
@@ -31,8 +33,11 @@ public class Player extends Person{
     public Player(){};
     
     // Constructor #2
-    public Player(int id, String name, String password, String email, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
-        super(id, name, password, email);
+    public Player(String phoneNumber, String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth) {
+        super(id, name, password, email, dateBirth);
+        this.phoneNumber = phoneNumber;
+        this.category = category;
+        this.teamName = teamName;
         this.matchesPlayed = matchesPlayed;
         this.matchesWon = matchesWon;
         this.matchesLost = matchesLost;
@@ -44,9 +49,21 @@ public class Player extends Person{
         this.setAverage = setAverage;
         this.gameAverage = gameAverage;
     }
-    
+
     // Getter Methods
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+    
     public int getMatchesPlayed() {
         return matchesPlayed;
     }
@@ -89,6 +106,18 @@ public class Player extends Person{
     
     // Setter Methods
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+    
     public void setMatchesPlayed(int matchPlayed) {
         this.matchesPlayed = matchPlayed;
     }

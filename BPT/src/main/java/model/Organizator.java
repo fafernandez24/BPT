@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -21,11 +22,12 @@ public class Organizator extends Person {
     public Organizator(){}
     
     // Constructor #2
-
-    public Organizator(List<Tournament> TournamentList, int id, String name, String password, String email) {
-        super(id, name, password, email);
+    public Organizator(List<Tournament> TournamentList, String id, String name, String password, String email, LocalDate dateBirth) {
+        super(id, name, password, email, dateBirth);
         this.TournamentList = TournamentList;
     }
+
+
     
     // Getter Methods
 

@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -22,8 +23,8 @@ public class Administrator extends Person {
     public Administrator(){}
     
     // Constructor #2
-    public Administrator(int id, String name, String password, String email, List<Player> playerList) {
-        super(id, name, password, email);
+    public Administrator(List<Player> playerList, String id, String name, String password, String email, LocalDate dateBirth) {
+        super(id, name, password, email, dateBirth);
         this.playerList = playerList;
     }
         

@@ -4,6 +4,9 @@
  */
 package control;
 
+import static control.ValidationControl.validateAdministrator;
+import static control.ValidationControl.validateDeveloper;
+import static control.ValidationControl.validateOrganizator;
 import view.MenuAdministrator;
 import view.MenuOrganizator;
 
@@ -12,19 +15,6 @@ import view.MenuOrganizator;
  * @author Freddy A. Fernández
  */
 public class StartControl {
-    
-    public static boolean validateDeveloper(String id, String password){
-        return (id.equals("31703150") && password.equals("0406")) || 
-                (id.equals("31307188") && password.equals("Carlospinto2005")) || (id.equals("31101453") && password.equals("Messi48"));
-    }
-    
-    public static boolean validateOrganizator(String id, String password){
-        return id.equals("11032757") && password.equals("11032757");
-    }
-    
-    public static boolean validateAdministrator(String id, String password){
-        return id.equals("11032757") && password.equals("11032757");
-    }
     
     public static void openMenuOrganizator(String id, String password){
         boolean bol = validateOrganizator(id, password);

@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -24,11 +25,10 @@ public class Team extends Player{
     public Team(){}
     
     // Constructor #2
-    public Team(List<Player> teamList, int id, String name, String password, String email, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage) {
-        super(id, name, password, email, matchesPlayed, matchesWon, matchesLost, setsWon, setsLost, gamesWon, gamesLost, matchAverage, setAverage, gameAverage);
+    public Team(List<Player> teamList, String phoneNumber, String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth) {
+        super(phoneNumber, category, teamName, matchesPlayed, matchesWon, matchesLost, setsWon, setsLost, gamesWon, gamesLost, matchAverage, setAverage, gameAverage, id, name, password, email, dateBirth);
         this.teamList = teamList;
     }
-    
     
     // Getter Methods
 

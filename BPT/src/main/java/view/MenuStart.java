@@ -51,9 +51,9 @@ public class MenuStart extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        iniciarSeccionIngresarCedula = new javax.swing.JTextField();
+        iniciarSesionIngresarCedula = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        iniciarSeccionIngresarPassword = new javax.swing.JPasswordField();
+        iniciarSesionIngresarPassword = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         checkBoxOrganizator = new javax.swing.JCheckBox();
@@ -123,48 +123,50 @@ public class MenuStart extends javax.swing.JFrame {
         jLabel11.setToolTipText("");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 160, -1));
 
-        iniciarSeccionIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        iniciarSeccionIngresarCedula.setForeground(new java.awt.Color(153, 153, 153));
-        iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
-        iniciarSeccionIngresarCedula.setBorder(null);
-        iniciarSeccionIngresarCedula.addFocusListener(new java.awt.event.FocusAdapter() {
+        iniciarSesionIngresarCedula.setBackground(new java.awt.Color(255, 255, 255));
+        iniciarSesionIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSesionIngresarCedula.setForeground(new java.awt.Color(153, 153, 153));
+        iniciarSesionIngresarCedula.setText("Ingresar cedula de identidad");
+        iniciarSesionIngresarCedula.setBorder(null);
+        iniciarSesionIngresarCedula.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                iniciarSeccionIngresarCedulaFocusGained(evt);
+                iniciarSesionIngresarCedulaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                iniciarSeccionIngresarCedulaFocusLost(evt);
+                iniciarSesionIngresarCedulaFocusLost(evt);
             }
         });
-        iniciarSeccionIngresarCedula.addActionListener(new java.awt.event.ActionListener() {
+        iniciarSesionIngresarCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iniciarSeccionIngresarCedulaActionPerformed(evt);
+                iniciarSesionIngresarCedulaActionPerformed(evt);
             }
         });
-        jPanel2.add(iniciarSeccionIngresarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
+        jPanel2.add(iniciarSesionIngresarCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel10.setText("CONTRASEÑA:");
         jLabel10.setToolTipText("");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
-        iniciarSeccionIngresarPassword.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        iniciarSeccionIngresarPassword.setForeground(new java.awt.Color(153, 153, 153));
-        iniciarSeccionIngresarPassword.setText("Ingresar contraseña");
-        iniciarSeccionIngresarPassword.setBorder(null);
-        iniciarSeccionIngresarPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+        iniciarSesionIngresarPassword.setBackground(new java.awt.Color(255, 255, 255));
+        iniciarSesionIngresarPassword.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        iniciarSesionIngresarPassword.setForeground(new java.awt.Color(153, 153, 153));
+        iniciarSesionIngresarPassword.setText("Ingresar contraseña");
+        iniciarSesionIngresarPassword.setBorder(null);
+        iniciarSesionIngresarPassword.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                iniciarSeccionIngresarPasswordFocusGained(evt);
+                iniciarSesionIngresarPasswordFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                iniciarSeccionIngresarPasswordFocusLost(evt);
+                iniciarSesionIngresarPasswordFocusLost(evt);
             }
         });
-        iniciarSeccionIngresarPassword.addActionListener(new java.awt.event.ActionListener() {
+        iniciarSesionIngresarPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                iniciarSeccionIngresarPasswordActionPerformed(evt);
+                iniciarSesionIngresarPasswordActionPerformed(evt);
             }
         });
-        jPanel2.add(iniciarSeccionIngresarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 206, -1));
+        jPanel2.add(iniciarSesionIngresarPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 206, -1));
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, 312, 16));
@@ -332,13 +334,13 @@ public class MenuStart extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_checkBoxOrganizatorActionPerformed
 
-    private void iniciarSeccionIngresarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordActionPerformed
+    private void iniciarSesionIngresarPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_iniciarSeccionIngresarPasswordActionPerformed
+    }//GEN-LAST:event_iniciarSesionIngresarPasswordActionPerformed
 
-    private void iniciarSeccionIngresarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaActionPerformed
+    private void iniciarSesionIngresarCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_iniciarSeccionIngresarCedulaActionPerformed
+    }//GEN-LAST:event_iniciarSesionIngresarCedulaActionPerformed
 
     private void BannerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BannerMouseClicked
         // TODO add your handling code here:
@@ -352,33 +354,33 @@ public class MenuStart extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_botonSalida1MouseClicked
 
-    private void iniciarSeccionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusGained
-        if (iniciarSeccionIngresarCedula.getText().equals("Ingresar cedula de identidad")) iniciarSeccionIngresarCedula.setText("");
-    }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusGained
+    private void iniciarSesionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusGained
+        if (iniciarSesionIngresarCedula.getText().equals("Ingresar cedula de identidad")) iniciarSesionIngresarCedula.setText("");
+    }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusGained
 
-    private void iniciarSeccionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarCedulaFocusLost
-        String cedula = iniciarSeccionIngresarCedula.getText();
-        if (cedula.trim().isEmpty()) iniciarSeccionIngresarCedula.setText("Ingresar cedula de identidad");
+    private void iniciarSesionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusLost
+        String cedula = iniciarSesionIngresarCedula.getText();
+        if (cedula.trim().isEmpty()) iniciarSesionIngresarCedula.setText("Ingresar cedula de identidad");
         else System.out.println(cedula);
-    }//GEN-LAST:event_iniciarSeccionIngresarCedulaFocusLost
+    }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusLost
 
-    private void iniciarSeccionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusGained
-        if (iniciarSeccionIngresarPassword.getText().equals("Ingresar contraseña")){
-            iniciarSeccionIngresarPassword.setText("");
+    private void iniciarSesionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusGained
+        if (iniciarSesionIngresarPassword.getText().equals("Ingresar contraseña")){
+            iniciarSesionIngresarPassword.setText("");
         }
-    }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusGained
+    }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusGained
 
-    private void iniciarSeccionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSeccionIngresarPasswordFocusLost
-        String password = iniciarSeccionIngresarPassword.getText();
+    private void iniciarSesionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusLost
+        String password = iniciarSesionIngresarPassword.getText();
         if (password.trim().isEmpty()){
-            iniciarSeccionIngresarPassword.setText("ingresar contraseña");
+            iniciarSesionIngresarPassword.setText("ingresar contraseña");
         }
         else
         System.out.println(password);
-    }//GEN-LAST:event_iniciarSeccionIngresarPasswordFocusLost
+    }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
-        String id = iniciarSeccionIngresarCedula.getText(), password = iniciarSeccionIngresarPassword.getText();
+        String id = iniciarSesionIngresarCedula.getText(), password = iniciarSesionIngresarPassword.getText();
         if (checkBoxOrganizator.isSelected()){
             openMenuOrganizator(id, password);
         }
@@ -411,13 +413,13 @@ public class MenuStart extends javax.swing.JFrame {
     @SuppressWarnings("empty-statement")
     private void botonVerPasswordMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseMoved
         botonVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/hidden.png")));
-        iniciarSeccionIngresarPassword.setEchoChar((char)0); ;
+        iniciarSesionIngresarPassword.setEchoChar((char)0); ;
     }//GEN-LAST:event_botonVerPasswordMouseMoved
 
     @SuppressWarnings("empty-statement")
     private void botonVerPasswordMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseExited
         botonVerPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/view.png")));
-        iniciarSeccionIngresarPassword.setEchoChar((char)'•'); ;
+        iniciarSesionIngresarPassword.setEchoChar((char)'•'); ;
     }//GEN-LAST:event_botonVerPasswordMouseExited
 
     private void checkBoxOrganizatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxOrganizatorMouseClicked
@@ -490,8 +492,8 @@ public class MenuStart extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkBoxAdministrador;
     private javax.swing.JCheckBox checkBoxJugador;
     private javax.swing.JCheckBox checkBoxOrganizator;
-    private javax.swing.JTextField iniciarSeccionIngresarCedula;
-    private javax.swing.JPasswordField iniciarSeccionIngresarPassword;
+    private javax.swing.JTextField iniciarSesionIngresarCedula;
+    private javax.swing.JPasswordField iniciarSesionIngresarPassword;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
