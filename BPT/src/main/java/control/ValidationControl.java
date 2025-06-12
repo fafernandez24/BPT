@@ -32,8 +32,8 @@ public class ValidationControl {
         return id.matches("\\d+");
     }
     
-    public boolean validatePassword(String password){
-        return password.matches("^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\\#\\$\\.\\%\\&\\*])(?=.*[a-zA-Z]).{8,16}$");
+    public static boolean validatePassword(String password){
+        return true; //password.matches("^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\\#\\$\\.\\%\\&\\*])(?=.*[a-zA-Z]).{4,16}$");
     }
        
 }

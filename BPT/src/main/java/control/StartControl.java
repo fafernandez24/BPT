@@ -6,7 +6,10 @@ package control;
 
 import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateDeveloper;
+import static control.ValidationControl.validateId;
 import static control.ValidationControl.validateOrganizator;
+import static control.ValidationControl.validatePassword;
+import java.awt.Color;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -54,23 +57,30 @@ public class StartControl {
     
     // FOCUS GAINED AND LOST METHODS
     
-    public static void StartFocusGained(JTextField dataEnter, String message){
+    public static void startFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
     }
     
-    public static void StartFocusGained(JPasswordField dataEnter, String message){
+    public static void startFocusGained(JPasswordField dataEnter, String message){
         String password = new String(dataEnter.getPassword());
         if (password.equals(message)) dataEnter.setText("");
     }
      
-    public static void StartFocusLost(JTextField dataEnter, String message){
+    public static void startFocusLost(JTextField dataEnter, String message){
         String id = dataEnter.getText();
         if (id.trim().isEmpty()) dataEnter.setText(message);
     }
     
-    public static void StartFocusLost(JPasswordField dataEnter, String message){
+    public static void startFocusLost(JPasswordField dataEnter, String message){
         String password = new String(dataEnter.getPassword());
         if (password.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    // Verificar que solo esta marcada una checkBox de 3
+    public static void startCheckBox(JCheckBox checkBoxA, JCheckBox checkBoxB, JCheckBox checkBoxC){
+        checkBoxA.setSelected(true);
+        checkBoxB.setSelected(false);
+        checkBoxC.setSelected(false);
     }
         
     // Boton Iniciar sesion
@@ -87,6 +97,39 @@ public class StartControl {
         else if (checkBoxAdministrator.isSelected()){
             openMenuAdministrator(id, password);
         }
+    }
+    
+    // Manejo de errores
+    
+    public static void idErrorToRed(JTextField id){
+        String text = id.getText();
+        if (!validateId(text)) id.setForeground(Color.red);
+    }
+    
+    public static void passwordErrorToRed(JPasswordField password){
+        String text = new String(password.getPassword());
+        if (!validatePassword(text)) password.setForeground(Color.red);
+    }
+    
+    public static void startDataEnterToRed(JTextField id, JPasswordField password){
+        String textId = id.getText();
+        String textPassword = new String(password.getPassword());
+        if (!validateId(textId)) id.setForeground(Color.red);
+        else if (!validatePassword(textPassword)) password.setForeground(Color.red);
+    }
+    
+    
+    public static boolean startValidateDataEnter(JTextField id, JPasswordField password){
+        String textId = id.getText();
+        String textPassword = new String(password.getPassword());
+        return validateId(textId) && validatePassword(textPassword);
+    }
+    
+    // Presionar boton de iniciar sesion
+    
+    public static void pushLoginButton(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword){
+        if (!startValidateDataEnter(dataEnterId, dataEnterPassword)) startDataEnterToRed(dataEnterId, dataEnterPassword);
+        else startLoging(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword);
     }
     
 }
