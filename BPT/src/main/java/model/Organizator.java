@@ -22,12 +22,11 @@ public class Organizator extends Person {
     public Organizator(){}
     
     // Constructor #2
+
     public Organizator(List<Tournament> TournamentList, String id, String name, String password, String email, LocalDate dateBirth) {
         super(id, name, password, email, dateBirth);
         this.TournamentList = TournamentList;
     }
-
-
     
     // Getter Methods
 

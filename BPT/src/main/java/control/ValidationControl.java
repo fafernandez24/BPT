@@ -4,7 +4,10 @@
  */
 package control;
 
+import java.util.List;
+import model.Administrator;
 import model.Organizator;
+import model.Player;
 
 /**
  *
@@ -20,22 +23,59 @@ public class ValidationControl {
     
     // VALIDAR ORGANIZADORES
     
-    public static boolean validateOrganizator(String id, String password){
-        return id.equals("11032757") && password.equals("11032757");
+    public static boolean validateOrganizator(String id, String password, Organizator organizator){
+        String textId = organizator.getId(), textPassword = organizator.getPassword();
+        return id.equals(textId) && password.equals(textPassword);
     }
     
-    public static boolean validateOrganizatorId(String id){
-        return id.equals("11032757");
+        public static boolean validateOrganizatorId(String id, Organizator organizator){
+        String textId = organizator.getId();
+        return id.equals(textId);
+    }
+        
+    public static boolean validateOrganizatorPassword(String password, Organizator organizator){
+        String textPassword = organizator.getPassword();
+        return password.equals(textPassword);
     }
     
-    public static boolean validateOrganizatorPassword(String password){
-        return password.equals("11032757");
+    // VALIDAR JUGADORES
+    
+    public static boolean validatePlayer(String id, String password, List<Player> player){
+        for (int i = 0; i < player.size(); i++){
+            if (player.get(i).getId().equals(id) && player.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
+    }
+    
+    public static boolean validatePlayerId(String id, List<Player> player){
+        for (int i = 0; i < player.size(); i++){
+            if (player.get(i).getId().equals(id)) return true;
+        }
+        return false;
+    }
+    
+    public static boolean validatePlayerPassword(String password, List<Player> player){
+        for (int i = 0; i < player.size(); i++){
+            if (player.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
     }
     
     //     // VALIDAR ADMINISTRADORES
     
-    public static boolean validateAdministrator(String id, String password){
-        return id.equals("11032757") && password.equals("11032757");
+    public static boolean validateAdministrator(String id, String password, Administrator administrator){
+        String textId = administrator.getId(), textPassword = administrator.getPassword();
+        return id.equals(textId) && password.equals(textPassword);
+    }
+
+    public static boolean validateAdministratorId(String id, Administrator administrator){
+        String textId = administrator.getId();
+        return id.equals(textId);
+    }
+    
+    public static boolean validateAdministratorPassword(String password, Administrator administrator){
+        String textPassword = administrator.getPassword();
+        return password.equals(textPassword);
     }
     
     

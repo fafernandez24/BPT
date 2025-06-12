@@ -5,16 +5,12 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.Scanner;
 
 /**
  *
  * @author Freddy A. Fernández
  */
-public abstract class Person {
-    
-    Scanner dataEnter = new Scanner(System.in);
-    
+public abstract class Person {    
     // Attributes
     
     protected String id;
@@ -28,11 +24,16 @@ public abstract class Person {
     // Constructor #1
     public Person(){};
     
-    // Constructor #2
-    public Person(String id, String name, String password, String email, LocalDate dateBirth){};
-    
-    // Getters methods
+    // Constructor #2// Constructor #2
+    public Person(String id, String name, String password, String email, LocalDate dateBirth) {
+        this.id = id;
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.dateBirth = dateBirth;
+    }
 
+    // Getters methods
     public String getId() {
         return id;
     }

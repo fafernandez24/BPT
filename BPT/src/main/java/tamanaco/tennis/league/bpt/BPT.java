@@ -10,7 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import model.Administrator;
 import model.Organizator;
+import model.Player;
 import model.Tournament;
 import view.MenuStart;
 
@@ -24,13 +26,16 @@ public class BPT {
         
         List<Tournament> tournamentList = new ArrayList<>();
         Organizator organizator = new Organizator(tournamentList,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03));
+        List<Player> playerList = new ArrayList<>();
+        Administrator administrator = new Administrator(playerList,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03));
         
         // Permite que la interfaz grafica se vea un poco mejor.
         UIManager.setLookAndFeel(new FlatLightLaf());
         ///////////////////////////////////////////////////////////
        
-        MenuStart openStart = new MenuStart();
+        MenuStart openStart = new MenuStart(organizator, playerList, administrator);
         openStart.setVisible(true);
+        
            
     }
 }
