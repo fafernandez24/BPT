@@ -4,11 +4,10 @@
  */
 package view;
 
-import static control.StartControl.StartFocusGained;
-import static control.StartControl.StartFocusLost;
-import static control.StartControl.openMenuOrganizator;
-import static control.StartControl.openMenuAdministrator;
-import static control.StartControl.startLoging;
+import static control.StartControl.pushLoginButton;
+import static control.StartControl.startCheckBox;
+import static control.StartControl.startFocusGained;
+import static control.StartControl.startFocusLost;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -358,23 +357,23 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida1MouseClicked
 
     private void iniciarSesionIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusGained
-        StartFocusGained(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
+        startFocusGained(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
     }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusGained
 
     private void iniciarSesionIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarCedulaFocusLost
-        StartFocusLost(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
+        startFocusLost(iniciarSesionIngresarCedula, "Ingresar cedula de identidad");
     }//GEN-LAST:event_iniciarSesionIngresarCedulaFocusLost
 
     private void iniciarSesionIngresarPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusGained
-        StartFocusGained(iniciarSesionIngresarPassword, "Ingresar contraseña");
+        startFocusGained(iniciarSesionIngresarPassword, "Ingresar contraseña");
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusGained
 
     private void iniciarSesionIngresarPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_iniciarSesionIngresarPasswordFocusLost
-        StartFocusLost(iniciarSesionIngresarPassword, "Ingresar contraseña");
+        startFocusLost(iniciarSesionIngresarPassword, "Ingresar contraseña");
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
-        startLoging(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword);
+        pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword);
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 
     private void botonIniciarSeccionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseEntered
@@ -406,21 +405,15 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVerPasswordMouseExited
 
     private void checkBoxOrganizatorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxOrganizatorMouseClicked
-        checkBoxOrganizator.setSelected(true);
-        checkBoxJugador.setSelected(false);
-        checkBoxAdministrador.setSelected(false);
+        startCheckBox(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador);
     }//GEN-LAST:event_checkBoxOrganizatorMouseClicked
 
     private void checkBoxJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxJugadorMouseClicked
-        checkBoxJugador.setSelected(true);
-        checkBoxOrganizator.setSelected(false);
-        checkBoxAdministrador.setSelected(false);
+        startCheckBox(checkBoxJugador, checkBoxOrganizator, checkBoxAdministrador);
     }//GEN-LAST:event_checkBoxJugadorMouseClicked
 
     private void checkBoxAdministradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkBoxAdministradorMouseClicked
-        checkBoxAdministrador.setSelected(true);
-        checkBoxOrganizator.setSelected(false);
-        checkBoxJugador.setSelected(false);
+        startCheckBox(checkBoxAdministrador, checkBoxOrganizator, checkBoxJugador);
     }//GEN-LAST:event_checkBoxAdministradorMouseClicked
 
     /**
