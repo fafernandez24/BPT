@@ -5,19 +5,13 @@
 package view;
 
 import java.awt.Color;
-import javax.swing.DefaultCellEditor;
-import javax.swing.JComboBox;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
 
 /**
  *
  * @author Freddy A. Fernández
  */
 public class MenuAdministrator extends javax.swing.JFrame {
-    DefaultTableModel modelo;
+
     /**
      * Creates new form Organizator
      */
@@ -25,13 +19,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Cedula");
-        modelo.addColumn("Estado");
-        this.tablaAdministrarPagos.setModel(modelo);
-        visualizar(tablaAdministrarPagos);
-
     }
 
     /**
@@ -90,14 +77,17 @@ public class MenuAdministrator extends javax.swing.JFrame {
         iconoSuperior = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
-        botonActualizarTabla = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaAdministrarPagos = new javax.swing.JTable();
         jPanel30 = new javax.swing.JPanel();
         jLabel90 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel92 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        jLabel91 = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel93 = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel19.setBackground(new java.awt.Color(250, 250, 250));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -398,6 +388,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("ADMINISTRAR PAGOS");
         botonAdministrarPago.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
 
@@ -423,6 +414,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
         botonVisualizarReporte.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 40));
 
         jLabel9.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("VISUALIZAR REPORTES");
         botonVisualizarReporte.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
 
@@ -445,65 +437,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
 
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        botonActualizarTabla.setBackground(new java.awt.Color(30, 25, 161));
-        botonActualizarTabla.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonActualizarTabla.setForeground(new java.awt.Color(255, 255, 255));
-        botonActualizarTabla.setText("Actualizar tabla");
-        botonActualizarTabla.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonActualizarTablaMouseMoved(evt);
-            }
-        });
-        botonActualizarTabla.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonActualizarTablaMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonActualizarTablaMouseExited(evt);
-            }
-        });
-        botonActualizarTabla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonActualizarTablaActionPerformed(evt);
-            }
-        });
-
-        tablaAdministrarPagos.setModel(tablaAdministrarPagos.getModel());
-        tablaAdministrarPagos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaAdministrarPagosMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablaAdministrarPagos);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(132, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(botonActualizarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 824, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(botonActualizarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58))
-        );
-
-        jTabbedPane.addTab("tab4", jPanel3);
+        jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -529,6 +463,81 @@ public class MenuAdministrator extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("tab2", jPanel30);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel92.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel92.setText("ADMINISTRAR PAGOS");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jLabel92)
+                .addContainerGap(469, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane.addTab("tab4", jPanel3);
+
+        jPanel31.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel91.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel91.setText("fase eliminacion directa");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jLabel91)
+                .addContainerGap(399, Short.MAX_VALUE))
+        );
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel31Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane.addTab("tab3", jPanel31);
+
+        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel93.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel93.setText("calendario");
+
+        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
+        jPanel32.setLayout(jPanel32Layout);
+        jPanel32Layout.setHorizontalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(450, 450, 450)
+                .addComponent(jLabel93)
+                .addContainerGap(497, Short.MAX_VALUE))
+        );
+        jPanel32Layout.setVerticalGroup(
+            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel32Layout.createSequentialGroup()
+                .addGap(257, 257, 257)
+                .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(378, Short.MAX_VALUE))
+        );
+
+        jTabbedPane.addTab("tab5", jPanel32);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
 
@@ -585,57 +594,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private void botonAdministrarPagoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAdministrarPagoMouseMoved
         botonAdministrarPago.setBackground(new Color(250,250,250));
     }//GEN-LAST:event_botonAdministrarPagoMouseMoved
-
-    private void botonActualizarTablaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarTablaMouseMoved
-        //  TO DO
-    }//GEN-LAST:event_botonActualizarTablaMouseMoved
-
-    private void botonActualizarTablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarTablaMouseClicked
-        // TO DO add your handling code here:
-    }//GEN-LAST:event_botonActualizarTablaMouseClicked
-
-    private void botonActualizarTablaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarTablaMouseExited
-        // TO DO
-    }//GEN-LAST:event_botonActualizarTablaMouseExited
-
-    private void botonActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarTablaActionPerformed
-        // TO DO
-    }//GEN-LAST:event_botonActualizarTablaActionPerformed
-
-    private void tablaAdministrarPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaAdministrarPagosMouseClicked
-        //TO DO
-    }//GEN-LAST:event_tablaAdministrarPagosMouseClicked
-    
-    public final void visualizar(JTable tabla) {
-        Object[][] datos = new Object[][]{{"Carlos", "31307188", "Pendiente"},
-        {"Alejandra", "31307642", "Abonado"},
-        {"Amanda", "32305978", "Al dia"}};
-
-        String[] columna = new String[]{"Nombre", "Cedula", "Estado"};
-
-        DefaultTableModel dt = new DefaultTableModel(datos, columna);
-
-        tabla.setModel(dt);
-        
-        setUpEstadoColumn(tabla, tabla.getColumnModel().getColumn(2));
-
-    }
-    
-    public void setUpEstadoColumn(JTable table,
-            TableColumn sportColumn) {
-        //Set up the editor for the sport cells.
-        JComboBox comboBox = new JComboBox();
-        comboBox.addItem("Pendiente");
-        comboBox.addItem("Abonado");
-        comboBox.addItem("Al dia");
-        sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
-
-        //Set up tool tips for the sport cells.
-        DefaultTableCellRenderer renderer
-                = new DefaultTableCellRenderer();
-        renderer.setToolTipText("Click for combo box");
-        sportColumn.setCellRenderer(renderer);
-    }
     
     /**
      * @param args the command line arguments
@@ -681,7 +639,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
     private javax.swing.JLabel NombreOrganizador;
-    private javax.swing.JButton botonActualizarTabla;
     private javax.swing.JPanel botonAdministrarPago;
     private javax.swing.JLabel botonMinimizar;
     private javax.swing.JLabel botonSalida;
@@ -713,6 +670,9 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -724,12 +684,12 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
+    private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable tablaAdministrarPagos;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables
 }
