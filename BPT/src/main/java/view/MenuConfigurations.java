@@ -4,6 +4,8 @@
  */
 package view;
 
+import static control.MenuConfigurationsControl.configurationFocusGained;
+import static control.MenuConfigurationsControl.configurationFocusLost;
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 
@@ -35,7 +37,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonSalida = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
-        banner = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         botonAgregarJugadorConfiguracion = new javax.swing.JButton();
@@ -44,10 +45,10 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        cedulaJugador = new javax.swing.JTextField();
+        entradaCedulaJugadorModificar = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator16 = new javax.swing.JSeparator();
-        nombreTorneo = new javax.swing.JTextField();
+        entradaNombreTorneoModificar = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         botonCambiarNombreTorneo = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -60,7 +61,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         correoJugadorModificar = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        telefonoJugardorModificar = new javax.swing.JTextField();
+        telefonoJugadorModificar = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -103,6 +104,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         cedulaJugadorEliminar = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
+        banner = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -141,12 +143,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 40, 30));
-
-        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        banner.setText("jLabel2");
-        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -198,53 +194,45 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel7.setText("AGREGAR JUGADOR:");
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 270, 30));
 
-        cedulaJugador.setFont(new java.awt.Font("Bebas Neue", 0, 16)); // NOI18N
-        cedulaJugador.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugador.setText("Ingrese NUMERO DE CéDULA");
-        cedulaJugador.setBorder(null);
-        cedulaJugador.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCedulaJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 16)); // NOI18N
+        entradaCedulaJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCedulaJugadorModificar.setText("Ingresar numero de cedula");
+        entradaCedulaJugadorModificar.setBorder(null);
+        entradaCedulaJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorFocusGained(evt);
+                entradaCedulaJugadorModificarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorFocusLost(evt);
+                entradaCedulaJugadorModificarFocusLost(evt);
             }
         });
-        cedulaJugador.addActionListener(new java.awt.event.ActionListener() {
+        entradaCedulaJugadorModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorActionPerformed(evt);
+                entradaCedulaJugadorModificarActionPerformed(evt);
             }
         });
-        jPanel3.add(cedulaJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 190, 30));
+        jPanel3.add(entradaCedulaJugadorModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 190, 30));
         jPanel3.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 180, 20));
         jPanel3.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 180, 20));
 
-        nombreTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 16)); // NOI18N
-        nombreTorneo.setForeground(new java.awt.Color(153, 153, 153));
-        nombreTorneo.setText("Ingresar nuevo nombre");
-        nombreTorneo.setBorder(null);
-        nombreTorneo.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaNombreTorneoModificar.setFont(new java.awt.Font("Bebas Neue", 0, 16)); // NOI18N
+        entradaNombreTorneoModificar.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNombreTorneoModificar.setText("Ingresar nuevo nombre");
+        entradaNombreTorneoModificar.setBorder(null);
+        entradaNombreTorneoModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                nombreTorneoFocusGained(evt);
+                entradaNombreTorneoModificarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                nombreTorneoFocusLost(evt);
+                entradaNombreTorneoModificarFocusLost(evt);
             }
         });
-        nombreTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nombreTorneoMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                nombreTorneoMouseExited(evt);
-            }
-        });
-        nombreTorneo.addActionListener(new java.awt.event.ActionListener() {
+        entradaNombreTorneoModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreTorneoActionPerformed(evt);
+                entradaNombreTorneoModificarActionPerformed(evt);
             }
         });
-        jPanel3.add(nombreTorneo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, 30));
+        jPanel3.add(entradaNombreTorneoModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 130, 30));
 
         jLabel24.setFont(new java.awt.Font("Bebas Neue", 0, 28)); // NOI18N
         jLabel24.setText("MODIFICAR NOMBRE TORNEO:");
@@ -311,7 +299,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         correoJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         correoJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
-        correoJugadorModificar.setText("CORREO A MODIFICAR");
+        correoJugadorModificar.setText("Correo a modificar");
         correoJugadorModificar.setBorder(null);
         correoJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -330,21 +318,21 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel12.setText("CoRREO");
 
-        telefonoJugardorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
-        telefonoJugardorModificar.setForeground(new java.awt.Color(153, 153, 153));
-        telefonoJugardorModificar.setText("NúMERO A MODIFICAR");
-        telefonoJugardorModificar.setBorder(null);
-        telefonoJugardorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
+        telefonoJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        telefonoJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
+        telefonoJugadorModificar.setText("Numero a modificar");
+        telefonoJugadorModificar.setBorder(null);
+        telefonoJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                telefonoJugardorModificarFocusGained(evt);
+                telefonoJugadorModificarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                telefonoJugardorModificarFocusLost(evt);
+                telefonoJugadorModificarFocusLost(evt);
             }
         });
-        telefonoJugardorModificar.addActionListener(new java.awt.event.ActionListener() {
+        telefonoJugadorModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                telefonoJugardorModificarActionPerformed(evt);
+                telefonoJugadorModificarActionPerformed(evt);
             }
         });
 
@@ -356,7 +344,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         cedulaJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         cedulaJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorModificar.setText("cédula a modificar");
+        cedulaJugadorModificar.setText("Cedula a modificar");
         cedulaJugadorModificar.setBorder(null);
         cedulaJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -377,7 +365,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         fechaNacimientoJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         fechaNacimientoJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
-        fechaNacimientoJugadorModificar.setText("FEHCA A MODIFICAR");
+        fechaNacimientoJugadorModificar.setText("Fecha a modificar");
         fechaNacimientoJugadorModificar.setBorder(null);
         fechaNacimientoJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -398,7 +386,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         equipoJugadorModificar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         equipoJugadorModificar.setForeground(new java.awt.Color(153, 153, 153));
-        equipoJugadorModificar.setText("NUEVO EQUIPO");
+        equipoJugadorModificar.setText("Nuevo equipo");
         equipoJugadorModificar.setBorder(null);
         equipoJugadorModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -454,7 +442,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                             .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(telefonoJugardorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(telefonoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -483,7 +471,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombreJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(correoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(telefonoJugardorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(telefonoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -509,7 +497,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addComponent(fechaNacimientoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolverModifiarJugador)
                     .addComponent(botonGuardarModificarJugador))
@@ -522,7 +510,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         textoIngresarNombre.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         textoIngresarNombre.setForeground(new java.awt.Color(153, 153, 153));
-        textoIngresarNombre.setText("NOMBRE A AGREGAR");
+        textoIngresarNombre.setText("Nombre a agregar");
         textoIngresarNombre.setBorder(null);
         textoIngresarNombre.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -566,7 +554,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         textoIngresarCorreo.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         textoIngresarCorreo.setForeground(new java.awt.Color(153, 153, 153));
-        textoIngresarCorreo.setText("CORREO A AGREGAR");
+        textoIngresarCorreo.setText("Correo a agregar");
         textoIngresarCorreo.setBorder(null);
         textoIngresarCorreo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -587,7 +575,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         textoIngresarTelefono.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         textoIngresarTelefono.setForeground(new java.awt.Color(153, 153, 153));
-        textoIngresarTelefono.setText("NúMERO A AGREGAR");
+        textoIngresarTelefono.setText("Numero a agregar");
         textoIngresarTelefono.setBorder(null);
         textoIngresarTelefono.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -611,7 +599,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         textoIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         textoIngresarCedula.setForeground(new java.awt.Color(153, 153, 153));
-        textoIngresarCedula.setText("CédULA DEL JUGADOR");
+        textoIngresarCedula.setText("Cedula del jugador");
         textoIngresarCedula.setBorder(null);
         textoIngresarCedula.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -632,7 +620,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         textoIngresarEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         textoIngresarEquipo.setForeground(new java.awt.Color(153, 153, 153));
-        textoIngresarEquipo.setText("EQUIPO del jugador");
+        textoIngresarEquipo.setText("Equipo del jugador");
         textoIngresarEquipo.setBorder(null);
         textoIngresarEquipo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -792,7 +780,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         cedulaJugadorEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         cedulaJugadorEliminar.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar.setText("CéDULA DEL JUGADOR");
+        cedulaJugadorEliminar.setText("Cedula del jugador");
         cedulaJugadorEliminar.setBorder(null);
         cedulaJugadorEliminar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -861,6 +849,12 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 470, 540));
 
+        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        banner.setText("jLabel2");
+        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
+
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -882,9 +876,9 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cedulaJugadorModificarActionPerformed
 
-    private void telefonoJugardorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoJugardorModificarActionPerformed
+    private void telefonoJugadorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telefonoJugadorModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_telefonoJugardorModificarActionPerformed
+    }//GEN-LAST:event_telefonoJugadorModificarActionPerformed
 
     private void correoJugadorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoJugadorModificarActionPerformed
         // TODO add your handling code here:
@@ -978,13 +972,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcionesCategoriasAgregarActionPerformed
 
-    private void cedulaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorActionPerformed
+    private void entradaCedulaJugadorModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorModificarActionPerformed
 
-    }//GEN-LAST:event_cedulaJugadorActionPerformed
+    }//GEN-LAST:event_entradaCedulaJugadorModificarActionPerformed
 
-    private void nombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreTorneoActionPerformed
+    private void entradaNombreTorneoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreTorneoActionPerformed
+    }//GEN-LAST:event_entradaNombreTorneoModificarActionPerformed
 
     private void botonCambiarNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarNombreTorneoActionPerformed
         // TODO add your handling code here:
@@ -994,133 +988,124 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_opcionesCategoriasModificarActionPerformed
 
-    private void nombreTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreTorneoMouseClicked
-        //BORRAR
-    }//GEN-LAST:event_nombreTorneoMouseClicked
+    private void entradaNombreTorneoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusLost
+        configurationFocusLost (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
+    }//GEN-LAST:event_entradaNombreTorneoModificarFocusLost
 
-    private void nombreTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreTorneoMouseExited
-       //BORRAR
-    }//GEN-LAST:event_nombreTorneoMouseExited
+    private void entradaNombreTorneoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusGained
+        configurationFocusGained (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
+    }//GEN-LAST:event_entradaNombreTorneoModificarFocusGained
 
-    private void nombreTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreTorneoFocusLost
-         nombreTorneo.setText("Ingrese nuevo nombre");
-    }//GEN-LAST:event_nombreTorneoFocusLost
+    private void entradaCedulaJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorModificarFocusGained
+        configurationFocusGained (entradaCedulaJugadorModificar, "Ingresar numero de cedula");
+    }//GEN-LAST:event_entradaCedulaJugadorModificarFocusGained
 
-    private void nombreTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreTorneoFocusGained
-        nombreTorneo.setText("");
-    }//GEN-LAST:event_nombreTorneoFocusGained
-
-    private void cedulaJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorFocusGained
-        cedulaJugador.setText("");
-    }//GEN-LAST:event_cedulaJugadorFocusGained
-
-    private void cedulaJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorFocusLost
-        cedulaJugador.setText("Ingrese numero de cédula");
-    }//GEN-LAST:event_cedulaJugadorFocusLost
+    private void entradaCedulaJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorModificarFocusLost
+        configurationFocusLost (entradaCedulaJugadorModificar, "Ingresar numero de cedula");
+    }//GEN-LAST:event_entradaCedulaJugadorModificarFocusLost
 
     private void nombreJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorModificarFocusGained
-        nombreJugadorModificar.setText("");
+        configurationFocusGained (nombreJugadorModificar, "Nombre a modificar");
     }//GEN-LAST:event_nombreJugadorModificarFocusGained
 
     private void nombreJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorModificarFocusLost
-        nombreJugadorModificar.setText("nombre a modificar");
+        configurationFocusLost (nombreJugadorModificar, "Nombre a modificar");
     }//GEN-LAST:event_nombreJugadorModificarFocusLost
 
     private void cedulaJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorModificarFocusGained
-        cedulaJugadorModificar.setText("");
+        configurationFocusGained (cedulaJugadorModificar, "Cedula a modificar");
     }//GEN-LAST:event_cedulaJugadorModificarFocusGained
 
     private void cedulaJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorModificarFocusLost
-        cedulaJugadorModificar.setText("cédula a modificar");
+        configurationFocusLost (cedulaJugadorModificar, "Cedula a modificar");
     }//GEN-LAST:event_cedulaJugadorModificarFocusLost
 
     private void fechaNacimientoJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoJugadorModificarFocusGained
-        fechaNacimientoJugadorModificar.setText("");
+        configurationFocusGained (fechaNacimientoJugadorModificar, "Fecha a modificar");
     }//GEN-LAST:event_fechaNacimientoJugadorModificarFocusGained
 
     private void fechaNacimientoJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoJugadorModificarFocusLost
-        fechaNacimientoJugadorModificar.setText("fecha a modificar");
+        configurationFocusLost (fechaNacimientoJugadorModificar, "Fecha a modificar");
     }//GEN-LAST:event_fechaNacimientoJugadorModificarFocusLost
 
     private void correoJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_correoJugadorModificarFocusGained
-        correoJugadorModificar.setText("");
+        configurationFocusGained (correoJugadorModificar, "Correo a modificar");
     }//GEN-LAST:event_correoJugadorModificarFocusGained
 
     private void correoJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_correoJugadorModificarFocusLost
-        correoJugadorModificar.setText("correo a modificar");
+        configurationFocusLost (correoJugadorModificar, "Correo a modificar");
     }//GEN-LAST:event_correoJugadorModificarFocusLost
 
     private void equipoJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_equipoJugadorModificarFocusGained
-        equipoJugadorModificar.setText("");
+        configurationFocusGained (equipoJugadorModificar, "Nuevo equipo");
     }//GEN-LAST:event_equipoJugadorModificarFocusGained
 
     private void equipoJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_equipoJugadorModificarFocusLost
-        equipoJugadorModificar.setText("Nuevo equipo");
+        configurationFocusLost (equipoJugadorModificar, "Nuevo equipo");
     }//GEN-LAST:event_equipoJugadorModificarFocusLost
 
-    private void telefonoJugardorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefonoJugardorModificarFocusGained
-        telefonoJugardorModificar.setText("");
-    }//GEN-LAST:event_telefonoJugardorModificarFocusGained
+    private void telefonoJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefonoJugadorModificarFocusGained
+        configurationFocusGained (telefonoJugadorModificar, "Numero a modificar");
+    }//GEN-LAST:event_telefonoJugadorModificarFocusGained
 
-    private void telefonoJugardorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefonoJugardorModificarFocusLost
-        telefonoJugardorModificar.setText("número a modificar");
-    }//GEN-LAST:event_telefonoJugardorModificarFocusLost
+    private void telefonoJugadorModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_telefonoJugadorModificarFocusLost
+        configurationFocusLost (telefonoJugadorModificar, "Numero a modificar");
+    }//GEN-LAST:event_telefonoJugadorModificarFocusLost
 
     private void textoIngresarNombreFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarNombreFocusGained
-        textoIngresarNombre.setText("");
+        configurationFocusGained (textoIngresarNombre, "Nombre a agregar");
     }//GEN-LAST:event_textoIngresarNombreFocusGained
 
     private void textoIngresarNombreFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarNombreFocusLost
-        textoIngresarNombre.setText("nombre a agregar");
+        configurationFocusLost (textoIngresarNombre, "Numero a modificar");
     }//GEN-LAST:event_textoIngresarNombreFocusLost
 
     private void textoIngresarCedulaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarCedulaFocusGained
-        textoIngresarCedula.setText("");
+        configurationFocusGained (textoIngresarCedula, "Cedula del jugador");
     }//GEN-LAST:event_textoIngresarCedulaFocusGained
 
     private void textoIngresarCedulaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarCedulaFocusLost
-        textoIngresarCedula.setText("cédula del jugador");
+        configurationFocusLost (textoIngresarCedula, "Cedula del jugador");
     }//GEN-LAST:event_textoIngresarCedulaFocusLost
 
     private void textoIngresarCorreoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarCorreoFocusGained
-        textoIngresarCorreo.setText("");
+        configurationFocusGained (textoIngresarCorreo, "Correo a agregar");
     }//GEN-LAST:event_textoIngresarCorreoFocusGained
 
-    
     private void textoIngresarTelefonoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarTelefonoFocusGained
-        textoIngresarTelefono.setText("");
+        configurationFocusGained (textoIngresarTelefono, "Numero a agregar");
     }//GEN-LAST:event_textoIngresarTelefonoFocusGained
 
     private void textoIngresarTelefonoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarTelefonoFocusLost
-        textoIngresarTelefono.setText("número de telefono");
+        configurationFocusLost (textoIngresarTelefono, "Numero a agregar");
     }//GEN-LAST:event_textoIngresarTelefonoFocusLost
 
     private void textoIngresarCorreoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarCorreoFocusLost
-        textoIngresarCorreo.setText("correo a agregar");
+        configurationFocusLost (textoIngresarCorreo, "Correo a agregar");
     }//GEN-LAST:event_textoIngresarCorreoFocusLost
 
     private void textoIngresarEquipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarEquipoFocusGained
-        textoIngresarEquipo.setText("");
+        configurationFocusGained (textoIngresarEquipo, "Equipo del jugador");
     }//GEN-LAST:event_textoIngresarEquipoFocusGained
 
     private void textoIngresarEquipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoIngresarEquipoFocusLost
-        textoIngresarEquipo.setText("equipo del jugador");
+        configurationFocusLost (textoIngresarEquipo, "Equipo del jugador");
     }//GEN-LAST:event_textoIngresarEquipoFocusLost
 
     private void nombreJugadorEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminarFocusGained
-        nombreJugadorEliminar.setText("");
+        configurationFocusGained (nombreJugadorEliminar, "Nombre del jugador");
     }//GEN-LAST:event_nombreJugadorEliminarFocusGained
 
     private void nombreJugadorEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminarFocusLost
-        nombreJugadorEliminar.setText("nombre del jugador");
+        configurationFocusLost (nombreJugadorEliminar, "Nombre del jugador");
     }//GEN-LAST:event_nombreJugadorEliminarFocusLost
 
     private void cedulaJugadorEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminarFocusGained
-        cedulaJugadorEliminar.setText("");
+        configurationFocusGained (cedulaJugadorEliminar, "Cedula del jugador");
     }//GEN-LAST:event_cedulaJugadorEliminarFocusGained
 
     private void cedulaJugadorEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminarFocusLost
-        cedulaJugadorEliminar.setText("cédula del jugador");
+        configurationFocusLost (cedulaJugadorEliminar, "Cedula del jugador");
     }//GEN-LAST:event_cedulaJugadorEliminarFocusLost
 
     /**
@@ -1187,10 +1172,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JButton botonVolverAgregar;
     private javax.swing.JButton botonVolverEliminarJugador;
     private javax.swing.JButton botonVolverModifiarJugador;
-    private javax.swing.JTextField cedulaJugador;
     private javax.swing.JTextField cedulaJugadorEliminar;
     private javax.swing.JTextField cedulaJugadorModificar;
     private javax.swing.JTextField correoJugadorModificar;
+    private javax.swing.JTextField entradaCedulaJugadorModificar;
+    private javax.swing.JTextField entradaNombreTorneoModificar;
     private javax.swing.JTextField equipoJugadorModificar;
     private javax.swing.JTextField fechaNacimientoJugadorModificar;
     private javax.swing.JLabel jLabel1;
@@ -1240,10 +1226,9 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nombreJugadorEliminar;
     private javax.swing.JTextField nombreJugadorModificar;
-    private javax.swing.JTextField nombreTorneo;
     private javax.swing.JComboBox<String> opcionesCategoriasAgregar;
     private javax.swing.JComboBox<String> opcionesCategoriasModificar;
-    private javax.swing.JTextField telefonoJugardorModificar;
+    private javax.swing.JTextField telefonoJugadorModificar;
     private javax.swing.JTextField textoIngresarCedula;
     private javax.swing.JTextField textoIngresarCorreo;
     private javax.swing.JTextField textoIngresarEquipo;
