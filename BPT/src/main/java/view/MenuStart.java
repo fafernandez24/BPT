@@ -10,18 +10,29 @@ import static control.StartControl.startFocusGained;
 import static control.StartControl.startFocusLost;
 import java.awt.Color;
 import java.awt.Image;
+import java.util.List;
 import javax.swing.ImageIcon;
+import model.Administrator;
+import model.Organizator;
+import model.Player;
 
 /**
  *
  * @author Freddy A. Fernández
  */
 public class MenuStart extends javax.swing.JFrame {
+    
+    private Organizator organizator;
+    private List<Player> player;
+    private Administrator administrator;
 
     /**
      * Creates new form start
      */
-    public MenuStart() {
+    public MenuStart(Organizator organizator, List<Player> player, Administrator administrator) {
+        this.organizator = organizator;
+        this.player = player;
+        this.administrator = administrator;
         this.setUndecorated(true);
         initComponents();
         this.setResizable(true);
@@ -373,7 +384,7 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
-        pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword);
+        pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword, organizator, player, administrator);
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 
     private void botonIniciarSeccionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseEntered
@@ -455,7 +466,6 @@ public class MenuStart extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new MenuStart().setVisible(true);
         });
     }
 
