@@ -5,6 +5,7 @@
 package view;
 
 import static control.MenuOrganizatorControl.addPlayerSingleSingleTournament;
+import static control.MenuOrganizatorControl.changeButtonColor;
 import static control.MenuOrganizatorControl.organizatorFocusGained;
 import static control.MenuOrganizatorControl.organizatorFocusLost;
 import java.awt.Color;
@@ -101,7 +102,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -312,6 +312,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         entradaFechaNacimientoCapitan = new javax.swing.JTextField();
         jLabel114 = new javax.swing.JLabel();
         opcionesCategoriaCapitan = new javax.swing.JComboBox<>();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -732,17 +733,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel25.setBackground(new java.awt.Color(250, 250, 250));
@@ -900,7 +890,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel92)
-                .addContainerGap(367, Short.MAX_VALUE))
+                .addContainerGap(391, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1128,7 +1118,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
             .addGroup(jPanel31Layout.createSequentialGroup()
                 .addGap(389, 389, 389)
                 .addComponent(jLabel91)
-                .addContainerGap(329, Short.MAX_VALUE))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1420,6 +1410,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
         jPanel6.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 350, 10));
 
+        entradaNombreJugador.setBackground(null);
         entradaNombreJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaNombreJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaNombreJugador.setText("Ingresar nombre del jugador");
@@ -1444,6 +1435,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel29.setText("Ingresar nombre deL JUGADOR:");
         jPanel6.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
+        entradaIDJugador.setBackground(null);
         entradaIDJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaIDJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaIDJugador.setText("Ingresar numero de cedula del jugador");
@@ -1470,6 +1462,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, -1, 30));
         jPanel6.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
 
+        entradaNumeroTelefonoJugador.setBackground(null);
         entradaNumeroTelefonoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaNumeroTelefonoJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaNumeroTelefonoJugador.setText("Ingresar numero de telefono del jugador");
@@ -1495,6 +1488,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
         jPanel6.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 390, 350, 10));
 
+        entradaEmailJugador.setBackground(null);
         entradaEmailJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaEmailJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaEmailJugador.setText("Ingresar correo del jugador");
@@ -1529,6 +1523,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel34.setText("Ingresar EQUIPO deL JUGADOR:");
         jPanel6.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, 30));
 
+        entradaEquipoJugador.setBackground(null);
         entradaEquipoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaEquipoJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaEquipoJugador.setText("Ingresar equipo externo del jugador");
@@ -1550,6 +1545,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel6.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 350, 10));
         jPanel6.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 610, 350, 10));
 
+        entradaFechaNacimientoJugador.setBackground(null);
         entradaFechaNacimientoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         entradaFechaNacimientoJugador.setForeground(new java.awt.Color(153, 153, 153));
         entradaFechaNacimientoJugador.setText("Ingresar fecha de nacimiento (DD-MM-YYYY)");
@@ -1573,11 +1569,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel35.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(102, 102, 102));
         jLabel35.setText("VISTA DE JUGADORES YA AGREGADOS:");
-        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 740, -1, 30));
+        jPanel6.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 750, -1, 30));
 
         tablaJugadoresAgregados.setAutoCreateRowSorter(true);
-        tablaJugadoresAgregados.setBackground(new java.awt.Color(204, 204, 204));
-        tablaJugadoresAgregados.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         tablaJugadoresAgregados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1587,19 +1583,29 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         ));
         tablaJugadoresAgregados.setAutoscrolls(false);
-        tablaJugadoresAgregados.setGridColor(new java.awt.Color(0, 0, 255));
-        tablaJugadoresAgregados.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        tablaJugadoresAgregados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaJugadoresAgregados.setGridColor(new java.awt.Color(204, 204, 204));
+        tablaJugadoresAgregados.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tablaJugadoresAgregados.setSelectionForeground(new java.awt.Color(30, 25, 161));
         jScrollPane2.setViewportView(tablaJugadoresAgregados);
 
         jPanel6.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, 840, 410));
 
-        botonSubirFotoJugador.setBackground(new java.awt.Color(36, 20, 188));
+        botonSubirFotoJugador.setBackground(new java.awt.Color(30, 25, 161));
         botonSubirFotoJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSubirFotoJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonSubirFotoJugador.setText("SUBIR FOTO");
+        botonSubirFotoJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonSubirFotoJugadorMouseMoved(evt);
+            }
+        });
         botonSubirFotoJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonSubirFotoJugadorMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonSubirFotoJugadorMouseExited(evt);
             }
         });
         botonSubirFotoJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -1609,13 +1615,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel6.add(botonSubirFotoJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 140, 30));
 
-        botonRegresarIngresarDatosSingle.setBackground(new java.awt.Color(36, 20, 188));
+        botonRegresarIngresarDatosSingle.setBackground(new java.awt.Color(30, 25, 161));
         botonRegresarIngresarDatosSingle.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonRegresarIngresarDatosSingle.setForeground(new java.awt.Color(255, 255, 255));
         botonRegresarIngresarDatosSingle.setText("REGRESAR");
+        botonRegresarIngresarDatosSingle.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosSingleMouseMoved(evt);
+            }
+        });
         botonRegresarIngresarDatosSingle.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonRegresarIngresarDatosSingleMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosSingleMouseExited(evt);
             }
         });
         botonRegresarIngresarDatosSingle.addActionListener(new java.awt.event.ActionListener() {
@@ -1625,13 +1639,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel6.add(botonRegresarIngresarDatosSingle, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 670, 140, 40));
 
-        botonAgregarJugador.setBackground(new java.awt.Color(36, 20, 188));
+        botonAgregarJugador.setBackground(new java.awt.Color(30, 25, 161));
         botonAgregarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonAgregarJugador.setText("AGREGAR JUGADOR");
+        botonAgregarJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonAgregarJugadorMouseMoved(evt);
+            }
+        });
         botonAgregarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonAgregarJugadorMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAgregarJugadorMouseExited(evt);
             }
         });
         botonAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -1651,10 +1673,20 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel41.setText("Ingresar fecha de nacimiento deL JUGADOR:");
         jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, -1, 30));
 
-        botonSeguirIngresarJugador.setBackground(new java.awt.Color(36, 20, 188));
+        botonSeguirIngresarJugador.setBackground(new java.awt.Color(30, 25, 161));
         botonSeguirIngresarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSeguirIngresarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonSeguirIngresarJugador.setText("SEGUIR");
+        botonSeguirIngresarJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonSeguirIngresarJugadorMouseMoved(evt);
+            }
+        });
+        botonSeguirIngresarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonSeguirIngresarJugadorMouseExited(evt);
+            }
+        });
         botonSeguirIngresarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSeguirIngresarJugadorActionPerformed(evt);
@@ -1662,6 +1694,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel6.add(botonSeguirIngresarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 670, 140, 40));
 
+        opcionesCategoriaJugador.setBackground(null);
         opcionesCategoriaJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         opcionesCategoriaJugador.setForeground(new java.awt.Color(153, 153, 153));
         opcionesCategoriaJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7ma Categoria", "6ta Categoria", "5ta Categoria", "4ta Categoria", "3era Categoria" }));
@@ -2418,6 +2451,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -3100,6 +3144,38 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void entradaCedulaCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusLost
         organizatorFocusLost (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
     }//GEN-LAST:event_entradaCedulaCapitanFocusLost
+
+    private void botonSubirFotoJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSubirFotoJugadorMouseMoved
+        changeButtonColor(botonSubirFotoJugador,102,102,255);
+    }//GEN-LAST:event_botonSubirFotoJugadorMouseMoved
+
+    private void botonAgregarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseMoved
+        changeButtonColor(botonAgregarJugador,102,102,255);
+    }//GEN-LAST:event_botonAgregarJugadorMouseMoved
+
+    private void botonRegresarIngresarDatosSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseMoved
+        changeButtonColor(botonRegresarIngresarDatosSingle,102,102,255);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseMoved
+
+    private void botonSeguirIngresarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseMoved
+        changeButtonColor(botonSeguirIngresarJugador,102,102,255);
+    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseMoved
+
+    private void botonSubirFotoJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSubirFotoJugadorMouseExited
+        changeButtonColor(botonSubirFotoJugador,30,25,161);
+    }//GEN-LAST:event_botonSubirFotoJugadorMouseExited
+
+    private void botonSeguirIngresarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseExited
+        changeButtonColor(botonSeguirIngresarJugador,30,25,161);
+    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseExited
+
+    private void botonAgregarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseExited
+        changeButtonColor(botonAgregarJugador,30,25,161);
+    }//GEN-LAST:event_botonAgregarJugadorMouseExited
+
+    private void botonRegresarIngresarDatosSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseExited
+        changeButtonColor(botonRegresarIngresarDatosSingle,30,25,161);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseExited
         
     /**
      * @param args the command line arguments

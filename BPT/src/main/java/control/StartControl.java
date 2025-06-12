@@ -8,6 +8,8 @@ import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateDeveloper;
 import static control.ValidationControl.validateId;
 import static control.ValidationControl.validateOrganizator;
+import static control.ValidationControl.validateOrganizatorId;
+import static control.ValidationControl.validateOrganizatorPassword;
 import static control.ValidationControl.validatePassword;
 import java.awt.Color;
 import javax.swing.JCheckBox;
@@ -99,30 +101,25 @@ public class StartControl {
         }
     }
     
-    // Manejo de errores
-    
-    public static void idErrorToRed(JTextField id){
-        String text = id.getText();
-        if (!validateId(text)) id.setForeground(Color.red);
+    public static void idChangeColor(JTextField id, int r, int g, int b){
+        id.setForeground(new Color(r,g,b));
     }
     
-    public static void passwordErrorToRed(JPasswordField password){
-        String text = new String(password.getPassword());
-        if (!validatePassword(text)) password.setForeground(Color.red);
+    public static void passworChangeColor(JPasswordField password, int r, int g, int b){
+        password.setForeground(new Color(r,g,b));
     }
     
     public static void startDataEnterToRed(JTextField id, JPasswordField password){
         String textId = id.getText();
         String textPassword = new String(password.getPassword());
-        if (!validateId(textId)) id.setForeground(Color.red);
-        else if (!validatePassword(textPassword)) password.setForeground(Color.red);
+        if (!validateId(textId) || !validateOrganizatorId(textId)) idChangeColor(id, 255, 0, 51);
+        else if (!validatePassword(textPassword) || !validateOrganizatorPassword(textPassword)) passworChangeColor(password, 255, 0, 51);
     }
-    
     
     public static boolean startValidateDataEnter(JTextField id, JPasswordField password){
         String textId = id.getText();
         String textPassword = new String(password.getPassword());
-        return validateId(textId) && validatePassword(textPassword);
+        return validateId(textId) && validatePassword(textPassword) && validateOrganizator(textId, textPassword);
     }
     
     // Presionar boton de iniciar sesion
@@ -131,5 +128,7 @@ public class StartControl {
         if (!startValidateDataEnter(dataEnterId, dataEnterPassword)) startDataEnterToRed(dataEnterId, dataEnterPassword);
         else startLoging(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword);
     }
+    
+    
     
 }

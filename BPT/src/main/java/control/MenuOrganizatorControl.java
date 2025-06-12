@@ -5,7 +5,9 @@
 package control;
 
 import static control.TypeBecomeType.StringBecomeLocalDate;
+import java.awt.Color;
 import java.time.LocalDate;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -28,13 +30,28 @@ public class MenuOrganizatorControl {
         return new Player(cellPhoneNumber, level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, identification, gmail, date); 
     }
     
-    public static void OrganizatorFocusGained(JTextField dataEnter, String message){
+    public static void organizatorFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
     }
     
-    public static void OrganizatorFocusGained(JPasswordField dataEnter, String message){
+    public static void organizatorFocusGained(JPasswordField dataEnter, String message){
         String password = new String(dataEnter.getPassword());
         if (password.equals(message)) dataEnter.setText("");
     }
+    
+    public static void organizatorFocusLost(JTextField dataEnter, String message){
+        String id = dataEnter.getText();
+        if (id.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    public static void organizatorFocusLost(JPasswordField dataEnter, String message){
+        String password = new String(dataEnter.getPassword());
+        if (password.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    public static void changeButtonColor(JButton button, int r, int g, int b){
+        button.setBackground(new Color(r,g,b));
+    }
+    
     
 }
