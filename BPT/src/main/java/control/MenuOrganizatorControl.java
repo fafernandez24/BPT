@@ -28,13 +28,17 @@ public class MenuOrganizatorControl {
         return new Player(cellPhoneNumber, level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, identification, gmail, date); 
     }
     
-    public static void OrganizatorFocusGained(JTextField dataEnter, String message){
+    public static void organizatorFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
     }
     
-    public static void OrganizatorFocusGained(JPasswordField dataEnter, String message){
+    public static void organizatorFocusGained(JPasswordField dataEnter, String message){
         String password = new String(dataEnter.getPassword());
         if (password.equals(message)) dataEnter.setText("");
     }
     
+    public static void organizatorFocusLost(JTextField dataEnter, String message){
+        String data = dataEnter.getText();
+        if (data.trim().isEmpty()) dataEnter.setText(message);
+    }
 }
