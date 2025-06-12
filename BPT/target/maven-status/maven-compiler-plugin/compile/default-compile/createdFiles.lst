@@ -5,6 +5,7 @@ view\MenuConfigurations$17.class
 view\MenuOrganizator$3.class
 view\MenuStart$9.class
 view\MenuOrganizator$112.class
+view\MenuOrganizator$132.class
 view\MenuOrganizator$64.class
 view\MenuAdministrator$7.class
 view\MenuAdministrator$1.class
@@ -45,6 +46,7 @@ model\MatchJourney.class
 view\MenuConfigurations$31.class
 view\MenuOrganizator$120.class
 view\MenuOrganizator$38.class
+view\MenuOrganizator$131.class
 view\MenuOrganizator$71.class
 view\MenuOrganizator$31.class
 view\MenuOrganizator$126.class
@@ -56,6 +58,7 @@ view\MenuOrganizator$78.class
 view\MenuPlayer$2.class
 view\MenuOrganizator$109.class
 view\MenuConfigurations$10.class
+view\MenuOrganizator$129.class
 view\MenuOrganizator$70.class
 view\MenuOrganizator$60.class
 view\MenuOrganizator$90.class
@@ -72,6 +75,7 @@ view\MenuOrganizator$13.class
 view\MenuOrganizator$28.class
 view\MenuOrganizator$2.class
 control\MenuConfigurationsControl.class
+view\MenuOrganizator$133.class
 view\MenuStart$18.class
 view\MenuOrganizator$56.class
 view\MenuOrganizator$36.class
@@ -110,6 +114,7 @@ view\MenuOrganizator$11.class
 view\MenuOrganizator$35.class
 view\MenuOrganizator$106.class
 view\MenuOrganizator$111.class
+view\MenuOrganizator$134.class
 model\Pay.class
 model\Match.class
 view\MenuOrganizator$58.class
@@ -123,6 +128,7 @@ view\MenuOrganizator$6.class
 model\Team.class
 view\MenuOrganizator$54.class
 view\MenuPlayer$4.class
+view\MenuOrganizator$135.class
 view\MenuStart$6.class
 view\MenuOrganizator$74.class
 view\MenuOrganizator$34.class
@@ -132,6 +138,7 @@ view\MenuOrganizator$14.class
 view\MenuOrganizator$115.class
 view\MenuOrganizator$87.class
 view\MenuAdministrator$4.class
+view\MenuOrganizator$128.class
 view\MenuOrganizator$61.class
 view\MenuOrganizator$81.class
 view\MenuOrganizator$21.class
@@ -154,6 +161,7 @@ view\MenuOrganizator$82.class
 view\MenuOrganizator$108.class
 control\TypeBecomeType.class
 view\MenuConfigurations$41.class
+view\MenuOrganizator$130.class
 tamanaco\tennis\league\bpt\BPT.class
 model\GeneralTable.class
 view\MenuOrganizator$103.class
