@@ -26,27 +26,26 @@ public class BPT {
         
         List<Tournament> tournamentList = new ArrayList<>();
         
-        Player freddyPlayer = new Player("04241540989", "7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06));
-        Player juanFreddy = new Player("0263213594", "6ta Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03));
+        Player freddyPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
+        Player juanFreddy = new Player("6ta Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
         
         List<Player> playerList = new ArrayList<>();
         playerList.add(freddyPlayer);
         playerList.add(juanFreddy);
         
-        Organizator organizator = new Organizator(tournamentList, playerList, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03));
-        Organizator freddyOrganizator = new Organizator(tournamentList, playerList, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06));
+        Organizator organizator = new Organizator(tournamentList, playerList, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
+        Organizator freddyOrganizator = new Organizator(tournamentList, playerList, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         
         List<Organizator> organizatorList = new ArrayList<>();
         organizatorList.add(organizator);
         organizatorList.add(freddyOrganizator);
         
-        Administrator administrator = new Administrator(playerList,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03));
-        Administrator freddyAdministrator = new Administrator(playerList,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06));
+        Administrator administrator = new Administrator(playerList,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "11032757");
+        Administrator freddyAdministrator = new Administrator(playerList,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "11032757");
         
         List<Administrator> administratorList = new ArrayList<>();
         administratorList.add(administrator);
         administratorList.add(freddyAdministrator);
-        
         
         // Permite que la interfaz grafica se vea un poco mejor.
         UIManager.setLookAndFeel(new FlatLightLaf());
@@ -55,6 +54,5 @@ public class BPT {
         MenuStart openStart = new MenuStart(organizatorList, playerList, administratorList);
         openStart.setVisible(true);
         
-           
     }
 }

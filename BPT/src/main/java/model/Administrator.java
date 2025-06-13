@@ -23,10 +23,11 @@ public class Administrator extends Person {
     public Administrator(){}
     
     // Constructor #2
-    public Administrator(List<Player> playerList, String id, String name, String password, String email, LocalDate dateBirth) {
-        super(id, name, password, email, dateBirth);
+    public Administrator(List<Player> playerList, String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber) {
+        super(id, name, password, email, dateBirth, phoneNumber);
         this.playerList = playerList;
     }
+    
         
     // Getter Methods
 

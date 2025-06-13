@@ -15,6 +15,10 @@ public class MenuPlayOff extends javax.swing.JFrame {
      */
     public MenuPlayOff() {
         initComponents();
+        this.setUndecorated(true);
+        initComponents();
+        this.setResizable(true);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -3144,7 +3148,7 @@ public class MenuPlayOff extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BannerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BannerMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_BannerMouseClicked
 
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked

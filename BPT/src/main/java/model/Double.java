@@ -4,8 +4,6 @@
  */
 package model;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author Freddy A. Fernández
@@ -20,15 +18,13 @@ public class Double extends Player {
     // Methods
     
     // Constructor #1
-    public Double(){}
+    public Double(){};
     
     // Constructor #2
-
-    public Double(Player playerA, Player playerB, String phoneNumber, String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth) {
-        super(phoneNumber, category, teamName, matchesPlayed, matchesWon, matchesLost, setsWon, setsLost, gamesWon, gamesLost, matchAverage, setAverage, gameAverage, id, name, password, email, dateBirth);
+    public Double(Player playerA, Player playerB) {
         this.playerA = playerA;
         this.playerB = playerB;
-    }
+    };
     
     // Getter Methods
 

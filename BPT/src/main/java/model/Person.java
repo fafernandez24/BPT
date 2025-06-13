@@ -18,6 +18,7 @@ public abstract class Person {
     protected String password;
     protected String email;
     protected LocalDate dateBirth;
+    protected String phoneNumber;
     
     // Methods
     
@@ -25,13 +26,14 @@ public abstract class Person {
     public Person(){};
     
     // Constructor #2// Constructor #2
-    public Person(String id, String name, String password, String email, LocalDate dateBirth) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-        this.dateBirth = dateBirth;
-    }
+        public Person(String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber) {    
+            this.id = id;
+            this.name = name;
+            this.password = password;
+            this.email = email;
+            this.dateBirth = dateBirth;
+            this.phoneNumber = phoneNumber;
+        }
 
     // Getters methods
     public String getId() {
@@ -81,8 +83,6 @@ public abstract class Person {
     public boolean validateId(String numberString){
         return numberString.matches("[0-9]") && (numberString.length() > 0 && numberString.length() < 9);
     }
-    
-
     
     // Read Methods
     

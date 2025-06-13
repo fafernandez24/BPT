@@ -4,13 +4,15 @@
  */
 package view;
 
-import static control.MenuOrganizatorControl.addPlayerSingleSingleTournament;
+import static control.MenuOrganizatorControl.addPlayerTournament;
 import static control.MenuOrganizatorControl.changeButtonColor;
 import static control.MenuOrganizatorControl.organizatorFindPlayer;
 import static control.MenuOrganizatorControl.organizatorFocusGained;
 import static control.MenuOrganizatorControl.organizatorFocusLost;
 import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
 import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Organizator;
 import model.Player;
@@ -23,13 +25,16 @@ public class MenuOrganizator extends javax.swing.JFrame {
     
     // Atributtes
     
-    int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
+    private int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
     Organizator organizator;
     
     // ManejarTablas
     
     private DefaultTableModel tablaJugadoresIngresados;
-    private Object[] cells = new Object[4];
+    private Object[] cellsSingle = new Object[4];
+    
+    private DefaultTableModel tablaDuplasIngresados;
+    private Object[] cellsDoubles = new Object[6];
     
     //////////////////
 
@@ -43,6 +48,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setResizable(true);
         this.setLocationRelativeTo(null);
         tablaJugadoresIngresados = (DefaultTableModel) tablaJugadoresAgregados.getModel();
+        tablaDuplasIngresados = (DefaultTableModel) tablaDuplasAgregadas.getModel();
     }
 
     /**
@@ -90,9 +96,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         NombreOrganizador = new javax.swing.JLabel();
         IconoCalendario = new javax.swing.JLabel();
-        botonMenuVerCalendario = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         botonMenuCrearTorneo = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -102,10 +105,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonMenuBuscarJugador = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        botonMenuFaseEliminacionDirecta = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        botonMenuVerCalendario = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
@@ -300,8 +303,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jTextField11 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jPanel31 = new javax.swing.JPanel();
-        jLabel91 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
@@ -376,14 +377,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator22 = new javax.swing.JSeparator();
         entradaNombreJugadorA = new javax.swing.JTextField();
         jLabel46 = new javax.swing.JLabel();
-        entradaCedulaJugadorA = new javax.swing.JTextField();
+        entradaIdJugadorA = new javax.swing.JTextField();
         jSeparator23 = new javax.swing.JSeparator();
         jLabel47 = new javax.swing.JLabel();
         jSeparator24 = new javax.swing.JSeparator();
-        entradaTelefonoJugadorA = new javax.swing.JTextField();
+        entradaNumeroTelefonoJugadorA = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jSeparator25 = new javax.swing.JSeparator();
-        entradaCorreoJugadorA = new javax.swing.JTextField();
+        entradaEmailJugadorA = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -392,8 +393,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator28 = new javax.swing.JSeparator();
         entradaFechaNacimientoJugadorA = new javax.swing.JTextField();
         jLabel52 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tablaDuplasAgregadas = new javax.swing.JTable();
         botonFotoJugadorA = new javax.swing.JButton();
         botonRegresarIngresarDatosDobles = new javax.swing.JButton();
         botonAgregarJugadoresDupla = new javax.swing.JButton();
@@ -403,14 +402,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator29 = new javax.swing.JSeparator();
         entradaNombreJugadorB = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
-        entradaCedulaJugadorB = new javax.swing.JTextField();
+        entradaIdJugadorB = new javax.swing.JTextField();
         jSeparator30 = new javax.swing.JSeparator();
         jLabel58 = new javax.swing.JLabel();
         jSeparator31 = new javax.swing.JSeparator();
-        entradaTelefonoJugadorB = new javax.swing.JTextField();
+        entradaNumeroTelefonoJugadorB = new javax.swing.JTextField();
         jLabel59 = new javax.swing.JLabel();
         jSeparator32 = new javax.swing.JSeparator();
-        entradaCorreoJugadorB = new javax.swing.JTextField();
+        entradaEmailJugadorB = new javax.swing.JTextField();
         jLabel88 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -423,6 +422,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel102 = new javax.swing.JLabel();
         opcionesCategoriaJugadorA = new javax.swing.JComboBox<>();
         opcionesCategoriaJugadorB = new javax.swing.JComboBox<>();
+        jScrollPane37 = new javax.swing.JScrollPane();
+        tablaDuplasAgregadas = new javax.swing.JTable();
         jScrollPane7 = new javax.swing.JScrollPane();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
@@ -914,32 +915,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         IconoCalendario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotoPerfilPequenio.png"))); // NOI18N
         jPanel4.add(IconoCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 230, 200));
 
-        botonMenuVerCalendario.setBackground(new java.awt.Color(204, 204, 255));
-        botonMenuVerCalendario.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonMenuVerCalendarioMouseMoved(evt);
-            }
-        });
-        botonMenuVerCalendario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonMenuVerCalendarioMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonMenuVerCalendarioMouseExited(evt);
-            }
-        });
-        botonMenuVerCalendario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
-        botonMenuVerCalendario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 30));
-
-        jLabel3.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel3.setText("VER CALENDARIO");
-        botonMenuVerCalendario.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
-
-        jPanel4.add(botonMenuVerCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 360, 60));
-
         botonMenuCrearTorneo.setBackground(new java.awt.Color(204, 204, 255));
         botonMenuCrearTorneo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -1019,39 +994,36 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel4.add(botonMenuBuscarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 360, 60));
 
-        botonMenuFaseEliminacionDirecta.setBackground(new java.awt.Color(204, 204, 255));
-        botonMenuFaseEliminacionDirecta.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonMenuFaseEliminacionDirectaMouseMoved(evt);
-            }
-        });
-        botonMenuFaseEliminacionDirecta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonMenuFaseEliminacionDirectaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonMenuFaseEliminacionDirectaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonMenuFaseEliminacionDirectaMouseExited(evt);
-            }
-        });
-        botonMenuFaseEliminacionDirecta.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoEliminacionDirectapequenio.png"))); // NOI18N
-        botonMenuFaseEliminacionDirecta.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 40));
-
-        jLabel13.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel13.setText("FASES DE ELIMINACIÓN DIRECTA");
-        botonMenuFaseEliminacionDirecta.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
-
-        jPanel4.add(botonMenuFaseEliminacionDirecta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 360, 60));
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 370, 280));
+
+        botonMenuVerCalendario.setBackground(new java.awt.Color(204, 204, 255));
+        botonMenuVerCalendario.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonMenuVerCalendarioMouseMoved(evt);
+            }
+        });
+        botonMenuVerCalendario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMenuVerCalendarioMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonMenuVerCalendarioMouseExited(evt);
+            }
+        });
+        botonMenuVerCalendario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/calendar.png"))); // NOI18N
+        botonMenuVerCalendario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, 30));
+
+        jLabel3.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("VER CALENDARIO");
+        botonMenuVerCalendario.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
+
+        jPanel4.add(botonMenuVerCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 360, 60));
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 780));
 
@@ -2422,31 +2394,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab3", jPanel30);
 
-        jPanel31.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel91.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel91.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel91.setText("fase eliminacion directa");
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel91)
-                .addContainerGap(354, Short.MAX_VALUE))
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(394, Short.MAX_VALUE))
-        );
-
-        jTabbedPane.addTab("tab4", jPanel31);
-
         jPanel32.setBackground(new java.awt.Color(255, 255, 255));
         jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2454,11 +2401,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(153, 153, 153));
         jLabel43.setText("VISUALIZAR CALENDARIO...");
-        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, -1, 60));
+        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, 60));
 
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
-        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
-        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 900, 10));
+        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 900, 10));
 
         jTable2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -2480,7 +2427,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable2);
 
-        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 200, 350, 410));
+        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 350, 410));
 
         jButton8.setBackground(new java.awt.Color(36, 20, 188));
         jButton8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2491,7 +2438,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 jButton8ActionPerformed(evt);
             }
         });
-        jPanel32.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, 140, 40));
+        jPanel32.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 140, 40));
 
         jButton9.setBackground(new java.awt.Color(36, 20, 188));
         jButton9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2502,7 +2449,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        jPanel32.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
+        jPanel32.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, 140, 40));
 
         jButton10.setBackground(new java.awt.Color(36, 20, 188));
         jButton10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2513,10 +2460,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        jPanel32.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 630, 140, 40));
-        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 520, 410));
+        jPanel32.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 140, 40));
+        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 520, 410));
 
-        jTabbedPane.addTab("tab5", jPanel32);
+        jTabbedPane.addTab("tab4", jPanel32);
 
         pestaniaCrearTorneoInicio.setBackground(new java.awt.Color(255, 255, 255));
         pestaniaCrearTorneoInicio.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2707,7 +2654,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         pestaniaCrearTorneoInicio.add(ingresarRondaEliminacionDirecta, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 521, 250, 30));
 
-        jTabbedPane.addTab("tab6", pestaniaCrearTorneoInicio);
+        jTabbedPane.addTab("tab5", pestaniaCrearTorneoInicio);
 
         jScrollPane1.setBorder(null);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -3023,7 +2970,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel5);
 
-        jTabbedPane.addTab("tab7", jScrollPane1);
+        jTabbedPane.addTab("tab6", jScrollPane1);
 
         jScrollPane4.setBorder(null);
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -3072,25 +3019,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel46.setText("Ingresar nombre deL JUGADOR A:");
         jPanel10.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaCedulaJugadorA.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCedulaJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCedulaJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCedulaJugadorA.setText("Ingresar numero de cedula jugador");
-        entradaCedulaJugadorA.setBorder(null);
-        entradaCedulaJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaIdJugadorA.setBackground(new java.awt.Color(255, 255, 255));
+        entradaIdJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaIdJugadorA.setForeground(new java.awt.Color(153, 153, 153));
+        entradaIdJugadorA.setText("Ingresar numero de cedula jugador");
+        entradaIdJugadorA.setBorder(null);
+        entradaIdJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCedulaJugadorAFocusGained(evt);
+                entradaIdJugadorAFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCedulaJugadorAFocusLost(evt);
+                entradaIdJugadorAFocusLost(evt);
             }
         });
-        entradaCedulaJugadorA.addActionListener(new java.awt.event.ActionListener() {
+        entradaIdJugadorA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCedulaJugadorAActionPerformed(evt);
+                entradaIdJugadorAActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCedulaJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+        jPanel10.add(entradaIdJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
         jPanel10.add(jSeparator23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 350, 10));
 
         jLabel47.setBackground(new java.awt.Color(255, 255, 255));
@@ -3099,25 +3046,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
         jPanel10.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 710, 350, 10));
 
-        entradaTelefonoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
-        entradaTelefonoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaTelefonoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaTelefonoJugadorA.setText("Ingresar numero de telefono del jugador");
-        entradaTelefonoJugadorA.setBorder(null);
-        entradaTelefonoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaNumeroTelefonoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNumeroTelefonoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNumeroTelefonoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNumeroTelefonoJugadorA.setText("Ingresar numero de telefono del jugador");
+        entradaNumeroTelefonoJugadorA.setBorder(null);
+        entradaNumeroTelefonoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaTelefonoJugadorAFocusGained(evt);
+                entradaNumeroTelefonoJugadorAFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaTelefonoJugadorAFocusLost(evt);
+                entradaNumeroTelefonoJugadorAFocusLost(evt);
             }
         });
-        entradaTelefonoJugadorA.addActionListener(new java.awt.event.ActionListener() {
+        entradaNumeroTelefonoJugadorA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaTelefonoJugadorAActionPerformed(evt);
+                entradaNumeroTelefonoJugadorAActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaTelefonoJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 680, 280, -1));
+        jPanel10.add(entradaNumeroTelefonoJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 680, 280, -1));
 
         jLabel48.setBackground(new java.awt.Color(255, 255, 255));
         jLabel48.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3125,26 +3072,26 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 640, -1, 30));
         jPanel10.add(jSeparator25, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, 350, 10));
 
-        entradaCorreoJugadorA.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCorreoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCorreoJugadorA.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCorreoJugadorA.setText("Ingresar correo del jugador");
-        entradaCorreoJugadorA.setToolTipText("");
-        entradaCorreoJugadorA.setBorder(null);
-        entradaCorreoJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaEmailJugadorA.setBackground(new java.awt.Color(255, 255, 255));
+        entradaEmailJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaEmailJugadorA.setForeground(new java.awt.Color(153, 153, 153));
+        entradaEmailJugadorA.setText("Ingresar correo del jugador");
+        entradaEmailJugadorA.setToolTipText("");
+        entradaEmailJugadorA.setBorder(null);
+        entradaEmailJugadorA.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCorreoJugadorAFocusGained(evt);
+                entradaEmailJugadorAFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCorreoJugadorAFocusLost(evt);
+                entradaEmailJugadorAFocusLost(evt);
             }
         });
-        entradaCorreoJugadorA.addActionListener(new java.awt.event.ActionListener() {
+        entradaEmailJugadorA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCorreoJugadorAActionPerformed(evt);
+                entradaEmailJugadorAActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCorreoJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
+        jPanel10.add(entradaEmailJugadorA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
 
         jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3209,23 +3156,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel52.setText("VISTA DE JUGADORES YA AGREGADOS:");
         jPanel10.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1120, -1, 30));
 
-        tablaDuplasAgregadas.setAutoCreateRowSorter(true);
-        tablaDuplasAgregadas.setBackground(new java.awt.Color(204, 204, 204));
-        tablaDuplasAgregadas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Nombre", "Cedula", "Categoria"
-            }
-        ));
-        jScrollPane6.setViewportView(tablaDuplasAgregadas);
-
-        jPanel10.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1170, 840, 430));
-
         botonFotoJugadorA.setBackground(new java.awt.Color(36, 20, 188));
         botonFotoJugadorA.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonFotoJugadorA.setForeground(new java.awt.Color(255, 255, 255));
@@ -3284,6 +3214,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonSeguirDuplas.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSeguirDuplas.setForeground(new java.awt.Color(255, 255, 255));
         botonSeguirDuplas.setText("SEGUIR");
+        botonSeguirDuplas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSeguirDuplasMouseClicked(evt);
+            }
+        });
         botonSeguirDuplas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSeguirDuplasActionPerformed(evt);
@@ -3317,25 +3252,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel57.setText("Ingresar nombre deL JUGADOR B:");
         jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, 30));
 
-        entradaCedulaJugadorB.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCedulaJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCedulaJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCedulaJugadorB.setText("Ingresar numero de cedula jugador");
-        entradaCedulaJugadorB.setBorder(null);
-        entradaCedulaJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaIdJugadorB.setBackground(new java.awt.Color(255, 255, 255));
+        entradaIdJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaIdJugadorB.setForeground(new java.awt.Color(153, 153, 153));
+        entradaIdJugadorB.setText("Ingresar numero de cedula jugador");
+        entradaIdJugadorB.setBorder(null);
+        entradaIdJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCedulaJugadorBFocusGained(evt);
+                entradaIdJugadorBFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCedulaJugadorBFocusLost(evt);
+                entradaIdJugadorBFocusLost(evt);
             }
         });
-        entradaCedulaJugadorB.addActionListener(new java.awt.event.ActionListener() {
+        entradaIdJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCedulaJugadorBActionPerformed(evt);
+                entradaIdJugadorBActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCedulaJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, -1, -1));
+        jPanel10.add(entradaIdJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, -1, -1));
         jPanel10.add(jSeparator30, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 350, 10));
 
         jLabel58.setBackground(new java.awt.Color(255, 255, 255));
@@ -3344,25 +3279,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, -1, 30));
         jPanel10.add(jSeparator31, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 710, 350, 10));
 
-        entradaTelefonoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
-        entradaTelefonoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaTelefonoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaTelefonoJugadorB.setText("Ingresar numero de telefono del jugador");
-        entradaTelefonoJugadorB.setBorder(null);
-        entradaTelefonoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaNumeroTelefonoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
+        entradaNumeroTelefonoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaNumeroTelefonoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
+        entradaNumeroTelefonoJugadorB.setText("Ingresar numero de telefono del jugador");
+        entradaNumeroTelefonoJugadorB.setBorder(null);
+        entradaNumeroTelefonoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaTelefonoJugadorBFocusGained(evt);
+                entradaNumeroTelefonoJugadorBFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaTelefonoJugadorBFocusLost(evt);
+                entradaNumeroTelefonoJugadorBFocusLost(evt);
             }
         });
-        entradaTelefonoJugadorB.addActionListener(new java.awt.event.ActionListener() {
+        entradaNumeroTelefonoJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaTelefonoJugadorBActionPerformed(evt);
+                entradaNumeroTelefonoJugadorBActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaTelefonoJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 680, 320, -1));
+        jPanel10.add(entradaNumeroTelefonoJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 680, 320, -1));
 
         jLabel59.setBackground(new java.awt.Color(255, 255, 255));
         jLabel59.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3370,25 +3305,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel10.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 640, -1, 30));
         jPanel10.add(jSeparator32, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 350, 10));
 
-        entradaCorreoJugadorB.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCorreoJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCorreoJugadorB.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCorreoJugadorB.setText("Ingresar correo del jugador");
-        entradaCorreoJugadorB.setBorder(null);
-        entradaCorreoJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaEmailJugadorB.setBackground(new java.awt.Color(255, 255, 255));
+        entradaEmailJugadorB.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaEmailJugadorB.setForeground(new java.awt.Color(153, 153, 153));
+        entradaEmailJugadorB.setText("Ingresar correo del jugador");
+        entradaEmailJugadorB.setBorder(null);
+        entradaEmailJugadorB.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCorreoJugadorBFocusGained(evt);
+                entradaEmailJugadorBFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCorreoJugadorBFocusLost(evt);
+                entradaEmailJugadorBFocusLost(evt);
             }
         });
-        entradaCorreoJugadorB.addActionListener(new java.awt.event.ActionListener() {
+        entradaEmailJugadorB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCorreoJugadorBActionPerformed(evt);
+                entradaEmailJugadorBActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCorreoJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, -1, -1));
+        jPanel10.add(entradaEmailJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, -1, -1));
 
         jLabel88.setBackground(new java.awt.Color(255, 255, 255));
         jLabel88.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3498,11 +3433,31 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel10.add(opcionesCategoriaJugadorB, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 790, 350, 30));
 
+        tablaDuplasAgregadas.setAutoCreateRowSorter(true);
+        tablaDuplasAgregadas.setBackground(new java.awt.Color(255, 255, 255));
+        tablaDuplasAgregadas.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaDuplasAgregadas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre A", "Cedula A", "Nombre B", "Cedula B", "Categoria A", "Categoria B"
+            }
+        ));
+        tablaDuplasAgregadas.setAutoscrolls(false);
+        tablaDuplasAgregadas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaDuplasAgregadas.setGridColor(new java.awt.Color(204, 204, 204));
+        tablaDuplasAgregadas.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tablaDuplasAgregadas.setSelectionForeground(new java.awt.Color(30, 25, 161));
+        jScrollPane37.setViewportView(tablaDuplasAgregadas);
+
+        jPanel10.add(jScrollPane37, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1170, 840, 410));
+
         jPanel8.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 1700));
 
         jScrollPane4.setViewportView(jPanel8);
 
-        jTabbedPane.addTab("tab8", jScrollPane4);
+        jTabbedPane.addTab("tab7", jScrollPane4);
 
         jScrollPane7.setBorder(null);
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -3727,6 +3682,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonSeguirEquipo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSeguirEquipo.setForeground(new java.awt.Color(255, 255, 255));
         botonSeguirEquipo.setText("SEGUIR");
+        botonSeguirEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSeguirEquipoMouseClicked(evt);
+            }
+        });
         botonSeguirEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSeguirEquipoActionPerformed(evt);
@@ -3774,7 +3734,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane7.setViewportView(jPanel11);
 
-        jTabbedPane.addTab("tab9", jScrollPane7);
+        jTabbedPane.addTab("tab8", jScrollPane7);
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -3925,7 +3885,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel121.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel9.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 315, 389));
 
-        jTabbedPane.addTab("tab10", jPanel9);
+        jTabbedPane.addTab("tab9", jPanel9);
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -4018,6 +3978,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonRegresarIngresarDatosSingle1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                botonRegresarIngresarDatosSingle1MouseEntered(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonRegresarIngresarDatosSingle1MouseExited(evt);
             }
@@ -4054,7 +4017,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel13.add(entradaCantidadJugadores2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
         jPanel13.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 490, 10));
 
-        jTabbedPane.addTab("tab11", jPanel13);
+        jTabbedPane.addTab("tab10", jPanel13);
 
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
         jPanel16.setPreferredSize(new java.awt.Dimension(1010, 1850));
@@ -4101,7 +4064,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel143.setText("Bienvenido al torneo");
         jPanel16.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
 
-        jTabbedPane.addTab("tab12", jPanel16);
+        jTabbedPane.addTab("tab11", jPanel16);
 
         jScrollPane9.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane9.setBorder(null);
@@ -4215,7 +4178,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane9.setViewportView(jPanel3);
 
-        jTabbedPane.addTab("tab13", jScrollPane9);
+        jTabbedPane.addTab("tab12", jScrollPane9);
 
         jScrollPane13.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane13.setBorder(null);
@@ -4376,7 +4339,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane13.setViewportView(jPanel18);
 
-        jTabbedPane.addTab("tab14", jScrollPane13);
+        jTabbedPane.addTab("tab13", jScrollPane13);
 
         jScrollPane19.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane19.setBorder(null);
@@ -4565,7 +4528,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane19.setViewportView(jPanel27);
 
-        jTabbedPane.addTab("tab15", jScrollPane19);
+        jTabbedPane.addTab("tab14", jScrollPane19);
 
         jScrollPane26.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane26.setBorder(null);
@@ -4782,7 +4745,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane26.setViewportView(jPanel33);
 
-        jTabbedPane.addTab("tab16", jScrollPane26);
+        jTabbedPane.addTab("tab15", jScrollPane26);
 
         jScrollPane43.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane43.setBorder(null);
@@ -5027,7 +4990,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jScrollPane43.setViewportView(jPanel55);
 
-        jTabbedPane.addTab("tab17", jScrollPane43);
+        jTabbedPane.addTab("tab16", jScrollPane43);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
@@ -5091,38 +5054,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonMenuBuscarJugador.setBackground(new Color(204,204,255));
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseExited
 
-    private void botonMenuFaseEliminacionDirectaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuFaseEliminacionDirectaMouseClicked
-        jTabbedPane.setSelectedIndex(3);
-        tituloSuperior.setText("Fases de eliminacion directa");
-        iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoEliminacionDirecta.png")));
-    }//GEN-LAST:event_botonMenuFaseEliminacionDirectaMouseClicked
-
-    private void botonMenuFaseEliminacionDirectaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuFaseEliminacionDirectaMouseMoved
-        botonMenuFaseEliminacionDirecta.setBackground(new Color(250,250,250));
-    }//GEN-LAST:event_botonMenuFaseEliminacionDirectaMouseMoved
-
-    private void botonMenuFaseEliminacionDirectaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuFaseEliminacionDirectaMouseEntered
-        // ME EQUIVOQUE Y EL IDE NO ME PERMITE QUITARLO
-    }//GEN-LAST:event_botonMenuFaseEliminacionDirectaMouseEntered
-
-    private void botonMenuFaseEliminacionDirectaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuFaseEliminacionDirectaMouseExited
-        botonMenuFaseEliminacionDirecta.setBackground(new Color(204,204,255));
-    }//GEN-LAST:event_botonMenuFaseEliminacionDirectaMouseExited
-
-    private void botonMenuVerCalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseClicked
-        jTabbedPane.setSelectedIndex(4);
-        tituloSuperior.setText("Ver calendario");
-        iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoCalendario.png")));
-    }//GEN-LAST:event_botonMenuVerCalendarioMouseClicked
-
-    private void botonMenuVerCalendarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseMoved
-        botonMenuVerCalendario.setBackground(new Color(250,250,250));
-    }//GEN-LAST:event_botonMenuVerCalendarioMouseMoved
-
-    private void botonMenuVerCalendarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseExited
-        botonMenuVerCalendario.setBackground(new Color(204,204,255));
-    }//GEN-LAST:event_botonMenuVerCalendarioMouseExited
-
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
         System.exit(0);
     }//GEN-LAST:event_botonSalidaMouseClicked
@@ -5148,7 +5079,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosEquipoActionPerformed
 
     private void botonRegresarIngresarDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseClicked
 
     private void botonFotoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoCapitanActionPerformed
@@ -5203,33 +5134,33 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaEquipoJugadorBActionPerformed
 
-    private void entradaCorreoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBActionPerformed
+    private void entradaEmailJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCorreoJugadorBActionPerformed
+    }//GEN-LAST:event_entradaEmailJugadorBActionPerformed
 
-    private void entradaCorreoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusLost
-        organizatorFocusLost(entradaCorreoJugadorB, "Ingresar correo del jugador");
-    }//GEN-LAST:event_entradaCorreoJugadorBFocusLost
+    private void entradaEmailJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorBFocusLost
+        organizatorFocusLost(entradaEmailJugadorB, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorBFocusLost
 
-    private void entradaCorreoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorBFocusGained
-        organizatorFocusGained (entradaCorreoJugadorB, "Ingresar correo del jugador");
-    }//GEN-LAST:event_entradaCorreoJugadorBFocusGained
+    private void entradaEmailJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorBFocusGained
+        organizatorFocusGained (entradaEmailJugadorB, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorBFocusGained
 
-    private void entradaTelefonoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBActionPerformed
+    private void entradaNumeroTelefonoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaTelefonoJugadorBActionPerformed
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBActionPerformed
 
-    private void entradaCedulaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBActionPerformed
+    private void entradaIdJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCedulaJugadorBActionPerformed
+    }//GEN-LAST:event_entradaIdJugadorBActionPerformed
 
-    private void entradaCedulaJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusLost
-        organizatorFocusLost(entradaCedulaJugadorB, "Ingresar numero de cedula jugador");
-    }//GEN-LAST:event_entradaCedulaJugadorBFocusLost
+    private void entradaIdJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIdJugadorBFocusLost
+        organizatorFocusLost(entradaIdJugadorB, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaIdJugadorBFocusLost
 
-    private void entradaCedulaJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorBFocusGained
-        organizatorFocusGained (entradaCedulaJugadorB, "Ingresar numero de cedula jugador");
-    }//GEN-LAST:event_entradaCedulaJugadorBFocusGained
+    private void entradaIdJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIdJugadorBFocusGained
+        organizatorFocusGained (entradaIdJugadorB, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaIdJugadorBFocusGained
 
     private void entradaNombreJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorBActionPerformed
         // TODO add your handling code here:
@@ -5248,7 +5179,16 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirDuplasActionPerformed
 
     private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
-        // TODO add your handling code here:
+        Player playerA = addPlayerTournament(entradaNombreJugadorA, entradaIdJugadorA, entradaNumeroTelefonoJugadorA, entradaEmailJugadorA, opcionesCategoriaJugadorA, entradaEquipoJugadorA, entradaFechaNacimientoJugadorA);
+        Player playerB = addPlayerTournament(entradaNombreJugadorB, entradaIdJugadorB, entradaNumeroTelefonoJugadorB, entradaEmailJugadorB, opcionesCategoriaJugadorB, entradaEquipoJugadorB, entradaFechaNacimientoJugadorB);
+        
+        cellsDoubles[0] = playerA.getName();
+        cellsDoubles[1] = playerA.getId();
+        cellsDoubles[2] = playerB.getName();
+        cellsDoubles[3] = playerB.getId();
+        cellsDoubles[4] = playerA.getCategory();
+        cellsDoubles[5] = playerB.getCategory();
+        tablaDuplasIngresados.addRow(cellsDoubles);
     }//GEN-LAST:event_botonAgregarJugadoresDuplaActionPerformed
 
     private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
@@ -5256,7 +5196,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosDoblesActionPerformed
 
     private void botonRegresarIngresarDatosDoblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseClicked
 
     private void botonFotoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFotoJugadorAActionPerformed
@@ -5283,33 +5223,33 @@ public class MenuOrganizator extends javax.swing.JFrame {
         organizatorFocusGained (entradaEquipoJugadorA, "Ingresar equipo del jugador");
     }//GEN-LAST:event_entradaEquipoJugadorAFocusGained
 
-    private void entradaCorreoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAActionPerformed
+    private void entradaEmailJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCorreoJugadorAActionPerformed
+    }//GEN-LAST:event_entradaEmailJugadorAActionPerformed
 
-    private void entradaCorreoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusLost
-        organizatorFocusLost(entradaCorreoJugadorA, "Ingresar correo jugador");
-    }//GEN-LAST:event_entradaCorreoJugadorAFocusLost
+    private void entradaEmailJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorAFocusLost
+        organizatorFocusLost(entradaEmailJugadorA, "Ingresar correo jugador");
+    }//GEN-LAST:event_entradaEmailJugadorAFocusLost
 
-    private void entradaCorreoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoJugadorAFocusGained
-        organizatorFocusGained (entradaCorreoJugadorA, "Ingresar correo del jugador");
-    }//GEN-LAST:event_entradaCorreoJugadorAFocusGained
+    private void entradaEmailJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorAFocusGained
+        organizatorFocusGained (entradaEmailJugadorA, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorAFocusGained
 
-    private void entradaTelefonoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAActionPerformed
+    private void entradaNumeroTelefonoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaTelefonoJugadorAActionPerformed
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAActionPerformed
 
-    private void entradaCedulaJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAActionPerformed
+    private void entradaIdJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCedulaJugadorAActionPerformed
+    }//GEN-LAST:event_entradaIdJugadorAActionPerformed
 
-    private void entradaCedulaJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusLost
-        organizatorFocusLost(entradaCedulaJugadorA, "Ingresar numero de cedula jugador");
-    }//GEN-LAST:event_entradaCedulaJugadorAFocusLost
+    private void entradaIdJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIdJugadorAFocusLost
+        organizatorFocusLost(entradaIdJugadorA, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaIdJugadorAFocusLost
 
-    private void entradaCedulaJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorAFocusGained
-        organizatorFocusGained (entradaCedulaJugadorA, "Ingresar numero de cedula jugador");
-    }//GEN-LAST:event_entradaCedulaJugadorAFocusGained
+    private void entradaIdJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIdJugadorAFocusGained
+        organizatorFocusGained (entradaIdJugadorA, "Ingresar numero de cedula jugador");
+    }//GEN-LAST:event_entradaIdJugadorAFocusGained
 
     private void entradaNombreJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorAActionPerformed
         // TODO add your handling code here:
@@ -5332,13 +5272,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarJugadorActionPerformed
 
     private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
-        Player player = addPlayerSingleSingleTournament(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
+        Player player = addPlayerSingleTournament(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
 
-        cells[0] = entradaNombreJugador.getText();
-        cells[1] = entradaIDJugador.getText();
-        cells[2] = entradaNumeroTelefonoJugador.getText();
-        cells[3] = opcionesCategoriaJugador.getSelectedItem();
-        tablaJugadoresIngresados.addRow(cells);
+        cellsSingle[0] = entradaNombreJugador.getText();
+        cellsSingle[1] = entradaIDJugador.getText();
+        cellsSingle[2] = entradaNumeroTelefonoJugador.getText();
+        cellsSingle[3] = opcionesCategoriaJugador.getSelectedItem();
+        tablaJugadoresIngresados.addRow(cellsSingle);
     }//GEN-LAST:event_botonAgregarJugadorActionPerformed
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
@@ -5350,7 +5290,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
 
     private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
 
     private void botonSubirFotoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSubirFotoJugadorActionPerformed
@@ -5403,9 +5343,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
     private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
         switch(opcionCrearTorneo){
-            case 1 -> jTabbedPane.setSelectedIndex(6);
-            case 2 -> jTabbedPane.setSelectedIndex(7);
-            case 3 -> jTabbedPane.setSelectedIndex(8);
+            case 1 -> jTabbedPane.setSelectedIndex(5);
+            case 2 -> jTabbedPane.setSelectedIndex(6);
+            case 3 -> jTabbedPane.setSelectedIndex(7);
             default -> jTabbedPane.setSelectedIndex(0);
         }
 
@@ -5540,7 +5480,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingleMouseExited
 
     private void botonCrearTorneoSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
         opcionCrearTorneo = 1;
     }//GEN-LAST:event_botonCrearTorneoSingleMouseClicked
 
@@ -5553,7 +5493,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipoMouseExited
 
     private void botonCrearTorneoEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipoMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
         opcionCrearTorneo = 3;
     }//GEN-LAST:event_botonCrearTorneoEquipoMouseClicked
 
@@ -5566,7 +5506,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDobleMouseExited
 
     private void botonCrearTorneoDobleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseClicked
-        jTabbedPane.setSelectedIndex(5);
+        jTabbedPane.setSelectedIndex(4);
         opcionCrearTorneo = 2;
     }//GEN-LAST:event_botonCrearTorneoDobleMouseClicked
 
@@ -5582,21 +5522,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         organizatorFocusLost (entradaEquipoJugadorB, "Ingresar equipo del jugador");
     }//GEN-LAST:event_entradaEquipoJugadorBFocusLost
 
-    private void entradaTelefonoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAFocusGained
-        organizatorFocusGained (entradaTelefonoJugadorA, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaTelefonoJugadorAFocusGained
+    private void entradaNumeroTelefonoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusGained
 
-    private void entradaTelefonoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorAFocusLost
-        organizatorFocusLost (entradaTelefonoJugadorA, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaTelefonoJugadorAFocusLost
+    private void entradaNumeroTelefonoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusLost
 
-    private void entradaTelefonoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBFocusGained
-        organizatorFocusGained (entradaTelefonoJugadorB, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaTelefonoJugadorBFocusGained
+    private void entradaNumeroTelefonoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusGained
 
-    private void entradaTelefonoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaTelefonoJugadorBFocusLost
-        organizatorFocusLost (entradaTelefonoJugadorB, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaTelefonoJugadorBFocusLost
+    private void entradaNumeroTelefonoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusLost
 
     private void entradaFechaNacimientoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusGained
         organizatorFocusGained (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
@@ -5751,7 +5691,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonConfigurarGruposMouseMoved
 
     private void botonConfigurarGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarGruposMouseClicked
-        jTabbedPane.setSelectedIndex(10);
+        jTabbedPane.setSelectedIndex(9);
     }//GEN-LAST:event_botonConfigurarGruposMouseClicked
 
     private void botonConfigurarGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarGruposMouseExited
@@ -5815,16 +5755,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosSingle1MouseMoved
 
     private void botonRegresarIngresarDatosSingle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingle1MouseClicked
-        jTabbedPane.setSelectedIndex(9);
+        jTabbedPane.setSelectedIndex(8);
     }//GEN-LAST:event_botonRegresarIngresarDatosSingle1MouseClicked
 
     private void botonRegresarIngresarDatosSingle1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingle1MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosSingle1MouseExited
-
-    private void botonRegresarIngresarDatosSingle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingle1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingle1ActionPerformed
 
     private void entradaCantidadJugadores2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores2FocusGained
         // TODO add your handling code here:
@@ -6091,11 +6027,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle8MouseExited
 
     private void botonSeguirIngresarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseClicked
-        jTabbedPane.setSelectedIndex(9);
+        jTabbedPane.setSelectedIndex(8);
     }//GEN-LAST:event_botonSeguirIngresarJugadorMouseClicked
 
     private void botonSeguirIngresarJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugador1MouseClicked
-        jTabbedPane.setSelectedIndex(2);
+        jTabbedPane.setSelectedIndex(1);
     }//GEN-LAST:event_botonSeguirIngresarJugador1MouseClicked
 
     private void NombreOrganizadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseMoved
@@ -6110,6 +6046,36 @@ public class MenuOrganizator extends javax.swing.JFrame {
         Player player = organizatorFindPlayer(textoBuscarJugador, organizator.getPlayerList());
         organizatorShowPlayerInformation(mostrarNombre, jTextField11, jTextField2, jTextField6, jTextField3, jTextField8, jTextField5, jTextField10, jTextField7, player);
     }//GEN-LAST:event_botonBuscarJugadorMouseClicked
+
+    private void botonMenuVerCalendarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseExited
+        botonMenuVerCalendario.setBackground(new Color(204,204,255));
+    }//GEN-LAST:event_botonMenuVerCalendarioMouseExited
+
+    private void botonMenuVerCalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseClicked
+        jTabbedPane.setSelectedIndex(3);
+        tituloSuperior.setText("Ver calendario");
+        iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoCalendario.png")));
+    }//GEN-LAST:event_botonMenuVerCalendarioMouseClicked
+
+    private void botonMenuVerCalendarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseMoved
+        botonMenuVerCalendario.setBackground(new Color(250,250,250));
+    }//GEN-LAST:event_botonMenuVerCalendarioMouseMoved
+
+    private void botonRegresarIngresarDatosSingle1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingle1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingle1MouseEntered
+
+    private void botonSeguirDuplasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseClicked
+        jTabbedPane.setSelectedIndex(8);
+    }//GEN-LAST:event_botonSeguirDuplasMouseClicked
+
+    private void botonSeguirEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseClicked
+        jTabbedPane.setSelectedIndex(8);
+    }//GEN-LAST:event_botonSeguirEquipoMouseClicked
+
+    private void botonRegresarIngresarDatosSingle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingle1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingle1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -6152,7 +6118,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonFotoJugadorB;
     private javax.swing.JPanel botonMenuBuscarJugador;
     private javax.swing.JPanel botonMenuCrearTorneo;
-    private javax.swing.JPanel botonMenuFaseEliminacionDirecta;
     private javax.swing.JPanel botonMenuVerCalendario;
     private javax.swing.JPanel botonMenuVerTorneos;
     private javax.swing.JLabel botonMinimizar;
@@ -6175,13 +6140,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField entradaCantidadJugadores2;
     private javax.swing.JTextField entradaCantidadParticipantesGrupos;
     private javax.swing.JTextField entradaCedulaCapitan;
-    private javax.swing.JTextField entradaCedulaJugadorA;
-    private javax.swing.JTextField entradaCedulaJugadorB;
     private javax.swing.JTextField entradaCorreoCapitan;
-    private javax.swing.JTextField entradaCorreoJugadorA;
-    private javax.swing.JTextField entradaCorreoJugadorB;
     private javax.swing.JTextField entradaCostoTorneo;
     private javax.swing.JTextField entradaEmailJugador;
+    private javax.swing.JTextField entradaEmailJugadorA;
+    private javax.swing.JTextField entradaEmailJugadorB;
     private javax.swing.JTextField entradaEquipoJugador;
     private javax.swing.JTextField entradaEquipoJugadorA;
     private javax.swing.JTextField entradaEquipoJugadorB;
@@ -6190,6 +6153,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField entradaFechaNacimientoJugadorA;
     private javax.swing.JTextField entradaFechaNacimientoJugadorB;
     private javax.swing.JTextField entradaIDJugador;
+    private javax.swing.JTextField entradaIdJugadorA;
+    private javax.swing.JTextField entradaIdJugadorB;
     private javax.swing.JTextField entradaNombreCapitan;
     private javax.swing.JTextField entradaNombreEquipo;
     private javax.swing.JTextField entradaNombreJugador;
@@ -6198,8 +6163,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField entradaNombreTorneo;
     private javax.swing.JTextField entradaNumeroTelefonoCapitan;
     private javax.swing.JTextField entradaNumeroTelefonoJugador;
-    private javax.swing.JTextField entradaTelefonoJugadorA;
-    private javax.swing.JTextField entradaTelefonoJugadorB;
+    private javax.swing.JTextField entradaNumeroTelefonoJugadorA;
+    private javax.swing.JTextField entradaNumeroTelefonoJugadorB;
     private javax.swing.JLabel iconoSuperior;
     private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta;
     private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta1;
@@ -6229,7 +6194,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
@@ -6240,7 +6204,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel127;
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
@@ -6475,7 +6438,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
@@ -6508,7 +6470,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
@@ -6568,6 +6529,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane37;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane43;
     private javax.swing.JScrollPane jScrollPane44;
@@ -6577,7 +6539,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane48;
     private javax.swing.JScrollPane jScrollPane49;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
@@ -6699,4 +6660,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField textoBuscarJugador;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables
+
+    private Player addPlayerSingleTournament(JTextField entradaNombreJugador, JTextField entradaIDJugador, JTextField entradaNumeroTelefonoJugador, JTextField entradaEmailJugador, JComboBox<String> opcionesCategoriaJugador, JTextField entradaEquipoJugador, JTextField entradaFechaNacimientoJugador) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

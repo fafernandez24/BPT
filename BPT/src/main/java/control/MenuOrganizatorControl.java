@@ -20,17 +20,18 @@ import model.Player;
  */
 public class MenuOrganizatorControl {
     
-    public static Player addPlayerSingleSingleTournament(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
+    public static Player addPlayerTournament(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
         String name = nombre.getText();
         String identification = id.getText();
+        String password = identification;
         String cellPhoneNumber = phoneNumber.getText();
         String gmail = email.getText();
-        String level = category.getToolTipText();
+        String level = (String) category.getSelectedItem();
         String teamName = team.getText();
         LocalDate date = StringBecomeLocalDate(dateBirth.getText());   
-        return new Player(cellPhoneNumber, level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, identification, gmail, date); 
+        return new Player(level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, password, gmail, date, cellPhoneNumber); 
     }
-    
+   
     public static void organizatorFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
     }

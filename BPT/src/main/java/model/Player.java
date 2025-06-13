@@ -13,7 +13,6 @@ import java.time.LocalDate;
 public class Player extends Person{
    
     // Attributes
-    protected String phoneNumber;
     protected String category;
     protected String teamName;
     protected int matchesPlayed;
@@ -32,10 +31,9 @@ public class Player extends Person{
     // Constructor #1
     public Player(){};
     
-    // Constructor #2
-    public Player(String phoneNumber, String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth) {
-        super(id, name, password, email, dateBirth);
-        this.phoneNumber = phoneNumber;
+    // Constructor #2// Constructor #2
+    public Player(String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber) {
+        super(id, name, password, email, dateBirth, phoneNumber);
         this.category = category;
         this.teamName = teamName;
         this.matchesPlayed = matchesPlayed;
@@ -51,7 +49,6 @@ public class Player extends Person{
     }
 
     // Getter Methods
-
     public String getPhoneNumber() {
         return phoneNumber;
     }

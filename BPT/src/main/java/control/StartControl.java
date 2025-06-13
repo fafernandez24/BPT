@@ -7,7 +7,6 @@ package control;
 import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateAdministratorId;
 import static control.ValidationControl.validateAdministratorPassword;
-import static control.ValidationControl.validateDeveloper;
 import static control.ValidationControl.validateOrganizator;
 import static control.ValidationControl.validateOrganizatorId;
 import static control.ValidationControl.validateOrganizatorPassword;
@@ -46,8 +45,7 @@ public class StartControl {
         MenuAdministrator openMenu = new MenuAdministrator(administrator);
         openMenu.setVisible(true);
     }
-    
-    
+      
     // FOCUS GAINED AND LOST METHODS
     
     public static void startFocusGained(JTextField dataEnter, String message){
@@ -81,21 +79,21 @@ public class StartControl {
     public static int startCheckingOrganizator(JTextField idField, JPasswordField passwordField, List<Organizator> organizator){
         String textId = idField.getText();
         String textPassword = new String(passwordField.getPassword());
-        if (!validateOrganizator(textId, textPassword, organizator) && !validateDeveloper(textId, textPassword)) return 0;
+        if (!validateOrganizator(textId, textPassword, organizator)) return 0;
         return 1;
     }
     
     public static int startCheckingPlayer(JTextField idField, JPasswordField passwordField, List<Player> player){
         String textId = idField.getText();
         String textPassword = new String(passwordField.getPassword());
-        if (!validatePlayer(textId, textPassword, player) && !validateDeveloper(textId, textPassword)) return 0;
+        if (!validatePlayer(textId, textPassword, player)) return 0;
         return 2;
     }
     
     public static int startCheckingAdministrator(JTextField idField, JPasswordField passwordField, List<Administrator> administrator){
         String textId = idField.getText();
         String textPassword = new String(passwordField.getPassword());
-        if (!validateAdministrator(textId, textPassword, administrator) && !validateDeveloper(textId, textPassword)) return 0;
+        if (!validateAdministrator(textId, textPassword, administrator)) return 0;
         return 3;
     }
     
