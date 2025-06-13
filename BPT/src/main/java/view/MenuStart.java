@@ -22,14 +22,17 @@ import model.Player;
  */
 public class MenuStart extends javax.swing.JFrame {
     
-    private Organizator organizator;
+    private List<Organizator> organizator;
     private List<Player> player;
-    private Administrator administrator;
+    private List<Administrator> administrator;
 
     /**
      * Creates new form start
+     * @param organizator
+     * @param player
+     * @param administrator
      */
-    public MenuStart(Organizator organizator, List<Player> player, Administrator administrator) {
+    public MenuStart(List<Organizator> organizator, List<Player> player, List<Administrator> administrator) {
         this.organizator = organizator;
         this.player = player;
         this.administrator = administrator;

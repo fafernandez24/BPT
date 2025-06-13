@@ -23,19 +23,25 @@ public class ValidationControl {
     
     // VALIDAR ORGANIZADORES
     
-    public static boolean validateOrganizator(String id, String password, Organizator organizator){
-        String textId = organizator.getId(), textPassword = organizator.getPassword();
-        return id.equals(textId) && password.equals(textPassword);
+    public static boolean validateOrganizator(String id, String password, List<Organizator> organizator){
+        for (int i = 0; i < organizator.size(); i++){
+            if (organizator.get(i).getId().equals(id) && organizator.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
     }
     
-        public static boolean validateOrganizatorId(String id, Organizator organizator){
-        String textId = organizator.getId();
-        return id.equals(textId);
+    public static boolean validateOrganizatorId(String id, List<Organizator> organizator){
+        for (int i = 0; i < organizator.size(); i++){
+            if (organizator.get(i).getId().equals(id)) return true;
+        }
+        return false;
     }
-        
-    public static boolean validateOrganizatorPassword(String password, Organizator organizator){
-        String textPassword = organizator.getPassword();
-        return password.equals(textPassword);
+    
+    public static boolean validateOrganizatorPassword(String password, List<Organizator> organizator){
+        for (int i = 0; i < organizator.size(); i++){
+            if (organizator.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
     }
     
     // VALIDAR JUGADORES
@@ -63,21 +69,26 @@ public class ValidationControl {
     
     //     // VALIDAR ADMINISTRADORES
     
-    public static boolean validateAdministrator(String id, String password, Administrator administrator){
-        String textId = administrator.getId(), textPassword = administrator.getPassword();
-        return id.equals(textId) && password.equals(textPassword);
-    }
-
-    public static boolean validateAdministratorId(String id, Administrator administrator){
-        String textId = administrator.getId();
-        return id.equals(textId);
+    public static boolean validateAdministrator(String id, String password, List<Administrator> administrator){
+        for (int i = 0; i < administrator.size(); i++){
+            if (administrator.get(i).getId().equals(id) && administrator.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
     }
     
-    public static boolean validateAdministratorPassword(String password, Administrator administrator){
-        String textPassword = administrator.getPassword();
-        return password.equals(textPassword);
+    public static boolean validateAdministratorId(String id, List<Administrator> administrator){
+        for (int i = 0; i < administrator.size(); i++){
+            if (administrator.get(i).getId().equals(id)) return true;
+        }
+        return false;
     }
     
+    public static boolean validateAdministratorPassword(String password, List<Administrator> administrator){
+        for (int i = 0; i < administrator.size(); i++){
+            if (administrator.get(i).getPassword().equals(password)) return true;
+        }
+        return false;
+    }
     
     public boolean validateName(String name){
         return name.matches("/^[a-zA-ZÀ-ÿñÑ]+(([,\\. -][a-zA-ZÀ-ÿñÑ ])?[a-zA-ZÀ-ÿñÑ]*)*[^\\w\\s\\d\\(\\)\\[\\]\\?]$/");

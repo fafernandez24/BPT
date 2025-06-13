@@ -8,11 +8,9 @@ import static control.ValidationControl.validateAdministrator;
 import static control.ValidationControl.validateAdministratorId;
 import static control.ValidationControl.validateAdministratorPassword;
 import static control.ValidationControl.validateDeveloper;
-import static control.ValidationControl.validateId;
 import static control.ValidationControl.validateOrganizator;
 import static control.ValidationControl.validateOrganizatorId;
 import static control.ValidationControl.validateOrganizatorPassword;
-import static control.ValidationControl.validatePassword;
 import static control.ValidationControl.validatePlayer;
 import static control.ValidationControl.validatePlayerId;
 import static control.ValidationControl.validatePlayerPassword;
@@ -35,17 +33,17 @@ import view.MenuPlayer;
 public class StartControl {
     
     public static void openMenuOrganizator(Organizator organizator){
-        MenuOrganizator openMenu = new MenuOrganizator();
+        MenuOrganizator openMenu = new MenuOrganizator(organizator);
         openMenu.setVisible(true);
     }
 
-    public static void openMenuPlayer(){
-        MenuPlayer openMenu = new MenuPlayer();
+    public static void openMenuPlayer(Player player){
+        MenuPlayer openMenu = new MenuPlayer(player);
         openMenu.setVisible(true);
     }
     
-    public static void openMenuAdministrator(){
-        MenuAdministrator openMenu = new MenuAdministrator();
+    public static void openMenuAdministrator(Administrator administrator){
+        MenuAdministrator openMenu = new MenuAdministrator(administrator);
         openMenu.setVisible(true);
     }
     
@@ -80,7 +78,7 @@ public class StartControl {
         
     // Boton Iniciar sesion
     
-    public static int startCheckingOrganizator(JTextField idField, JPasswordField passwordField, Organizator organizator){
+    public static int startCheckingOrganizator(JTextField idField, JPasswordField passwordField, List<Organizator> organizator){
         String textId = idField.getText();
         String textPassword = new String(passwordField.getPassword());
         if (!validateOrganizator(textId, textPassword, organizator) && !validateDeveloper(textId, textPassword)) return 0;
@@ -94,14 +92,14 @@ public class StartControl {
         return 2;
     }
     
-    public static int startCheckingAdministrator(JTextField idField, JPasswordField passwordField, Administrator administrator){
+    public static int startCheckingAdministrator(JTextField idField, JPasswordField passwordField, List<Administrator> administrator){
         String textId = idField.getText();
         String textPassword = new String(passwordField.getPassword());
         if (!validateAdministrator(textId, textPassword, administrator) && !validateDeveloper(textId, textPassword)) return 0;
         return 3;
     }
     
-    public static int startLoging(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField idField, JPasswordField passwordField, Organizator organizator, List<Player> player, Administrator administrator){
+    public static int startLoging(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField idField, JPasswordField passwordField, List<Organizator> organizator, List<Player> player, List<Administrator> administrator){
         if (checkBoxOrganizator.isSelected()) return startCheckingOrganizator(idField, passwordField, organizator);
         else if (checkBoxPlayer.isSelected()) return startCheckingPlayer(idField, passwordField, player);
         else if (checkBoxAdministrator.isSelected()) return startCheckingAdministrator(idField, passwordField, administrator);
@@ -123,80 +121,107 @@ public class StartControl {
         return 0;
     }
     
-    public static void startConditionForChangeIdColor(JTextField idField, Organizator organizator){
+    public static void startConditionForChangeIdColorOrganizator(JTextField idField, List<Organizator> organizator){
         String id = idField.getText();
         if (!validateOrganizatorId(id, organizator)) idChangeColor(idField, 255, 0, 51);
     }
     
-    public static void startConditionForChangeIdColor(JTextField idField, List<Player> player){
+    public static void startConditionForChangeIdColorPlayer(JTextField idField, List<Player> player){
         String id = idField.getText();
         if (!validatePlayerId(id, player)) idChangeColor(idField, 255, 0, 51);
     }
     
-    public static void startConditionForChangeIdColor(JTextField idField, Administrator administrator){
+    public static void startConditionForChangeIdColorAdministrator(JTextField idField, List<Administrator> administrator){
         String id = idField.getText();
         if (!validateAdministratorId(id, administrator)) idChangeColor(idField, 255, 0, 51);
     }
     
-    public static void startConditionForChangePasswordColor(JPasswordField passwordField, Organizator organizator){
+    public static void startConditionForChangePasswordColorOrganizator(JPasswordField passwordField, List<Organizator> organizator){
         String textPassword = new String(passwordField.getPassword());
         if (!validateOrganizatorPassword(textPassword, organizator)) passwordChangeColor(passwordField, 255, 0, 51);
     }
     
-    public static void startConditionForChangePasswordColor(JPasswordField passwordField, List<Player> player){
+    public static void startConditionForChangePasswordColorPlayer(JPasswordField passwordField, List<Player> player){
         String textPassword = new String(passwordField.getPassword());
         if (!validatePlayerPassword(textPassword, player)) passwordChangeColor(passwordField, 255, 0, 51);
     }
     
-    public static void startConditionForChangePasswordColor(JPasswordField passwordField, Administrator administrator){
+    public static void startConditionForChangePasswordColorAdministrator(JPasswordField passwordField, List<Administrator> administrator){
         String textPassword = new String(passwordField.getPassword());
         if (!validateAdministratorPassword(textPassword, administrator)) passwordChangeColor(passwordField, 255, 0, 51);
     }
     
-    public static void startChangeColor(JTextField idField, JPasswordField passwordField, Organizator organizator){
-        startConditionForChangeIdColor(idField, organizator);
-        startConditionForChangePasswordColor(passwordField, organizator);
+    public static void startChangeColorOrganizator(JTextField idField, JPasswordField passwordField, List<Organizator> organizator){
+        startConditionForChangeIdColorOrganizator(idField, organizator);
+        startConditionForChangePasswordColorOrganizator(passwordField, organizator);
     }
     
-    public static void startChangeColor(JTextField idField, JPasswordField passwordField, List<Player> player){
-        startConditionForChangeIdColor(idField, player);
-        startConditionForChangePasswordColor(passwordField, player);
+    public static void startChangeColorPlayer(JTextField idField, JPasswordField passwordField, List<Player> player){
+        startConditionForChangeIdColorPlayer(idField, player);
+        startConditionForChangePasswordColorPlayer(passwordField, player);
     }
     
-    public static void startChangeColor(JTextField idField, JPasswordField passwordField, Administrator administrator){
-        startConditionForChangeIdColor(idField, administrator);
-        startConditionForChangePasswordColor(passwordField, administrator);
+    public static void startChangeColorAdministrator(JTextField idField, JPasswordField passwordField, List<Administrator> administrator){
+        startConditionForChangeIdColorAdministrator(idField, administrator);
+        startConditionForChangePasswordColorAdministrator(passwordField, administrator);
     }
     
-    public static void startShowWhereIsError(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField id, JPasswordField password, Organizator organizator, List<Player> player, Administrator administrator){
+    public static void startShowWhereIsError(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField id, JPasswordField password, List<Organizator> organizator, List<Player> player, List<Administrator> administrator){
         int option = startWhoIsTheIsue(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator);
         switch(option){
-            case 1 -> startChangeColor(id, password, organizator);
-            case 2 -> startChangeColor(id, password, player);
-            case 3 -> startChangeColor(id, password, administrator);
+            case 1 -> startChangeColorOrganizator(id, password, organizator);
+            case 2 -> startChangeColorPlayer(id, password, player);
+            case 3 -> startChangeColorAdministrator(id, password, administrator);
         }
     }
     
-    public static boolean startValidateDataEnter(JTextField id, JPasswordField password, Organizator organizator){
-        String textId = id.getText();
-        String textPassword = new String(password.getPassword());
-        return validateId(textId) && validatePassword(textPassword) && validateOrganizator(textId, textPassword, organizator);
+    public static Organizator startFindOrganizator(JTextField dataEnterId, List<Organizator> organizatorList){
+        Organizator organizator = new Organizator();
+        for (int i = 0; i < organizatorList.size(); i++){
+            if(organizatorList.get(i).getId().equals(dataEnterId.getText())) organizator = organizatorList.get(i);
+        }
+        return organizator;
     }
     
-    public static void openAnyMenu(int option, JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, Organizator organizator, List<Player> player, Administrator administrator){
+    public static Player startFindPlayer(JTextField dataEnterId, List<Player> playerList){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
+        }
+        return player;
+    }
+    
+    public static Administrator startFindAdministrator(JTextField dataEnterId, List<Administrator> administratorList){
+        Administrator administrator = new Administrator();
+        for (int i = 0; i < administratorList.size(); i++){
+            if(administratorList.get(i).getId().equals(dataEnterId.getText())) administrator = administratorList.get(i);
+        }
+        return administrator;
+    }
+    
+    public static void openAnyMenu(int option, JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administratorList){
         switch(option){
-            case 1 -> openMenuOrganizator(organizator);
-            case 2 -> openMenuPlayer();
-            case 3 -> openMenuAdministrator();
-            default -> startShowWhereIsError(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizator, player, administrator);  
+            case 1 -> {
+                Organizator organizator = startFindOrganizator(dataEnterId, organizatorList);
+                openMenuOrganizator(organizator);
+            }
+            case 2 -> {
+                Player player = startFindPlayer(dataEnterId, playerList);
+                openMenuPlayer(player);
+            }
+            case 3 -> {
+                Administrator administrator = startFindAdministrator(dataEnterId, administratorList);
+                openMenuAdministrator(administrator);
+            }  
+            default -> startShowWhereIsError(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administratorList);  
         }
     }
     
     // Presionar boton de iniciar sesion
     
-    public static void pushLoginButton(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, Organizator organizator, List<Player> player, Administrator administrator){
-        int login = startLoging(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizator, player, administrator);
-        openAnyMenu(login, checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizator, player, administrator);
+    public static void pushLoginButton(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administrator){
+        int login = startLoging(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administrator);
+        openAnyMenu(login, checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administrator);
     }  
     
 }

@@ -5,17 +5,22 @@
 package view;
 
 import java.awt.Color;
+import model.Administrator;
 
 /**
  *
  * @author Freddy A. Fernández
  */
 public class MenuAdministrator extends javax.swing.JFrame {
+    
+    private Administrator administrator;
 
     /**
-     * Creates new form Organizator
+     * Creates new form Administrator
+     * @param administrator
      */
-    public MenuAdministrator() {
+    public MenuAdministrator(Administrator administrator) {
+        this.administrator = administrator;
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -65,7 +70,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
         botonSalida = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        NombreOrganizador = new javax.swing.JLabel();
+        NombreAdministrador = new javax.swing.JLabel();
         IconoCalendario = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         botonAdministrarPago = new javax.swing.JPanel();
@@ -77,14 +82,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         iconoSuperior = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
-        jPanel30 = new javax.swing.JPanel();
-        jLabel90 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
-        jPanel31 = new javax.swing.JPanel();
-        jLabel91 = new javax.swing.JLabel();
-        jPanel32 = new javax.swing.JPanel();
-        jLabel93 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel90 = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -353,11 +354,11 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        NombreOrganizador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        NombreOrganizador.setForeground(new java.awt.Color(255, 255, 255));
-        NombreOrganizador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NombreOrganizador.setText("ADMINISTRADOR");
-        jPanel4.add(NombreOrganizador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 140, -1));
+        NombreAdministrador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        NombreAdministrador.setForeground(new java.awt.Color(255, 255, 255));
+        NombreAdministrador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NombreAdministrador.setText("ADMINISTRADOR");
+        jPanel4.add(NombreAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 140, -1));
 
         IconoCalendario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotoPerfilPequenio.png"))); // NOI18N
         jPanel4.add(IconoCalendario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 230, 200));
@@ -439,6 +440,31 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel92.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel92.setText("ADMINISTRAR PAGOS");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(389, 389, 389)
+                .addComponent(jLabel92)
+                .addContainerGap(469, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
+                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(389, Short.MAX_VALUE))
+        );
+
+        jTabbedPane.addTab("tab1", jPanel3);
+
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
@@ -463,81 +489,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         );
 
         jTabbedPane.addTab("tab2", jPanel30);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel92.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel92.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel92.setText("ADMINISTRAR PAGOS");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel92)
-                .addContainerGap(469, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
-        );
-
-        jTabbedPane.addTab("tab4", jPanel3);
-
-        jPanel31.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel91.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel91.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel91.setText("fase eliminacion directa");
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel91)
-                .addContainerGap(399, Short.MAX_VALUE))
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel31Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel91, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
-        );
-
-        jTabbedPane.addTab("tab3", jPanel31);
-
-        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel93.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel93.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel93.setText("calendario");
-
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(jLabel93)
-                .addContainerGap(497, Short.MAX_VALUE))
-        );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel32Layout.createSequentialGroup()
-                .addGap(257, 257, 257)
-                .addComponent(jLabel93, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(378, Short.MAX_VALUE))
-        );
-
-        jTabbedPane.addTab("tab5", jPanel32);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
 
@@ -594,51 +545,11 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private void botonAdministrarPagoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAdministrarPagoMouseMoved
         botonAdministrarPago.setBackground(new Color(250,250,250));
     }//GEN-LAST:event_botonAdministrarPagoMouseMoved
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuAdministrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuAdministrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuAdministrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuAdministrator.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new MenuAdministrator().setVisible(true);
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
-    private javax.swing.JLabel NombreOrganizador;
+    private javax.swing.JLabel NombreAdministrador;
     private javax.swing.JPanel botonAdministrarPago;
     private javax.swing.JLabel botonMinimizar;
     private javax.swing.JLabel botonSalida;
@@ -670,9 +581,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -684,8 +593,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JTabbedPane jTabbedPane;

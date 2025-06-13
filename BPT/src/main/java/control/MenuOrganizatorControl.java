@@ -7,6 +7,7 @@ package control;
 import static control.TypeBecomeType.StringBecomeLocalDate;
 import java.awt.Color;
 import java.time.LocalDate;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
@@ -51,6 +52,26 @@ public class MenuOrganizatorControl {
     
     public static void changeButtonColor(JButton button, int r, int g, int b){
         button.setBackground(new Color(r,g,b));
+    }
+    
+    public static Player organizatorFindPlayer(JTextField dataEnterId, List<Player> playerList){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
+        }
+        return player;
+    }
+    
+    public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField categoryField, JTextField teamField, JTextField mathPlayedField, JTextField matchesWonField, Player player){
+        nameField.setText(player.getName());
+        phoneField.setText(player.getPhoneNumber());
+        dateBirthField.setText(player.getDateBirth().toString());
+        idField.setText(player.getId());
+        email.setText(player.getEmail());
+        categoryField.setText(player.getCategory());
+        teamField.setText(player.getTeamName());
+        mathPlayedField.setText(String.valueOf(player.getMatchesPlayed()));
+        matchesWonField.setText(String.valueOf(player.getMatchesWon()));
     }
     
     
