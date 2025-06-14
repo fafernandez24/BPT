@@ -28,10 +28,12 @@ public class BPT {
         
         Player freddyPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Player juanFreddy = new Player("6ta Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
+        Player carlosAPlayer = new Player("7ma Categoria", "Tamanaco Team", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
         
         List<Player> playerList = new ArrayList<>();
         playerList.add(freddyPlayer);
         playerList.add(juanFreddy);
+        playerList.add(carlosAPlayer);
         
         Organizator organizator = new Organizator(tournamentList, playerList, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
         Organizator freddyOrganizator = new Organizator(tournamentList, playerList, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");

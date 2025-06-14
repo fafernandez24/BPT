@@ -44,7 +44,7 @@ public class MenuStart extends javax.swing.JFrame {
     }
     
     private void newIcon(){
-        Image icon = new ImageIcon(getClass().getResource("/images/tamanacoLogoUltraPequenio.png")).getImage();
+        Image icon = new ImageIcon(getClass().getResource("/images/logoTamanacoSinFuego.png")).getImage();
         this.setIconImage(icon);
     }
 

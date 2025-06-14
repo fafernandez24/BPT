@@ -1014,26 +1014,26 @@
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/rogerDobles.jpg"/>
+                      <Image iconType="3" name="/images/dobleAzul.jpeg"/>
                     </Property>
                     <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="410" y="230" width="230" height="180"/>
+                      <AbsoluteConstraints x="410" y="230" width="230" height="150"/>
                     </Constraint>
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel77">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/dkocovik.jpg"/>
+                      <Image iconType="3" name="/images/djocovikAzul.jpg"/>
                     </Property>
                     <Property name="verticalAlignment" type="int" value="1"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="70" y="230" width="240" height="150"/>
+                      <AbsoluteConstraints x="80" y="230" width="230" height="150"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1454,7 +1454,7 @@
                           <Properties>
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/SteffiGraf.jpg"/>
+                              <Image iconType="3" name="/images/djocovik celebrando.jpg"/>
                             </Property>
                             <Property name="toolTipText" type="java.lang.String" value=""/>
                             <Property name="autoscrolls" type="boolean" value="true"/>
@@ -1529,12 +1529,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1584,12 +1585,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1673,12 +1675,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1763,7 +1766,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel162">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/djocovik celebrando.jpg"/>
+                              <Image iconType="3" name="/images/SteffiGraf.jpg"/>
                             </Property>
                             <Property name="verticalAlignment" type="int" value="1"/>
                           </Properties>
@@ -1852,12 +1855,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1907,12 +1911,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -1996,12 +2001,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2175,12 +2181,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2230,12 +2237,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2319,12 +2327,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2513,12 +2522,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2568,12 +2578,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2657,12 +2668,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2836,12 +2848,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2891,12 +2904,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="80" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -2980,12 +2994,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3159,12 +3174,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3214,12 +3230,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3303,12 +3320,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3482,12 +3500,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3537,12 +3556,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -3626,12 +3646,13 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
+                                <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="VER TORNEO"/>
                                 <Property name="toolTipText" type="java.lang.String" value=""/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                                  <AbsoluteConstraints x="20" y="10" width="-1" height="-1"/>
+                                  <AbsoluteConstraints x="20" y="10" width="90" height="-1"/>
                                 </Constraint>
                               </Constraints>
                             </Component>
@@ -4257,7 +4278,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="99" green="99" red="99" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="VISUALIZAR CALENDARIO..."/>
+                    <Property name="text" type="java.lang.String" value="Ver CALENDARIO..."/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
