@@ -69,6 +69,7 @@ view\MenuOrganizator$186.class
 view\MenuPlayer.class
 view\MenuConfigurations$34.class
 view\MenuOrganizator$163.class
+view\MenuAdministrator$8.class
 view\MenuOrganizator$106.class
 model\Pay.class
 view\MenuOrganizator$63.class
@@ -129,6 +130,7 @@ view\MenuOrganizator$144.class
 view\MenuOrganizator$68.class
 view\MenuOrganizator$139.class
 view\MenuOrganizator$73.class
+control\MenuAdministratorControl.class
 view\MenuConfigurations$45.class
 view\MenuOrganizator$19.class
 view\MenuOrganizator$22.class
@@ -189,6 +191,7 @@ view\MenuOrganizator$70.class
 view\MenuOrganizator$40.class
 view\MenuConfigurations$7.class
 view\MenuConfigurations$33.class
+view\MenuAdministrator$10.class
 view\MenuConfigurations$36.class
 view\MenuOrganizator$113.class
 view\MenuOrganizator$13.class
@@ -208,6 +211,7 @@ view\MenuOrganizator$29.class
 view\MenuOrganizator$62.class
 view\MenuOrganizator$85.class
 control\ValidationControl.class
+view\MenuAdministrator$9.class
 view\MenuOrganizator.class
 view\MenuOrganizator$140.class
 view\MenuOrganizator$158.class

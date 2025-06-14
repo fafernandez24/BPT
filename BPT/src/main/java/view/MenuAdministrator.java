@@ -4,6 +4,7 @@
  */
 package view;
 
+import static control.MenuAdministratorControl.readPlayerList;
 import static control.MenuOrganizatorControl.changeButtonColor;
 import java.awt.Color;
 import java.util.List;
@@ -23,8 +24,7 @@ import model.Player;
 public class MenuAdministrator extends javax.swing.JFrame {
     
     DefaultTableModel modelo;
-    List<Player> listaJugadores = new List<Player>();
-    listaJugadores = Administrator.playerList();
+    List<Player> listaJugadores;
     
     private Administrator administrator;
 
@@ -34,6 +34,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
      */
     public MenuAdministrator(Administrator administrator) {
         this.administrator = administrator;
+        this.listaJugadores = administrator.getPlayerList();
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -615,28 +616,12 @@ public class MenuAdministrator extends javax.swing.JFrame {
         
     }//GEN-LAST:event_botonActualizarPagosActionPerformed
 
-    public final void visualizar(JTable tabla) {
-        
-        Object[][] jugadores= Administrator.playerList();
-        for (Object[] p: jugadores){
-            Object[] fila;
-            fila = {p.getName(), p.getId()};
-            modelo.addRow(fila);
-        }
-        
-         /*
-        Object[][] jugadores = new Object[][]{{"Carlos", "31307188", "Pendiente"},
-        {"Alejandra", "31307642", "Abonado"},
-        {"Amanda", "32305978", "Al dia"}};
-        */
+    public final void visualizar(JTable tabla) {    
+        Object jugadores = readPlayerList(administrator.getPlayerList());  
         String[] columna = new String[]{"Nombre", "Cedula", "Estado"};
-
-        DefaultTableModel dt = new DefaultTableModel(jugadores, columna);
-
-        tabla.setModel(dt);
-        
+        DefaultTableModel dt = new DefaultTableModel((Object[][]) jugadores, columna);
+        tabla.setModel(dt); 
         setUpEstadoColumn(tabla, tabla.getColumnModel().getColumn(2));
-
     }
     
     public void setUpEstadoColumn(JTable table,
