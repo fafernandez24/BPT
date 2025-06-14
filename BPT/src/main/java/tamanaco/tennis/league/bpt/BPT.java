@@ -42,10 +42,13 @@ public class BPT {
         
         Administrator administrator = new Administrator(playerList,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "11032757");
         Administrator freddyAdministrator = new Administrator(playerList,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "11032757");
+        Administrator carlosAdministrator = new Administrator(playerList,"31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
+
         
         List<Administrator> administratorList = new ArrayList<>();
         administratorList.add(administrator);
         administratorList.add(freddyAdministrator);
+        administratorList.add(carlosAdministrator);
         
         // Permite que la interfaz grafica se vea un poco mejor.
         UIManager.setLookAndFeel(new FlatLightLaf());
