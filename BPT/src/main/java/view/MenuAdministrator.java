@@ -4,14 +4,27 @@
  */
 package view;
 
+import static control.MenuOrganizatorControl.changeButtonColor;
 import java.awt.Color;
+import java.util.List;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import model.Administrator;
+import model.Player;
 
 /**
  *
  * @author Freddy A. Fernández
  */
 public class MenuAdministrator extends javax.swing.JFrame {
+    
+    DefaultTableModel modelo;
+    List<Player> listaJugadores = new List<Player>();
+    listaJugadores = Administrator.playerList();
     
     private Administrator administrator;
 
@@ -24,6 +37,12 @@ public class MenuAdministrator extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Cedula");
+        modelo.addColumn("Estado");
+        this.tablaAdministrarPagos.setModel(modelo);
+        visualizar(tablaAdministrarPagos);
     }
 
     /**
@@ -80,15 +99,16 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
-        jLabel92 = new javax.swing.JLabel();
+        botonActualizarPagos = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaAdministrarPagos = new javax.swing.JTable();
         jPanel30 = new javax.swing.JPanel();
         jLabel90 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel19.setBackground(new java.awt.Color(250, 250, 250));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -389,7 +409,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("ADMINISTRAR PAGOS");
         botonAdministrarPago.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
 
@@ -415,7 +434,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         botonVisualizarReporte.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 40));
 
         jLabel9.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("VISUALIZAR REPORTES");
         botonVisualizarReporte.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, 30));
 
@@ -426,41 +444,65 @@ public class MenuAdministrator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoAdministrarPago.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 80));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerRojo.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
-
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel92.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel92.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel92.setText("ADMINISTRAR PAGOS");
+        botonActualizarPagos.setBackground(new java.awt.Color(30, 25, 161));
+        botonActualizarPagos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonActualizarPagos.setForeground(new java.awt.Color(255, 255, 255));
+        botonActualizarPagos.setText("Actualizar pagos");
+        botonActualizarPagos.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonActualizarPagosMouseMoved(evt);
+            }
+        });
+        botonActualizarPagos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonActualizarPagosMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonActualizarPagosMouseExited(evt);
+            }
+        });
+        botonActualizarPagos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarPagosActionPerformed(evt);
+            }
+        });
+
+        tablaAdministrarPagos.setAutoCreateRowSorter(true);
+        tablaAdministrarPagos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaAdministrarPagos.setModel(tablaAdministrarPagos.getModel());
+        tablaAdministrarPagos.setAutoscrolls(false);
+        tablaAdministrarPagos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tablaAdministrarPagos.setGridColor(new java.awt.Color(204, 204, 204));
+        tablaAdministrarPagos.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tablaAdministrarPagos.setSelectionForeground(new java.awt.Color(30, 25, 161));
+        jScrollPane2.setViewportView(tablaAdministrarPagos);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(389, 389, 389)
-                .addComponent(jLabel92)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(botonActualizarPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(131, 131, 131))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(389, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(botonActualizarPagos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
 
         jTabbedPane.addTab("tab1", jPanel3);
@@ -491,6 +533,17 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jTabbedPane.addTab("tab2", jPanel30);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1080, 730));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerRojo.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1090, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -546,10 +599,66 @@ public class MenuAdministrator extends javax.swing.JFrame {
         botonAdministrarPago.setBackground(new Color(250,250,250));
     }//GEN-LAST:event_botonAdministrarPagoMouseMoved
 
+    private void botonActualizarPagosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseMoved
+        changeButtonColor(botonActualizarPagos,102,102,255);
+    }//GEN-LAST:event_botonActualizarPagosMouseMoved
+
+    private void botonActualizarPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonActualizarPagosMouseClicked
+
+    private void botonActualizarPagosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseExited
+        changeButtonColor(botonActualizarPagos,30,25,161);
+    }//GEN-LAST:event_botonActualizarPagosMouseExited
+
+    private void botonActualizarPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarPagosActionPerformed
+        
+    }//GEN-LAST:event_botonActualizarPagosActionPerformed
+
+    public final void visualizar(JTable tabla) {
+        
+        Object[][] jugadores= Administrator.playerList();
+        for (Object[] p: jugadores){
+            Object[] fila;
+            fila = {p.getName(), p.getId()};
+            modelo.addRow(fila);
+        }
+        
+         /*
+        Object[][] jugadores = new Object[][]{{"Carlos", "31307188", "Pendiente"},
+        {"Alejandra", "31307642", "Abonado"},
+        {"Amanda", "32305978", "Al dia"}};
+        */
+        String[] columna = new String[]{"Nombre", "Cedula", "Estado"};
+
+        DefaultTableModel dt = new DefaultTableModel(jugadores, columna);
+
+        tabla.setModel(dt);
+        
+        setUpEstadoColumn(tabla, tabla.getColumnModel().getColumn(2));
+
+    }
+    
+    public void setUpEstadoColumn(JTable table,
+        TableColumn estadoColumn) {
+        JComboBox comboBox = new JComboBox();
+        comboBox.addItem("Pendiente");
+        comboBox.addItem("Abonado");
+        comboBox.addItem("Al dia");
+        estadoColumn.setCellEditor(new DefaultCellEditor(comboBox));
+
+        //Set up tool tips for the sport cells.
+        DefaultTableCellRenderer renderer
+                = new DefaultTableCellRenderer();
+        renderer.setToolTipText("Click for combo box");
+        estadoColumn.setCellRenderer(renderer);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
     private javax.swing.JLabel NombreAdministrador;
+    private javax.swing.JButton botonActualizarPagos;
     private javax.swing.JPanel botonAdministrarPago;
     private javax.swing.JLabel botonMinimizar;
     private javax.swing.JLabel botonSalida;
@@ -581,7 +690,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel92;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
@@ -595,8 +703,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTable tablaAdministrarPagos;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables
 }
