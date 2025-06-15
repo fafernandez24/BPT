@@ -38,4 +38,13 @@ public class MenuPlayerControl {
         return player;
     }
     
+    public static void playerFocusGained(JTextField dataEnter, String message){
+        if (dataEnter.getText().equals(message)) dataEnter.setText("");
+    }
+    
+    public static void playerFocusLost(JTextField dataEnter, String message){
+        String id = dataEnter.getText();
+        if (id.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
 }
