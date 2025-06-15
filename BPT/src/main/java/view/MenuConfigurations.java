@@ -14,9 +14,12 @@ import javax.swing.ImageIcon;
  * @author Freddy A. Fernández
  */
 public class MenuConfigurations extends javax.swing.JFrame {
+    
+    // Attributes
 
     /**
      * Creates new form start
+     * @param index
      */
     public MenuConfigurations(int index) {
         this.setUndecorated(true);
@@ -26,16 +29,15 @@ public class MenuConfigurations extends javax.swing.JFrame {
         setTabbedBegin(index);
     }
     
-   private void setTabbedBegin(int number){
-       this.jTabbedPane1.setSelectedIndex(number);
-   }
-    
     private void newIcon(){
         Image icon = new ImageIcon(getClass().getResource("/images/logoTamanacoSinFuego.png")).getImage();
         this.setIconImage(icon);
     }
     
-    
+    private void setTabbedBegin(int number){
+        this.jTabbedPane1.setSelectedIndex(number);
+    }
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -112,41 +114,41 @@ public class MenuConfigurations extends javax.swing.JFrame {
         cedulaJugadorEliminar = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
         jPanel7 = new javax.swing.JPanel();
-        jSeparator20 = new javax.swing.JSeparator();
-        cedulaJugadorEliminar1 = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        botonVolverEliminarJugador1 = new javax.swing.JButton();
-        botonEliminarJugador1 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        nombreJugadorEliminar2 = new javax.swing.JTextField();
-        jSeparator18 = new javax.swing.JSeparator();
-        jLabel31 = new javax.swing.JLabel();
-        cedulaJugadorEliminar8 = new javax.swing.JTextField();
+        JugadorEliminar2 = new javax.swing.JTextField();
+        jSeparator20 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
+        HoraPartidoEliminar = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jSeparator18 = new javax.swing.JSeparator();
+        nombreJugadorEliminar2 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        botonEliminarJugador1 = new javax.swing.JButton();
+        botonVolverEliminarJugador1 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         jSeparator33 = new javax.swing.JSeparator();
-        jSeparator34 = new javax.swing.JSeparator();
-        cedulaJugadorEliminar9 = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        nombreJugadorEliminar5 = new javax.swing.JTextField();
-        botonEliminarJugador4 = new javax.swing.JButton();
-        botonVolverEliminarJugador4 = new javax.swing.JButton();
-        jLabel44 = new javax.swing.JLabel();
-        cedulaJugadorEliminar10 = new javax.swing.JTextField();
         jSeparator35 = new javax.swing.JSeparator();
+        JugadorModificar10 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        botonVolverEliminarJugador4 = new javax.swing.JButton();
+        botonEliminarJugador4 = new javax.swing.JButton();
+        nombreJugadorModificar5 = new javax.swing.JTextField();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        HoraPartidoModificar = new javax.swing.JTextField();
+        jSeparator34 = new javax.swing.JSeparator();
         jPanel9 = new javax.swing.JPanel();
-        nombreJugadorEliminar4 = new javax.swing.JTextField();
-        jLabel39 = new javax.swing.JLabel();
         jSeparator30 = new javax.swing.JSeparator();
-        jSeparator31 = new javax.swing.JSeparator();
-        jSeparator32 = new javax.swing.JSeparator();
-        cedulaJugadorEliminar6 = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        botonVolverEliminarJugador3 = new javax.swing.JButton();
-        botonEliminarJugador3 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        nombreJugadorAgregar4 = new javax.swing.JTextField();
+        HoraPartidoAgregar = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
-        cedulaJugadorEliminar7 = new javax.swing.JTextField();
+        botonEliminarJugador3 = new javax.swing.JButton();
+        botonVolverEliminarJugador3 = new javax.swing.JButton();
+        jLabel41 = new javax.swing.JLabel();
+        JugadorAgregar6 = new javax.swing.JTextField();
+        jSeparator32 = new javax.swing.JSeparator();
+        jSeparator31 = new javax.swing.JSeparator();
         banner = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -174,7 +176,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("MODIFICAR TORNEO");
         jLabel3.setToolTipText("");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 240, 50));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 240, 50));
 
         botonMinimizar.setBackground(new java.awt.Color(255, 255, 255));
         botonMinimizar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -541,7 +543,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addComponent(fechaNacimientoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolverModifiarJugador)
                     .addComponent(botonGuardarModificarJugador))
@@ -893,53 +895,51 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        cedulaJugadorEliminar1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar1.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar1.setText("Nombre del jugador ");
-        cedulaJugadorEliminar1.setBorder(null);
-        cedulaJugadorEliminar1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar1FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar1FocusLost(evt);
-            }
-        });
-        cedulaJugadorEliminar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar1ActionPerformed(evt);
-            }
-        });
-
         jLabel27.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
         jLabel27.setText("Jugador B o Dupla B");
 
-        botonVolverEliminarJugador1.setBackground(new java.awt.Color(0, 51, 255));
-        botonVolverEliminarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonVolverEliminarJugador1.setForeground(new java.awt.Color(255, 255, 255));
-        botonVolverEliminarJugador1.setText("Volver");
-        botonVolverEliminarJugador1.addActionListener(new java.awt.event.ActionListener() {
+        JugadorEliminar2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        JugadorEliminar2.setForeground(new java.awt.Color(153, 153, 153));
+        JugadorEliminar2.setText("Nombre del jugador  a eliminar");
+        JugadorEliminar2.setBorder(null);
+        JugadorEliminar2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JugadorEliminar2FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JugadorEliminar2FocusLost(evt);
+            }
+        });
+        JugadorEliminar2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverEliminarJugador1ActionPerformed(evt);
+                JugadorEliminar2ActionPerformed(evt);
             }
         });
 
-        botonEliminarJugador1.setBackground(new java.awt.Color(0, 51, 255));
-        botonEliminarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonEliminarJugador1.setForeground(new java.awt.Color(255, 255, 255));
-        botonEliminarJugador1.setText("Eliminar");
-        botonEliminarJugador1.addActionListener(new java.awt.event.ActionListener() {
+        HoraPartidoEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        HoraPartidoEliminar.setForeground(new java.awt.Color(153, 153, 153));
+        HoraPartidoEliminar.setText("hORA del partido");
+        HoraPartidoEliminar.setBorder(null);
+        HoraPartidoEliminar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HoraPartidoEliminarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                HoraPartidoEliminarFocusLost(evt);
+            }
+        });
+        HoraPartidoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarJugador1ActionPerformed(evt);
+                HoraPartidoEliminarActionPerformed(evt);
             }
         });
 
-        jLabel25.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel25.setText("Jugador A o Dupla A");
+        jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel31.setText("hORA");
 
         nombreJugadorEliminar2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         nombreJugadorEliminar2.setForeground(new java.awt.Color(153, 153, 153));
-        nombreJugadorEliminar2.setText("Nombre del jugador ");
+        nombreJugadorEliminar2.setText("Nombre del jugador  a eliminar");
         nombreJugadorEliminar2.setBorder(null);
         nombreJugadorEliminar2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -955,24 +955,26 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
-        jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel31.setText("Fecha");
+        jLabel25.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel25.setText("Jugador A o Dupla A");
 
-        cedulaJugadorEliminar8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar8.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar8.setText("Fecha del partido");
-        cedulaJugadorEliminar8.setBorder(null);
-        cedulaJugadorEliminar8.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar8FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar8FocusLost(evt);
+        botonEliminarJugador1.setBackground(new java.awt.Color(0, 51, 255));
+        botonEliminarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonEliminarJugador1.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarJugador1.setText("Eliminar");
+        botonEliminarJugador1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarJugador1ActionPerformed(evt);
             }
         });
-        cedulaJugadorEliminar8.addActionListener(new java.awt.event.ActionListener() {
+
+        botonVolverEliminarJugador1.setBackground(new java.awt.Color(0, 51, 255));
+        botonVolverEliminarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonVolverEliminarJugador1.setForeground(new java.awt.Color(255, 255, 255));
+        botonVolverEliminarJugador1.setText("Volver");
+        botonVolverEliminarJugador1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar8ActionPerformed(evt);
+                botonVolverEliminarJugador1ActionPerformed(evt);
             }
         });
 
@@ -985,13 +987,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cedulaJugadorEliminar1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JugadorEliminar2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator20)
                             .addComponent(jSeparator18)
                             .addComponent(nombreJugadorEliminar2, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                             .addComponent(jLabel31)
                             .addComponent(jSeparator24)
-                            .addComponent(cedulaJugadorEliminar8)
+                            .addComponent(HoraPartidoEliminar)
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -1013,13 +1015,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JugadorEliminar2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HoraPartidoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
@@ -1033,45 +1035,34 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        cedulaJugadorEliminar9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar9.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar9.setText("Hora del encuentro");
-        cedulaJugadorEliminar9.setBorder(null);
-        cedulaJugadorEliminar9.addFocusListener(new java.awt.event.FocusAdapter() {
+        JugadorModificar10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        JugadorModificar10.setForeground(new java.awt.Color(153, 153, 153));
+        JugadorModificar10.setText("Nombre del jugador  a modificar");
+        JugadorModificar10.setBorder(null);
+        JugadorModificar10.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar9FocusGained(evt);
+                JugadorModificar10FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar9FocusLost(evt);
+                JugadorModificar10FocusLost(evt);
             }
         });
-        cedulaJugadorEliminar9.addActionListener(new java.awt.event.ActionListener() {
+        JugadorModificar10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar9ActionPerformed(evt);
+                JugadorModificar10ActionPerformed(evt);
             }
         });
 
-        jLabel40.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel40.setText("Hora");
+        jLabel44.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel44.setText("Jugador B o Dupla B");
 
-        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel43.setText("Jugador A o Dupla A");
-
-        nombreJugadorEliminar5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        nombreJugadorEliminar5.setForeground(new java.awt.Color(153, 153, 153));
-        nombreJugadorEliminar5.setText("Nombre del jugador ");
-        nombreJugadorEliminar5.setBorder(null);
-        nombreJugadorEliminar5.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminar5FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminar5FocusLost(evt);
-            }
-        });
-        nombreJugadorEliminar5.addActionListener(new java.awt.event.ActionListener() {
+        botonVolverEliminarJugador4.setBackground(new java.awt.Color(0, 51, 255));
+        botonVolverEliminarJugador4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonVolverEliminarJugador4.setForeground(new java.awt.Color(255, 255, 255));
+        botonVolverEliminarJugador4.setText("Volver");
+        botonVolverEliminarJugador4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreJugadorEliminar5ActionPerformed(evt);
+                botonVolverEliminarJugador4ActionPerformed(evt);
             }
         });
 
@@ -1085,34 +1076,45 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
-        botonVolverEliminarJugador4.setBackground(new java.awt.Color(0, 51, 255));
-        botonVolverEliminarJugador4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonVolverEliminarJugador4.setForeground(new java.awt.Color(255, 255, 255));
-        botonVolverEliminarJugador4.setText("Volver");
-        botonVolverEliminarJugador4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverEliminarJugador4ActionPerformed(evt);
-            }
-        });
-
-        jLabel44.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel44.setText("Jugador B o Dupla B");
-
-        cedulaJugadorEliminar10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar10.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar10.setText("Nombre del jugador ");
-        cedulaJugadorEliminar10.setBorder(null);
-        cedulaJugadorEliminar10.addFocusListener(new java.awt.event.FocusAdapter() {
+        nombreJugadorModificar5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        nombreJugadorModificar5.setForeground(new java.awt.Color(153, 153, 153));
+        nombreJugadorModificar5.setText("Nombre del jugador  a modificar");
+        nombreJugadorModificar5.setBorder(null);
+        nombreJugadorModificar5.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar10FocusGained(evt);
+                nombreJugadorModificar5FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar10FocusLost(evt);
+                nombreJugadorModificar5FocusLost(evt);
             }
         });
-        cedulaJugadorEliminar10.addActionListener(new java.awt.event.ActionListener() {
+        nombreJugadorModificar5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar10ActionPerformed(evt);
+                nombreJugadorModificar5ActionPerformed(evt);
+            }
+        });
+
+        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel43.setText("Jugador A o Dupla A");
+
+        jLabel40.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel40.setText("Hora");
+
+        HoraPartidoModificar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        HoraPartidoModificar.setForeground(new java.awt.Color(153, 153, 153));
+        HoraPartidoModificar.setText("Hora del partido");
+        HoraPartidoModificar.setBorder(null);
+        HoraPartidoModificar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HoraPartidoModificarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                HoraPartidoModificarFocusLost(evt);
+            }
+        });
+        HoraPartidoModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HoraPartidoModificarActionPerformed(evt);
             }
         });
 
@@ -1125,13 +1127,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cedulaJugadorEliminar10, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JugadorModificar10, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator35)
                             .addComponent(jSeparator33)
-                            .addComponent(nombreJugadorEliminar5, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                            .addComponent(nombreJugadorModificar5, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                             .addComponent(jLabel44)
                             .addComponent(jLabel40)
-                            .addComponent(cedulaJugadorEliminar9)
+                            .addComponent(HoraPartidoModificar)
                             .addComponent(jSeparator34, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -1147,19 +1149,19 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombreJugadorEliminar5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nombreJugadorModificar5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JugadorModificar10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator35, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HoraPartidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -1173,57 +1175,47 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
-        nombreJugadorEliminar4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        nombreJugadorEliminar4.setForeground(new java.awt.Color(153, 153, 153));
-        nombreJugadorEliminar4.setText("Nombre del jugador ");
-        nombreJugadorEliminar4.setBorder(null);
-        nombreJugadorEliminar4.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminar4FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminar4FocusLost(evt);
-            }
-        });
-        nombreJugadorEliminar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreJugadorEliminar4ActionPerformed(evt);
-            }
-        });
-
         jLabel39.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
         jLabel39.setText("Hora");
 
-        cedulaJugadorEliminar6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar6.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar6.setText("Nombre del jugador ");
-        cedulaJugadorEliminar6.setBorder(null);
-        cedulaJugadorEliminar6.addFocusListener(new java.awt.event.FocusAdapter() {
+        nombreJugadorAgregar4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        nombreJugadorAgregar4.setForeground(new java.awt.Color(153, 153, 153));
+        nombreJugadorAgregar4.setText("Nombre del jugador  a agregar");
+        nombreJugadorAgregar4.setBorder(null);
+        nombreJugadorAgregar4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar6FocusGained(evt);
+                nombreJugadorAgregar4FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar6FocusLost(evt);
+                nombreJugadorAgregar4FocusLost(evt);
             }
         });
-        cedulaJugadorEliminar6.addActionListener(new java.awt.event.ActionListener() {
+        nombreJugadorAgregar4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar6ActionPerformed(evt);
+                nombreJugadorAgregar4ActionPerformed(evt);
             }
         });
 
-        jLabel41.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel41.setText("Jugador B o Dupla B");
-
-        botonVolverEliminarJugador3.setBackground(new java.awt.Color(0, 51, 255));
-        botonVolverEliminarJugador3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonVolverEliminarJugador3.setForeground(new java.awt.Color(255, 255, 255));
-        botonVolverEliminarJugador3.setText("Volver");
-        botonVolverEliminarJugador3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonVolverEliminarJugador3ActionPerformed(evt);
+        HoraPartidoAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        HoraPartidoAgregar.setForeground(new java.awt.Color(153, 153, 153));
+        HoraPartidoAgregar.setText("Hora del partido");
+        HoraPartidoAgregar.setBorder(null);
+        HoraPartidoAgregar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                HoraPartidoAgregarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                HoraPartidoAgregarFocusLost(evt);
             }
         });
+        HoraPartidoAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HoraPartidoAgregarActionPerformed(evt);
+            }
+        });
+
+        jLabel42.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel42.setText("Jugador A o Dupla A");
 
         botonEliminarJugador3.setBackground(new java.awt.Color(0, 51, 255));
         botonEliminarJugador3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -1235,24 +1227,34 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
-        jLabel42.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel42.setText("Jugador A o Dupla A");
-
-        cedulaJugadorEliminar7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        cedulaJugadorEliminar7.setForeground(new java.awt.Color(153, 153, 153));
-        cedulaJugadorEliminar7.setText("Hora del encuentro");
-        cedulaJugadorEliminar7.setBorder(null);
-        cedulaJugadorEliminar7.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar7FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cedulaJugadorEliminar7FocusLost(evt);
+        botonVolverEliminarJugador3.setBackground(new java.awt.Color(0, 51, 255));
+        botonVolverEliminarJugador3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonVolverEliminarJugador3.setForeground(new java.awt.Color(255, 255, 255));
+        botonVolverEliminarJugador3.setText("Volver");
+        botonVolverEliminarJugador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverEliminarJugador3ActionPerformed(evt);
             }
         });
-        cedulaJugadorEliminar7.addActionListener(new java.awt.event.ActionListener() {
+
+        jLabel41.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
+        jLabel41.setText("Jugador B o Dupla B");
+
+        JugadorAgregar6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        JugadorAgregar6.setForeground(new java.awt.Color(153, 153, 153));
+        JugadorAgregar6.setText("Nombre del jugador  a agregar");
+        JugadorAgregar6.setBorder(null);
+        JugadorAgregar6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JugadorAgregar6FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JugadorAgregar6FocusLost(evt);
+            }
+        });
+        JugadorAgregar6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cedulaJugadorEliminar7ActionPerformed(evt);
+                JugadorAgregar6ActionPerformed(evt);
             }
         });
 
@@ -1265,13 +1267,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cedulaJugadorEliminar6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JugadorAgregar6, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSeparator32)
                             .addComponent(jSeparator31)
-                            .addComponent(nombreJugadorEliminar4, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                            .addComponent(nombreJugadorAgregar4, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                             .addComponent(jLabel41)
                             .addComponent(jLabel39)
-                            .addComponent(cedulaJugadorEliminar7)
+                            .addComponent(HoraPartidoAgregar)
                             .addComponent(jSeparator30, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -1287,19 +1289,19 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombreJugadorEliminar4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nombreJugadorAgregar4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JugadorAgregar6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator32, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cedulaJugadorEliminar7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(HoraPartidoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator30, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -1439,9 +1441,25 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
     }//GEN-LAST:event_entradaCedulaJugadorModificarActionPerformed
 
+    private void entradaNombreTorneoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneoModificarActionPerformed
+
+    private void botonCambiarNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarNombreTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCambiarNombreTorneoActionPerformed
+
     private void opcionesCategoriasModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriasModificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_opcionesCategoriasModificarActionPerformed
+
+    private void entradaNombreTorneoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusLost
+        configurationFocusLost (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
+    }//GEN-LAST:event_entradaNombreTorneoModificarFocusLost
+
+    private void entradaNombreTorneoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusGained
+        configurationFocusGained (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
+    }//GEN-LAST:event_entradaNombreTorneoModificarFocusGained
 
     private void entradaCedulaJugadorModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaJugadorModificarFocusGained
         configurationFocusGained (entradaCedulaJugadorModificar, "Ingresar numero de cedula");
@@ -1555,205 +1573,145 @@ public class MenuConfigurations extends javax.swing.JFrame {
         configurationFocusLost (cedulaJugadorEliminar, "Cedula del jugador");
     }//GEN-LAST:event_cedulaJugadorEliminarFocusLost
 
-    private void cedulaJugadorEliminar1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar1FocusGained
+    private void JugadorEliminar2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorEliminar2FocusGained
+        configurationFocusGained (JugadorEliminar2, "Nombre del jugador a eliminar");
+    }//GEN-LAST:event_JugadorEliminar2FocusGained
 
-    private void cedulaJugadorEliminar1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar1FocusLost
+    private void JugadorEliminar2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorEliminar2FocusLost
+        configurationFocusLost (JugadorEliminar2, "Nombre del jugador a eliminar");
+    }//GEN-LAST:event_JugadorEliminar2FocusLost
 
-    private void cedulaJugadorEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar1ActionPerformed
+    private void JugadorEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugadorEliminar2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar1ActionPerformed
+    }//GEN-LAST:event_JugadorEliminar2ActionPerformed
 
-    private void botonVolverEliminarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverEliminarJugador1ActionPerformed
-        jTabbedPane1.setSelectedIndex(0);
-    }//GEN-LAST:event_botonVolverEliminarJugador1ActionPerformed
+    private void HoraPartidoEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarFocusGained
+        configurationFocusGained (HoraPartidoEliminar, "Hora del partido");
+    }//GEN-LAST:event_HoraPartidoEliminarFocusGained
 
-    private void botonEliminarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador1ActionPerformed
+    private void HoraPartidoEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarFocusLost
+        configurationFocusLost (HoraPartidoEliminar, "Hora del partido");
+    }//GEN-LAST:event_HoraPartidoEliminarFocusLost
+
+    private void HoraPartidoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarJugador1ActionPerformed
+    }//GEN-LAST:event_HoraPartidoEliminarActionPerformed
 
     private void nombreJugadorEliminar2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar2FocusGained
-        // TODO add your handling code here:
+        configurationFocusGained (nombreJugadorEliminar2, "Nombre del jugador a eliminar");
     }//GEN-LAST:event_nombreJugadorEliminar2FocusGained
 
     private void nombreJugadorEliminar2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar2FocusLost
-        // TODO add your handling code here:
+        configurationFocusLost (nombreJugadorEliminar2, "Nombre del jugador a eliminar");
     }//GEN-LAST:event_nombreJugadorEliminar2FocusLost
 
     private void nombreJugadorEliminar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreJugadorEliminar2ActionPerformed
 
-    private void nombreJugadorEliminar4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar4FocusGained
+    private void botonEliminarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar4FocusGained
+    }//GEN-LAST:event_botonEliminarJugador1ActionPerformed
 
-    private void nombreJugadorEliminar4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar4FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar4FocusLost
-
-    private void nombreJugadorEliminar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar4ActionPerformed
-
-    private void cedulaJugadorEliminar6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar6FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar6FocusGained
-
-    private void cedulaJugadorEliminar6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar6FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar6FocusLost
-
-    private void cedulaJugadorEliminar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar6ActionPerformed
-
-    private void botonVolverEliminarJugador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverEliminarJugador3ActionPerformed
+    private void botonVolverEliminarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverEliminarJugador1ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
-    }//GEN-LAST:event_botonVolverEliminarJugador3ActionPerformed
+    }//GEN-LAST:event_botonVolverEliminarJugador1ActionPerformed
 
-    private void botonEliminarJugador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador3ActionPerformed
+    private void JugadorModificar10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorModificar10FocusGained
+        configurationFocusGained (JugadorModificar10, "Nombre del jugador a modificar");
+    }//GEN-LAST:event_JugadorModificar10FocusGained
+
+    private void JugadorModificar10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorModificar10FocusLost
+        configurationFocusLost (JugadorModificar10, "Nombre del jugador a modificar");
+    }//GEN-LAST:event_JugadorModificar10FocusLost
+
+    private void JugadorModificar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugadorModificar10ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarJugador3ActionPerformed
-
-    private void cedulaJugadorEliminar7FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar7FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar7FocusGained
-
-    private void cedulaJugadorEliminar7FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar7FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar7FocusLost
-
-    private void cedulaJugadorEliminar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar7ActionPerformed
-
-    private void entradaNombreTorneoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneoModificarActionPerformed
-
-    private void entradaNombreTorneoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusLost
-        configurationFocusLost (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
-    }//GEN-LAST:event_entradaNombreTorneoModificarFocusLost
-
-    private void entradaNombreTorneoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoModificarFocusGained
-        configurationFocusGained (entradaNombreTorneoModificar, "Ingresar nuevo nombre");
-    }//GEN-LAST:event_entradaNombreTorneoModificarFocusGained
-
-    private void botonCambiarNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCambiarNombreTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCambiarNombreTorneoActionPerformed
-
-    private void cedulaJugadorEliminar8FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar8FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar8FocusGained
-
-    private void cedulaJugadorEliminar8FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar8FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar8FocusLost
-
-    private void cedulaJugadorEliminar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar8ActionPerformed
-
-    private void cedulaJugadorEliminar9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar9FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar9FocusGained
-
-    private void cedulaJugadorEliminar9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar9FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar9FocusLost
-
-    private void cedulaJugadorEliminar9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar9ActionPerformed
-
-    private void nombreJugadorEliminar5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar5FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar5FocusGained
-
-    private void nombreJugadorEliminar5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar5FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar5FocusLost
-
-    private void nombreJugadorEliminar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorEliminar5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminar5ActionPerformed
-
-    private void botonEliminarJugador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarJugador4ActionPerformed
+    }//GEN-LAST:event_JugadorModificar10ActionPerformed
 
     private void botonVolverEliminarJugador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverEliminarJugador4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVolverEliminarJugador4ActionPerformed
 
-    private void cedulaJugadorEliminar10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar10FocusGained
+    private void botonEliminarJugador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar10FocusGained
+    }//GEN-LAST:event_botonEliminarJugador4ActionPerformed
 
-    private void cedulaJugadorEliminar10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar10FocusLost
+    private void nombreJugadorModificar5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorModificar5FocusGained
+        configurationFocusGained (nombreJugadorModificar5, "Nombre del jugador a modificar");
+    }//GEN-LAST:event_nombreJugadorModificar5FocusGained
+
+    private void nombreJugadorModificar5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorModificar5FocusLost
+        configurationFocusLost (nombreJugadorModificar5, "Nombre del jugador a modificar");
+    }//GEN-LAST:event_nombreJugadorModificar5FocusLost
+
+    private void nombreJugadorModificar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorModificar5ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar10FocusLost
+    }//GEN-LAST:event_nombreJugadorModificar5ActionPerformed
 
-    private void cedulaJugadorEliminar10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminar10ActionPerformed
+    private void HoraPartidoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoModificarFocusGained
+        configurationFocusGained (HoraPartidoModificar, "Hora del encuentro");
+    }//GEN-LAST:event_HoraPartidoModificarFocusGained
+
+    private void HoraPartidoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoModificarFocusLost
+        configurationFocusLost (HoraPartidoModificar, "Hora del encuentro");
+    }//GEN-LAST:event_HoraPartidoModificarFocusLost
+
+    private void HoraPartidoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cedulaJugadorEliminar10ActionPerformed
+    }//GEN-LAST:event_HoraPartidoModificarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+    private void nombreJugadorAgregar4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorAgregar4FocusGained
+        configurationFocusGained (nombreJugadorAgregar4, "Nombre del jugador a agregar");
+    }//GEN-LAST:event_nombreJugadorAgregar4FocusGained
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-               //new MenuConfigurations().setVisible(true);
-            }
-        });
-    }
+    private void nombreJugadorAgregar4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorAgregar4FocusLost
+        configurationFocusLost (nombreJugadorAgregar4, "Nombre del jugador a agregar");
+    }//GEN-LAST:event_nombreJugadorAgregar4FocusLost
+
+    private void nombreJugadorAgregar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorAgregar4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nombreJugadorAgregar4ActionPerformed
+
+    private void HoraPartidoAgregarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarFocusGained
+        configurationFocusGained (HoraPartidoAgregar, "Hora del partido");
+    }//GEN-LAST:event_HoraPartidoAgregarFocusGained
+
+    private void HoraPartidoAgregarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarFocusLost
+        configurationFocusLost (HoraPartidoAgregar, "Hora del partido");
+    }//GEN-LAST:event_HoraPartidoAgregarFocusLost
+
+    private void HoraPartidoAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HoraPartidoAgregarActionPerformed
+
+    private void botonEliminarJugador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugador3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminarJugador3ActionPerformed
+
+    private void botonVolverEliminarJugador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverEliminarJugador3ActionPerformed
+        jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_botonVolverEliminarJugador3ActionPerformed
+
+    private void JugadorAgregar6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorAgregar6FocusGained
+        configurationFocusGained (JugadorAgregar6, "Nombre del jugador a agregar");
+    }//GEN-LAST:event_JugadorAgregar6FocusGained
+
+    private void JugadorAgregar6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JugadorAgregar6FocusLost
+        configurationFocusLost (JugadorAgregar6, "Nombre del jugador a agregar");
+    }//GEN-LAST:event_JugadorAgregar6FocusLost
+
+    private void JugadorAgregar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JugadorAgregar6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JugadorAgregar6ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField HoraPartidoAgregar;
+    private javax.swing.JTextField HoraPartidoEliminar;
+    private javax.swing.JTextField HoraPartidoModificar;
+    private javax.swing.JTextField JugadorAgregar6;
+    private javax.swing.JTextField JugadorEliminar2;
+    private javax.swing.JTextField JugadorModificar10;
     private javax.swing.JLabel banner;
     private javax.swing.JButton botonAgregarJugador;
     private javax.swing.JButton botonAgregarJugadorConfiguracion;
@@ -1774,12 +1732,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JButton botonVolverEliminarJugador4;
     private javax.swing.JButton botonVolverModifiarJugador;
     private javax.swing.JTextField cedulaJugadorEliminar;
-    private javax.swing.JTextField cedulaJugadorEliminar1;
-    private javax.swing.JTextField cedulaJugadorEliminar10;
-    private javax.swing.JTextField cedulaJugadorEliminar6;
-    private javax.swing.JTextField cedulaJugadorEliminar7;
-    private javax.swing.JTextField cedulaJugadorEliminar8;
-    private javax.swing.JTextField cedulaJugadorEliminar9;
     private javax.swing.JTextField cedulaJugadorModificar;
     private javax.swing.JTextField correoJugadorModificar;
     private javax.swing.JTextField entradaCedulaJugadorModificar;
@@ -1852,11 +1804,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField nombreJugadorAgregar4;
     private javax.swing.JTextField nombreJugadorEliminar;
     private javax.swing.JTextField nombreJugadorEliminar2;
-    private javax.swing.JTextField nombreJugadorEliminar4;
-    private javax.swing.JTextField nombreJugadorEliminar5;
     private javax.swing.JTextField nombreJugadorModificar;
+    private javax.swing.JTextField nombreJugadorModificar5;
     private javax.swing.JComboBox<String> opcionesCategoriasAgregar;
     private javax.swing.JComboBox<String> opcionesCategoriasModificar;
     private javax.swing.JTextField telefonoJugadorModificar;
