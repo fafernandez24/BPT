@@ -4,15 +4,15 @@
  */
 package control;
 
+import java.awt.Color;
 import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import model.Player;
 import model.Tournament;
 
-/**
- *
- * @author Freddy A. Fernández
- */
+
 public class MenuPlayerControl {
     
     public static void playerShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField categoryField, JTextField teamField, JTextField mathPlayedField, JTextField matchesWonField, Player player){
@@ -45,6 +45,14 @@ public class MenuPlayerControl {
     public static void playerFocusLost(JTextField dataEnter, String message){
         String id = dataEnter.getText();
         if (id.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    public static void changeButtonColor(JButton button, int r, int g, int b){
+        button.setBackground(new Color(r,g,b));
+    }
+    
+    public static void changePanelColor(JPanel panel, int r, int g, int b){
+        panel.setBackground(new Color(r,g,b));
     }
     
 }

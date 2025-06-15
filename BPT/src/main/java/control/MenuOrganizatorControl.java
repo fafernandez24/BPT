@@ -17,6 +17,7 @@ import java.util.HashSet;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -53,6 +54,10 @@ public class MenuOrganizatorControl {
     
     public static void changeButtonColor(JButton button, int r, int g, int b){
         button.setBackground(new Color(r,g,b));
+    }
+    
+    public static void changePanelColor(JPanel panel, int r, int g, int b){
+        panel.setBackground(new Color(r,g,b));
     }
     
     public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField categoryField, JTextField teamField, JTextField mathPlayedField, JTextField matchesWonField, Player player){
