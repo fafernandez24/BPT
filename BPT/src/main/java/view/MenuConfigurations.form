@@ -96,6 +96,21 @@
         </Constraint>
       </Constraints>
     </Component>
+    <Component class="javax.swing.JLabel" name="banner">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/banner.jpg"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="0" y="0" width="900" height="80"/>
+        </Constraint>
+      </Constraints>
+    </Component>
     <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -451,7 +466,7 @@
                       <Component id="fechaNacimientoJugadorModificar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator7" min="-2" pref="20" max="-2" attributes="0"/>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="botonVolverModifiarJugador" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="botonGuardarModificarJugador" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -738,18 +753,18 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jSeparator9" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="textoIngresarNombre" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="agregarIngresarNombre" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                           <Component id="jLabel17" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                           <Component id="jLabel20" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                          <Component id="textoIngresarCedula" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                          <Component id="agregarIngresarCedula" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jLabel23" pref="100" max="32767" attributes="0"/>
                                           <Component id="jLabel19" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                           <Component id="jSeparator10" alignment="0" pref="100" max="32767" attributes="0"/>
-                                          <Component id="textoIngresarCorreo" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="textoIngresarEquipo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="agregarIngresarCorreo" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="agregarIngresarEquipo" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="jSeparator15" min="-2" pref="100" max="-2" attributes="0"/>
@@ -757,7 +772,7 @@
                               <EmptySpace pref="36" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="opcionesCategoriasAgregar" min="-2" max="-2" attributes="0"/>
-                                  <Component id="textoIngresarTelefono" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
+                                  <Component id="agregarIngresarTelefono" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="jLabel18" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                                   <Component id="jSeparator11" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
                                   <Component id="jLabel21" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
@@ -779,9 +794,9 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="textoIngresarNombre" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="textoIngresarCorreo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="textoIngresarTelefono" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="agregarIngresarNombre" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="agregarIngresarCorreo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="agregarIngresarTelefono" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -802,8 +817,8 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="opcionesCategoriasAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="textoIngresarCedula" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="textoIngresarEquipo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="agregarIngresarCedula" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="agregarIngresarEquipo" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -823,7 +838,7 @@
           <SubComponents>
             <Component class="javax.swing.JSeparator" name="jSeparator9">
             </Component>
-            <Component class="javax.swing.JTextField" name="textoIngresarNombre">
+            <Component class="javax.swing.JTextField" name="agregarIngresarNombre">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="14" style="0"/>
@@ -837,9 +852,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarNombreFocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarNombreFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoIngresarNombreActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarNombreFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarNombreFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarIngresarNombreActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
@@ -892,7 +907,7 @@
                 <Property name="text" type="java.lang.String" value="N&#xfa;MERO TELEFONO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoIngresarCorreo">
+            <Component class="javax.swing.JTextField" name="agregarIngresarCorreo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="14" style="0"/>
@@ -906,9 +921,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarCorreoFocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarCorreoFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoIngresarCorreoActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarCorreoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarCorreoFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarIngresarCorreoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator10">
@@ -921,7 +936,7 @@
                 <Property name="text" type="java.lang.String" value="CoRREO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoIngresarTelefono">
+            <Component class="javax.swing.JTextField" name="agregarIngresarTelefono">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="14" style="0"/>
@@ -935,9 +950,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarTelefonoFocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarTelefonoFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoIngresarTelefonoActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarTelefonoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarTelefonoFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarIngresarTelefonoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator11">
@@ -958,7 +973,7 @@
                 <Property name="text" type="java.lang.String" value="CaTEGOR&#xed;A"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoIngresarCedula">
+            <Component class="javax.swing.JTextField" name="agregarIngresarCedula">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="14" style="0"/>
@@ -972,9 +987,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarCedulaFocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarCedulaFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoIngresarCedulaActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarCedulaFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarCedulaFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarIngresarCedulaActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator13">
@@ -987,7 +1002,7 @@
                 <Property name="text" type="java.lang.String" value="EQUIPO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="textoIngresarEquipo">
+            <Component class="javax.swing.JTextField" name="agregarIngresarEquipo">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="14" style="0"/>
@@ -1001,9 +1016,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarEquipoFocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textoIngresarEquipoFocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textoIngresarEquipoActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarEquipoFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="agregarIngresarEquipoFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarIngresarEquipoActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator15">
@@ -1237,10 +1252,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="JugadorEliminar2" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorBPartidoEliminar" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jSeparator20" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jSeparator18" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nombreJugadorEliminar2" alignment="0" pref="283" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorAPartidoEliminar" alignment="0" pref="283" max="32767" attributes="0"/>
                                   <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSeparator24" alignment="0" max="32767" attributes="0"/>
                                   <Component id="HoraPartidoEliminar" alignment="0" max="32767" attributes="0"/>
@@ -1250,9 +1265,9 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                              <Component id="botonVolverEliminarJugador1" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="botonVolverPartidoEliminar" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="botonEliminarJugador1" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="botonPartidoEliminar" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="125" max="32767" attributes="0"/>
@@ -1265,13 +1280,13 @@
                       <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="jLabel25" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="nombreJugadorEliminar2" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorAPartidoEliminar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator18" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel27" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="JugadorEliminar2" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorBPartidoEliminar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator20" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1282,8 +1297,8 @@
                       <Component id="jSeparator24" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonVolverEliminarJugador1" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="botonEliminarJugador1" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonVolverPartidoEliminar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonPartidoEliminar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="49" max="32767" attributes="0"/>
                   </Group>
@@ -1299,7 +1314,7 @@
                 <Property name="text" type="java.lang.String" value="Jugador B o Dupla B"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="JugadorEliminar2">
+            <Component class="javax.swing.JTextField" name="nombreJugadorBPartidoEliminar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1313,9 +1328,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorEliminar2FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorEliminar2FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JugadorEliminar2ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoEliminarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoEliminarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorBPartidoEliminarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator20">
@@ -1351,7 +1366,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator18">
             </Component>
-            <Component class="javax.swing.JTextField" name="nombreJugadorEliminar2">
+            <Component class="javax.swing.JTextField" name="nombreJugadorAPartidoEliminar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1365,9 +1380,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorEliminar2FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorEliminar2FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorEliminar2ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoEliminarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoEliminarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorAPartidoEliminarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
@@ -1378,7 +1393,7 @@
                 <Property name="text" type="java.lang.String" value="Jugador A o Dupla A"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botonEliminarJugador1">
+            <Component class="javax.swing.JButton" name="botonPartidoEliminar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1392,10 +1407,10 @@
                 <Property name="text" type="java.lang.String" value="Eliminar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarJugador1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPartidoEliminarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="botonVolverEliminarJugador1">
+            <Component class="javax.swing.JButton" name="botonVolverPartidoEliminar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1409,7 +1424,7 @@
                 <Property name="text" type="java.lang.String" value="Volver"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverEliminarJugador1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverPartidoEliminarActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1436,10 +1451,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="JugadorModificar10" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorBPartidoModificar" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jSeparator35" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jSeparator33" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nombreJugadorModificar5" alignment="0" pref="338" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorAPartidoModificar" alignment="0" pref="338" max="32767" attributes="0"/>
                                   <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="HoraPartidoModificar" alignment="0" max="32767" attributes="0"/>
@@ -1449,9 +1464,9 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                              <Component id="botonVolverEliminarJugador4" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="botonVolverPartidoModificar" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="botonEliminarJugador4" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="botonPartidoModificar" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
@@ -1464,13 +1479,13 @@
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="jLabel43" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="nombreJugadorModificar5" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorAPartidoModificar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator33" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel44" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="JugadorModificar10" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorBPartidoModificar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator35" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1481,8 +1496,8 @@
                       <Component id="jSeparator34" min="-2" pref="13" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonVolverEliminarJugador4" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="botonEliminarJugador4" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonVolverPartidoModificar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonPartidoModificar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
@@ -1494,7 +1509,7 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator35">
             </Component>
-            <Component class="javax.swing.JTextField" name="JugadorModificar10">
+            <Component class="javax.swing.JTextField" name="nombreJugadorBPartidoModificar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1508,9 +1523,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorModificar10FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorModificar10FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JugadorModificar10ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoModificarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoModificarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorBPartidoModificarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
@@ -1521,7 +1536,7 @@
                 <Property name="text" type="java.lang.String" value="Jugador B o Dupla B"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botonVolverEliminarJugador4">
+            <Component class="javax.swing.JButton" name="botonVolverPartidoModificar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1535,10 +1550,10 @@
                 <Property name="text" type="java.lang.String" value="Volver"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverEliminarJugador4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverPartidoModificarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="botonEliminarJugador4">
+            <Component class="javax.swing.JButton" name="botonPartidoModificar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1552,10 +1567,10 @@
                 <Property name="text" type="java.lang.String" value="Modificar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarJugador4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPartidoModificarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="nombreJugadorModificar5">
+            <Component class="javax.swing.JTextField" name="nombreJugadorAPartidoModificar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1569,9 +1584,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorModificar5FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorModificar5FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorModificar5ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoModificarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoModificarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorAPartidoModificarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
@@ -1635,10 +1650,10 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="JugadorAgregar6" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorBPartidoAgregar" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jSeparator32" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jSeparator31" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nombreJugadorAgregar4" alignment="0" pref="338" max="32767" attributes="0"/>
+                                  <Component id="nombreJugadorAPartidoAgregar" alignment="0" pref="338" max="32767" attributes="0"/>
                                   <Component id="jLabel41" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="HoraPartidoAgregar" alignment="0" max="32767" attributes="0"/>
@@ -1648,9 +1663,9 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                              <Component id="botonVolverEliminarJugador3" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="botonVolverPartidoAgregar" min="-2" pref="110" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="botonEliminarJugador3" min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="botonPartidoAgregar" min="-2" pref="101" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="86" max="32767" attributes="0"/>
@@ -1663,13 +1678,13 @@
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="jLabel42" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="nombreJugadorAgregar4" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorAPartidoAgregar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator31" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel41" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="JugadorAgregar6" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="nombreJugadorBPartidoAgregar" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator32" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1680,8 +1695,8 @@
                       <Component id="jSeparator30" min="-2" pref="13" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="botonVolverEliminarJugador3" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="botonEliminarJugador3" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonVolverPartidoAgregar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                          <Component id="botonPartidoAgregar" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
@@ -1699,7 +1714,7 @@
                 <Property name="text" type="java.lang.String" value="Hora"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="nombreJugadorAgregar4">
+            <Component class="javax.swing.JTextField" name="nombreJugadorAPartidoAgregar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1713,9 +1728,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAgregar4FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAgregar4FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorAgregar4ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoAgregarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorAPartidoAgregarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorAPartidoAgregarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="HoraPartidoAgregar">
@@ -1745,7 +1760,7 @@
                 <Property name="text" type="java.lang.String" value="Jugador A o Dupla A"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botonEliminarJugador3">
+            <Component class="javax.swing.JButton" name="botonPartidoAgregar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1759,10 +1774,10 @@
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEliminarJugador3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonPartidoAgregarActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="botonVolverEliminarJugador3">
+            <Component class="javax.swing.JButton" name="botonVolverPartidoAgregar">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -1776,7 +1791,7 @@
                 <Property name="text" type="java.lang.String" value="Volver"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverEliminarJugador3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonVolverPartidoAgregarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
@@ -1787,7 +1802,7 @@
                 <Property name="text" type="java.lang.String" value="Jugador B o Dupla B"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="JugadorAgregar6">
+            <Component class="javax.swing.JTextField" name="nombreJugadorBPartidoAgregar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Bebas Neue" size="18" style="0"/>
@@ -1801,9 +1816,9 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorAgregar6FocusGained"/>
-                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JugadorAgregar6FocusLost"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JugadorAgregar6ActionPerformed"/>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoAgregarFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="nombreJugadorBPartidoAgregarFocusLost"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreJugadorBPartidoAgregarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator32">
@@ -1814,21 +1829,6 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="banner">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/banner.jpg"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
-        <Property name="verticalAlignment" type="int" value="1"/>
-      </Properties>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="900" height="80"/>
-        </Constraint>
-      </Constraints>
-    </Component>
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

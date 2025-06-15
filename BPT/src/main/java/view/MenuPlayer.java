@@ -5,6 +5,8 @@
 package view;
 
 import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
+import static control.MenuPlayerControl.playerFocusGained;
+import static control.MenuPlayerControl.playerFocusLost;
 import static control.MenuPlayerControl.playerShowPlayerInformation;
 import static control.MenuPlayerControl.searchPlayer;
 import java.awt.Color;
@@ -99,6 +101,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel65 = new javax.swing.JPanel();
@@ -216,10 +219,8 @@ public class MenuPlayer extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         calendar1 = new raven.calendar.Calendar();
-        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel19.setBackground(new java.awt.Color(250, 250, 250));
         jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -596,8 +597,18 @@ public class MenuPlayer extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoEnCursoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 80));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerVerde.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
-        jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
@@ -1193,7 +1204,6 @@ public class MenuPlayer extends javax.swing.JFrame {
         });
         jPanel31.add(botonBuscarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 120, 40));
 
-        textoBuscarJugador.setBackground(new java.awt.Color(255, 255, 255));
         textoBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         textoBuscarJugador.setForeground(new java.awt.Color(153, 153, 153));
         textoBuscarJugador.setHorizontalAlignment(javax.swing.JTextField.LEFT);
@@ -1449,17 +1459,6 @@ public class MenuPlayer extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerVerde.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1690,11 +1689,11 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugadorMouseClicked
 
     private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
-
+        playerFocusGained (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
     }//GEN-LAST:event_textoBuscarJugadorFocusGained
 
     private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
-
+        playerFocusLost (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
     }//GEN-LAST:event_textoBuscarJugadorFocusLost
 
     private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
