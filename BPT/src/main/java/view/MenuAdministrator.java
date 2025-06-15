@@ -4,7 +4,6 @@
  */
 package view;
 
-import static control.MenuAdministratorControl.readPlayerList;
 import static control.MenuOrganizatorControl.changeButtonColor;
 import java.awt.Color;
 import java.awt.Image;
@@ -23,8 +22,6 @@ import model.Administrator;
  */
 public class MenuAdministrator extends javax.swing.JFrame {
     
-    DefaultTableModel modelo;
-    
     private Administrator administrator;
 
     /**
@@ -36,11 +33,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
-        modelo = new DefaultTableModel();
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Cedula");
-        modelo.addColumn("Estado");
-        this.tablaAdministrarPagos.setModel(modelo);
         visualizar(tablaAdministrarPagos);
         this.newIcon();
     }
@@ -615,7 +607,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_NombreAdministradorMouseExited
 
     public final void visualizar(JTable tabla) {    
-        Object[][] jugadores = readPlayerList(administrator.getPlayerList());  
+        Object[][] jugadores = administrator.readPlayerList();  
         String[] columna = new String[]{"Nombre", "Cedula", "Estado"};
         DefaultTableModel dt = new DefaultTableModel((Object[][]) jugadores, columna);
         tabla.setModel(dt); 

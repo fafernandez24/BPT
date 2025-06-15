@@ -5,6 +5,7 @@
 package control;
 
 import java.util.List;
+import javax.swing.JTextField;
 import model.Administrator;
 import model.Organizator;
 import model.Player;
@@ -14,7 +15,7 @@ import model.Player;
  * @author Freddy
  */
 public class ValidationControl {
-    
+        
     // VALIDAR ORGANIZADORES
     
     public static boolean validateOrganizator(String id, String password, List<Organizator> organizator){
@@ -93,7 +94,52 @@ public class ValidationControl {
     }
     
     public static boolean validatePassword(String password){
-        return true; //password.matches("^(?=.*\\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\\#\\$\\.\\%\\&\\*])(?=.*[a-zA-Z]).{4,16}$");
+        return true;
     }
-       
+    
+    public static boolean validateJFieldTextInt(JTextField textField){
+        return textField.getText().matches("/[-.0-9]+/");
+    }
+    
+    // validate tournament data
+    
+    public static boolean validateTournamentName(JTextField tournamentName){
+        String name = tournamentName.getText();
+        return !name.trim().isEmpty();
+    }
+    
+    public static boolean validateParticipantsNumber(JTextField tournamentParticipants){
+        int number = 0;
+        if (!tournamentParticipants.getText().isEmpty() && tournamentParticipants.getText().matches("^[0-9]+")) number = Integer.parseInt(tournamentParticipants.getText());
+        return number > 0 && number < 100;
+    }
+    
+    public static boolean validateTournamentCost(JTextField tournamentCost){
+        float number = 0;
+        if (!tournamentCost.getText().isEmpty() && tournamentCost.getText().matches("[\\d]*\\.?[\\d]*")) number = Float.parseFloat(tournamentCost.getText());
+        return number > 0 && number < 300;
+    }
+    
+    public static boolean validateTournamentPlayOff(Integer playOff, int tournamentParticipants){
+        switch(playOff){
+                case 1 ->{
+                    if (tournamentParticipants >= 32) return true;
+                }
+                case 2 -> {
+                    if (tournamentParticipants >= 16) return true;
+                }
+                case 3 ->{
+                    if (tournamentParticipants >= 8) return true;
+                }
+                case 4 ->{
+                    if (tournamentParticipants >= 4) return true;
+                }
+                case 5 ->{
+                    if (tournamentParticipants >= 2) return true;
+                }
+                default -> {return false;}
+        }
+        return true;
+    }
+     
 }

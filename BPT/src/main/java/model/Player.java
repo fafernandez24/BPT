@@ -155,34 +155,4 @@ public class Player extends Person{
         this.gameAverage = gameAverage;
     }
     
-    /* TO DO
-    Programar el metodo de searchPlayer...
-    public Player searchPlayer(List<Player> playersList){}
-    */
-    
-    /* TO DO
-    Tengo que programar 
-    public void reviewCalendar(List<partido> matchesList){}
-    */    
-    @Override
-    public String showData(){
-        return  "CI: " + id +
-                "\nNombre: " + name +
-                "\nPartidos jugados: " + matchesPlayed +
-                "\nPartidos ganados: " + matchesWon +
-                "\nPartidos perdidos: " + matchesLost +
-                "\nSets ganados: " + setsWon +
-                "\nSets perdidos: " + setsLost +
-                "\nGames ganados: "+ gamesWon +
-                "\nGames perdidos: " + gamesLost +
-                "\nPorcentaje de partidos ganados: " + matchAverage +
-                "\nPorcentaje de sets ganados: " + setAverage +
-                "\nPorcentaje de games ganados: " + gameAverage;
-    }
-    
-    @Override
-    // TO DO
-    // HACER ESTE METODO
-    public void readData(){}
-    
 }

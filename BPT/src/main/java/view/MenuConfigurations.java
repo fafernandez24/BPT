@@ -14,15 +14,19 @@ import javax.swing.ImageIcon;
  * @author Freddy A. Fernández
  */
 public class MenuConfigurations extends javax.swing.JFrame {
+    
+    // Attributes
 
     /**
      * Creates new form start
+     * @param index
      */
-    public MenuConfigurations() {
+    public MenuConfigurations(int index) {
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
         this.newIcon();
+        setTabbedBegin(index);
     }
     
     private void newIcon(){
@@ -30,7 +34,10 @@ public class MenuConfigurations extends javax.swing.JFrame {
         this.setIconImage(icon);
     }
     
-    
+    private void setTabbedBegin(int number){
+        this.jTabbedPane1.setSelectedIndex(number);
+    }
+   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -39,7 +46,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonSalida = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
-        banner = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         botonAgregarJugadorConfiguracion = new javax.swing.JButton();
@@ -107,6 +113,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel26 = new javax.swing.JLabel();
         cedulaJugadorEliminar = new javax.swing.JTextField();
         jSeparator19 = new javax.swing.JSeparator();
+        banner = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -146,12 +153,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 40, 30));
-
-        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        banner.setText("jLabel2");
-        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -506,7 +507,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addComponent(fechaNacimientoJugadorModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolverModifiarJugador)
                     .addComponent(botonGuardarModificarJugador))
@@ -858,6 +859,12 @@ public class MenuConfigurations extends javax.swing.JFrame {
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 470, 540));
 
+        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        banner.setText("jLabel2");
+        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
+
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1109,56 +1116,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private void cedulaJugadorEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminarFocusLost
         configurationFocusLost (cedulaJugadorEliminar, "Cedula del jugador");
     }//GEN-LAST:event_cedulaJugadorEliminarFocusLost
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuConfigurations.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MenuConfigurations().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel banner;

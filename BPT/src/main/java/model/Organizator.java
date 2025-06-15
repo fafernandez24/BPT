@@ -6,6 +6,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.List;
+import javax.swing.JTextField;
 
 /**
  *
@@ -48,15 +49,13 @@ public class Organizator extends Person {
     public void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;
     }
-
-    @Override
-    public void readData() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public String showData() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    
+    public Player searchPlayer(JTextField dataEnterId){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
+        }
+        return player;
     }
     
 }

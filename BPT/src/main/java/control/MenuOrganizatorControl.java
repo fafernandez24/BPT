@@ -4,33 +4,31 @@
  */
 package control;
 
-import static control.TypeBecomeType.StringBecomeLocalDate;
+import static control.TypeBecomeType.JComboBoxBecomeString;
+import static control.TypeBecomeType.JTextFieldBecomeInt;
+import static control.ValidationControl.validateParticipantsNumber;
+import static control.ValidationControl.validateTournamentCost;
+import static control.ValidationControl.validateTournamentName;
+import static control.ValidationControl.validateTournamentPlayOff;
 import java.awt.Color;
-import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import model.Group;
 import model.Player;
+import model.Tournament;
 
 /**
  *
  * @author Freddy
  */
 public class MenuOrganizatorControl {
-    
-    public static Player addPlayerTournament(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
-        String name = nombre.getText();
-        String identification = id.getText();
-        String password = identification;
-        String cellPhoneNumber = phoneNumber.getText();
-        String gmail = email.getText();
-        String level = (String) category.getSelectedItem();
-        String teamName = team.getText();
-        LocalDate date = StringBecomeLocalDate(dateBirth.getText());   
-        return new Player(level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, password, gmail, date, cellPhoneNumber); 
-    }
    
     public static void organizatorFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
@@ -55,14 +53,6 @@ public class MenuOrganizatorControl {
         button.setBackground(new Color(r,g,b));
     }
     
-    public static Player organizatorFindPlayer(JTextField dataEnterId, List<Player> playerList){
-        Player player = new Player();
-        for (int i = 0; i < playerList.size(); i++){
-            if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
-        }
-        return player;
-    }
-    
     public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField categoryField, JTextField teamField, JTextField mathPlayedField, JTextField matchesWonField, Player player){
         nameField.setText(player.getName());
         phoneField.setText(player.getPhoneNumber());
@@ -75,5 +65,140 @@ public class MenuOrganizatorControl {
         matchesWonField.setText(String.valueOf(player.getMatchesWon()));
     }
     
+    public static int organizatorGetPlayOffJComboBox(JComboBox comboBox){
+        HashMap<String, Integer> playOff = new HashMap<>();
+        playOff.put("DIECISEISAVOS", 1);
+        playOff.put("OCTAVOS", 2);
+        playOff.put("CUARTOS", 3);
+        playOff.put("SEMIFINALES", 4);
+        playOff.put("FINAL", 5);
+        return playOff.get(JComboBoxBecomeString(comboBox));
+    }
+    
+    public static int organizatorGetTicketForPlayOffJComboBox(JComboBox comboBox){
+        HashMap<String, Integer> playOff = new HashMap<>();
+        playOff.put("DIECISEISAVOS", 32);
+        playOff.put("OCTAVOS", 16);
+        playOff.put("CUARTOS", 8);
+        playOff.put("SEMIFINALES", 4);
+        playOff.put("FINAL", 2);
+        return playOff.get(JComboBoxBecomeString(comboBox));
+    }
+    
+    public static int organizatorGetNumberOfGroupsJComboBox(JComboBox comboBox){
+        HashMap<String, Integer> playOff = new HashMap<>();
+        playOff.put("Dos grupos", 2);
+        playOff.put("Tres grupos", 3);
+        playOff.put("Cuatro grupos", 4);
+        playOff.put("Cinco grupos", 5);
+        playOff.put("Seis grupos", 6);
+        return playOff.get(JComboBoxBecomeString(comboBox));
+    }
+ 
+    public static void organizatorTabbedPanelCreateTournament(JTabbedPane tabs, int option){
+        switch(option){
+            case 1 -> tabs.setSelectedIndex(5);
+            case 2 -> tabs.setSelectedIndex(6);
+            case 3 -> tabs.setSelectedIndex(7);
+            default -> tabs.setSelectedIndex(0);
+        }
+    }
+    
+    public static void organizatorTabbedPanelSeeTournaments(JTabbedPane tabs, int option){
+        switch(option){
+            case 1 -> tabs.setSelectedIndex(10);
+            case 2 -> tabs.setSelectedIndex(11);
+            case 3 -> tabs.setSelectedIndex(12);
+            case 4 -> tabs.setSelectedIndex(13);
+            case 5 -> tabs.setSelectedIndex(14);
+            case 6 -> tabs.setSelectedIndex(15);
+            default -> tabs.setSelectedIndex(0);
+        }
+    }
+    
+    public static boolean booleanValidateDataEnterTournament(JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
+        return validateTournamentName(name) && validateTournamentCost(cost) && validateParticipantsNumber(participants) && validateTournamentPlayOff(organizatorGetPlayOffJComboBox(playOff), JTextFieldBecomeInt(participants));
+    }
+    
+    public static Tournament CreateTournament(JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
+        if (booleanValidateDataEnterTournament(name, cost, participants, playOff)) return new Tournament(name.getText(), cost.getText(), JTextFieldBecomeInt(cost), JTextFieldBecomeInt(participants));
+        return null;
+    }
+    
+    public static void GetUpTournamentFromPartOne(JTabbedPane tabs, int option, JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
+        if (booleanValidateDataEnterTournament(name, cost, participants, playOff)) organizatorTabbedPanelCreateTournament(tabs, option); 
+    }
+    
+    public static void organizatorSeeTournament(JTabbedPane tabs, int tournamentNumber, List<Tournament> tournamentList){
+        if ((tournamentNumber) <  tournamentList.size()) organizatorTabbedPanelSeeTournaments(tabs, tournamentList.get(tournamentNumber).getGroupsNumber());
+    }
+    
+    public static void loadPlayerIntoTableGroup(JTable table, List<Player> playerList){
+        DefaultTableModel group = (DefaultTableModel) table.getModel();
+        Object[] cells = new Object[11];
+            for (int i = 0; i < playerList.size(); i++){
+            cells[0] = playerList.get(i).getName();
+            cells[1] = playerList.get(i).getMatchesPlayed();
+            cells[2] = playerList.get(i).getMatchesWon();
+            cells[3] = playerList.get(i).getMatchesLost();
+            cells[4] = playerList.get(i).getMatchAverage();
+            cells[5] = playerList.get(i).getSetsWon();
+            cells[6] = playerList.get(i).getSetsLost();
+            cells[7] = playerList.get(i).getSetAverage();
+            cells[8] = playerList.get(i).getGamesWon();
+            cells[9] = playerList.get(i).getGamesLost();
+            cells[10] = playerList.get(i).getGameAverage();
+            group.addRow(cells);
+        }
+    }
+
+    public static int whichTournamentShow(int tournamentNumber, List<Tournament> tournamentList){
+        if (tournamentNumber <  tournamentList.size()) return tournamentList.get(tournamentNumber).getGroupsNumber();
+        return 0;    
+    }
+    
+    public static void loadTournamentTypeZero(JTable generalTable, List<Player> playerList){
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static void loadTournamentTypeOne(JTable tableOne, JTable tableTwo, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
+        loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static void loadTournamentTypeTwo(JTable tableOne, JTable tableTwo, JTable tableThree, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
+        loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
+        loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static void loadTournamentTypeThree(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
+        loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
+        loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
+        loadPlayerIntoTableGroup(tableFour, groupsList.get(3).getPlayerList());
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static void loadTournamentTypeFour(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable tableFive, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
+        loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
+        loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
+        loadPlayerIntoTableGroup(tableFour, groupsList.get(3).getPlayerList());
+        loadPlayerIntoTableGroup(tableFive, groupsList.get(4).getPlayerList());
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static void loadTournamentTypeFive(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable tableFive, JTable tableSix, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
+        loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
+        loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
+        loadPlayerIntoTableGroup(tableFour, groupsList.get(3).getPlayerList());
+        loadPlayerIntoTableGroup(tableFive, groupsList.get(4).getPlayerList());
+        loadPlayerIntoTableGroup(tableSix, groupsList.get(5).getPlayerList());
+        loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
     
 }

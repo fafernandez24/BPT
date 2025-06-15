@@ -84,15 +84,4 @@ public abstract class Person {
         return numberString.matches("[0-9]") && (numberString.length() > 0 && numberString.length() < 9);
     }
     
-    // Read Methods
-    
-    // Others Methods
-    
-    public abstract void readData();
-    public abstract String showData();
-
-    private boolean validateName(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
 }

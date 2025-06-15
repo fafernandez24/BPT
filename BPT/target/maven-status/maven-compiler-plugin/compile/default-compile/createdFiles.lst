@@ -93,7 +93,6 @@ view\MenuPlayer$4.class
 view\MenuOrganizator$135.class
 view\MenuOrganizator$74.class
 view\MenuOrganizator$34.class
-view\MenuOrganizator$188.class
 view\MenuOrganizator$27.class
 view\MenuOrganizator$14.class
 view\MenuOrganizator$148.class
@@ -114,7 +113,6 @@ view\MenuPlayOff$2.class
 control\TypeBecomeType.class
 view\MenuConfigurations$41.class
 tamanaco\tennis\league\bpt\BPT.class
-model\GeneralTable.class
 view\MenuOrganizator$103.class
 view\MenuOrganizator$66.class
 view\MenuOrganizator$143.class
@@ -128,7 +126,6 @@ view\MenuPlayOff$1.class
 view\prueba$1.class
 view\MenuOrganizator$149.class
 view\MenuOrganizator$154.class
-view\MenuOrganizator$189.class
 view\MenuOrganizator$80.class
 view\MenuPlayer$32.class
 view\MenuPlayer$8.class
@@ -150,7 +147,6 @@ view\MenuOrganizator$68.class
 view\MenuOrganizator$139.class
 view\MenuOrganizator$73.class
 control\MenuAdministratorControl.class
-view\MenuConfigurations$45.class
 view\MenuOrganizator$19.class
 view\MenuOrganizator$22.class
 model\Administrator.class
@@ -236,7 +232,6 @@ view\MenuOrganizator$88.class
 view\MenuOrganizator$179.class
 view\MenuOrganizator$93.class
 view\MenuPlayer$14.class
-view\MenuOrganizator$187.class
 view\MenuOrganizator$29.class
 view\MenuOrganizator$62.class
 view\MenuOrganizator$85.class

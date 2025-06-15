@@ -47,18 +47,14 @@ public class Administrator extends Person {
         return true;
     }
     
-    // Other Methods
-    
-    public void checkingPay(){}
-    
-    @Override
-    public String showData(){
-        return  "CI: " + id +
-                "\nNombre: " + name +
-                "\nCorreo: " + email;
+    public Object[][] readPlayerList(){
+        Object playersTable[][] = new Object[playerList.size()][3];
+        for (int i = 0; i < playerList.size(); i++){
+            playersTable[i][0] = playerList.get(i).getName();
+            playersTable[i][1] = playerList.get(i).getId();
+            playersTable[i][2] = "Pendiente";
+        }
+        return playersTable;
     }
-    
-    @Override
-    public void readData(){}
     
 }
