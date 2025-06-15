@@ -12,6 +12,7 @@ import static control.ValidationControl.validateTournamentName;
 import static control.ValidationControl.validateTournamentPlayOff;
 import java.awt.Color;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -199,6 +200,38 @@ public class MenuOrganizatorControl {
         loadPlayerIntoTableGroup(tableFive, groupsList.get(4).getPlayerList());
         loadPlayerIntoTableGroup(tableSix, groupsList.get(5).getPlayerList());
         loadPlayerIntoTableGroup(generalTable, playerList);    
+    }
+    
+    public static Object[][] readPlayerListTournament(List<Player> listPlayer){
+        HashSet<String> playersNames= new HashSet<>();
+        int n= listPlayer.size();  
+        Object playersTable[][]= new Object[n][3];
+        int index= 0;
+        for(Player playerA : listPlayer){
+            String nameA= nameCharacters(playerA.getName());
+            if(playersNames.add(nameA)){
+                String nameB= findDifferentName(listPlayer, nameA);
+                playersTable[index][0]= nameA;
+                playersTable[index][1]= nameB;
+                playersTable[index][2]= "07/02/2005";
+                index++;
+            }
+        }
+        return playersTable;
+    }
+    
+    public static String nameCharacters(String name){
+        return name.length() > 9 ? name.substring(0, 9) : name;
+    }
+    
+    public static String findDifferentName(List<Player> listPlayer, String nameSave){
+        for(Player playerB : listPlayer){
+            String nameB= nameCharacters(playerB.getName());
+            if(!nameB.equals(nameSave)){
+                return nameB;
+            }
+        }
+        return "-";
     }
     
 }
