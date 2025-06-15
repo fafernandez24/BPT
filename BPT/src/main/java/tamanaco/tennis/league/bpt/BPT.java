@@ -28,10 +28,8 @@ public class BPT {
         Player freddyPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Player juanFreddy = new Player("6ta Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
         Player carlosAPlayer = new Player("7ma Categoria", "Tamanaco Team", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
-        Player pedroPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Pedro Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
+        Player pedroPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "14957763", "Pedro Alejandro Fernández Tovar", "0406", "freddyf2019@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Player carlitosPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31101453", "Carlos Alejandro Fernández Tovar", "Messi48", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
-        
-        
         
         List<Player> players = new ArrayList<>();
         players.add(juanFreddy);
@@ -41,7 +39,6 @@ public class BPT {
         players.add(carlitosPlayer);
         
         List<Group> groups = new ArrayList<>();
-        
         List<Player> knockOut = new ArrayList<>();
 
         Tournament tournament = new Tournament("Copa Libertadores","Profesional",1,1,1,1,1, 1, players, groups,knockOut);

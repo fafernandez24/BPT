@@ -7,7 +7,6 @@ package view;
 import static control.MenuOrganizatorControl.CreateTournament;
 import static control.MenuOrganizatorControl.GetUpTournamentFromPartOne;
 import static control.MenuOrganizatorControl.changeButtonColor;
-import static control.MenuOrganizatorControl.loadPlayerIntoTableGroup;
 import static control.MenuOrganizatorControl.loadTournamentTypeFive;
 import static control.MenuOrganizatorControl.loadTournamentTypeFour;
 import static control.MenuOrganizatorControl.loadTournamentTypeOne;
@@ -24,10 +23,13 @@ import static control.MenuOrganizatorControl.readPlayerListTournament;
 import static control.MenuOrganizatorControl.whichTournamentShow;
 import java.awt.Color;
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Organizator;
+import model.Double;
 import model.Player;
 import model.Tournament;
 
@@ -37,13 +39,14 @@ import model.Tournament;
  */
 public class MenuOrganizator extends javax.swing.JFrame {
     
-    DefaultTableModel modelo;
     
     // Atributtes
     
+    
+    
     private int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
     private Organizator organizator;
-    private Tournament newTournament;
+    private Tournament newTournament = new Tournament();
     
     // ManejarTablas
     
@@ -70,10 +73,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresIngresados = (DefaultTableModel) tablaJugadoresAgregados.getModel();
         tablaDuplasIngresados = (DefaultTableModel) tablaDuplasAgregadas.getModel();
         this.newIcon();
-        modelo= new DefaultTableModel();
-        modelo.addColumn("Jugador A");
-        modelo.addColumn("Jugador B");
-        modelo.addColumn("Fecha");
         visual(tablaEnfrentamientos);
     }
 
@@ -5194,9 +5193,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirDuplasActionPerformed
 
     private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
-        Player playerA = newTournament.addPlayer(entradaNombreJugadorA, entradaIdJugadorA, entradaNumeroTelefonoJugadorA, entradaEmailJugadorA, opcionesCategoriaJugadorA, entradaEquipoJugadorA, entradaFechaNacimientoJugadorA);
-        Player playerB = newTournament.addPlayer(entradaNombreJugadorB, entradaIdJugadorB, entradaNumeroTelefonoJugadorB, entradaEmailJugadorB, opcionesCategoriaJugadorB, entradaEquipoJugadorB, entradaFechaNacimientoJugadorB);
-        
+        Player playerA = new Player();
+        Player playerB = new Player();
+        playerA.readPlayer(entradaNombreJugadorA, entradaIdJugadorA, entradaNumeroTelefonoJugadorA, entradaEmailJugadorA, opcionesCategoriaJugadorA, entradaEquipoJugadorA, entradaFechaNacimientoJugadorA);
+        playerB.readPlayer(entradaNombreJugadorB, entradaIdJugadorB, entradaNumeroTelefonoJugadorB, entradaEmailJugadorB, opcionesCategoriaJugadorB, entradaEquipoJugadorB, entradaFechaNacimientoJugadorB);    
         
         cellsDoubles[0] = playerA.getName();
         cellsDoubles[1] = playerA.getId();
@@ -5288,16 +5288,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarJugadorActionPerformed
 
     private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
-        int tournamentPosition = organizator.getTournamentList().size() - 1;
-        if (newTournament.getParticipantsList().size() < newTournament.getParticipantsNumber()){
-            organizator.getTournamentList().get(tournamentPosition).addPlayerTournament(mostrarNombre, jTextField2, mostrarNombre, jTextField2, opcionesCategoriaCapitan, jTextField2, jTextField2);
-            Player player = organizator.getTournamentList().get(tournamentPosition).getParticipantsList().getLast();
-            cellsSingle[0] = player.getName();
-            cellsSingle[1] = player.getId();
-            cellsSingle[2] = player.getPhoneNumber();
-            cellsSingle[3] = player.getCategory();
-            tablaJugadoresIngresados.addRow(cellsSingle);
-        }
+        Player player = new Player();
+        player.readPlayer(mostrarNombre, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
+        newTournament.addPlayerTournament(player);
+        cellsSingle[0] = player.getName();
+        cellsSingle[1] = player.getId();
+        cellsSingle[2] = player.getPhoneNumber();
+        cellsSingle[3] = player.getCategory();
+        tablaJugadoresIngresados.addRow(cellsSingle);
     }//GEN-LAST:event_botonAgregarJugadorActionPerformed
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
@@ -5720,7 +5718,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_verTorneo2MouseMoved
 
-    @SuppressWarnings("empty-statement")
     private void verTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseClicked
         organizatorSeeTournament(pestania, 2, organizator.getTournamentList());   
         int numberGroups = whichTournamentShow(1, organizator.getTournamentList());
@@ -5728,7 +5725,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         switch(numberGroups){
             case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(1).getParticipantsList());
             case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados8, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
+            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
             case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
             case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
             case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
@@ -5751,7 +5748,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         switch(numberGroups){
             case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(2).getParticipantsList());
             case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados8, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
+            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
             case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
             case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
             case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
@@ -5774,7 +5771,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         switch(numberGroups){
             case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(0).getParticipantsList());
             case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
-            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados8, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
+            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
             case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
             case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
             case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
@@ -6072,8 +6069,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
     private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
         newTournament = CreateTournament(entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);
-        GetUpTournamentFromPartOne(pestania, opcionCrearTorneo, entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);
-         
+        List<Player> playerList = new ArrayList<>();
+        newTournament.setParticipantsList(playerList);
+        GetUpTournamentFromPartOne(pestania, opcionCrearTorneo, entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);     
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
 
     private void entradaCantidadJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresActionPerformed

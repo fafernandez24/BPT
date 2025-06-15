@@ -122,24 +122,13 @@ public class ValidationControl {
     
     public static boolean validateTournamentPlayOff(Integer playOff, int tournamentParticipants){
         switch(playOff){
-                case 1 ->{
-                    if (tournamentParticipants >= 32) return true;
-                }
-                case 2 -> {
-                    if (tournamentParticipants >= 16) return true;
-                }
-                case 3 ->{
-                    if (tournamentParticipants >= 8) return true;
-                }
-                case 4 ->{
-                    if (tournamentParticipants >= 4) return true;
-                }
-                case 5 ->{
-                    if (tournamentParticipants >= 2) return true;
-                }
+                case 1 ->{return tournamentParticipants >= 32;}
+                case 2 -> {return tournamentParticipants >= 16;}
+                case 3 -> {return tournamentParticipants >= 8;}
+                case 4 -> {return tournamentParticipants >= 4;}
+                case 5 -> {return tournamentParticipants >= 2;}
                 default -> {return false;}
         }
-        return true;
     }
      
 }

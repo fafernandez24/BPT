@@ -11,6 +11,7 @@ import static control.ValidationControl.validateTournamentCost;
 import static control.ValidationControl.validateTournamentName;
 import static control.ValidationControl.validateTournamentPlayOff;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -122,7 +123,10 @@ public class MenuOrganizatorControl {
     }
     
     public static Tournament CreateTournament(JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
-        if (booleanValidateDataEnterTournament(name, cost, participants, playOff)) return new Tournament(name.getText(), cost.getText(), JTextFieldBecomeInt(cost), JTextFieldBecomeInt(participants));
+        List<Player> participantsList = new ArrayList<>();
+        List<Group> groupsList = new ArrayList<>();
+        List<Player> knockOutStage = new ArrayList<>();
+        if (booleanValidateDataEnterTournament(name, cost, participants, playOff)) return new Tournament(name.getText(), cost.getText(), 0, JTextFieldBecomeInt(cost), JTextFieldBecomeInt(participants), 0, 0, 0, participantsList, groupsList, knockOutStage);
         return null;
     }
     

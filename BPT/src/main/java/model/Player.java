@@ -4,7 +4,10 @@
  */
 package model;
 
+import static control.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
@@ -153,6 +156,17 @@ public class Player extends Person{
 
     public void setGameAverage(double gameAverage) {
         this.gameAverage = gameAverage;
+    }
+    
+    public void readPlayer(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
+        this.name = nombre.getText();
+        this.id = id.getText();
+        this.password = this.id;
+        this.phoneNumber= phoneNumber.getText();
+        this.email = email.getText();
+        this.category = (String) category.getSelectedItem();
+        this.teamName = team.getText();
+        this.dateBirth = StringBecomeLocalDate(dateBirth.getText());   
     }
     
 }

@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import model.Administrator;
 import model.Organizator;
 import model.Player;
+import model.Tournament;
 import view.MenuAdministrator;
 import view.MenuOrganizator;
 import view.MenuPlayer;
@@ -36,8 +37,8 @@ public class StartControl {
         openMenu.setVisible(true);
     }
 
-    public static void openMenuPlayer(Player player){
-        MenuPlayer openMenu = new MenuPlayer(player);
+    public static void openMenuPlayer(Player player, List<Tournament> tournamentList){
+        MenuPlayer openMenu = new MenuPlayer(player, tournamentList);
         openMenu.setVisible(true);
     }
     
@@ -205,7 +206,7 @@ public class StartControl {
             }
             case 2 -> {
                 Player player = startFindPlayer(dataEnterId, playerList);
-                openMenuPlayer(player);
+                openMenuPlayer(player, organizatorList.get(0).getTournamentList());
             }
             case 3 -> {
                 Administrator administrator = startFindAdministrator(dataEnterId, administratorList);

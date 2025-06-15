@@ -5,12 +5,9 @@
 package model;
 
 import static control.TypeBecomeType.JComboBoxBecomeString;
-import static control.TypeBecomeType.StringBecomeLocalDate;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
 
 /**
  *
@@ -51,14 +48,6 @@ public class Tournament {
         this.participantsList = participantsList;
         this.groupsList = groupsList;
         this.knockOutStage = knockOutStage;
-    }
-
-    // Constructor #3
-    public Tournament(String tournamentName, String tournamentCategory, int tournamentCost, int participantsNumber) {
-        this.tournamentName = tournamentName;
-        this.tournamentCategory = tournamentCategory;
-        this.tournamentCost = tournamentCost;
-        this.participantsNumber = participantsNumber;
     }
 
     // Getter Methods
@@ -153,29 +142,8 @@ public class Tournament {
         this.ticketPlayOff = ticketPlayOff;
     }
     
-    public void addPlayerTournament(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
-        String name = nombre.getText();
-        String identification = id.getText();
-        String password = identification;
-        String cellPhoneNumber = phoneNumber.getText();
-        String gmail = email.getText();
-        String level = (String) category.getSelectedItem();
-        String teamName = team.getText();
-        LocalDate date = StringBecomeLocalDate(dateBirth.getText());   
-        Player player = new Player(level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, password, gmail, date, cellPhoneNumber); 
+    public void addPlayerTournament(Player player){
         participantsList.add(player);
-    }
-    
-    public Player addPlayer(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
-        String name = nombre.getText();
-        String identification = id.getText();
-        String password = identification;
-        String cellPhoneNumber = phoneNumber.getText();
-        String gmail = email.getText();
-        String level = (String) category.getSelectedItem();
-        String teamName = team.getText();
-        LocalDate date = StringBecomeLocalDate(dateBirth.getText());   
-        return new Player(level, teamName, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, identification, name, password, gmail, date, cellPhoneNumber); 
     }
     
     public void drawGroups(int numberGroups){
@@ -184,10 +152,6 @@ public class Tournament {
             group = (int) (Math.random() * (numberGroups-1));
             groupsList.get(group).getPlayerList().add(participantsList.get(i));
         }
-    }
-    
-    public void drawknockOutStage(int numberGroups){
-        //TODO
     }
     
     public void ticketsForPlayOffJComboBox(JComboBox comboBox){
@@ -199,5 +163,12 @@ public class Tournament {
         playOff.put("FINAL", 2);
         ticketPlayOff = playOff.get(JComboBoxBecomeString(comboBox));
     }
+    
+    public Player searchPlayerTournament(String id){
+        for (int i = 0; i < participantsList.size(); i++){
+            if (participantsList.get(i).getId().equals(id)) return participantsList.get(i);
+        }
+        return new Player();
+    } 
 
 }

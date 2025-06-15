@@ -4,10 +4,15 @@
  */
 package view;
 
+import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
+import static control.MenuPlayerControl.playerShowPlayerInformation;
+import static control.MenuPlayerControl.searchPlayer;
 import java.awt.Color;
 import java.awt.Image;
+import java.util.List;
 import javax.swing.ImageIcon;
 import model.Player;
+import model.Tournament;
 
 /**
  *
@@ -15,14 +20,17 @@ import model.Player;
  */
 public class MenuPlayer extends javax.swing.JFrame {
     
-    Player player;
+    private Player player;
+    private List<Tournament> tournamentList;
 
     /**
      * Creates new form Player
      * @param player
+     * @param tournamentList
      */
-    public MenuPlayer(Player player) {
+    public MenuPlayer(Player player, List<Tournament> tournamentList) {
         this.player = player;
+        this.tournamentList = tournamentList;
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -91,7 +99,6 @@ public class MenuPlayer extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel65 = new javax.swing.JPanel();
@@ -209,6 +216,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         calendar1 = new raven.calendar.Calendar();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane2.setForeground(new java.awt.Color(0, 0, 0));
@@ -587,17 +595,6 @@ public class MenuPlayer extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoEnCursoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 80));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerVerde.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane.setForeground(new java.awt.Color(0, 0, 0));
@@ -1452,6 +1449,17 @@ public class MenuPlayer extends javax.swing.JFrame {
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerVerde.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1677,7 +1685,8 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle9MouseExited
 
     private void botonBuscarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseClicked
-
+        Player player = searchPlayer(tournamentList, textoBuscarJugador.getText());
+        playerShowPlayerInformation(mostrarNombre, jTextField11, jTextField2, jTextField6, jTextField3, jTextField8, jTextField5, jTextField10, jTextField7, player);
     }//GEN-LAST:event_botonBuscarJugadorMouseClicked
 
     private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
