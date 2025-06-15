@@ -4,6 +4,7 @@
  */
 package view;
 
+import static control.MenuOrganizatorControl.changeButtonColor;
 import static control.StartControl.pushLoginButton;
 import static control.StartControl.startCheckBox;
 import static control.StartControl.startFocusGained;
@@ -139,7 +140,6 @@ public class MenuStart extends javax.swing.JFrame {
         jLabel11.setToolTipText("");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 171, 160, -1));
 
-        iniciarSesionIngresarCedula.setBackground(new java.awt.Color(255, 255, 255));
         iniciarSesionIngresarCedula.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         iniciarSesionIngresarCedula.setForeground(new java.awt.Color(153, 153, 153));
         iniciarSesionIngresarCedula.setText("Ingresar cedula de identidad");
@@ -164,7 +164,6 @@ public class MenuStart extends javax.swing.JFrame {
         jLabel10.setToolTipText("");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
-        iniciarSesionIngresarPassword.setBackground(new java.awt.Color(255, 255, 255));
         iniciarSesionIngresarPassword.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         iniciarSesionIngresarPassword.setForeground(new java.awt.Color(153, 153, 153));
         iniciarSesionIngresarPassword.setText("Ingresar contraseña");
@@ -253,9 +252,6 @@ public class MenuStart extends javax.swing.JFrame {
         botonIniciarSeccion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonIniciarSeccionMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonIniciarSeccionMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonIniciarSeccionMouseExited(evt);
@@ -390,16 +386,12 @@ public class MenuStart extends javax.swing.JFrame {
         pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword, organizator, player, administrator);
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 
-    private void botonIniciarSeccionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseEntered
-
-    }//GEN-LAST:event_botonIniciarSeccionMouseEntered
-
     private void botonIniciarSeccionMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseMoved
-        botonIniciarSeccion.setBackground(new Color(102,102,255));
+         changeButtonColor(botonIniciarSeccion,102,102,255);
     }//GEN-LAST:event_botonIniciarSeccionMouseMoved
 
     private void botonIniciarSeccionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseExited
-         botonIniciarSeccion.setBackground(new Color(30,25,161));
+         changeButtonColor(botonIniciarSeccion,30,25,161);
     }//GEN-LAST:event_botonIniciarSeccionMouseExited
 
     private void botonVerPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerPasswordMouseClicked

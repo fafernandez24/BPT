@@ -4,6 +4,8 @@
  */
 package view;
 
+import static control.MenuOrganizatorControl.changeButtonColor;
+import static control.MenuOrganizatorControl.changePanelColor;
 import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
 import static control.MenuPlayerControl.playerFocusGained;
 import static control.MenuPlayerControl.playerFocusLost;
@@ -572,9 +574,6 @@ public class MenuPlayer extends javax.swing.JFrame {
         botonMenuVerCalendario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonMenuVerCalendarioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                botonMenuVerCalendarioMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonMenuVerCalendarioMouseExited(evt);
@@ -1192,9 +1191,17 @@ public class MenuPlayer extends javax.swing.JFrame {
         botonBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         botonBuscarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscarJugador.setText("Buscar");
+        botonBuscarJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonBuscarJugadorMouseMoved(evt);
+            }
+        });
         botonBuscarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonBuscarJugadorMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonBuscarJugadorMouseExited(evt);
             }
         });
         botonBuscarJugador.addActionListener(new java.awt.event.ActionListener() {
@@ -1484,11 +1491,11 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseClicked
 
     private void botonMenuBuscarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuBuscarJugadorMouseMoved
-        botonMenuBuscarJugador.setBackground(new Color(250,250,250));
+        changePanelColor(botonMenuBuscarJugador,250,250,250);
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseMoved
 
     private void botonMenuBuscarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuBuscarJugadorMouseExited
-        botonMenuBuscarJugador.setBackground(new Color(153,255,153));
+        changePanelColor(botonMenuBuscarJugador,153,255,153);
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseExited
 
     private void botonMenuVerCalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseClicked
@@ -1498,15 +1505,11 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuVerCalendarioMouseClicked
 
     private void botonMenuVerCalendarioMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseMoved
-        botonMenuVerCalendario.setBackground(new Color(250,250,250));
+        changePanelColor(botonMenuVerCalendario,250,250,250);
     }//GEN-LAST:event_botonMenuVerCalendarioMouseMoved
 
-    private void botonMenuVerCalendarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseEntered
-        // ME EQUIVOQUE Y EL IDE NO ME PERMITE QUITARLO
-    }//GEN-LAST:event_botonMenuVerCalendarioMouseEntered
-
     private void botonMenuVerCalendarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseExited
-        botonMenuVerCalendario.setBackground(new Color(153,255,153));
+        changePanelColor(botonMenuVerCalendario,153,255,153);
     }//GEN-LAST:event_botonMenuVerCalendarioMouseExited
 
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
@@ -1518,7 +1521,7 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMinimizarMouseClicked
 
     private void botonMenuVerTorneosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerTorneosMouseExited
-        botonMenuVerTorneos.setBackground(new Color(153,255,153));
+        changePanelColor(botonMenuVerTorneos,153,255,153);
     }//GEN-LAST:event_botonMenuVerTorneosMouseExited
 
     private void botonMenuVerTorneosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerTorneosMouseClicked
@@ -1528,7 +1531,7 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuVerTorneosMouseClicked
 
     private void botonMenuVerTorneosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerTorneosMouseMoved
-        botonMenuVerTorneos.setBackground(new Color(250,250,250));
+        changePanelColor(botonMenuVerTorneos,250,250,250);
     }//GEN-LAST:event_botonMenuVerTorneosMouseMoved
 
     private void NombreJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreJugadorMouseExited
@@ -1743,6 +1746,14 @@ public class MenuPlayer extends javax.swing.JFrame {
     private void botonBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonBuscarJugadorActionPerformed
+
+    private void botonBuscarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseExited
+        changeButtonColor(botonBuscarJugador,0,102,0);
+    }//GEN-LAST:event_botonBuscarJugadorMouseExited
+
+    private void botonBuscarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseMoved
+        changeButtonColor(botonBuscarJugador,153,153,0);
+    }//GEN-LAST:event_botonBuscarJugadorMouseMoved
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;

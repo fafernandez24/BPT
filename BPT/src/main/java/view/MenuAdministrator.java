@@ -5,6 +5,7 @@
 package view;
 
 import static control.MenuOrganizatorControl.changeButtonColor;
+import static control.MenuOrganizatorControl.changePanelColor;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.DefaultCellEditor;
@@ -463,7 +464,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jPanel3.setPreferredSize(new java.awt.Dimension(1370, 625));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        botonActualizarPagos.setBackground(new java.awt.Color(30, 25, 161));
+        botonActualizarPagos.setBackground(new java.awt.Color(204, 0, 51));
         botonActualizarPagos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonActualizarPagos.setForeground(new java.awt.Color(255, 255, 255));
         botonActualizarPagos.setText("Actualizar pagos");
@@ -553,11 +554,11 @@ public class MenuAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVisualizarReporteMouseClicked
 
     private void botonVisualizarReporteMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVisualizarReporteMouseMoved
-        botonVisualizarReporte.setBackground(new Color(250,250,250));
+        changePanelColor(botonVisualizarReporte,250,250,250);
     }//GEN-LAST:event_botonVisualizarReporteMouseMoved
 
     private void botonVisualizarReporteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVisualizarReporteMouseExited
-        botonVisualizarReporte.setBackground(new Color(255,51,51));
+        changePanelColor(botonVisualizarReporte,255,51,51);
     }//GEN-LAST:event_botonVisualizarReporteMouseExited
 
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
@@ -569,7 +570,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMinimizarMouseClicked
 
     private void botonAdministrarPagoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAdministrarPagoMouseExited
-        botonAdministrarPago.setBackground(new Color(255,51,51));
+        changePanelColor(botonAdministrarPago,255,51,51);
     }//GEN-LAST:event_botonAdministrarPagoMouseExited
 
     private void botonAdministrarPagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAdministrarPagoMouseClicked
@@ -579,11 +580,11 @@ public class MenuAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAdministrarPagoMouseClicked
 
     private void botonAdministrarPagoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAdministrarPagoMouseMoved
-        botonAdministrarPago.setBackground(new Color(250,250,250));
+        changePanelColor(botonAdministrarPago,250,250,250);
     }//GEN-LAST:event_botonAdministrarPagoMouseMoved
 
     private void botonActualizarPagosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseMoved
-        changeButtonColor(botonActualizarPagos,102,102,255);
+        changeButtonColor(botonActualizarPagos,255,51,51);
     }//GEN-LAST:event_botonActualizarPagosMouseMoved
 
     private void botonActualizarPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseClicked
@@ -591,7 +592,7 @@ public class MenuAdministrator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonActualizarPagosMouseClicked
 
     private void botonActualizarPagosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseExited
-        changeButtonColor(botonActualizarPagos,30,25,161);
+        changeButtonColor(botonActualizarPagos,204,0,51);
     }//GEN-LAST:event_botonActualizarPagosMouseExited
 
     private void botonActualizarPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarPagosActionPerformed
