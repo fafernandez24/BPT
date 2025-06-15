@@ -27,14 +27,14 @@ public class BPT {
         
         Player freddyPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Player juanFreddy = new Player("6ta Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
-        Player carlosAPlayer = new Player("7ma Categoria", "Tamanaco Team", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
+        Player pintoPlayer = new Player("7ma Categoria", "Tamanaco Team", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
         Player pedroPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "14957763", "Pedro Alejandro Fernández Tovar", "0406", "freddyf2019@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Player carlitosPlayer = new Player("7ma Categoria", "Centro Portugues", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "31101453", "Carlos Alejandro Fernández Tovar", "Messi48", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         
         List<Player> players = new ArrayList<>();
         players.add(juanFreddy);
         players.add(freddyPlayer);
-        players.add(carlosAPlayer);
+        players.add(pintoPlayer);
         players.add(pedroPlayer);
         players.add(carlitosPlayer);
         
@@ -51,7 +51,8 @@ public class BPT {
         Organizator organizator = new Organizator(tournamentList, players, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
         Organizator freddyOrganizator = new Organizator(tournamentList, players, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
         Organizator CarlosOrganizator = new Organizator(tournamentList, players, "31101453", "Carlos Eduardo Hernandez Rivas", "Messi48", "eduyeli958@gmail.com", LocalDate.of(2005,04,06), "31101453");
-        
+        Organizator pintoOrganizator = new Organizator(tournamentList, players, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "31307188");
+
         
         List<Organizator> organizatorList = new ArrayList<>();
         organizatorList.add(organizator);
@@ -60,14 +61,14 @@ public class BPT {
         
         Administrator administrator = new Administrator(players,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "11032757");
         Administrator freddyAdministrator = new Administrator(players,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "11032757");
-        Administrator carlosAdministrator = new Administrator(players,"31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
+        Administrator pintoAdministrator = new Administrator(players,"31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
         Administrator CarlosAdministrator = new Administrator(players,"31101453", "Carlos Eduardo Hernandez Rivas", "Messi48", "eduyeli958@gmail.com", LocalDate.of(2005,12,01), "31101453");
 
         
         List<Administrator> administratorList = new ArrayList<>();
         administratorList.add(administrator);
         administratorList.add(freddyAdministrator);
-        administratorList.add(carlosAdministrator);
+        administratorList.add(pintoAdministrator);
         administratorList.add(CarlosAdministrator);
         
         // Permite que la interfaz grafica se vea un poco mejor.
