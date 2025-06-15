@@ -58,6 +58,8 @@ public class BPT {
         organizatorList.add(organizator);
         organizatorList.add(freddyOrganizator);
         organizatorList.add(CarlosOrganizator);
+        organizatorList.add(pintoOrganizator);
+
         
         Administrator administrator = new Administrator(players,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "11032757");
         Administrator freddyAdministrator = new Administrator(players,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "11032757");
