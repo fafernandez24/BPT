@@ -15,11 +15,8 @@ _2. Descargar el tipo de letra "Bebas Neue":_
   *[Google Fonts](https://fonts.google.com/specimen/Bebas+Neue) - Instalador del tipo de letra
   
     2.1. Cuando se termine de descargar el tipo de letra tendrá que dirigirse a sus descargas
-    
     2.2. Descomprimir el archivo "Bebas_Neue.zip"
-    
     2.3. Abrir el archivo "BebasNeue-Regular"
-    
     2.4. Darle al botón ""Install"
 
 _3. Añandir la librería del CalendarW_
