@@ -3,6 +3,7 @@ view\MenuOrganizator$57.class
 view\MenuStart$9.class
 view\MenuOrganizator$112.class
 view\MenuOrganizator$152.class
+view\MenuOrganizator$192.class
 view\MenuOrganizator$165.class
 view\MenuAdministrator$1.class
 view\MenuOrganizator$44.class
@@ -12,6 +13,7 @@ view\MenuOrganizator$17.class
 view\MenuOrganizator$178.class
 view\MenuOrganizator$125.class
 view\MenuPlayer$1.class
+view\MenuOrganizator$203.class
 view\MenuConfigurations$64.class
 view\MenuConfigurations$24.class
 view\MenuConfigurations.class
@@ -25,6 +27,7 @@ view\MenuStart$4.class
 model\Person.class
 view\MenuOrganizator$89.class
 view\MenuPlayer$17.class
+view\MenuPlayer$50.class
 view\MenuConfigurations$6.class
 view\MenuPlayer$10.class
 view\MenuOrganizator$160.class
@@ -60,6 +63,7 @@ view\MenuOrganizator$159.class
 view\MenuStart$15.class
 view\MenuOrganizator$184.class
 view\MenuOrganizator$33.class
+view\MenuOrganizator$190.class
 view\MenuStart$17.class
 view\MenuOrganizator$12.class
 view\MenuConfigurations$35.class
@@ -92,14 +96,17 @@ view\MenuOrganizator$67.class
 view\MenuPlayer$19.class
 view\MenuOrganizator$102.class
 view\MenuOrganizator$162.class
+view\MenuOrganizator$200.class
 model\Team.class
 view\MenuOrganizator$155.class
 view\MenuPlayer$4.class
 view\MenuOrganizator$135.class
 view\MenuOrganizator$74.class
 view\MenuOrganizator$34.class
+view\MenuOrganizator$188.class
 view\MenuOrganizator$27.class
 view\MenuOrganizator$14.class
+view\MenuOrganizator$195.class
 view\MenuOrganizator$148.class
 view\MenuPlayer$33.class
 view\MenuOrganizator$81.class
@@ -112,6 +119,7 @@ view\MenuConfigurations$55.class
 view\MenuOrganizator$1.class
 view\MenuPlayer$3.class
 view\MenuConfigurations$48.class
+view\MenuOrganizator$206.class
 view\MenuOrganizator$79.class
 view\MenuStart$14.class
 view\MenuPlayer$9.class
@@ -124,6 +132,7 @@ tamanaco\tennis\league\bpt\BPT.class
 view\MenuOrganizator$103.class
 view\MenuOrganizator$66.class
 view\MenuOrganizator$143.class
+view\MenuOrganizator$201.class
 view\MenuOrganizator$15.class
 view\MenuConfigurations$54.class
 view\MenuPlayer$18.class
@@ -135,6 +144,8 @@ view\MenuPlayOff$1.class
 view\prueba$1.class
 view\MenuOrganizator$149.class
 view\MenuOrganizator$154.class
+view\MenuOrganizator$189.class
+view\MenuOrganizator$194.class
 view\MenuOrganizator$80.class
 view\MenuPlayer$32.class
 view\MenuConfigurations$50.class
@@ -144,11 +155,13 @@ view\MenuStart$12.class
 view\MenuConfigurations$43.class
 view\MenuPlayer$25.class
 view\MenuConfigurations$46.class
+view\MenuOrganizator$196.class
 view\MenuOrganizator$76.class
 view\MenuOrganizator$153.class
 view\MenuPlayer$28.class
 view\MenuConfigurations$38.class
 view\MenuPlayOff$3.class
+view\MenuOrganizator$199.class
 view\MenuOrganizator$25.class
 view\MenuOrganizator$16.class
 view\MenuOrganizator$101.class
@@ -165,10 +178,12 @@ view\MenuOrganizator$22.class
 model\Administrator.class
 view\MenuOrganizator$75.class
 view\MenuOrganizator$147.class
+view\MenuOrganizator$197.class
 view\MenuConfigurations$51.class
 view\MenuPlayer$27.class
 view\MenuOrganizator$69.class
 view\MenuConfigurations$39.class
+view\MenuOrganizator$205.class
 view\MenuPlayer$30.class
 view\MenuOrganizator$150.class
 model\Tournament.class
@@ -179,6 +194,7 @@ view\MenuOrganizator$146.class
 view\MenuPlayer$26.class
 view\MenuPlayer$5.class
 view\MenuOrganizator$18.class
+view\MenuOrganizator$204.class
 view\MenuOrganizator$23.class
 view\MenuPlayer$31.class
 view\MenuStart$10.class
@@ -195,6 +211,7 @@ view\MenuOrganizator$64.class
 view\MenuAdministrator$7.class
 view\MenuOrganizator$185.class
 view\MenuOrganizator$24.class
+view\MenuOrganizator$198.class
 view\MenuOrganizator$105.class
 view\MenuOrganizator$37.class
 view\MenuPlayer$7.class
@@ -213,6 +230,8 @@ view\MenuOrganizator$177.class
 view\MenuConfigurations$25.class
 view\MenuConfigurations$65.class
 view\MenuOrganizator$137.class
+view\MenuOrganizator$202.class
+view\MenuOrganizator$193.class
 view\MenuAdministrator.class
 view\MenuConfigurations$49.class
 view\MenuOrganizator$72.class
@@ -252,6 +271,7 @@ view\MenuOrganizator$88.class
 view\MenuOrganizator$179.class
 view\MenuOrganizator$93.class
 view\MenuPlayer$14.class
+view\MenuOrganizator$187.class
 view\MenuOrganizator$29.class
 view\MenuOrganizator$62.class
 view\MenuOrganizator$85.class
@@ -265,6 +285,7 @@ view\MenuPlayer$43.class
 view\MenuStart$8.class
 control\StartControl.class
 view\MenuStart$16.class
+view\MenuOrganizator$191.class
 view\MenuOrganizator$91.class
 view\MenuConfigurations$28.class
 control\MenuOrganizatorControl.class

@@ -127,7 +127,7 @@ public class ValidationControl {
                 case 3 -> {return tournamentParticipants >= 8;}
                 case 4 -> {return tournamentParticipants >= 4;}
                 case 5 -> {return tournamentParticipants >= 2;}
-                default -> {return false;}
+                default -> {return true;}
         }
     }
      

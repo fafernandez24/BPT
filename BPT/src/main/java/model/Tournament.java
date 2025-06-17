@@ -8,6 +8,7 @@ import static control.TypeBecomeType.JComboBoxBecomeString;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JComboBox;
+import javax.swing.JTextField;
 
 /**
  *
