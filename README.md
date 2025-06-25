@@ -1,5 +1,4 @@
-# BPT🎾
-## Break Point Tamanaco
+# Break Point Tamanaco - BPT🎾
 _El proyecto es una aplicación de escritorio que ayuda a la creación, organización y visualización de torneos amateur de tenis en Caracas, Venezuela_
 
 _Este además, permite (de parte de los juagdores) llevar un registro de como se van desarrollando los torneos donde participan ver tanto sus estadísticas como las de otros jugadores_
@@ -30,9 +29,3 @@ _- En NetBeans, con el proyecto abierto deberá:_
     3.6. Marcarlo y Seleccionar "Add from JAR..."
     3.7. Buscar el JAR de "CalendarW"
     3.8. Colocar las componentes a "CalendarW"
-
-
-
-
-
-    
