@@ -7,7 +7,9 @@ package model;
 import static control.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -167,6 +169,16 @@ public class Player extends Person{
         this.category = (String) category.getSelectedItem();
         this.teamName = team.getText();
         this.dateBirth = StringBecomeLocalDate(dateBirth.getText());   
+    }
+    
+    public void addPlayerTable(JTable table){
+        DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
+        Object[] cells = new Object[4];
+        cells[0] = name;
+        cells[1] = id;
+        cells[2] = phoneNumber;
+        cells[3] = category;
+        defaultTable.addRow(cells);
     }
     
 }

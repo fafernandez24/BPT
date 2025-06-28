@@ -198,7 +198,6 @@ view\MenuOrganizator$204.class
 view\MenuOrganizator$23.class
 view\MenuPlayer$31.class
 view\MenuStart$10.class
-model\Double.class
 view\MenuOrganizator$77.class
 view\MenuConfigurations$17.class
 view\MenuOrganizator$3.class
@@ -317,6 +316,7 @@ view\MenuPlayer$13.class
 view\MenuOrganizator$61.class
 view\MenuOrganizator$41.class
 view\MenuOrganizator$107.class
+model\DoubleTennis.class
 view\MenuConfigurations$8.class
 view\MenuConfigurations$67.class
 view\MenuOrganizator$167.class

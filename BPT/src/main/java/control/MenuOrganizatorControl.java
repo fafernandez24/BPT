@@ -9,7 +9,6 @@ import static control.TypeBecomeType.JTextFieldBecomeInt;
 import static control.ValidationControl.validateParticipantsNumber;
 import static control.ValidationControl.validateTournamentCost;
 import static control.ValidationControl.validateTournamentName;
-import static control.ValidationControl.validateTournamentPlayOff;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,6 +71,11 @@ public class MenuOrganizatorControl {
         matchesWonField.setText(String.valueOf(player.getMatchesWon()));
     }
     
+    public static void organizatorCleanTable(JTable table){
+        DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
+        defaultTable.setRowCount(0);
+    }
+    
     public static int organizatorGetPlayOffJComboBox(JComboBox comboBox){
         HashMap<String, Integer> playOff = new HashMap<>();
         playOff.put("DIECISEISAVOS", 1);
@@ -124,7 +128,7 @@ public class MenuOrganizatorControl {
     }
     
     public static boolean booleanValidateDataEnterTournament(JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
-        return validateTournamentName(name) && validateTournamentCost(cost) && validateParticipantsNumber(participants) && validateTournamentPlayOff(organizatorGetPlayOffJComboBox(playOff), JTextFieldBecomeInt(participants));
+        return validateTournamentName(name) && validateTournamentCost(cost) && validateParticipantsNumber(participants);
     }
     
     public static Tournament CreateTournament(JTextField name, JTextField cost, JTextField participants, JComboBox playOff){
@@ -168,16 +172,24 @@ public class MenuOrganizatorControl {
     }
     
     public static void loadTournamentTypeZero(JTable generalTable, List<Player> playerList){
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(generalTable, playerList);    
     }
     
     public static void loadTournamentTypeOne(JTable tableOne, JTable tableTwo, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        organizatorCleanTable(tableOne);
+        organizatorCleanTable(tableTwo);
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
         loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
         loadPlayerIntoTableGroup(generalTable, playerList);    
     }
     
     public static void loadTournamentTypeTwo(JTable tableOne, JTable tableTwo, JTable tableThree, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        organizatorCleanTable(tableOne);
+        organizatorCleanTable(tableTwo);
+        organizatorCleanTable(tableThree);
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
         loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
         loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
@@ -185,6 +197,11 @@ public class MenuOrganizatorControl {
     }
     
     public static void loadTournamentTypeThree(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        organizatorCleanTable(tableOne);
+        organizatorCleanTable(tableTwo);
+        organizatorCleanTable(tableThree);
+        organizatorCleanTable(tableFour);
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
         loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
         loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
@@ -193,6 +210,12 @@ public class MenuOrganizatorControl {
     }
     
     public static void loadTournamentTypeFour(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable tableFive, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        organizatorCleanTable(tableOne);
+        organizatorCleanTable(tableTwo);
+        organizatorCleanTable(tableThree);
+        organizatorCleanTable(tableFour);
+        organizatorCleanTable(tableFive);
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
         loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
         loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
@@ -202,6 +225,13 @@ public class MenuOrganizatorControl {
     }
     
     public static void loadTournamentTypeFive(JTable tableOne, JTable tableTwo, JTable tableThree, JTable tableFour, JTable tableFive, JTable tableSix, JTable generalTable, List<Player> playerList, List<Group> groupsList){
+        organizatorCleanTable(tableOne);
+        organizatorCleanTable(tableTwo);
+        organizatorCleanTable(tableThree);
+        organizatorCleanTable(tableFour);
+        organizatorCleanTable(tableFive);
+        organizatorCleanTable(tableSix);
+        organizatorCleanTable(generalTable);
         loadPlayerIntoTableGroup(tableOne, groupsList.get(0).getPlayerList());
         loadPlayerIntoTableGroup(tableTwo, groupsList.get(1).getPlayerList());
         loadPlayerIntoTableGroup(tableThree, groupsList.get(2).getPlayerList());
