@@ -5,6 +5,8 @@
 package tamanaco.tennis.league.bpt;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import controller.AdministratorJsonControl;
+import controller.OrganizatorJsonControl;
 import controller.PlayerJsonControl;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,43 +28,21 @@ public class BPT {
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException {
         
+        // JSON 
         PlayerJsonControl jsonPlayerList = new PlayerJsonControl();
-        List<Player> players = jsonPlayerList.allPlayers();
+        OrganizatorJsonControl jsonOrganizatorList = new OrganizatorJsonControl();
+        AdministratorJsonControl jsonAdministratorList = new AdministratorJsonControl();
+        
+        List<Organizator> organizatorList = jsonOrganizatorList.allOrganizators(); // Lista de organizadores
+        List<Player> players = jsonPlayerList.allPlayers(); // Lista de jugadores
+        List<Administrator> administratorList = jsonAdministratorList.allAdministrators(); // Lista de administradores
         
         List<Group> groups = new ArrayList<>();
         List<Player> knockOut = new ArrayList<>();
-
         Tournament tournament = new Tournament("Copa Libertadores","Profesional",1,1,1,1,1, 1, players, groups,knockOut);
         
         List<Tournament> tournamentList = new ArrayList<>();
         tournamentList.add(tournament);
-        
-
-        
-        Organizator organizator = new Organizator(tournamentList, players, "11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "0263213594");
-        Organizator freddyOrganizator = new Organizator(tournamentList, players, "31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "04241540989");
-        Organizator CarlosOrganizator = new Organizator(tournamentList, players, "31101453", "Carlos Eduardo Hernandez Rivas", "Messi48", "eduyeli958@gmail.com", LocalDate.of(2005,04,06), "31101453");
-        Organizator pintoOrganizator = new Organizator(tournamentList, players, "31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "31307188");
-
-        
-        List<Organizator> organizatorList = new ArrayList<>();
-        organizatorList.add(organizator);
-        organizatorList.add(freddyOrganizator);
-        organizatorList.add(CarlosOrganizator);
-        organizatorList.add(pintoOrganizator);
-
-        
-        Administrator administrator = new Administrator(players,"11032757", "Juan Freddy Fernández Da Silva", "11032757", "jfreddyf@hotmail.com", LocalDate.of(1972,04,03), "11032757");
-        Administrator freddyAdministrator = new Administrator(players,"31703150", "Freddy Alejandro Fernández Tovar", "0406", "freddyf2030@gmail.com", LocalDate.of(2005,04,06), "11032757");
-        Administrator pintoAdministrator = new Administrator(players,"31307188", "Carlos Enrique Pinto Abreu", "carlospinto2005", "carlosepintoa01@gmail.com", LocalDate.of(2005,12,01), "11032757");
-        Administrator CarlosAdministrator = new Administrator(players,"31101453", "Carlos Eduardo Hernandez Rivas", "Messi48", "eduyeli958@gmail.com", LocalDate.of(2005,12,01), "31101453");
-
-        
-        List<Administrator> administratorList = new ArrayList<>();
-        administratorList.add(administrator);
-        administratorList.add(freddyAdministrator);
-        administratorList.add(pintoAdministrator);
-        administratorList.add(CarlosAdministrator);
         
         // Permite que la interfaz grafica se vea un poco mejor.
         UIManager.setLookAndFeel(new FlatLightLaf());

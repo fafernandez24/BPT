@@ -12,6 +12,7 @@ view\MenuOrganizator$97.class
 view\MenuOrganizator$17.class
 view\MenuOrganizator$178.class
 view\MenuOrganizator$125.class
+controller\AdministratorJsonControl.class
 view\MenuPlayer$1.class
 view\MenuOrganizator$203.class
 view\MenuConfigurations$64.class
@@ -209,6 +210,7 @@ view\MenuPlayOff$4.class
 view\MenuOrganizator$132.class
 view\MenuOrganizator$172.class
 view\MenuOrganizator$145.class
+controller\OrganizatorJsonControl.class
 view\MenuOrganizator$64.class
 view\MenuAdministrator$7.class
 view\MenuOrganizator$185.class
@@ -326,6 +328,7 @@ view\MenuConfigurations$15.class
 view\MenuOrganizator$42.class
 view\MenuOrganizator$127.class
 view\MenuPlayer$47.class
+controller\OrganizatorJsonControl$1.class
 view\MenuOrganizator$55.class
 view\MenuOrganizator$95.class
 view\MenuConfigurations$19.class
@@ -345,6 +348,7 @@ view\MenuConfigurations$4.class
 view\MenuConfigurations$30.class
 view\MenuOrganizator$50.class
 view\MenuStart$2.class
+controller\AdministratorJsonControl$1.class
 view\MenuConfigurations$1.class
 view\MenuConfigurations$23.class
 view\MenuConfigurations$66.class

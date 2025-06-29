@@ -79,10 +79,6 @@ public abstract class Person {
         this.dateBirth = dateBirth;
     }
     
-    public void setDateBirth(String dateBirth) {
-        this.dateBirth = StringBecomeLocalDate(dateBirth);
-    }
-    
     // Validations
     
     public boolean validateId(String numberString){

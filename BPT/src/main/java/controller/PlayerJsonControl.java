@@ -41,7 +41,7 @@ public class PlayerJsonControl {
         }
     }
     
-        private boolean updateDocument() {
+    private boolean updateDocument() {
         try (FileWriter writer = new FileWriter(fileLocation)) {
             gson.toJson(players, writer);
             return true;
