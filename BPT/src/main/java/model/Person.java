@@ -4,7 +4,6 @@
  */
 package model;
 
-import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
 
 /**

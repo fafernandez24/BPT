@@ -383,7 +383,7 @@ public class MenuStart extends javax.swing.JFrame {
     }//GEN-LAST:event_iniciarSesionIngresarPasswordFocusLost
 
     private void botonIniciarSeccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseClicked
-        pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword, organizator, player, administrator);
+        pushLoginButton(checkBoxOrganizator, checkBoxJugador, checkBoxAdministrador, iniciarSesionIngresarCedula, iniciarSesionIngresarPassword, organizator, player, administrator, this);
     }//GEN-LAST:event_botonIniciarSeccionMouseClicked
 
     private void botonIniciarSeccionMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIniciarSeccionMouseMoved

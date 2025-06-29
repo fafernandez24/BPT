@@ -199,29 +199,38 @@ public class StartControl {
         return administrator;
     }
     
-    public static void openAnyMenu(int option, JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administratorList){
+    public static void startOrganizator(JTextField dataEnterId, List<Organizator> organizatorList, JFrame window){
+        Organizator organizator = startFindOrganizator(dataEnterId, organizatorList);
+        openMenuOrganizator(organizator);
+        window.dispose();
+    }
+    
+    public static void startPlayer(JTextField dataEnterId, List<Player> playerList, List<Organizator> organizatorList, JFrame window){
+        Player player = startFindPlayer(dataEnterId, playerList);
+        openMenuPlayer(player, organizatorList.get(0).getTournamentList());
+        window.dispose();
+    }
+    
+    public static void startAdministrator(JTextField dataEnterId, List<Administrator> administratorList, JFrame window){
+        Administrator administrator = startFindAdministrator(dataEnterId, administratorList);
+        openMenuAdministrator(administrator);
+        window.dispose();
+    }
+    
+    public static void openAnyMenu(int option, JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administratorList, JFrame window){
         switch(option){
-            case 1 -> {
-                Organizator organizator = startFindOrganizator(dataEnterId, organizatorList);
-                openMenuOrganizator(organizator);
-            }
-            case 2 -> {
-                Player player = startFindPlayer(dataEnterId, playerList);
-                openMenuPlayer(player, organizatorList.get(0).getTournamentList());
-            }
-            case 3 -> {
-                Administrator administrator = startFindAdministrator(dataEnterId, administratorList);
-                openMenuAdministrator(administrator);
-            }  
+            case 1 -> startOrganizator(dataEnterId, organizatorList,window); 
+            case 2 -> startPlayer(dataEnterId, playerList, organizatorList,window);
+            case 3 -> startAdministrator(dataEnterId, administratorList, window); 
             default -> startShowWhereIsError(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administratorList);  
         }
     }
     
     // Presionar boton de iniciar sesion
     
-    public static void pushLoginButton(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administrator){
+    public static void pushLoginButton(JCheckBox checkBoxOrganizator, JCheckBox checkBoxPlayer, JCheckBox checkBoxAdministrator, JTextField dataEnterId, JPasswordField dataEnterPassword, List<Organizator> organizatorList, List<Player> playerList, List<Administrator> administrator, JFrame window){
         int login = startLoging(checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administrator);
-        openAnyMenu(login, checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administrator);
+        openAnyMenu(login, checkBoxOrganizator, checkBoxPlayer, checkBoxAdministrator, dataEnterId, dataEnterPassword, organizatorList, playerList, administrator, window);
     }  
     
 }
