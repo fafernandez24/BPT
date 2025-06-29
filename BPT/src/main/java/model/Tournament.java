@@ -4,7 +4,7 @@
  */
 package model;
 
-import static control.TypeBecomeType.JComboBoxBecomeString;
+import static controller.TypeBecomeType.JComboBoxBecomeString;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JComboBox;

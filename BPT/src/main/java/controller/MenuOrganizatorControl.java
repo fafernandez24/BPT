@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package control;
+package controller;
 
-import static control.TypeBecomeType.JComboBoxBecomeString;
-import static control.TypeBecomeType.JTextFieldBecomeInt;
-import static control.ValidationControl.validateParticipantsNumber;
-import static control.ValidationControl.validateTournamentCost;
-import static control.ValidationControl.validateTournamentName;
+import static controller.TypeBecomeType.JComboBoxBecomeString;
+import static controller.TypeBecomeType.JTextFieldBecomeInt;
+import static controller.ValidationControl.validateParticipantsNumber;
+import static controller.ValidationControl.validateTournamentCost;
+import static controller.ValidationControl.validateTournamentName;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;

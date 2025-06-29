@@ -4,8 +4,8 @@
  */
 package view;
 
-import static control.MenuOrganizatorControl.changeButtonColor;
-import static control.MenuOrganizatorControl.changePanelColor;
+import static controller.MenuOrganizatorControl.changeButtonColor;
+import static controller.MenuOrganizatorControl.changePanelColor;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.DefaultCellEditor;

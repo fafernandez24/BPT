@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package control;
+package controller;
 
-import static control.ValidationControl.validateJFieldTextInt;
+import static controller.ValidationControl.validateJFieldTextInt;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;

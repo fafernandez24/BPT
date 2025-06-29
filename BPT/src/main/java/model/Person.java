@@ -4,8 +4,8 @@
  */
 package model;
 
+import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -77,6 +77,10 @@ public abstract class Person {
 
     public void setDateBirth(LocalDate dateBirth) {
         this.dateBirth = dateBirth;
+    }
+    
+    public void setDateBirth(String dateBirth) {
+        this.dateBirth = StringBecomeLocalDate(dateBirth);
     }
     
     // Validations

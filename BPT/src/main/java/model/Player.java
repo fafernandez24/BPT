@@ -4,7 +4,7 @@
  */
 package model;
 
-import static control.TypeBecomeType.StringBecomeLocalDate;
+import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JTable;

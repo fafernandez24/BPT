@@ -4,24 +4,24 @@
  */
 package view;
 
-import static control.MenuOrganizatorControl.CreateTournament;
-import static control.MenuOrganizatorControl.GetUpTournamentFromPartOne;
-import static control.MenuOrganizatorControl.changeButtonColor;
-import static control.MenuOrganizatorControl.changePanelColor;
-import static control.MenuOrganizatorControl.loadTournamentTypeFive;
-import static control.MenuOrganizatorControl.loadTournamentTypeFour;
-import static control.MenuOrganizatorControl.loadTournamentTypeOne;
-import static control.MenuOrganizatorControl.loadTournamentTypeThree;
-import static control.MenuOrganizatorControl.loadTournamentTypeTwo;
-import static control.MenuOrganizatorControl.loadTournamentTypeZero;
-import static control.MenuOrganizatorControl.organizatorFocusGained;
-import static control.MenuOrganizatorControl.organizatorFocusLost;
-import static control.MenuOrganizatorControl.organizatorGetNumberOfGroupsJComboBox;
-import static control.MenuOrganizatorControl.organizatorSeeTournament;
-import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
-import static control.MenuOrganizatorControl.organizatorTabbedPanelSeeTournaments;
-import static control.MenuOrganizatorControl.readPlayerListTournament;
-import static control.MenuOrganizatorControl.whichTournamentShow;
+import static controller.MenuOrganizatorControl.CreateTournament;
+import static controller.MenuOrganizatorControl.GetUpTournamentFromPartOne;
+import static controller.MenuOrganizatorControl.changeButtonColor;
+import static controller.MenuOrganizatorControl.changePanelColor;
+import static controller.MenuOrganizatorControl.loadTournamentTypeFive;
+import static controller.MenuOrganizatorControl.loadTournamentTypeFour;
+import static controller.MenuOrganizatorControl.loadTournamentTypeOne;
+import static controller.MenuOrganizatorControl.loadTournamentTypeThree;
+import static controller.MenuOrganizatorControl.loadTournamentTypeTwo;
+import static controller.MenuOrganizatorControl.loadTournamentTypeZero;
+import static controller.MenuOrganizatorControl.organizatorFocusGained;
+import static controller.MenuOrganizatorControl.organizatorFocusLost;
+import static controller.MenuOrganizatorControl.organizatorGetNumberOfGroupsJComboBox;
+import static controller.MenuOrganizatorControl.organizatorSeeTournament;
+import static controller.MenuOrganizatorControl.organizatorShowPlayerInformation;
+import static controller.MenuOrganizatorControl.organizatorTabbedPanelSeeTournaments;
+import static controller.MenuOrganizatorControl.readPlayerListTournament;
+import static controller.MenuOrganizatorControl.whichTournamentShow;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ import model.Organizator;
 import model.DoubleTennis;
 import model.Player;
 import model.Tournament;
-import static control.MenuOrganizatorControl.organizatorCleanTable;
+import static controller.MenuOrganizatorControl.organizatorCleanTable;
 import model.Team;
 
 

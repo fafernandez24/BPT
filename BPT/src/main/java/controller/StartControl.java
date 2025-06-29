@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package control;
+package controller;
 
-import static control.ValidationControl.validateAdministrator;
-import static control.ValidationControl.validateAdministratorId;
-import static control.ValidationControl.validateAdministratorPassword;
-import static control.ValidationControl.validateOrganizator;
-import static control.ValidationControl.validateOrganizatorId;
-import static control.ValidationControl.validateOrganizatorPassword;
-import static control.ValidationControl.validatePlayer;
-import static control.ValidationControl.validatePlayerId;
-import static control.ValidationControl.validatePlayerPassword;
+import static controller.ValidationControl.validateAdministrator;
+import static controller.ValidationControl.validateAdministratorId;
+import static controller.ValidationControl.validateAdministratorPassword;
+import static controller.ValidationControl.validateOrganizator;
+import static controller.ValidationControl.validateOrganizatorId;
+import static controller.ValidationControl.validateOrganizatorPassword;
+import static controller.ValidationControl.validatePlayer;
+import static controller.ValidationControl.validatePlayerId;
+import static controller.ValidationControl.validatePlayerPassword;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.JCheckBox;

@@ -4,13 +4,13 @@
  */
 package view;
 
-import static control.MenuOrganizatorControl.changeButtonColor;
-import static control.MenuOrganizatorControl.changePanelColor;
-import static control.MenuOrganizatorControl.organizatorShowPlayerInformation;
-import static control.MenuPlayerControl.playerFocusGained;
-import static control.MenuPlayerControl.playerFocusLost;
-import static control.MenuPlayerControl.playerShowPlayerInformation;
-import static control.MenuPlayerControl.searchPlayer;
+import static controller.MenuOrganizatorControl.changeButtonColor;
+import static controller.MenuOrganizatorControl.changePanelColor;
+import static controller.MenuOrganizatorControl.organizatorShowPlayerInformation;
+import static controller.MenuPlayerControl.playerFocusGained;
+import static controller.MenuPlayerControl.playerFocusLost;
+import static controller.MenuPlayerControl.playerShowPlayerInformation;
+import static controller.MenuPlayerControl.searchPlayer;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.List;

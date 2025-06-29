@@ -4,11 +4,11 @@
  */
 package view;
 
-import static control.MenuOrganizatorControl.changeButtonColor;
-import static control.StartControl.pushLoginButton;
-import static control.StartControl.startCheckBox;
-import static control.StartControl.startFocusGained;
-import static control.StartControl.startFocusLost;
+import static controller.MenuOrganizatorControl.changeButtonColor;
+import static controller.StartControl.pushLoginButton;
+import static controller.StartControl.startCheckBox;
+import static controller.StartControl.startFocusGained;
+import static controller.StartControl.startFocusLost;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.List;

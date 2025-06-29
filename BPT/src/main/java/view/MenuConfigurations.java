@@ -4,8 +4,8 @@
  */
 package view;
 
-import static control.MenuConfigurationsControl.configurationFocusGained;
-import static control.MenuConfigurationsControl.configurationFocusLost;
+import static controller.MenuConfigurationsControl.configurationFocusGained;
+import static controller.MenuConfigurationsControl.configurationFocusLost;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
