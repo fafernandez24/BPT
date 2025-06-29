@@ -23,6 +23,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Group;
+import model.Match;
 import model.Player;
 import model.Tournament;
 
@@ -272,5 +273,17 @@ public class MenuOrganizatorControl {
         }
         return "-";
     }
+    
+    public static void loadMatchesInTable(List<Match> listMatch, JTable table){      
+        try{
+            for (int i = 0; i < listMatch.size(); i++){
+                System.out.println(listMatch.get(i).getResultFirstSet());
+                listMatch.get(i).addMatchTableByDate(table);
+            }
+        } catch (NullPointerException error){
+            System.out.println("ERROR: No se cargo un partido");
+        }
+    }
+    
     
 }

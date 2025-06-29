@@ -6,8 +6,11 @@ package controller;
 
 import static controller.ValidationControl.validateJFieldTextInt;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+
 
 /**
  *
@@ -38,5 +41,4 @@ public class TypeBecomeType {
     public static int JComboBoxBecomeInt(JComboBox comboBox){
         return Integer.parseInt((String) comboBox.getSelectedItem());
     }
-     
 }

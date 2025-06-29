@@ -13,6 +13,7 @@ view\MenuOrganizator$17.class
 view\MenuOrganizator$178.class
 view\MenuOrganizator$125.class
 controller\AdministratorJsonControl.class
+view\MenuOrganizator$208.class
 view\MenuPlayer$1.class
 view\MenuOrganizator$203.class
 view\MenuConfigurations$64.class
@@ -86,6 +87,7 @@ view\MenuOrganizator$110.class
 view\MenuOrganizator$86.class
 view\MenuOrganizator$186.class
 view\MenuPlayer.class
+controller\MatchJsonControl$1.class
 view\MenuConfigurations$34.class
 view\MenuOrganizator$163.class
 view\MenuPlayer$38.class
@@ -211,6 +213,7 @@ view\MenuOrganizator$172.class
 view\MenuOrganizator$145.class
 controller\OrganizatorJsonControl.class
 view\MenuOrganizator$64.class
+view\MenuOrganizator$210.class
 view\MenuAdministrator$7.class
 view\MenuOrganizator$185.class
 view\MenuOrganizator$24.class
@@ -273,6 +276,7 @@ view\MenuOrganizator$88.class
 view\MenuOrganizator$179.class
 view\MenuOrganizator$93.class
 view\MenuPlayer$14.class
+view\MenuOrganizator$209.class
 view\MenuOrganizator$187.class
 view\MenuOrganizator$29.class
 view\MenuOrganizator$62.class
@@ -292,6 +296,7 @@ view\MenuOrganizator$11.class
 view\MenuOrganizator$35.class
 view\MenuOrganizator$111.class
 view\MenuConfigurations$57.class
+controller\MatchJsonControl.class
 view\MenuOrganizator$134.class
 model\Match.class
 view\MenuOrganizator$58.class

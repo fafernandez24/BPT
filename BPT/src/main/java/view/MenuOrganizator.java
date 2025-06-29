@@ -4,10 +4,12 @@
  */
 package view;
 
+import controller.MatchJsonControl;
 import static controller.MenuOrganizatorControl.CreateTournament;
 import static controller.MenuOrganizatorControl.GetUpTournamentFromPartOne;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.changePanelColor;
+import static controller.MenuOrganizatorControl.loadMatchesInTable;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFive;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFour;
 import static controller.MenuOrganizatorControl.loadTournamentTypeOne;
@@ -20,30 +22,29 @@ import static controller.MenuOrganizatorControl.organizatorGetNumberOfGroupsJCom
 import static controller.MenuOrganizatorControl.organizatorSeeTournament;
 import static controller.MenuOrganizatorControl.organizatorShowPlayerInformation;
 import static controller.MenuOrganizatorControl.organizatorTabbedPanelSeeTournaments;
-import static controller.MenuOrganizatorControl.readPlayerListTournament;
 import static controller.MenuOrganizatorControl.whichTournamentShow;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import model.Organizator;
 import model.DoubleTennis;
 import model.Player;
 import model.Tournament;
 import static controller.MenuOrganizatorControl.organizatorCleanTable;
+import model.Match;
 import model.Team;
 
-
 public class MenuOrganizator extends javax.swing.JFrame {
-    
+        
+    private MatchJsonControl jsonMatch = new MatchJsonControl();
     
     // Atributtes
       
     private int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
     private final Organizator organizator;
     private Tournament newTournament = new Tournament();
+    private List<Match> matchList = jsonMatch.allMatches();
     
     //////////////////
 
@@ -58,7 +59,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setResizable(true);
         this.setLocationRelativeTo(null);
         this.newIcon();
-        visual(tablaEnfrentamientos);
+        loadMatchesInTable(matchList, tablaPartidos);
     }
 
     private void newIcon(){
@@ -317,7 +318,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tablaEnfrentamientos = new javax.swing.JTable();
+        tablaPartidos = new javax.swing.JTable();
         botonAgregarPartido = new javax.swing.JButton();
         botonEliminarPartido = new javax.swing.JButton();
         botonModificarPartido = new javax.swing.JButton();
@@ -2420,6 +2421,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         pestania.addTab("tab3", jPanel30);
 
         jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel32MouseClicked(evt);
+            }
+        });
         jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel43.setBackground(new java.awt.Color(0, 0, 0));
@@ -2432,27 +2438,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
         jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 900, 10));
 
-        tablaEnfrentamientos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        tablaEnfrentamientos.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPartidos.setAutoCreateRowSorter(true);
+        tablaPartidos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaPartidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "JugadorA", "JugadorB", "Fecha"
+                "JugadorA", "JugadorB", "Primer set", "SegundoSet", "Fecha"
             }
-        ));
-        jScrollPane3.setViewportView(tablaEnfrentamientos);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
-        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 350, 410));
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaPartidos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(tablaPartidos);
+
+        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 380, 410));
 
         botonAgregarPartido.setBackground(new java.awt.Color(36, 20, 188));
         botonAgregarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2494,7 +2501,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 botonEliminarPartidoActionPerformed(evt);
             }
         });
-        jPanel32.add(botonEliminarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 630, 140, 40));
+        jPanel32.add(botonEliminarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
 
         botonModificarPartido.setBackground(new java.awt.Color(36, 20, 188));
         botonModificarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -2520,6 +2527,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 calendar1MouseClicked(evt);
+            }
+        });
+        calendar1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                calendar1PropertyChange(evt);
             }
         });
         jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 520, 410));
@@ -6276,17 +6288,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirEquipoMouseMoved
 
     private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
-        calendar1.getSelectedDate();
-        
-    }//GEN-LAST:event_calendar1MouseClicked
 
-    public final void visual(JTable tabla){
-       Object[][] jugadores= readPlayerListTournament(organizator.getPlayerList());
-       String[] columna= new String[]{"Jugador A", "Jugador B", "Fecha"}; 
-       DefaultTableModel dt= new DefaultTableModel(jugadores, columna);
-       tabla.setModel(dt);
-    }
-    
+    }//GEN-LAST:event_calendar1MouseClicked
+   
+    private void jPanel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel32MouseClicked
+
+    private void calendar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calendar1PropertyChange
+   
+    }//GEN-LAST:event_calendar1PropertyChange
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
@@ -6829,7 +6841,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
     private javax.swing.JTable tablaDuplasAgregadas;
-    private javax.swing.JTable tablaEnfrentamientos;
     private javax.swing.JTable tablaEquiposAgregados;
     private javax.swing.JTable tablaGeneralLiga;
     private javax.swing.JTable tablaJugadoresAgregados;
@@ -6862,6 +6873,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTable tablaJugadoresAgregados7;
     private javax.swing.JTable tablaJugadoresAgregados8;
     private javax.swing.JTable tablaJugadoresAgregados9;
+    private javax.swing.JTable tablaPartidos;
     private javax.swing.JTextField textoBuscarJugador;
     private javax.swing.JLabel tituloSuperior;
     private javax.swing.JPanel verTorneo1;
