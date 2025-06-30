@@ -122,7 +122,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         pestania = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -650,6 +649,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados29 = new javax.swing.JTable();
         jSeparator69 = new javax.swing.JSeparator();
         jLabel287 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1050,17 +1050,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         pestania.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2482,6 +2471,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         });
         botonAgregarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonAgregarPartidoMouseExited(evt);
             }
@@ -2503,6 +2495,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         });
         botonEliminarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonEliminarPartidoMouseExited(evt);
             }
@@ -2524,6 +2519,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         });
         botonModificarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonModificarPartidoMouseExited(evt);
             }
@@ -5065,6 +5063,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -6298,6 +6307,24 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void calendar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calendar1PropertyChange
    
     }//GEN-LAST:event_calendar1PropertyChange
+
+    private void botonAgregarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseClicked
+        List<Player> playerlist = organizator.getPlayerList();
+        MenuConfigurations menuConfigurations = new MenuConfigurations(6, playerlist, matchList);
+        menuConfigurations.setVisible(true);   
+    }//GEN-LAST:event_botonAgregarPartidoMouseClicked
+
+    private void botonModificarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseClicked
+        List<Player> playerlist = organizator.getPlayerList();
+        MenuConfigurations menuConfigurations = new MenuConfigurations(5, playerlist, matchList);
+        menuConfigurations.setVisible(true); 
+    }//GEN-LAST:event_botonModificarPartidoMouseClicked
+
+    private void botonEliminarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseClicked
+        List<Player> playerlist = organizator.getPlayerList();
+        MenuConfigurations menuConfigurations = new MenuConfigurations(4, playerlist, matchList);
+        menuConfigurations.setVisible(true); 
+    }//GEN-LAST:event_botonEliminarPartidoMouseClicked
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;

@@ -4,10 +4,21 @@
  */
 package view;
 
+import static controller.MenuConfigurationsControl.addMatch;
+import static controller.MenuConfigurationsControl.addPlayer;
+import static controller.MenuConfigurationsControl.changeNameTournament;
 import static controller.MenuConfigurationsControl.configurationFocusGained;
 import static controller.MenuConfigurationsControl.configurationFocusLost;
+import static controller.MenuConfigurationsControl.deleteMatch;
+import static controller.MenuConfigurationsControl.deletePlayer;
+import static controller.MenuConfigurationsControl.editMatch;
+import static controller.MenuConfigurationsControl.editPlayer;
 import java.awt.Image;
+import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
+import model.Match;
+import model.Player;
 
 /**
  *
@@ -16,12 +27,17 @@ import javax.swing.ImageIcon;
 public class MenuConfigurations extends javax.swing.JFrame {
     
     // Attributes
+    private List<Player> player;
+    private List<Match> matchList;
+    private JTextField oldName;
 
     /**
      * Creates new form start
      * @param index
      */
-    public MenuConfigurations(int index) {
+    public MenuConfigurations(int index, List<Player> player, List<Match> matchList) {
+        this.matchList = matchList;
+        this.player = player;        
         this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
@@ -46,7 +62,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonSalida = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
-        banner = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         botonAgregarJugadorConfiguracion = new javax.swing.JButton();
@@ -119,7 +134,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         nombreJugadorBPartidoEliminar = new javax.swing.JTextField();
         jSeparator20 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
-        HoraPartidoEliminar = new javax.swing.JTextField();
+        FechaPartidoEliminar = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
         jSeparator18 = new javax.swing.JSeparator();
         nombreJugadorAPartidoEliminar = new javax.swing.JTextField();
@@ -136,13 +151,13 @@ public class MenuConfigurations extends javax.swing.JFrame {
         nombreJugadorAPartidoModificar = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        HoraPartidoModificar = new javax.swing.JTextField();
+        FechaPartidoModificar = new javax.swing.JTextField();
         jSeparator34 = new javax.swing.JSeparator();
         jPanel9 = new javax.swing.JPanel();
         jSeparator30 = new javax.swing.JSeparator();
         jLabel39 = new javax.swing.JLabel();
         nombreJugadorAPartidoAgregar = new javax.swing.JTextField();
-        HoraPartidoAgregar = new javax.swing.JTextField();
+        FechaPartidoAgregar = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         botonPartidoAgregar = new javax.swing.JButton();
         botonVolverPartidoAgregar = new javax.swing.JButton();
@@ -150,6 +165,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         nombreJugadorBPartidoAgregar = new javax.swing.JTextField();
         jSeparator32 = new javax.swing.JSeparator();
         jSeparator31 = new javax.swing.JSeparator();
+        banner = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -190,12 +206,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         });
         getContentPane().add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 40, 30));
 
-        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        banner.setText("jLabel2");
-        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
-
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -227,6 +237,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonModificarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         botonModificarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonModificarJugador.setText("modifiCAR JUGADOR");
+        botonModificarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModificarJugadorMouseClicked(evt);
+            }
+        });
         botonModificarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonModificarJugadorActionPerformed(evt);
@@ -294,6 +309,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonCambiarNombreTorneo.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
         botonCambiarNombreTorneo.setForeground(new java.awt.Color(255, 255, 255));
         botonCambiarNombreTorneo.setText("CAMBIAR NOMBRE");
+        botonCambiarNombreTorneo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonCambiarNombreTorneoMouseClicked(evt);
+            }
+        });
         botonCambiarNombreTorneo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCambiarNombreTorneoActionPerformed(evt);
@@ -330,6 +350,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonGuardarModificarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonGuardarModificarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonGuardarModificarJugador.setText("Guardar");
+        botonGuardarModificarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonGuardarModificarJugadorMouseClicked(evt);
+            }
+        });
         botonGuardarModificarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarModificarJugadorActionPerformed(evt);
@@ -585,6 +610,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonAgregarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonAgregarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonAgregarJugador.setText("AGREGAR");
+        botonAgregarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAgregarJugadorMouseClicked(evt);
+            }
+        });
         botonAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAgregarJugadorActionPerformed(evt);
@@ -811,6 +841,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonEliminarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonEliminarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonEliminarJugador.setText("Eliminar");
+        botonEliminarJugador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonEliminarJugadorMouseClicked(evt);
+            }
+        });
         botonEliminarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEliminarJugadorActionPerformed(evt);
@@ -922,26 +957,26 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
-        HoraPartidoEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        HoraPartidoEliminar.setForeground(new java.awt.Color(153, 153, 153));
-        HoraPartidoEliminar.setText("hORA del partido");
-        HoraPartidoEliminar.setBorder(null);
-        HoraPartidoEliminar.addFocusListener(new java.awt.event.FocusAdapter() {
+        FechaPartidoEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        FechaPartidoEliminar.setForeground(new java.awt.Color(153, 153, 153));
+        FechaPartidoEliminar.setText("fecha del partido");
+        FechaPartidoEliminar.setBorder(null);
+        FechaPartidoEliminar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                HoraPartidoEliminarFocusGained(evt);
+                FechaPartidoEliminarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                HoraPartidoEliminarFocusLost(evt);
+                FechaPartidoEliminarFocusLost(evt);
             }
         });
-        HoraPartidoEliminar.addActionListener(new java.awt.event.ActionListener() {
+        FechaPartidoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HoraPartidoEliminarActionPerformed(evt);
+                FechaPartidoEliminarActionPerformed(evt);
             }
         });
 
         jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel31.setText("hORA");
+        jLabel31.setText("Fecha(DD/MM/YYYY)");
 
         nombreJugadorAPartidoEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         nombreJugadorAPartidoEliminar.setForeground(new java.awt.Color(153, 153, 153));
@@ -968,6 +1003,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonPartidoEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonPartidoEliminar.setForeground(new java.awt.Color(255, 255, 255));
         botonPartidoEliminar.setText("Eliminar");
+        botonPartidoEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonPartidoEliminarMouseClicked(evt);
+            }
+        });
         botonPartidoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPartidoEliminarActionPerformed(evt);
@@ -999,7 +1039,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                             .addComponent(nombreJugadorAPartidoEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                             .addComponent(jLabel31)
                             .addComponent(jSeparator24)
-                            .addComponent(HoraPartidoEliminar)
+                            .addComponent(FechaPartidoEliminar)
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
@@ -1027,7 +1067,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(HoraPartidoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FechaPartidoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
@@ -1076,6 +1116,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonPartidoModificar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonPartidoModificar.setForeground(new java.awt.Color(255, 255, 255));
         botonPartidoModificar.setText("Modificar");
+        botonPartidoModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonPartidoModificarMouseClicked(evt);
+            }
+        });
         botonPartidoModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPartidoModificarActionPerformed(evt);
@@ -1104,23 +1149,23 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jLabel43.setText("Jugador A o Dupla A");
 
         jLabel40.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel40.setText("Hora");
+        jLabel40.setText("Fecha(DD/MM/YYYY)");
 
-        HoraPartidoModificar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        HoraPartidoModificar.setForeground(new java.awt.Color(153, 153, 153));
-        HoraPartidoModificar.setText("Hora del partido");
-        HoraPartidoModificar.setBorder(null);
-        HoraPartidoModificar.addFocusListener(new java.awt.event.FocusAdapter() {
+        FechaPartidoModificar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        FechaPartidoModificar.setForeground(new java.awt.Color(153, 153, 153));
+        FechaPartidoModificar.setText("fecha del partido");
+        FechaPartidoModificar.setBorder(null);
+        FechaPartidoModificar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                HoraPartidoModificarFocusGained(evt);
+                FechaPartidoModificarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                HoraPartidoModificarFocusLost(evt);
+                FechaPartidoModificarFocusLost(evt);
             }
         });
-        HoraPartidoModificar.addActionListener(new java.awt.event.ActionListener() {
+        FechaPartidoModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HoraPartidoModificarActionPerformed(evt);
+                FechaPartidoModificarActionPerformed(evt);
             }
         });
 
@@ -1139,7 +1184,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                             .addComponent(nombreJugadorAPartidoModificar, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                             .addComponent(jLabel44)
                             .addComponent(jLabel40)
-                            .addComponent(HoraPartidoModificar)
+                            .addComponent(FechaPartidoModificar)
                             .addComponent(jSeparator34, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel8Layout.createSequentialGroup()
@@ -1167,7 +1212,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(HoraPartidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FechaPartidoModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator34, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -1182,7 +1227,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel39.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel39.setText("Hora");
+        jLabel39.setText("Fecha(DD/MM/YYYY)");
 
         nombreJugadorAPartidoAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         nombreJugadorAPartidoAgregar.setForeground(new java.awt.Color(153, 153, 153));
@@ -1202,21 +1247,21 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
-        HoraPartidoAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        HoraPartidoAgregar.setForeground(new java.awt.Color(153, 153, 153));
-        HoraPartidoAgregar.setText("Hora del partido");
-        HoraPartidoAgregar.setBorder(null);
-        HoraPartidoAgregar.addFocusListener(new java.awt.event.FocusAdapter() {
+        FechaPartidoAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        FechaPartidoAgregar.setForeground(new java.awt.Color(153, 153, 153));
+        FechaPartidoAgregar.setText("fecha del partido");
+        FechaPartidoAgregar.setBorder(null);
+        FechaPartidoAgregar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                HoraPartidoAgregarFocusGained(evt);
+                FechaPartidoAgregarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                HoraPartidoAgregarFocusLost(evt);
+                FechaPartidoAgregarFocusLost(evt);
             }
         });
-        HoraPartidoAgregar.addActionListener(new java.awt.event.ActionListener() {
+        FechaPartidoAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HoraPartidoAgregarActionPerformed(evt);
+                FechaPartidoAgregarActionPerformed(evt);
             }
         });
 
@@ -1227,6 +1272,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         botonPartidoAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonPartidoAgregar.setForeground(new java.awt.Color(255, 255, 255));
         botonPartidoAgregar.setText("Agregar");
+        botonPartidoAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonPartidoAgregarMouseClicked(evt);
+            }
+        });
         botonPartidoAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonPartidoAgregarActionPerformed(evt);
@@ -1279,7 +1329,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                             .addComponent(nombreJugadorAPartidoAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
                             .addComponent(jLabel41)
                             .addComponent(jLabel39)
-                            .addComponent(HoraPartidoAgregar)
+                            .addComponent(FechaPartidoAgregar)
                             .addComponent(jSeparator30, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -1307,7 +1357,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(HoraPartidoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FechaPartidoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator30, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
@@ -1320,6 +1370,12 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jTabbedPane1.addTab("tab7", jPanel9);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 470, 540));
+
+        banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        banner.setText("jLabel2");
+        banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1585,17 +1641,17 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreJugadorBPartidoEliminarActionPerformed
 
-    private void HoraPartidoEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarFocusGained
-        configurationFocusGained (HoraPartidoEliminar, "Hora del partido");
-    }//GEN-LAST:event_HoraPartidoEliminarFocusGained
+    private void FechaPartidoEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoEliminarFocusGained
+        configurationFocusGained (FechaPartidoEliminar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoEliminarFocusGained
 
-    private void HoraPartidoEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarFocusLost
-        configurationFocusLost (HoraPartidoEliminar, "Hora del partido");
-    }//GEN-LAST:event_HoraPartidoEliminarFocusLost
+    private void FechaPartidoEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoEliminarFocusLost
+        configurationFocusLost (FechaPartidoEliminar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoEliminarFocusLost
 
-    private void HoraPartidoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoEliminarActionPerformed
+    private void FechaPartidoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaPartidoEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_HoraPartidoEliminarActionPerformed
+    }//GEN-LAST:event_FechaPartidoEliminarActionPerformed
 
     private void nombreJugadorAPartidoEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorAPartidoEliminarFocusGained
         configurationFocusGained (nombreJugadorAPartidoEliminar, "Nombre del jugador a eliminar");
@@ -1649,17 +1705,17 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreJugadorAPartidoModificarActionPerformed
 
-    private void HoraPartidoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoModificarFocusGained
-        configurationFocusGained (HoraPartidoModificar, "Hora del encuentro");
-    }//GEN-LAST:event_HoraPartidoModificarFocusGained
+    private void FechaPartidoModificarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoModificarFocusGained
+        configurationFocusGained (FechaPartidoModificar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoModificarFocusGained
 
-    private void HoraPartidoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoModificarFocusLost
-        configurationFocusLost (HoraPartidoModificar, "Hora del encuentro");
-    }//GEN-LAST:event_HoraPartidoModificarFocusLost
+    private void FechaPartidoModificarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoModificarFocusLost
+        configurationFocusLost (FechaPartidoModificar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoModificarFocusLost
 
-    private void HoraPartidoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoModificarActionPerformed
+    private void FechaPartidoModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaPartidoModificarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_HoraPartidoModificarActionPerformed
+    }//GEN-LAST:event_FechaPartidoModificarActionPerformed
 
     private void nombreJugadorAPartidoAgregarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorAPartidoAgregarFocusGained
         configurationFocusGained (nombreJugadorAPartidoAgregar, "Nombre del jugador a agregar");
@@ -1673,17 +1729,17 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreJugadorAPartidoAgregarActionPerformed
 
-    private void HoraPartidoAgregarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarFocusGained
-        configurationFocusGained (HoraPartidoAgregar, "Hora del partido");
-    }//GEN-LAST:event_HoraPartidoAgregarFocusGained
+    private void FechaPartidoAgregarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoAgregarFocusGained
+        configurationFocusGained (FechaPartidoAgregar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoAgregarFocusGained
 
-    private void HoraPartidoAgregarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarFocusLost
-        configurationFocusLost (HoraPartidoAgregar, "Hora del partido");
-    }//GEN-LAST:event_HoraPartidoAgregarFocusLost
+    private void FechaPartidoAgregarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_FechaPartidoAgregarFocusLost
+        configurationFocusLost (FechaPartidoAgregar, "fecha del partido");
+    }//GEN-LAST:event_FechaPartidoAgregarFocusLost
 
-    private void HoraPartidoAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoraPartidoAgregarActionPerformed
+    private void FechaPartidoAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaPartidoAgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_HoraPartidoAgregarActionPerformed
+    }//GEN-LAST:event_FechaPartidoAgregarActionPerformed
 
     private void botonPartidoAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPartidoAgregarActionPerformed
         // TODO add your handling code here:
@@ -1705,10 +1761,73 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreJugadorBPartidoAgregarActionPerformed
 
+    private void botonPartidoEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPartidoEliminarMouseClicked
+        deleteMatch(matchList, nombreJugadorAPartidoEliminar, nombreJugadorBPartidoEliminar, FechaPartidoEliminar);
+        nombreJugadorAPartidoEliminar.setText("");
+        nombreJugadorBPartidoEliminar.setText("");
+        FechaPartidoEliminar.setText("");
+    }//GEN-LAST:event_botonPartidoEliminarMouseClicked
+
+    private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
+        addPlayer(player, agregarIngresarNombre, agregarIngresarCedula, agregarIngresarCorreo, agregarIngresarTelefono, agregarIngresarEquipo, opcionesCategoriasAgregar);
+        agregarIngresarNombre.setText("");
+        agregarIngresarCedula.setText("");
+        agregarIngresarCorreo.setText("");
+        agregarIngresarTelefono.setText("");
+        agregarIngresarEquipo.setText("");
+        opcionesCategoriasAgregar.setSelectedItem(0);
+    }//GEN-LAST:event_botonAgregarJugadorMouseClicked
+
+    private void botonEliminarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarJugadorMouseClicked
+        deletePlayer(player, nombreJugadorEliminar, cedulaJugadorEliminar);
+        nombreJugadorEliminar.setText("");
+        cedulaJugadorEliminar.setText("");
+    }//GEN-LAST:event_botonEliminarJugadorMouseClicked
+
+    private void botonCambiarNombreTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCambiarNombreTorneoMouseClicked
+        changeNameTournament(entradaNombreTorneoModificar, oldName);
+    }//GEN-LAST:event_botonCambiarNombreTorneoMouseClicked
+
+    private void botonModificarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarJugadorMouseClicked
+        String cedulaPlayer = entradaCedulaJugadorModificar.getText();
+        for(Player playerScreach : player) {
+            String playerName = playerScreach.getId();
+            if(cedulaPlayer.equals(playerName)) {
+                jTabbedPane1.setSelectedIndex(1);
+            }
+        }
+        entradaCedulaJugadorModificar.setText("");
+    }//GEN-LAST:event_botonModificarJugadorMouseClicked
+
+    private void botonGuardarModificarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarModificarJugadorMouseClicked
+        editPlayer(player, entradaCedulaJugadorModificar, nombreJugadorModificar, correoJugadorModificar, telefonoJugadorModificar, cedulaJugadorModificar, equipoJugadorModificar, opcionesCategoriasModificar, fechaNacimientoJugadorModificar);
+        nombreJugadorModificar.setText("");
+        correoJugadorModificar.setText("");
+        telefonoJugadorModificar.setText("");
+        cedulaJugadorModificar.setText("");
+        equipoJugadorModificar.setText("");
+        opcionesCategoriasModificar.setSelectedItem(0);
+        fechaNacimientoJugadorModificar.setText("");
+    }//GEN-LAST:event_botonGuardarModificarJugadorMouseClicked
+
+    private void botonPartidoModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPartidoModificarMouseClicked
+        editMatch(matchList, nombreJugadorAPartidoModificar, nombreJugadorBPartidoModificar, FechaPartidoModificar);
+        nombreJugadorAPartidoModificar.setText("");
+        nombreJugadorBPartidoModificar.setText("");
+        FechaPartidoModificar.setText("");
+    }//GEN-LAST:event_botonPartidoModificarMouseClicked
+
+    private void botonPartidoAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPartidoAgregarMouseClicked
+        addMatch(matchList, nombreJugadorAPartidoAgregar, nombreJugadorBPartidoAgregar, FechaPartidoAgregar);
+        nombreJugadorAPartidoAgregar.setText("");
+        nombreJugadorBPartidoAgregar.setText("");
+        FechaPartidoAgregar.setText("");
+    }//GEN-LAST:event_botonPartidoAgregarMouseClicked
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField HoraPartidoAgregar;
-    private javax.swing.JTextField HoraPartidoEliminar;
-    private javax.swing.JTextField HoraPartidoModificar;
+    private javax.swing.JTextField FechaPartidoAgregar;
+    private javax.swing.JTextField FechaPartidoEliminar;
+    private javax.swing.JTextField FechaPartidoModificar;
     private javax.swing.JTextField agregarIngresarCedula;
     private javax.swing.JTextField agregarIngresarCorreo;
     private javax.swing.JTextField agregarIngresarEquipo;
