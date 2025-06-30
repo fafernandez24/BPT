@@ -21,6 +21,7 @@ view\MenuConfigurations$24.class
 view\MenuConfigurations.class
 view\MenuConfigurations$32.class
 view\MenuPlayer$36.class
+view\MenuConfigurations$72.class
 view\MenuOrganizator$104.class
 view\MenuAdministrator$6.class
 view\MenuOrganizator$49.class
@@ -88,6 +89,7 @@ view\MenuOrganizator$86.class
 view\MenuOrganizator$186.class
 view\MenuPlayer.class
 controller\MatchJsonControl$1.class
+controller\MenuAdministratorControl.class
 view\MenuConfigurations$34.class
 view\MenuOrganizator$163.class
 view\MenuPlayer$38.class
@@ -238,6 +240,7 @@ view\MenuConfigurations$65.class
 view\MenuOrganizator$137.class
 view\MenuOrganizator$202.class
 view\MenuOrganizator$193.class
+view\MenuConfigurations$71.class
 view\MenuAdministrator.class
 view\MenuConfigurations$49.class
 view\MenuOrganizator$72.class
@@ -327,6 +330,7 @@ view\MenuOrganizator$107.class
 model\DoubleTennis.class
 view\MenuConfigurations$8.class
 view\MenuConfigurations$67.class
+view\MenuConfigurations$75.class
 view\MenuOrganizator$167.class
 view\MenuAdministrator$12.class
 view\MenuOrganizator$39.class
@@ -348,15 +352,19 @@ view\MenuOrganizator$7.class
 view\MenuConfigurations$14.class
 view\MenuStart$5.class
 view\MenuPlayer$46.class
+view\MenuConfigurations$70.class
 view\MenuOrganizator$114.class
 view\MenuConfigurations$20.class
 view\MenuConfigurations$4.class
 view\MenuConfigurations$30.class
+view\MenuConfigurations$73.class
 view\MenuOrganizator$50.class
 view\MenuStart$2.class
 controller\AdministratorJsonControl$1.class
 view\MenuConfigurations$1.class
 view\MenuConfigurations$23.class
+view\MenuAdministrator$13.class
+view\MenuConfigurations$76.class
 view\MenuConfigurations$66.class
 view\MenuOrganizator$48.class
 view\MenuOrganizator$96.class
@@ -386,8 +394,10 @@ view\MenuOrganizator$180.class
 view\MenuConfigurations$16.class
 view\MenuStart$1.class
 view\MenuOrganizator$123.class
+view\MenuConfigurations$74.class
 view\MenuConfigurations$3.class
 view\MenuOrganizator$9.class
+view\MenuConfigurations$69.class
 view\MenuOrganizator$46.class
 view\MenuOrganizator$51.class
 view\MenuOrganizator$174.class

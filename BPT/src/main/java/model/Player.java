@@ -181,4 +181,13 @@ public class Player extends Person{
         defaultTable.addRow(cells);
     }
     
+    public void addPlayerTableTopTen(JTable table){
+        DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
+        Object[] cells = new Object[3];
+        cells[0] = name;
+        cells[1] = id;
+        cells[2] = matchesWon;
+        defaultTable.addRow(cells);
+    }
+    
 }

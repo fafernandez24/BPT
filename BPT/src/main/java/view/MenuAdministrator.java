@@ -4,9 +4,10 @@
  */
 package view;
 
+import static controller.MenuAdministratorControl.administratorCleanTable;
+import static controller.MenuAdministratorControl.tableTopTen;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.changePanelColor;
-import java.awt.Color;
 import java.awt.Image;
 import javax.swing.DefaultCellEditor;
 import javax.swing.ImageIcon;
@@ -92,14 +93,26 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         jTabbedPane = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         botonActualizarPagos = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaAdministrarPagos = new javax.swing.JTable();
-        jPanel30 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jPanel14 = new javax.swing.JPanel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel88 = new javax.swing.JLabel();
+        panelTotalJugadores4 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        panelTotalJugadores5 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
+        panelTotalJugadores7 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaTopTen = new javax.swing.JTable();
+        jLabel91 = new javax.swing.JLabel();
+        panelTotalJugadores6 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -447,17 +460,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoAdministrarPago.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, 80));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerRojo.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -502,32 +504,108 @@ public class MenuAdministrator extends javax.swing.JFrame {
 
         jTabbedPane.addTab("tab1", jPanel3);
 
-        jPanel30.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane5.setBorder(null);
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel15.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel15.setToolTipText("");
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel88.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel88.setText("Total de jugadrores:");
+        jPanel15.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 60));
+
+        panelTotalJugadores4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores4.setToolTipText("");
+        panelTotalJugadores4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 300, 200));
+
+        jLabel89.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel89.setText("Torneo con mas");
+        jPanel15.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, 60));
+
+        jLabel82.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel82.setText("Jugadores:");
+        jPanel15.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, -1, 60));
+
+        panelTotalJugadores5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores5.setToolTipText("");
+        panelTotalJugadores5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 300, 200));
 
         jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel90.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel90.setText("VISUALIZAR REPORTES");
+        jLabel90.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel90.setText("Top 10 jugadores con mas partidos ganados:");
+        jPanel15.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, -1, 60));
 
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGap(429, 429, 429)
-                .addComponent(jLabel90)
-                .addContainerGap(352, Short.MAX_VALUE))
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGap(253, 253, 253)
-                .addComponent(jLabel90, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(382, Short.MAX_VALUE))
-        );
+        panelTotalJugadores7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores7.setToolTipText("");
+        panelTotalJugadores7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 200));
 
-        jTabbedPane.addTab("tab2", jPanel30);
+        tablaTopTen.setAutoCreateRowSorter(true);
+        tablaTopTen.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaTopTen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Cedula", "Partidos Ganados"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaTopTen.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(tablaTopTen);
+        if (tablaTopTen.getColumnModel().getColumnCount() > 0) {
+            tablaTopTen.getColumnModel().getColumn(0).setHeaderValue("Nombre");
+            tablaTopTen.getColumnModel().getColumn(1).setHeaderValue("Cedula");
+            tablaTopTen.getColumnModel().getColumn(2).setHeaderValue("Partidos Ganados");
+        }
+
+        jPanel15.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 590, 910, 400));
+
+        jLabel91.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel91.setText("Promedio de edad:");
+        jPanel15.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 60));
+
+        panelTotalJugadores6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores6.setToolTipText("");
+        panelTotalJugadores6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 300, 200));
+
+        jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 3200));
+
+        jScrollPane5.setViewportView(jPanel14);
+
+        jTabbedPane.addTab("tab2", jScrollPane5);
 
         jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 1020, 730));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerRojo.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -551,6 +629,8 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jTabbedPane.setSelectedIndex(1);
         tituloSuperior.setText("Reportes");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoVisualizarReporte.png")));
+        // administratorCleanTable(tablaTopTen);
+        tableTopTen(administrator.getPlayerList(), tablaTopTen);
     }//GEN-LAST:event_botonVisualizarReporteMouseClicked
 
     private void botonVisualizarReporteMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVisualizarReporteMouseMoved
@@ -583,22 +663,6 @@ public class MenuAdministrator extends javax.swing.JFrame {
         changePanelColor(botonAdministrarPago,250,250,250);
     }//GEN-LAST:event_botonAdministrarPagoMouseMoved
 
-    private void botonActualizarPagosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseMoved
-        changeButtonColor(botonActualizarPagos,255,51,51);
-    }//GEN-LAST:event_botonActualizarPagosMouseMoved
-
-    private void botonActualizarPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonActualizarPagosMouseClicked
-
-    private void botonActualizarPagosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseExited
-        changeButtonColor(botonActualizarPagos,204,0,51);
-    }//GEN-LAST:event_botonActualizarPagosMouseExited
-
-    private void botonActualizarPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarPagosActionPerformed
-        
-    }//GEN-LAST:event_botonActualizarPagosActionPerformed
-
     private void NombreAdministradorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreAdministradorMouseMoved
         NombreAdministrador.setText("ADMINISTRADOR");
     }//GEN-LAST:event_NombreAdministradorMouseMoved
@@ -606,6 +670,22 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private void NombreAdministradorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreAdministradorMouseExited
         NombreAdministrador.setText(administrator.getName());
     }//GEN-LAST:event_NombreAdministradorMouseExited
+
+    private void botonActualizarPagosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarPagosActionPerformed
+
+    }//GEN-LAST:event_botonActualizarPagosActionPerformed
+
+    private void botonActualizarPagosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseExited
+        changeButtonColor(botonActualizarPagos,204,0,51);
+    }//GEN-LAST:event_botonActualizarPagosMouseExited
+
+    private void botonActualizarPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonActualizarPagosMouseClicked
+
+    private void botonActualizarPagosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarPagosMouseMoved
+        changeButtonColor(botonActualizarPagos,255,51,51);
+    }//GEN-LAST:event_botonActualizarPagosMouseMoved
 
     public final void visualizar(JTable tabla) {    
         Object[][] jugadores = administrator.readPlayerList();  
@@ -662,11 +742,17 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -676,13 +762,19 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JLabel panelTotalJugadores4;
+    private javax.swing.JLabel panelTotalJugadores5;
+    private javax.swing.JLabel panelTotalJugadores6;
+    private javax.swing.JLabel panelTotalJugadores7;
     private javax.swing.JTable tablaAdministrarPagos;
+    private javax.swing.JTable tablaTopTen;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables
 }
