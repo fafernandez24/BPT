@@ -8,7 +8,6 @@ import static controller.TypeBecomeType.JComboBoxBecomeString;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JComboBox;
-import javax.swing.JTextField;
 
 /**
  *
@@ -21,7 +20,7 @@ public class Tournament {
     private String tournamentName;
     private String tournamentCategory;
     private int format;
-    private int tournamentCost;
+    private float tournamentCost;
     private int participantsNumber;
     private int groupsNumber;
     private int matchsNumber;
@@ -61,7 +60,7 @@ public class Tournament {
         return tournamentCategory;
     }
 
-    public int getTournamentCost() {
+    public float getTournamentCost() {
         return tournamentCost;
     }
 
@@ -107,7 +106,7 @@ public class Tournament {
         this.tournamentCategory = tournamentCategory;
     }
 
-    public void setTournamentCost(int tournamentCost) {
+    public void setTournamentCost(float tournamentCost) {
         this.tournamentCost = tournamentCost;
     }
 

@@ -258,6 +258,7 @@ view\MenuConfigurations$7.class
 view\MenuConfigurations$33.class
 view\MenuAdministrator$10.class
 view\MenuPlayer$22.class
+controller\TournamentJsonControl$1.class
 view\MenuPlayer$35.class
 view\MenuPlayer$45.class
 view\MenuConfigurations$36.class
@@ -306,6 +307,7 @@ controller\MenuConfigurationsControl.class
 view\MenuConfigurations$27.class
 view\MenuOrganizator$122.class
 view\MenuOrganizator$6.class
+controller\TournamentJsonControl.class
 view\MenuOrganizator$182.class
 view\MenuOrganizator$54.class
 view\MenuStart$6.class
