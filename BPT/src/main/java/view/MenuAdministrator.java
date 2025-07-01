@@ -6,6 +6,7 @@ package view;
 
 import static controller.MenuAdministratorControl.administratorCleanTable;
 import static controller.MenuAdministratorControl.tableTopTen;
+import static controller.MenuAdministratorControl.totalPlayers;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.changePanelColor;
 import java.awt.Image;
@@ -101,17 +102,20 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        jLabel88 = new javax.swing.JLabel();
-        panelTotalJugadores4 = new javax.swing.JLabel();
+        labelTorneoMasJugadores = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
-        panelTotalJugadores5 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
-        panelTotalJugadores7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tablaTopTen = new javax.swing.JTable();
         jLabel91 = new javax.swing.JLabel();
-        panelTotalJugadores6 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        panelTotalJugadores7 = new javax.swing.JLabel();
+        labelTotalJugadores = new javax.swing.JLabel();
+        panelTotalJugadores = new javax.swing.JLabel();
+        promedioEdad = new javax.swing.JLabel();
+        panelTorneoJugadores = new javax.swing.JLabel();
+        panelPromedioEdad = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -515,15 +519,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jPanel15.setToolTipText("");
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel88.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        jLabel88.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel88.setText("Total de jugadrores:");
-        jPanel15.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 60));
-
-        panelTotalJugadores4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        panelTotalJugadores4.setToolTipText("");
-        panelTotalJugadores4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel15.add(panelTotalJugadores4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 300, 200));
+        labelTorneoMasJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        labelTorneoMasJugadores.setForeground(new java.awt.Color(255, 51, 51));
+        labelTorneoMasJugadores.setText("<variable>");
+        jPanel15.add(labelTorneoMasJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, -1, 60));
 
         jLabel89.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel89.setForeground(new java.awt.Color(255, 51, 51));
@@ -535,20 +534,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel82.setText("Jugadores:");
         jPanel15.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, -1, 60));
 
-        panelTotalJugadores5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        panelTotalJugadores5.setToolTipText("");
-        panelTotalJugadores5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel15.add(panelTotalJugadores5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 300, 200));
-
         jLabel90.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel90.setForeground(new java.awt.Color(255, 51, 51));
         jLabel90.setText("Top 10 jugadores con mas partidos ganados:");
         jPanel15.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, -1, 60));
-
-        panelTotalJugadores7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        panelTotalJugadores7.setToolTipText("");
-        panelTotalJugadores7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel15.add(panelTotalJugadores7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 200));
 
         tablaTopTen.setAutoCreateRowSorter(true);
         tablaTopTen.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -580,13 +569,43 @@ public class MenuAdministrator extends javax.swing.JFrame {
 
         jLabel91.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel91.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel91.setText("Promedio de edad:");
+        jLabel91.setText("XXXXXX");
         jPanel15.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 60));
 
-        panelTotalJugadores6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
-        panelTotalJugadores6.setToolTipText("");
-        panelTotalJugadores6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel15.add(panelTotalJugadores6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 300, 200));
+        jLabel92.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel92.setText("Total de jugadrores:");
+        jPanel15.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, 60));
+
+        panelTotalJugadores7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores7.setToolTipText("");
+        panelTotalJugadores7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 300, 200));
+
+        labelTotalJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        labelTotalJugadores.setForeground(new java.awt.Color(255, 51, 51));
+        labelTotalJugadores.setText("<variable>");
+        jPanel15.add(labelTotalJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, 60));
+
+        panelTotalJugadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTotalJugadores.setToolTipText("");
+        panelTotalJugadores.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTotalJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 300, 200));
+
+        promedioEdad.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        promedioEdad.setForeground(new java.awt.Color(255, 51, 51));
+        promedioEdad.setText("<variable>");
+        jPanel15.add(promedioEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, -1, 60));
+
+        panelTorneoJugadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelTorneoJugadores.setToolTipText("");
+        panelTorneoJugadores.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelTorneoJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 300, 200));
+
+        panelPromedioEdad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
+        panelPromedioEdad.setToolTipText("");
+        panelPromedioEdad.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel15.add(panelPromedioEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 300, 200));
 
         jPanel14.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 3200));
 
@@ -629,8 +648,9 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jTabbedPane.setSelectedIndex(1);
         tituloSuperior.setText("Reportes");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoVisualizarReporte.png")));
-        // administratorCleanTable(tablaTopTen);
+        administratorCleanTable(tablaTopTen);
         tableTopTen(administrator.getPlayerList(), tablaTopTen);
+        labelTotalJugadores.setText(String.valueOf(totalPlayers(administrator.getPlayerList())));
     }//GEN-LAST:event_botonVisualizarReporteMouseClicked
 
     private void botonVisualizarReporteMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVisualizarReporteMouseMoved
@@ -745,11 +765,11 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
     private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
@@ -769,10 +789,13 @@ public class MenuAdministrator extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JLabel panelTotalJugadores4;
-    private javax.swing.JLabel panelTotalJugadores5;
-    private javax.swing.JLabel panelTotalJugadores6;
+    private javax.swing.JLabel labelTorneoMasJugadores;
+    private javax.swing.JLabel labelTotalJugadores;
+    private javax.swing.JLabel panelPromedioEdad;
+    private javax.swing.JLabel panelTorneoJugadores;
+    private javax.swing.JLabel panelTotalJugadores;
     private javax.swing.JLabel panelTotalJugadores7;
+    private javax.swing.JLabel promedioEdad;
     private javax.swing.JTable tablaAdministrarPagos;
     private javax.swing.JTable tablaTopTen;
     private javax.swing.JLabel tituloSuperior;
