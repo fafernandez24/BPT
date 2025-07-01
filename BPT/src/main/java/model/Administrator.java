@@ -16,6 +16,7 @@ public class Administrator extends Person {
     // Attributes
     
     private List<Player> playerList;
+    private List<Tournament> tournamentList;
     
     // Methods
 
@@ -23,9 +24,10 @@ public class Administrator extends Person {
     public Administrator(){}
     
     // Constructor #2
-    public Administrator(List<Player> playerList, String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber) {
+    public Administrator(List<Player> playerList, String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber, List<Tournament> tournamentList) {
         super(id, name, password, email, dateBirth, phoneNumber);
         this.playerList = playerList;
+        this.tournamentList = tournamentList;
     }
     
         
@@ -34,11 +36,19 @@ public class Administrator extends Person {
     public List<Player> getPlayerList() {
         return playerList;
     }
+
+    public List<Tournament> getTournamentList() {
+        return tournamentList;
+    }
     
     // Setter Methods
 
     public void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;
+    }
+
+    public void setTournamentList(List<Tournament> tournamentList) {
+        this.tournamentList = tournamentList;
     }
     
     // Validation Methods
