@@ -4,19 +4,30 @@
  */
 package view;
 
+import controller.MatchJsonControl;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.changePanelColor;
-import static controller.MenuOrganizatorControl.organizatorShowPlayerInformation;
+import static controller.MenuOrganizatorControl.loadMatchesInTable;
+import static controller.MenuOrganizatorControl.loadTournamentTypeFive;
+import static controller.MenuOrganizatorControl.loadTournamentTypeFour;
+import static controller.MenuOrganizatorControl.loadTournamentTypeOne;
+import static controller.MenuOrganizatorControl.loadTournamentTypeThree;
+import static controller.MenuOrganizatorControl.loadTournamentTypeTwo;
+import static controller.MenuOrganizatorControl.loadTournamentTypeZero;
+import static controller.MenuOrganizatorControl.showTournamentName;
+import static controller.MenuOrganizatorControl.whichTournamentShow;
 import static controller.MenuPlayerControl.playerFocusGained;
 import static controller.MenuPlayerControl.playerFocusLost;
 import static controller.MenuPlayerControl.playerShowPlayerInformation;
 import static controller.MenuPlayerControl.searchPlayer;
-import java.awt.Color;
 import java.awt.Image;
 import java.util.List;
 import javax.swing.ImageIcon;
+import model.Match;
 import model.Player;
 import model.Tournament;
+import static controller.MenuPlayerControl.playerSeeTournament;
+import static controller.MenuPlayerControl.playerTabbedPanelSeeTournaments;
 
 /**
  *
@@ -24,8 +35,12 @@ import model.Tournament;
  */
 public class MenuPlayer extends javax.swing.JFrame {
     
-    private Player player;
-    private List<Tournament> tournamentList;
+    private final MatchJsonControl jsonMatch = new MatchJsonControl();
+    private Tournament currentTournament = new Tournament();
+ 
+    private final Player player;
+    private final List<Tournament> tournamentList;
+    private final List<Match> matchList = jsonMatch.allMatches();
 
     /**
      * Creates new form Player
@@ -39,6 +54,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.newIcon();
+        loadMatchesInTable(matchList, tablaPartidos);
     }
     
     private void newIcon(){
@@ -103,7 +119,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        jTabbedPane = new javax.swing.JTabbedPane();
+        pestania = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel65 = new javax.swing.JPanel();
         jLabel134 = new javax.swing.JLabel();
@@ -217,9 +233,155 @@ public class MenuPlayer extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         calendar1 = new raven.calendar.Calendar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaPartidos = new javax.swing.JTable();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane36 = new javax.swing.JScrollPane();
+        tablaGeneralLiga = new javax.swing.JTable();
+        jSeparator27 = new javax.swing.JSeparator();
+        jLabel136 = new javax.swing.JLabel();
+        nombreTorneoCero = new javax.swing.JLabel();
+        jLabel142 = new javax.swing.JLabel();
+        jLabel143 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados1 = new javax.swing.JTable();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel139 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados2 = new javax.swing.JTable();
+        jSeparator20 = new javax.swing.JSeparator();
+        jLabel140 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados3 = new javax.swing.JTable();
+        jSeparator35 = new javax.swing.JSeparator();
+        jLabel144 = new javax.swing.JLabel();
+        nombreTorneoUno = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        jLabel244 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jPanel18 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados4 = new javax.swing.JTable();
+        jSeparator40 = new javax.swing.JSeparator();
+        jLabel245 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados5 = new javax.swing.JTable();
+        jSeparator43 = new javax.swing.JSeparator();
+        jLabel246 = new javax.swing.JLabel();
+        nombreTorneoDos = new javax.swing.JLabel();
+        jLabel248 = new javax.swing.JLabel();
+        jLabel249 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados7 = new javax.swing.JTable();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados8 = new javax.swing.JTable();
+        jSeparator44 = new javax.swing.JSeparator();
+        jLabel250 = new javax.swing.JLabel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados9 = new javax.swing.JTable();
+        jSeparator45 = new javax.swing.JSeparator();
+        jLabel251 = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jPanel27 = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados6 = new javax.swing.JTable();
+        jSeparator46 = new javax.swing.JSeparator();
+        jLabel252 = new javax.swing.JLabel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados10 = new javax.swing.JTable();
+        jSeparator47 = new javax.swing.JSeparator();
+        jLabel253 = new javax.swing.JLabel();
+        nombreTorneoTres = new javax.swing.JLabel();
+        jLabel255 = new javax.swing.JLabel();
+        jLabel256 = new javax.swing.JLabel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados11 = new javax.swing.JTable();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados12 = new javax.swing.JTable();
+        jSeparator48 = new javax.swing.JSeparator();
+        jLabel257 = new javax.swing.JLabel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados13 = new javax.swing.JTable();
+        jSeparator49 = new javax.swing.JSeparator();
+        jLabel258 = new javax.swing.JLabel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados14 = new javax.swing.JTable();
+        jSeparator50 = new javax.swing.JSeparator();
+        jLabel259 = new javax.swing.JLabel();
+        jScrollPane26 = new javax.swing.JScrollPane();
+        jPanel34 = new javax.swing.JPanel();
+        jPanel52 = new javax.swing.JPanel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados15 = new javax.swing.JTable();
+        jSeparator51 = new javax.swing.JSeparator();
+        jLabel260 = new javax.swing.JLabel();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados16 = new javax.swing.JTable();
+        jSeparator52 = new javax.swing.JSeparator();
+        jLabel261 = new javax.swing.JLabel();
+        nombreTorneoCuatro = new javax.swing.JLabel();
+        jLabel263 = new javax.swing.JLabel();
+        jLabel264 = new javax.swing.JLabel();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados17 = new javax.swing.JTable();
+        jScrollPane30 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados18 = new javax.swing.JTable();
+        jSeparator53 = new javax.swing.JSeparator();
+        jLabel265 = new javax.swing.JLabel();
+        jSeparator54 = new javax.swing.JSeparator();
+        jLabel266 = new javax.swing.JLabel();
+        jScrollPane31 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados20 = new javax.swing.JTable();
+        jSeparator55 = new javax.swing.JSeparator();
+        jLabel267 = new javax.swing.JLabel();
+        jScrollPane32 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados21 = new javax.swing.JTable();
+        jScrollPane33 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados22 = new javax.swing.JTable();
+        jSeparator56 = new javax.swing.JSeparator();
+        jLabel268 = new javax.swing.JLabel();
+        jScrollPane43 = new javax.swing.JScrollPane();
+        jPanel55 = new javax.swing.JPanel();
+        jPanel56 = new javax.swing.JPanel();
+        jScrollPane44 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados19 = new javax.swing.JTable();
+        jSeparator63 = new javax.swing.JSeparator();
+        jLabel278 = new javax.swing.JLabel();
+        jScrollPane45 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados23 = new javax.swing.JTable();
+        jSeparator64 = new javax.swing.JSeparator();
+        jLabel279 = new javax.swing.JLabel();
+        nombreTorneoCinco = new javax.swing.JLabel();
+        jLabel281 = new javax.swing.JLabel();
+        jLabel282 = new javax.swing.JLabel();
+        jScrollPane46 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados24 = new javax.swing.JTable();
+        jScrollPane47 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados25 = new javax.swing.JTable();
+        jSeparator65 = new javax.swing.JSeparator();
+        jLabel283 = new javax.swing.JLabel();
+        jSeparator66 = new javax.swing.JSeparator();
+        jLabel284 = new javax.swing.JLabel();
+        jScrollPane48 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados26 = new javax.swing.JTable();
+        jSeparator67 = new javax.swing.JSeparator();
+        jLabel285 = new javax.swing.JLabel();
+        jScrollPane49 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados27 = new javax.swing.JTable();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados28 = new javax.swing.JTable();
+        jSeparator68 = new javax.swing.JSeparator();
+        jLabel286 = new javax.swing.JLabel();
+        jScrollPane35 = new javax.swing.JScrollPane();
+        tablaJugadoresAgregados29 = new javax.swing.JTable();
+        jSeparator69 = new javax.swing.JSeparator();
+        jLabel287 = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -596,7 +758,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoEnCursoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, -1, 80));
 
-        jTabbedPane.setBackground(new java.awt.Color(255, 255, 255));
+        pestania.setBackground(new java.awt.Color(255, 255, 255));
 
         jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane1.setBorder(null);
@@ -1171,7 +1333,7 @@ public class MenuPlayer extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel65);
 
-        jTabbedPane.addTab("tab1", jScrollPane1);
+        pestania.addTab("tab1", jScrollPane1);
 
         jPanel31.setBackground(new java.awt.Color(255, 255, 255));
         jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1180,6 +1342,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         botonBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         botonBuscarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscarJugador.setText("Buscar");
+        botonBuscarJugador.setBorder(null);
         botonBuscarJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botonBuscarJugadorMouseMoved(evt);
@@ -1413,7 +1576,7 @@ public class MenuPlayer extends javax.swing.JFrame {
         jPanel31.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 1060, 510));
         jPanel31.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 820, 10));
 
-        jTabbedPane.addTab("tab2", jPanel31);
+        pestania.addTab("tab2", jPanel31);
 
         jPanel33.setBackground(new java.awt.Color(255, 255, 255));
         jPanel33.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1427,33 +1590,960 @@ public class MenuPlayer extends javax.swing.JFrame {
         jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
         jPanel33.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
         jPanel33.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 900, 10));
+        jPanel33.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 530, 410));
 
-        jTable2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPartidos.setAutoCreateRowSorter(true);
+        tablaPartidos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaPartidos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "JugadorA", "JugadorB", "Fecha"
+                "JugadorA", "JugadorB", "Primer set", "SegundoSet", "Fecha"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaPartidos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(tablaPartidos);
+
+        jPanel33.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 380, 410));
+
+        pestania.addTab("tab3", jPanel33);
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel16.setPreferredSize(new java.awt.Dimension(1010, 1850));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaGeneralLiga.setAutoCreateRowSorter(true);
+        tablaGeneralLiga.setBackground(new java.awt.Color(255, 255, 255));
+        tablaGeneralLiga.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaGeneralLiga.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, false, true, true, false, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaGeneralLiga.setAutoscrolls(false);
+        tablaGeneralLiga.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaGeneralLiga.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane36.setViewportView(tablaGeneralLiga);
+
+        jPanel16.add(jScrollPane36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, 390));
+
+        jSeparator27.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel16.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
+
+        jLabel136.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel136.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel136.setText("tabla general");
+        jPanel16.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        nombreTorneoCero.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoCero.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoCero.setText(currentTournament.getTournamentName());
+        jPanel16.add(nombreTorneoCero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
+
+        jLabel142.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel16.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel143.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel143.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel143.setText("Bienvenido al torneo");
+        jPanel16.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        pestania.addTab("tab4", jPanel16);
+
+        jScrollPane9.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane9.setBorder(null);
+        jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane9.setPreferredSize(new java.awt.Dimension(1040, 1800));
+
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel17.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel17.setPreferredSize(new java.awt.Dimension(1010, 1850));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaJugadoresAgregados1.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados1.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados1.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        tablaJugadoresAgregados1.setAutoscrolls(false);
+        tablaJugadoresAgregados1.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados1.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane10.setViewportView(tablaJugadoresAgregados1);
 
-        jPanel33.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 200, 350, 410));
-        jPanel33.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 520, 410));
+        jPanel17.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, -1));
 
-        jTabbedPane.addTab("tab3", jPanel33);
+        jSeparator12.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel17.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
 
-        jPanel1.add(jTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
+        jLabel139.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel139.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel139.setText("grupo a");
+        jPanel17.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        tablaJugadoresAgregados2.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados2.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados2.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados2.setAutoscrolls(false);
+        tablaJugadoresAgregados2.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados2.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane11.setViewportView(tablaJugadoresAgregados2);
+
+        jPanel17.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        jSeparator20.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel17.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
+
+        jLabel140.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel140.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel140.setText("grupo b");
+        jPanel17.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
+
+        tablaJugadoresAgregados3.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados3.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados3.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados3.setAutoscrolls(false);
+        tablaJugadoresAgregados3.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados3.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane12.setViewportView(tablaJugadoresAgregados3);
+
+        jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1360, 940, 430));
+
+        jSeparator35.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel17.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1340, 940, 30));
+
+        jLabel144.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel144.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel144.setText("Tabla General");
+        jPanel17.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1290, -1, 60));
+
+        nombreTorneoUno.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoUno.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoUno.setText(currentTournament.getTournamentName());
+        jPanel17.add(nombreTorneoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
+
+        jLabel146.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel17.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel244.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel244.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel244.setText("Bienvenido al torneo");
+        jPanel17.add(jLabel244, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        jPanel3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 1800));
+
+        jScrollPane9.setViewportView(jPanel3);
+
+        pestania.addTab("tab5", jScrollPane9);
+
+        jScrollPane13.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane13.setBorder(null);
+        jScrollPane13.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane13.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel26.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel26.setPreferredSize(new java.awt.Dimension(1010, 2397));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaJugadoresAgregados4.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados4.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados4.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados4.setAutoscrolls(false);
+        tablaJugadoresAgregados4.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados4.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane14.setViewportView(tablaJugadoresAgregados4);
+
+        jPanel26.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, -1));
+
+        jSeparator40.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel26.add(jSeparator40, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
+
+        jLabel245.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel245.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel245.setText("grupo a");
+        jPanel26.add(jLabel245, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        tablaJugadoresAgregados5.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados5.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados5.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados5.setAutoscrolls(false);
+        tablaJugadoresAgregados5.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados5.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane15.setViewportView(tablaJugadoresAgregados5);
+
+        jPanel26.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        jSeparator43.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel26.add(jSeparator43, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
+
+        jLabel246.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel246.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel246.setText("grupo b");
+        jPanel26.add(jLabel246, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
+
+        nombreTorneoDos.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoDos.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoDos.setText(currentTournament.getTournamentName());
+        jPanel26.add(nombreTorneoDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
+
+        jLabel248.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel26.add(jLabel248, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel249.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel249.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel249.setText("Bienvenido al torneo");
+        jPanel26.add(jLabel249, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        tablaJugadoresAgregados7.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados7.setBackground(new java.awt.Color(204, 204, 204));
+        tablaJugadoresAgregados7.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados7.setAutoscrolls(false);
+        tablaJugadoresAgregados7.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados7.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane16.setViewportView(tablaJugadoresAgregados7);
+
+        jPanel26.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        tablaJugadoresAgregados8.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados8.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados8.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados8.setAutoscrolls(false);
+        tablaJugadoresAgregados8.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados8.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane17.setViewportView(tablaJugadoresAgregados8);
+
+        jPanel26.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1370, 940, -1));
+
+        jSeparator44.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel26.add(jSeparator44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1350, 940, 30));
+
+        jLabel250.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel250.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel250.setText("Grupo C");
+        jPanel26.add(jLabel250, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1300, -1, 60));
+
+        tablaJugadoresAgregados9.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados9.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados9.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados9.setAutoscrolls(false);
+        tablaJugadoresAgregados9.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados9.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane18.setViewportView(tablaJugadoresAgregados9);
+
+        jPanel26.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, -1));
+
+        jSeparator45.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel26.add(jSeparator45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1900, 940, 30));
+
+        jLabel251.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel251.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel251.setText("TABLA GENERAL");
+        jPanel26.add(jLabel251, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
+
+        jPanel18.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1030, 2400));
+
+        jScrollPane13.setViewportView(jPanel18);
+
+        pestania.addTab("tab6", jScrollPane13);
+
+        jScrollPane19.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane19.setBorder(null);
+        jScrollPane19.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane19.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel28.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel28.setPreferredSize(new java.awt.Dimension(11010, 3000));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaJugadoresAgregados6.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados6.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados6.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados6.setAutoscrolls(false);
+        tablaJugadoresAgregados6.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados6.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane20.setViewportView(tablaJugadoresAgregados6);
+
+        jPanel28.add(jScrollPane20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, -1));
+
+        jSeparator46.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(jSeparator46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
+
+        jLabel252.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel252.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel252.setText("grupo a");
+        jPanel28.add(jLabel252, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        tablaJugadoresAgregados10.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados10.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados10.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados10.setAutoscrolls(false);
+        tablaJugadoresAgregados10.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados10.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane21.setViewportView(tablaJugadoresAgregados10);
+
+        jPanel28.add(jScrollPane21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        jSeparator47.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(jSeparator47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
+
+        jLabel253.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel253.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel253.setText("grupo b");
+        jPanel28.add(jLabel253, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
+
+        nombreTorneoTres.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoTres.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoTres.setText(currentTournament.getTournamentName());
+        jPanel28.add(nombreTorneoTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
+
+        jLabel255.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel28.add(jLabel255, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel256.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel256.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel256.setText("Bienvenido al torneo");
+        jPanel28.add(jLabel256, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        tablaJugadoresAgregados11.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados11.setBackground(new java.awt.Color(204, 204, 204));
+        tablaJugadoresAgregados11.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados11.setAutoscrolls(false);
+        tablaJugadoresAgregados11.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados11.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane22.setViewportView(tablaJugadoresAgregados11);
+
+        jPanel28.add(jScrollPane22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        tablaJugadoresAgregados12.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados12.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados12.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados12.setAutoscrolls(false);
+        tablaJugadoresAgregados12.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados12.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane23.setViewportView(tablaJugadoresAgregados12);
+
+        jPanel28.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1370, 940, -1));
+
+        jSeparator48.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(jSeparator48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1350, 940, 30));
+
+        jLabel257.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel257.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel257.setText("Grupo C");
+        jPanel28.add(jLabel257, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1300, -1, 60));
+
+        tablaJugadoresAgregados13.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados13.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados13.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados13.setAutoscrolls(false);
+        tablaJugadoresAgregados13.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados13.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane24.setViewportView(tablaJugadoresAgregados13);
+
+        jPanel28.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, -1));
+
+        jSeparator49.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(jSeparator49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1900, 940, 30));
+
+        jLabel258.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel258.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel258.setText("gRUPO D");
+        jPanel28.add(jLabel258, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
+
+        tablaJugadoresAgregados14.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados14.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados14.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados14.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados14.setAutoscrolls(false);
+        tablaJugadoresAgregados14.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados14.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane25.setViewportView(tablaJugadoresAgregados14);
+
+        jPanel28.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2480, 940, 470));
+
+        jSeparator50.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.add(jSeparator50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2460, 940, 30));
+
+        jLabel259.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel259.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel259.setText("TABLA GENERAL");
+        jPanel28.add(jLabel259, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2410, -1, 60));
+
+        jPanel27.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 3000));
+
+        jScrollPane19.setViewportView(jPanel27);
+
+        pestania.addTab("tab7", jScrollPane19);
+
+        jScrollPane26.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane26.setBorder(null);
+        jScrollPane26.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane26.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel52.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel52.setPreferredSize(new java.awt.Dimension(11010, 3500));
+        jPanel52.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaJugadoresAgregados15.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados15.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados15.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados15.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados15.setAutoscrolls(false);
+        tablaJugadoresAgregados15.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados15.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane27.setViewportView(tablaJugadoresAgregados15);
+
+        jPanel52.add(jScrollPane27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, -1));
+
+        jSeparator51.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
+
+        jLabel260.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel260.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel260.setText("grupo a");
+        jPanel52.add(jLabel260, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        tablaJugadoresAgregados16.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados16.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados16.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados16.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados16.setAutoscrolls(false);
+        tablaJugadoresAgregados16.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados16.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane28.setViewportView(tablaJugadoresAgregados16);
+
+        jPanel52.add(jScrollPane28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        jSeparator52.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator52, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
+
+        jLabel261.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel261.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel261.setText("grupo b");
+        jPanel52.add(jLabel261, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
+
+        nombreTorneoCuatro.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoCuatro.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoCuatro.setText(currentTournament.getTournamentName());
+        jPanel52.add(nombreTorneoCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
+
+        jLabel263.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel52.add(jLabel263, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel264.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel264.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel264.setText("Bienvenido al torneo");
+        jPanel52.add(jLabel264, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        tablaJugadoresAgregados17.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados17.setBackground(new java.awt.Color(204, 204, 204));
+        tablaJugadoresAgregados17.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados17.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados17.setAutoscrolls(false);
+        tablaJugadoresAgregados17.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados17.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane29.setViewportView(tablaJugadoresAgregados17);
+
+        jPanel52.add(jScrollPane29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        tablaJugadoresAgregados18.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados18.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados18.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados18.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados18.setAutoscrolls(false);
+        tablaJugadoresAgregados18.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados18.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane30.setViewportView(tablaJugadoresAgregados18);
+
+        jPanel52.add(jScrollPane30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1370, 940, -1));
+
+        jSeparator53.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator53, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1350, 940, 30));
+
+        jLabel265.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel265.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel265.setText("Grupo C");
+        jPanel52.add(jLabel265, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1300, -1, 60));
+
+        jSeparator54.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1900, 940, 30));
+
+        jLabel266.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel266.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel266.setText("gRUPO D");
+        jPanel52.add(jLabel266, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
+
+        tablaJugadoresAgregados20.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados20.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados20.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados20.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados20.setAutoscrolls(false);
+        tablaJugadoresAgregados20.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados20.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane31.setViewportView(tablaJugadoresAgregados20);
+
+        jPanel52.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2990, 940, 470));
+
+        jSeparator55.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2970, 940, 30));
+
+        jLabel267.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel267.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel267.setText("TABLA GENERAL");
+        jPanel52.add(jLabel267, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2920, -1, 60));
+
+        tablaJugadoresAgregados21.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados21.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados21.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados21.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados21.setAutoscrolls(false);
+        tablaJugadoresAgregados21.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados21.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane32.setViewportView(tablaJugadoresAgregados21);
+
+        jPanel52.add(jScrollPane32, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, -1));
+
+        tablaJugadoresAgregados22.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados22.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados22.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados22.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados22.setAutoscrolls(false);
+        tablaJugadoresAgregados22.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados22.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane33.setViewportView(tablaJugadoresAgregados22);
+
+        jPanel52.add(jScrollPane33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2440, 940, -1));
+
+        jSeparator56.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel52.add(jSeparator56, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2420, 940, 30));
+
+        jLabel268.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel268.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel268.setText("Grupo E");
+        jPanel52.add(jLabel268, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2370, -1, 60));
+
+        jPanel34.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 3500));
+
+        jScrollPane26.setViewportView(jPanel34);
+
+        pestania.addTab("tab8", jScrollPane26);
+
+        jScrollPane43.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane43.setBorder(null);
+        jScrollPane43.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane43.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        jPanel55.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel56.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel56.setPreferredSize(new java.awt.Dimension(11010, 4000));
+        jPanel56.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablaJugadoresAgregados19.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados19.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados19.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados19.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados19.setAutoscrolls(false);
+        tablaJugadoresAgregados19.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados19.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane44.setViewportView(tablaJugadoresAgregados19);
+
+        jPanel56.add(jScrollPane44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, -1));
+
+        jSeparator63.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
+
+        jLabel278.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel278.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel278.setText("grupo a");
+        jPanel56.add(jLabel278, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
+
+        tablaJugadoresAgregados23.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados23.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados23.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados23.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados23.setAutoscrolls(false);
+        tablaJugadoresAgregados23.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados23.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane45.setViewportView(tablaJugadoresAgregados23);
+
+        jPanel56.add(jScrollPane45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        jSeparator64.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
+
+        jLabel279.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel279.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel279.setText("grupo b");
+        jPanel56.add(jLabel279, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
+
+        nombreTorneoCinco.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        nombreTorneoCinco.setForeground(new java.awt.Color(0, 102, 0));
+        nombreTorneoCinco.setText(currentTournament.getTournamentName());
+        jPanel56.add(nombreTorneoCinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
+
+        jLabel281.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel56.add(jLabel281, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel282.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel282.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel282.setText("Bienvenido al torneo");
+        jPanel56.add(jLabel282, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        tablaJugadoresAgregados24.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados24.setBackground(new java.awt.Color(204, 204, 204));
+        tablaJugadoresAgregados24.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados24.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados24.setAutoscrolls(false);
+        tablaJugadoresAgregados24.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados24.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane46.setViewportView(tablaJugadoresAgregados24);
+
+        jPanel56.add(jScrollPane46, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+
+        tablaJugadoresAgregados25.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados25.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados25.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados25.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados25.setAutoscrolls(false);
+        tablaJugadoresAgregados25.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados25.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane47.setViewportView(tablaJugadoresAgregados25);
+
+        jPanel56.add(jScrollPane47, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1370, 940, -1));
+
+        jSeparator65.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator65, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1350, 940, 30));
+
+        jLabel283.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel283.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel283.setText("Grupo C");
+        jPanel56.add(jLabel283, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1300, -1, 60));
+
+        jSeparator66.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1900, 940, 30));
+
+        jLabel284.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel284.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel284.setText("gRUPO D");
+        jPanel56.add(jLabel284, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
+
+        tablaJugadoresAgregados26.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados26.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados26.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados26.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados26.setAutoscrolls(false);
+        tablaJugadoresAgregados26.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados26.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane48.setViewportView(tablaJugadoresAgregados26);
+
+        jPanel56.add(jScrollPane48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3500, 940, 470));
+
+        jSeparator67.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3480, 940, 30));
+
+        jLabel285.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel285.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel285.setText("TABLA GENERAL");
+        jPanel56.add(jLabel285, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 3430, -1, 60));
+
+        tablaJugadoresAgregados27.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados27.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados27.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados27.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados27.setAutoscrolls(false);
+        tablaJugadoresAgregados27.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados27.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane49.setViewportView(tablaJugadoresAgregados27);
+
+        jPanel56.add(jScrollPane49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, -1));
+
+        tablaJugadoresAgregados28.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados28.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados28.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados28.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados28.setAutoscrolls(false);
+        tablaJugadoresAgregados28.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados28.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane34.setViewportView(tablaJugadoresAgregados28);
+
+        jPanel56.add(jScrollPane34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2440, 940, -1));
+
+        jSeparator68.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator68, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2420, 940, 30));
+
+        jLabel286.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel286.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel286.setText("Grupo E");
+        jPanel56.add(jLabel286, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2370, -1, 60));
+
+        tablaJugadoresAgregados29.setAutoCreateRowSorter(true);
+        tablaJugadoresAgregados29.setBackground(new java.awt.Color(255, 255, 255));
+        tablaJugadoresAgregados29.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        tablaJugadoresAgregados29.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "PJ", "PG", "PP", "P Ave", "Set G", "Set P", "Set Ave", "GG", "GP", "G Ave"
+            }
+        ));
+        tablaJugadoresAgregados29.setAutoscrolls(false);
+        tablaJugadoresAgregados29.setGridColor(new java.awt.Color(0, 0, 255));
+        tablaJugadoresAgregados29.setSelectionForeground(new java.awt.Color(102, 0, 102));
+        jScrollPane35.setViewportView(tablaJugadoresAgregados29);
+
+        jPanel56.add(jScrollPane35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2970, 940, -1));
+
+        jSeparator69.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel56.add(jSeparator69, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2950, 940, 30));
+
+        jLabel287.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel287.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel287.setText("Grupo F");
+        jPanel56.add(jLabel287, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2900, -1, 60));
+
+        jPanel55.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 4000));
+
+        jScrollPane43.setViewportView(jPanel55);
+
+        pestania.addTab("tab9", jScrollPane43);
+
+        jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
         Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerVerde.jpg"))); // NOI18N
@@ -1485,7 +2575,7 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_BannerMouseClicked
 
     private void botonMenuBuscarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuBuscarJugadorMouseClicked
-        jTabbedPane.setSelectedIndex(1);
+        pestania.setSelectedIndex(1);
         tituloSuperior.setText("Buscar Jugador");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoBuscarJugador.png")));
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseClicked
@@ -1499,7 +2589,7 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseExited
 
     private void botonMenuVerCalendarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerCalendarioMouseClicked
-        jTabbedPane.setSelectedIndex(2);
+        pestania.setSelectedIndex(2);
         tituloSuperior.setText("Ver calendario");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoCalendario.png")));
     }//GEN-LAST:event_botonMenuVerCalendarioMouseClicked
@@ -1525,7 +2615,7 @@ public class MenuPlayer extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuVerTorneosMouseExited
 
     private void botonMenuVerTorneosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuVerTorneosMouseClicked
-        jTabbedPane.setSelectedIndex(0);
+        pestania.setSelectedIndex(0);
         tituloSuperior.setText("Ver Torneos en curso");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoEnCursoMasGrande.png")));
     }//GEN-LAST:event_botonMenuVerTorneosMouseClicked
@@ -1542,206 +2632,57 @@ public class MenuPlayer extends javax.swing.JFrame {
         NombreJugador.setText("JUGADOR");
     }//GEN-LAST:event_NombreJugadorMouseMoved
 
-    private void botonCrearTorneoDoble6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseMoved
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseMoved
-
-    private void botonCrearTorneoDoble6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseClicked
-
-    private void botonCrearTorneoDoble6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseExited
-
-    private void botonCrearTorneoEquipo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseMoved
-
-    private void botonCrearTorneoEquipo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseClicked
-
-    private void botonCrearTorneoEquipo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseExited
-
-    private void botonCrearTorneoSingle6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseMoved
-
-    private void botonCrearTorneoSingle6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseClicked
-
-    private void botonCrearTorneoSingle6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseExited
-
-    private void botonCrearTorneoDoble7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseMoved
-
-    private void botonCrearTorneoDoble7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseClicked
-
-    private void botonCrearTorneoDoble7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseExited
-
-    private void botonCrearTorneoEquipo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseMoved
-
-    private void botonCrearTorneoEquipo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseClicked
-
-    private void botonCrearTorneoEquipo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseExited
-
-    private void botonCrearTorneoSingle7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseMoved
-
-    private void botonCrearTorneoSingle7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseClicked
-
-    private void botonCrearTorneoSingle7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseExited
-
-    private void botonCrearTorneoDoble8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseMoved
-
-    private void botonCrearTorneoDoble8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseClicked
-
-    private void botonCrearTorneoDoble8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseExited
-
-    private void botonCrearTorneoEquipo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseMoved
-
-    private void botonCrearTorneoEquipo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseClicked
-
-    private void botonCrearTorneoEquipo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseExited
-
-    private void botonCrearTorneoSingle8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseMoved
-
-    private void botonCrearTorneoSingle8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseClicked
-
-    private void botonCrearTorneoSingle8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseExited
-
-    private void botonCrearTorneoDoble9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble9MouseMoved
-
-    private void botonCrearTorneoDoble9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble9MouseClicked
-
-    private void botonCrearTorneoDoble9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble9MouseExited
-
-    private void botonCrearTorneoEquipo9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseMoved
-
-    private void botonCrearTorneoEquipo9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseClicked
-
-    private void botonCrearTorneoEquipo9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseExited
-
-    private void botonCrearTorneoSingle9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle9MouseMoved
-
-    private void botonCrearTorneoSingle9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle9MouseClicked
-
-    private void botonCrearTorneoSingle9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle9MouseExited
-
-    private void botonBuscarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseClicked
-        Player player = searchPlayer(tournamentList, textoBuscarJugador.getText());
-        playerShowPlayerInformation(mostrarNombre, jTextField11, jTextField2, jTextField6, jTextField3, jTextField8, jTextField5, jTextField10, jTextField7, player);
-    }//GEN-LAST:event_botonBuscarJugadorMouseClicked
-
-    private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
-        playerFocusGained (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
-    }//GEN-LAST:event_textoBuscarJugadorFocusGained
-
-    private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
-        playerFocusLost (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
-    }//GEN-LAST:event_textoBuscarJugadorFocusLost
-
-    private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoBuscarJugadorActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void mostrarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mostrarNombreActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void mostrarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mostrarNombreActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void textoBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoBuscarJugadorActionPerformed
+
+    private void textoBuscarJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusLost
+        playerFocusLost (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
+    }//GEN-LAST:event_textoBuscarJugadorFocusLost
+
+    private void textoBuscarJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugadorFocusGained
+        playerFocusGained (textoBuscarJugador, "Ingresar cedula del jugador a buscar...");
+    }//GEN-LAST:event_textoBuscarJugadorFocusGained
 
     private void botonBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarJugadorActionPerformed
         // TODO add your handling code here:
@@ -1751,9 +2692,302 @@ public class MenuPlayer extends javax.swing.JFrame {
         changeButtonColor(botonBuscarJugador,0,102,0);
     }//GEN-LAST:event_botonBuscarJugadorMouseExited
 
+    private void botonBuscarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseClicked
+        Player player = searchPlayer(tournamentList, textoBuscarJugador.getText());
+        playerShowPlayerInformation(mostrarNombre, jTextField11, jTextField2, jTextField6, jTextField3, jTextField8, jTextField5, jTextField10, jTextField7, player);
+    }//GEN-LAST:event_botonBuscarJugadorMouseClicked
+
     private void botonBuscarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseMoved
         changeButtonColor(botonBuscarJugador,153,153,0);
     }//GEN-LAST:event_botonBuscarJugadorMouseMoved
+
+    private void botonCrearTorneoSingle9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle9MouseExited
+
+    private void botonCrearTorneoSingle9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle9MouseClicked
+
+    private void botonCrearTorneoSingle9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle9MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle9MouseMoved
+
+    private void botonCrearTorneoEquipo9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseExited
+
+    private void botonCrearTorneoEquipo9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseClicked
+
+    private void botonCrearTorneoEquipo9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo9MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo9MouseMoved
+
+    private void botonCrearTorneoDoble9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble9MouseExited
+
+    private void botonCrearTorneoDoble9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble9MouseClicked
+
+    private void botonCrearTorneoDoble9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble9MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble9MouseMoved
+
+    private void botonCrearTorneoSingle8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle8MouseExited
+
+    private void botonCrearTorneoSingle8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseClicked
+        int index = 6, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoSingle8MouseClicked
+
+    private void botonCrearTorneoSingle8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle8MouseMoved
+
+    private void botonCrearTorneoEquipo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseExited
+
+    private void botonCrearTorneoEquipo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseClicked
+        int index = 8, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseClicked
+
+    private void botonCrearTorneoEquipo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseMoved
+
+    private void botonCrearTorneoDoble8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble8MouseExited
+
+    private void botonCrearTorneoDoble8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseClicked
+        int index = 7, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoDoble8MouseClicked
+
+    private void botonCrearTorneoDoble8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble8MouseMoved
+
+    private void botonCrearTorneoSingle7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle7MouseExited
+
+    private void botonCrearTorneoSingle7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseClicked
+        int index = 3, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoSingle7MouseClicked
+
+    private void botonCrearTorneoSingle7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle7MouseMoved
+
+    private void botonCrearTorneoEquipo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseExited
+
+    private void botonCrearTorneoEquipo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseClicked
+        int index = 5, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseClicked
+
+    private void botonCrearTorneoEquipo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseMoved
+
+    private void botonCrearTorneoDoble7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble7MouseExited
+
+    private void botonCrearTorneoDoble7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseClicked
+        int index = 4, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoDoble7MouseClicked
+
+    private void botonCrearTorneoDoble7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble7MouseMoved
+
+    private void botonCrearTorneoSingle6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle6MouseExited
+
+    private void botonCrearTorneoSingle6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseClicked
+        int index = 0, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoSingle6MouseClicked
+
+    private void botonCrearTorneoSingle6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoSingle6MouseMoved
+
+    private void botonCrearTorneoEquipo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseExited
+
+    private void botonCrearTorneoEquipo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseClicked
+        int index = 2, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseClicked
+
+    private void botonCrearTorneoEquipo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseMoved
+
+    private void botonCrearTorneoDoble6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble6MouseExited
+
+    private void botonCrearTorneoDoble6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseClicked
+        int index = 1, numberGroups = whichTournamentShow(index, tournamentList);
+        playerSeeTournament(pestania, index+1, tournamentList);
+        playerTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, tournamentList.get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, tournamentList.get(index).getParticipantsList(), tournamentList.get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } finally {
+            currentTournament = tournamentList.get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_botonCrearTorneoDoble6MouseClicked
+
+    private void botonCrearTorneoDoble6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonCrearTorneoDoble6MouseMoved
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -1784,6 +3018,13 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel139;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel146;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel201;
     private javax.swing.JLabel jLabel202;
@@ -1806,11 +3047,42 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel221;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel244;
+    private javax.swing.JLabel jLabel245;
+    private javax.swing.JLabel jLabel246;
+    private javax.swing.JLabel jLabel248;
+    private javax.swing.JLabel jLabel249;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel250;
+    private javax.swing.JLabel jLabel251;
+    private javax.swing.JLabel jLabel252;
+    private javax.swing.JLabel jLabel253;
+    private javax.swing.JLabel jLabel255;
+    private javax.swing.JLabel jLabel256;
+    private javax.swing.JLabel jLabel257;
+    private javax.swing.JLabel jLabel258;
+    private javax.swing.JLabel jLabel259;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel260;
+    private javax.swing.JLabel jLabel261;
+    private javax.swing.JLabel jLabel263;
+    private javax.swing.JLabel jLabel264;
+    private javax.swing.JLabel jLabel265;
+    private javax.swing.JLabel jLabel266;
+    private javax.swing.JLabel jLabel267;
+    private javax.swing.JLabel jLabel268;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel273;
     private javax.swing.JLabel jLabel274;
+    private javax.swing.JLabel jLabel278;
+    private javax.swing.JLabel jLabel279;
+    private javax.swing.JLabel jLabel281;
+    private javax.swing.JLabel jLabel282;
+    private javax.swing.JLabel jLabel283;
+    private javax.swing.JLabel jLabel284;
+    private javax.swing.JLabel jLabel285;
+    private javax.swing.JLabel jLabel286;
+    private javax.swing.JLabel jLabel287;
     private javax.swing.JLabel jLabel290;
     private javax.swing.JLabel jLabel291;
     private javax.swing.JLabel jLabel292;
@@ -1879,6 +3151,9 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel94;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -1886,10 +3161,18 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel33;
+    private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel65;
     private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel67;
@@ -1901,15 +3184,74 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel77;
     private javax.swing.JPanel jPanel78;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane26;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane30;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane32;
+    private javax.swing.JScrollPane jScrollPane33;
+    private javax.swing.JScrollPane jScrollPane34;
+    private javax.swing.JScrollPane jScrollPane35;
+    private javax.swing.JScrollPane jScrollPane36;
+    private javax.swing.JScrollPane jScrollPane43;
+    private javax.swing.JScrollPane jScrollPane44;
+    private javax.swing.JScrollPane jScrollPane45;
+    private javax.swing.JScrollPane jScrollPane46;
+    private javax.swing.JScrollPane jScrollPane47;
+    private javax.swing.JScrollPane jScrollPane48;
+    private javax.swing.JScrollPane jScrollPane49;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator27;
+    private javax.swing.JSeparator jSeparator35;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator40;
+    private javax.swing.JSeparator jSeparator43;
+    private javax.swing.JSeparator jSeparator44;
+    private javax.swing.JSeparator jSeparator45;
+    private javax.swing.JSeparator jSeparator46;
+    private javax.swing.JSeparator jSeparator47;
+    private javax.swing.JSeparator jSeparator48;
+    private javax.swing.JSeparator jSeparator49;
+    private javax.swing.JSeparator jSeparator50;
+    private javax.swing.JSeparator jSeparator51;
+    private javax.swing.JSeparator jSeparator52;
+    private javax.swing.JSeparator jSeparator53;
+    private javax.swing.JSeparator jSeparator54;
+    private javax.swing.JSeparator jSeparator55;
+    private javax.swing.JSeparator jSeparator56;
+    private javax.swing.JSeparator jSeparator63;
+    private javax.swing.JSeparator jSeparator64;
+    private javax.swing.JSeparator jSeparator65;
+    private javax.swing.JSeparator jSeparator66;
+    private javax.swing.JSeparator jSeparator67;
+    private javax.swing.JSeparator jSeparator68;
+    private javax.swing.JSeparator jSeparator69;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField2;
@@ -1920,6 +3262,44 @@ public class MenuPlayer extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JTextField mostrarNombre;
+    private javax.swing.JLabel nombreTorneoCero;
+    private javax.swing.JLabel nombreTorneoCinco;
+    private javax.swing.JLabel nombreTorneoCuatro;
+    private javax.swing.JLabel nombreTorneoDos;
+    private javax.swing.JLabel nombreTorneoTres;
+    private javax.swing.JLabel nombreTorneoUno;
+    private javax.swing.JTabbedPane pestania;
+    private javax.swing.JTable tablaGeneralLiga;
+    private javax.swing.JTable tablaJugadoresAgregados1;
+    private javax.swing.JTable tablaJugadoresAgregados10;
+    private javax.swing.JTable tablaJugadoresAgregados11;
+    private javax.swing.JTable tablaJugadoresAgregados12;
+    private javax.swing.JTable tablaJugadoresAgregados13;
+    private javax.swing.JTable tablaJugadoresAgregados14;
+    private javax.swing.JTable tablaJugadoresAgregados15;
+    private javax.swing.JTable tablaJugadoresAgregados16;
+    private javax.swing.JTable tablaJugadoresAgregados17;
+    private javax.swing.JTable tablaJugadoresAgregados18;
+    private javax.swing.JTable tablaJugadoresAgregados19;
+    private javax.swing.JTable tablaJugadoresAgregados2;
+    private javax.swing.JTable tablaJugadoresAgregados20;
+    private javax.swing.JTable tablaJugadoresAgregados21;
+    private javax.swing.JTable tablaJugadoresAgregados22;
+    private javax.swing.JTable tablaJugadoresAgregados23;
+    private javax.swing.JTable tablaJugadoresAgregados24;
+    private javax.swing.JTable tablaJugadoresAgregados25;
+    private javax.swing.JTable tablaJugadoresAgregados26;
+    private javax.swing.JTable tablaJugadoresAgregados27;
+    private javax.swing.JTable tablaJugadoresAgregados28;
+    private javax.swing.JTable tablaJugadoresAgregados29;
+    private javax.swing.JTable tablaJugadoresAgregados3;
+    private javax.swing.JTable tablaJugadoresAgregados4;
+    private javax.swing.JTable tablaJugadoresAgregados5;
+    private javax.swing.JTable tablaJugadoresAgregados6;
+    private javax.swing.JTable tablaJugadoresAgregados7;
+    private javax.swing.JTable tablaJugadoresAgregados8;
+    private javax.swing.JTable tablaJugadoresAgregados9;
+    private javax.swing.JTable tablaPartidos;
     private javax.swing.JTextField textoBuscarJugador;
     private javax.swing.JLabel tituloSuperior;
     // End of variables declaration//GEN-END:variables

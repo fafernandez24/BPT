@@ -34,13 +34,19 @@ import model.Tournament;
 import static controller.MenuOrganizatorControl.organizatorCleanTable;
 import static controller.MenuOrganizatorControl.saveDataPlayerTable;
 import static controller.MenuOrganizatorControl.showTournamentName;
+import controller.OrganizatorJsonControl;
+import controller.PlayerJsonControl;
+import controller.TournamentJsonControl;
 import model.Match;
 import model.Team;
 
 public class MenuOrganizator extends javax.swing.JFrame {
         
-    private MatchJsonControl jsonMatch = new MatchJsonControl();
-    private Tournament currentTournament = new Tournament();
+    // JSON
+    private final MatchJsonControl jsonMatch = new MatchJsonControl();
+    private final PlayerJsonControl jsonPlayerList = new PlayerJsonControl();
+    private final OrganizatorJsonControl jsonOrganizatorList = new OrganizatorJsonControl();
+    TournamentJsonControl tournamentJsonControl = new TournamentJsonControl();
     
     // Atributtes
       
@@ -48,6 +54,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private final Organizator organizator;
     private Tournament newTournament = new Tournament();
     private List<Match> matchList = jsonMatch.allMatches();
+    private Tournament currentTournament = new Tournament();
     
     //////////////////
 
@@ -4197,7 +4204,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel16.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, 60));
 
         nombreTorneoCero.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoCero.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoCero.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoCero.setText(currentTournament.getTournamentName());
         jPanel16.add(nombreTorneoCero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
 
@@ -4326,7 +4333,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel17.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1290, -1, 60));
 
         nombreTorneoUno.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoUno.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoUno.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoUno.setText(currentTournament.getTournamentName());
         jPanel17.add(nombreTorneoUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
 
@@ -4433,7 +4440,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel26.add(jLabel246, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
 
         nombreTorneoDos.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoDos.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoDos.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoDos.setText(currentTournament.getTournamentName());
         jPanel26.add(nombreTorneoDos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 770, 60));
 
@@ -4585,7 +4592,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel28.add(jLabel253, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
 
         nombreTorneoTres.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoTres.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoTres.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoTres.setText(currentTournament.getTournamentName());
         jPanel28.add(nombreTorneoTres, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
 
@@ -4788,7 +4795,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel52.add(jLabel261, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
 
         nombreTorneoCuatro.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoCuatro.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoCuatro.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoCuatro.setText(currentTournament.getTournamentName());
         jPanel52.add(nombreTorneoCuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
 
@@ -5017,7 +5024,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel56.add(jLabel279, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 750, -1, 60));
 
         nombreTorneoCinco.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        nombreTorneoCinco.setForeground(new java.awt.Color(153, 153, 153));
+        nombreTorneoCinco.setForeground(new java.awt.Color(30, 25, 161));
         nombreTorneoCinco.setText(currentTournament.getTournamentName());
         jPanel56.add(nombreTorneoCinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 760, 60));
 
@@ -5502,6 +5509,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
         Player player = new Player();
         player.readPlayer(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
         player.addPlayerTable(tablaJugadoresAgregados);
+        if (organizator.findPlayer(player.getId()) == true) newTournament.getParticipantsList().add(player);
+        else{
+            organizator.getPlayerList().add(player);
+            newTournament.getParticipantsList().add(player);
+            jsonPlayerList.addPerson(player);
+        }
     }//GEN-LAST:event_botonAgregarJugadorActionPerformed
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
@@ -5567,10 +5580,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
@@ -5859,6 +5868,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
         newTournament.setGroupsNumber(1);
         newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
         organizator.getTournamentList().add(newTournament);
+        tournamentJsonControl.addTournament(newTournament);
+        jsonOrganizatorList.updatePerson(organizator);
     }//GEN-LAST:event_botonFormatoLigaMouseClicked
 
     private void botonFormatoLigaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseExited
@@ -5925,17 +5936,24 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_verTorneo2MouseMoved
 
     private void verTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseClicked
-        organizatorSeeTournament(pestania, 2, organizator.getTournamentList());   
-        int numberGroups = whichTournamentShow(1, organizator.getTournamentList());
+        int index = 1, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        switch(numberGroups){
-            case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(1).getParticipantsList());
-            case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(1).getParticipantsList(), organizator.getTournamentList().get(1).getGroupsList());
-            default -> pestania.setSelectedIndex(0);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
     }//GEN-LAST:event_verTorneo2MouseClicked
 
@@ -5948,17 +5966,24 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_verTorneo3MouseMoved
 
     private void verTorneo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseClicked
-        organizatorSeeTournament(pestania, 3, organizator.getTournamentList());   
-        int numberGroups = whichTournamentShow(2, organizator.getTournamentList());
+        int index = 2, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        switch(numberGroups){
-            case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(2).getParticipantsList());
-            case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(2).getGroupsList());
-            default -> pestania.setSelectedIndex(0);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
     }//GEN-LAST:event_verTorneo3MouseClicked
 
@@ -5971,21 +5996,23 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_verTorneo1MouseMoved
 
     private void verTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseClicked
-        organizatorSeeTournament(pestania, 1, organizator.getTournamentList()); 
-        int numberGroups = whichTournamentShow(0, organizator.getTournamentList());
+        int index = 0, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
         try{
             switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(0).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(0).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(2).getParticipantsList(), organizator.getTournamentList().get(0).getGroupsList());
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
                 default -> pestania.setSelectedIndex(0);
             }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
         } finally { 
-            currentTournament = organizator.getTournamentList().get(0);
+            currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
     }//GEN-LAST:event_verTorneo1MouseClicked
@@ -5999,7 +6026,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble3MouseMoved
 
     private void botonCrearTorneoDoble3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble3MouseClicked
-        // TODO add your handling code here:
+        int index = 4, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble3MouseClicked
 
     private void botonCrearTorneoDoble3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble3MouseExited
@@ -6011,7 +6056,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo3MouseMoved
 
     private void botonCrearTorneoEquipo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo3MouseClicked
-        // TODO add your handling code here:
+        int index = 5, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo3MouseClicked
 
     private void botonCrearTorneoEquipo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo3MouseExited
@@ -6023,7 +6086,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle3MouseMoved
 
     private void botonCrearTorneoSingle3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseClicked
-        // TODO add your handling code here:
+        int index = 3, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle3MouseClicked
 
     private void botonCrearTorneoSingle3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseExited
@@ -6035,7 +6116,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble4MouseMoved
 
     private void botonCrearTorneoDoble4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble4MouseClicked
-        // TODO add your handling code here:
+        int index = 7, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble4MouseClicked
 
     private void botonCrearTorneoDoble4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble4MouseExited
@@ -6047,7 +6146,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo4MouseMoved
 
     private void botonCrearTorneoEquipo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo4MouseClicked
-        // TODO add your handling code here:
+        int index = 8, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo4MouseClicked
 
     private void botonCrearTorneoEquipo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo4MouseExited
@@ -6059,7 +6176,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle4MouseMoved
 
     private void botonCrearTorneoSingle4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseClicked
-        // TODO add your handling code here:
+        int index = 6, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle4MouseClicked
 
     private void botonCrearTorneoSingle4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseExited
@@ -6071,7 +6206,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble5MouseMoved
 
     private void botonCrearTorneoDoble5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble5MouseClicked
-        // TODO add your handling code here:
+        int index = 10, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble5MouseClicked
 
     private void botonCrearTorneoDoble5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble5MouseExited
@@ -6083,7 +6236,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo5MouseMoved
 
     private void botonCrearTorneoEquipo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo5MouseClicked
-        // TODO add your handling code here:
+        int index = 11, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo5MouseClicked
 
     private void botonCrearTorneoEquipo5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo5MouseExited
@@ -6095,7 +6266,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle5MouseMoved
 
     private void botonCrearTorneoSingle5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle5MouseClicked
-        // TODO add your handling code here:
+        int index = 9, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle5MouseClicked
 
     private void botonCrearTorneoSingle5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle5MouseExited
@@ -6107,7 +6296,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble6MouseMoved
 
     private void botonCrearTorneoDoble6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseClicked
-        // TODO add your handling code here:
+        int index = 13, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble6MouseClicked
 
     private void botonCrearTorneoDoble6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseExited
@@ -6119,7 +6326,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo6MouseMoved
 
     private void botonCrearTorneoEquipo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseClicked
-        // TODO add your handling code here:
+        int index = 14, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo6MouseClicked
 
     private void botonCrearTorneoEquipo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseExited
@@ -6131,7 +6356,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle6MouseMoved
 
     private void botonCrearTorneoSingle6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseClicked
-        // TODO add your handling code here:
+        int index = 12, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle6MouseClicked
 
     private void botonCrearTorneoSingle6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseExited
@@ -6143,7 +6386,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble7MouseMoved
 
     private void botonCrearTorneoDoble7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseClicked
-        // TODO add your handling code here:
+        int index = 16, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble7MouseClicked
 
     private void botonCrearTorneoDoble7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseExited
@@ -6155,7 +6416,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo7MouseMoved
 
     private void botonCrearTorneoEquipo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseClicked
-        // TODO add your handling code here:
+        int index = 17, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo7MouseClicked
 
     private void botonCrearTorneoEquipo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseExited
@@ -6167,7 +6446,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle7MouseMoved
 
     private void botonCrearTorneoSingle7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseClicked
-        // TODO add your handling code here:
+        int index = 15, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle7MouseClicked
 
     private void botonCrearTorneoSingle7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseExited
@@ -6179,7 +6476,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoDoble8MouseMoved
 
     private void botonCrearTorneoDoble8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseClicked
-        // TODO add your handling code here:
+        int index = 19, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoDoble8MouseClicked
 
     private void botonCrearTorneoDoble8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseExited
@@ -6191,7 +6506,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoEquipo8MouseMoved
 
     private void botonCrearTorneoEquipo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseClicked
-        // TODO add your handling code here:
+        int index = 20, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoEquipo8MouseClicked
 
     private void botonCrearTorneoEquipo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseExited
@@ -6203,7 +6536,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle8MouseMoved
 
     private void botonCrearTorneoSingle8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseClicked
-        // TODO add your handling code here:
+        int index = 18, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally { 
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
     }//GEN-LAST:event_botonCrearTorneoSingle8MouseClicked
 
     private void botonCrearTorneoSingle8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseExited
@@ -6478,23 +6829,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         menuConfigurations.setVisible(true); 
     }//GEN-LAST:event_botonEliminarPartidoMouseClicked
 
-    private void actuGeneralTableMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableMouseMoved
-
-    private void actuGeneralTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseClicked
-        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
-        organizator.updatePlayers();
-    }//GEN-LAST:event_actuGeneralTableMouseClicked
-
-    private void actuGeneralTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableMouseExited
-
-    private void actuGeneralTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableActionPerformed
-
     private void botonBuscarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonBuscarJugadorActionPerformed
@@ -6563,6 +6897,27 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void actuGeneralTableUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_actuGeneralTableUno3ActionPerformed
+
+    private void actuGeneralTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableActionPerformed
+
+    private void actuGeneralTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableMouseExited
+
+    private void actuGeneralTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseClicked
+        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
+        organizator.updatePlayers();
+    }//GEN-LAST:event_actuGeneralTableMouseClicked
+
+    private void actuGeneralTableMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableMouseMoved
+
+    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField9ActionPerformed
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
