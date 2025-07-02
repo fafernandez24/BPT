@@ -6,7 +6,7 @@
         "email": "freddyf2030@gmail.com",
         "dateBirth": "2005-04-06",
         "phoneNumber": "04241540989",
-        "TournamentList": [
+        "tournamentList": [
             {
                 "tournamentName": "1ra Parada Single",
                 "tournamentCategory": "6ta Categoria",
