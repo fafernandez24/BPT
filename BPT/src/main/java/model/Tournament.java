@@ -171,6 +171,17 @@ public class Tournament {
         return new Player();
     } 
     
+    public boolean findPlayerById(String id){
+        try{
+            for (int i = 0; i < participantsList.size(); i++){
+                if (participantsList.get(i).getId().equals(id)) return false;
+            }
+        } catch (NullPointerException error){
+            System.out.println("AVISO. Lista vacia");;
+        }
+        return true;
+    } 
+    
     public Player updatePlayerGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
         for (int i = 0; i < participantsList.size(); i++){
             if (participantsList.get(i).getName().equals(name)) participantsList.get(i).updatePlayer(pj, pg, pp, sg, sp, gg, gp);

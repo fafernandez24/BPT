@@ -5,6 +5,7 @@
 package model;
 
 import static controller.TypeBecomeType.StringBecomeLocalDate;
+import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
@@ -36,7 +37,7 @@ public class Player extends Person{
     // Constructor #1
     public Player(){};
     
-    // Constructor #2// Constructor #2
+    // Constructor #2
     public Player(String category, String teamName, int matchesPlayed, int matchesWon, int matchesLost, int setsWon, int setsLost, int gamesWon, int gamesLost, double matchAverage, double setAverage, double gameAverage, String id, String name, String password, String email, LocalDate dateBirth, String phoneNumber) {
         super(id, name, password, email, dateBirth, phoneNumber);
         this.category = category;
@@ -160,6 +161,26 @@ public class Player extends Person{
         this.gameAverage = gameAverage;
     }
     
+    // Validation Methods
+    
+    public boolean validatePlayer(){
+        try{
+            return validateName(name) && validateId(id) && validatePhoneNumber(phoneNumber) && validateEmail(email) && !validateName(teamName) && !validateDateBirth(String.valueOf(dateBirth));
+        } catch (NullPointerException error){
+            return false;
+        }
+    }
+    
+    // Read Methods
+    
+    public void readTeamName(JTextField teamName){
+        if (validateName(teamName.getText())) this.teamName = teamName.getText();
+        else{
+            teamName.setText("Nombre invalido");
+            teamName.setForeground(Color.red);
+        }  
+    }
+    
     public void calculateMatchAverage(){
         try {
             matchAverage = (matchesWon/matchesPlayed);
@@ -184,15 +205,15 @@ public class Player extends Person{
         }
     }
     
-    public void readPlayer(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
-        this.name = nombre.getText();
-        this.id = id.getText();
-        this.password = this.id;
-        this.phoneNumber= phoneNumber.getText();
-        this.email = email.getText();
-        this.category = (String) category.getSelectedItem();
-        this.teamName = team.getText();
-        this.dateBirth = StringBecomeLocalDate(dateBirth.getText());   
+    public void readPlayer(JTextField name,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
+        readName(name);
+        readId(id);
+        readPassword();
+        readPhoneNumber(phoneNumber);
+        readEmail(email);
+        readTeamName(team);
+        readDateBirth(dateBirth);
+        this.category = (String) category.getSelectedItem();  
     }
     
     public void addPlayerTable(JTable table){
