@@ -70,15 +70,15 @@ public class MenuAdministratorControl {
     public static String mostPlayersTournament (List<Tournament> tournamentList){
         String nombreTorneo = "";
         try{
+            nombreTorneo = tournamentList.get(0).getTournamentName();
             int mostPlayers = tournamentList.get(0).getParticipantsNumber();
             for (int i = 0; i < tournamentList.size(); i++){
-                    if (mostPlayers < tournamentList.get(i).getParticipantsNumber()){
-                        mostPlayers = tournamentList.get(i).getParticipantsNumber();
-                        nombreTorneo = tournamentList.get(i).getTournamentName();
-                    }
+                if (mostPlayers < tournamentList.get(i).getParticipantsNumber()){
+                    mostPlayers = tournamentList.get(i).getParticipantsNumber();
+                    nombreTorneo = tournamentList.get(i).getTournamentName();
                 }
             }
-         catch (NullPointerException error){
+        } catch (NullPointerException error){
             System.out.println("ERROR. Lista vacia. Funcion mostParticipansTournament");
         }
         return nombreTorneo;
@@ -87,6 +87,7 @@ public class MenuAdministratorControl {
     public static String lessPlayersTournament (List<Tournament> tournamentList){
         String nombreTorneo = "";
         try{
+            nombreTorneo = tournamentList.get(0).getTournamentName();
             int lessPlayers = tournamentList.get(0).getParticipantsNumber();
             for (int i = 0; i < tournamentList.size(); i++){
                     if (lessPlayers > tournamentList.get(i).getParticipantsNumber()){
@@ -97,79 +98,61 @@ public class MenuAdministratorControl {
             }
          catch (NullPointerException error){
             System.out.println("ERROR. Lista vacia. Funcion mostParticipansTournament");
+            nombreTorneo = "ERROR";
         }
         return nombreTorneo;
     }
     
-    public static String findPlayerName (List<Player> players, int index){
-        String nombre = players.get(index).getName();
-        return nombre;
-    }
-    
-    public static double findGameAverage(List<Player> players, int index){
-        double average = players.get(index).getGameAverage();
-        return average;
-    }
-    
-    public static double findSetAverage(List<Player> players, int index){
-        double average = players.get(index).getSetAverage();
-        return average;
-    }
-    
-    public static double findMatchAverage(List<Player> players, int index){
-        double average = players.get(index).getMatchAverage();
-        return average;
-    }
-    
-    public static String mostGameAveragePlayer(List<Tournament> tournamentList){
-        String nombre = "";
+    public static String mostGameAveragePlayer(List<Player> playertList){
+        String name = "";
         try{
-            double mostGameAverage = findGameAverage(tournamentList.get(0).getParticipantsList(), 0);
-            for (int i = 0; i < tournamentList.size(); i++){
-                    if (mostGameAverage < findGameAverage(tournamentList.get(i).getParticipantsList(), i)){
-                        mostGameAverage = findGameAverage(tournamentList.get(i).getParticipantsList(), i);
-                        nombre = findPlayerName(tournamentList.get(i).getParticipantsList(), i);
-                    }
+            name = playertList.get(0).getName();
+            double mostGameAverage = playertList.get(0).getGameAverage();
+            for (Player player : playertList) {
+                if (mostGameAverage < player.getGameAverage()){
+                    mostGameAverage = player.getGameAverage();
+                    name = player.getName();
                 }
-        }
-        catch(NullPointerException error){
+            }
+        } catch(NullPointerException error){
             System.out.println("ERROR. Lista vacia. Funcion mostGameAveragePlayer");
+            name = "ERROR";
         }
-        return nombre;
+        return name;
     }
     
-    public static String mostSetsAveragePlayer(List<Tournament> tournamentList){
-        String nombre = "";
+    public static String mostSetsAveragePlayer(List<Player> playertList){
+        String name = "";
         try{
-            double mostSetsAverage = findSetAverage(tournamentList.get(0).getParticipantsList(), 0);
-            for (int i = 0; i < tournamentList.size(); i++){
-                    if (mostSetsAverage < findSetAverage(tournamentList.get(i).getParticipantsList(), i)){
-                        mostSetsAverage = findSetAverage(tournamentList.get(i).getParticipantsList(), i);
-                        nombre = findPlayerName(tournamentList.get(i).getParticipantsList(), i);
-                    }
+            name = playertList.get(0).getName();
+            double mostSetsAverage = playertList.get(0).getSetAverage();
+            for (Player player: playertList){
+                if (mostSetsAverage < player.getSetAverage()){
+                    mostSetsAverage = player.getSetAverage();
+                    name = player.getName();
                 }
-        }
-        catch(NullPointerException error){
+            }
+        } catch(NullPointerException error){
             System.out.println("ERROR. Lista vacia. Funcion mostSetsAveragePlayer");
         }
-        return nombre;
+        return name;
     }
     
-    public static String mostMatchAveragePlayer(List<Tournament> tournamentList){
-        String nombre = "";
+    public static String mostMatchAveragePlayer(List<Player> playertList){
+        String name = "";
         try{
-            double mostMatchAverage = findMatchAverage(tournamentList.get(0).getParticipantsList(), 0);
-            for (int i = 0; i < tournamentList.size(); i++){
-                    if (mostMatchAverage < findMatchAverage(tournamentList.get(i).getParticipantsList(), i)){
-                        mostMatchAverage = findMatchAverage(tournamentList.get(i).getParticipantsList(), i);
-                        nombre = findPlayerName(tournamentList.get(i).getParticipantsList(), i);
-                    }
+            name = playertList.get(0).getName();
+            double mostMatchAverage = playertList.get(0).getMatchAverage();
+            for (Player player: playertList){
+                if (mostMatchAverage < player.getMatchAverage()){
+                    mostMatchAverage = player.getMatchAverage();
+                    name = player.getName();
                 }
-        }
-        catch(NullPointerException error){
+            }
+        } catch(NullPointerException error){
             System.out.println("ERROR. Lista vacia. Funcion mostMatchAveragePlayer");
         }
-        return nombre;
+        return name;
     }
     
 }
