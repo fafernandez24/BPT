@@ -5402,12 +5402,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
         Player player = new Player();
         player.readPlayer(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
-        player.addPlayerTable(tablaJugadoresAgregados);
-        if (organizator.findPlayer(player.getId()) == true) newTournament.getParticipantsList().add(player);
-        else{
-            organizator.getPlayerList().add(player);
-            newTournament.getParticipantsList().add(player);
-        }
+        if (!player.validatePlayer()){
+            player.addPlayerTable(tablaJugadoresAgregados);
+            if (organizator.findPlayer(player.getId()) == true){
+                newTournament.getParticipantsList().add(player);
+                System.out.println("Jugador ingresado correctamente");
+            } else{
+                organizator.getPlayerList().add(player);
+                newTournament.getParticipantsList().add(player);
+                System.out.println("Jugador nuevo registrado");
+            }
+        } 
     }//GEN-LAST:event_botonAgregarJugadorActionPerformed
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
