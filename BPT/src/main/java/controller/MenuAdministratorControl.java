@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Player;
+import model.Tournament;
 
 /**
  *
@@ -61,5 +62,27 @@ public class MenuAdministratorControl {
         DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
         defaultTable.setRowCount(0);
     }
-            
+    
+    public static int totalPlayers(List<Player> players){
+        return players.size();
+    }
+    
+    public static String mostPlayersTournament (List<Tournament> tournamentList){
+        try{
+            int mostPlayers = tournamentList.get(0).getParticipantsNumber();
+            String nombreTorneo = "";
+            for (int i = 0; i < 1; i++){
+                for (int j = 0; j < tournamentList.size(); j++){
+                    if (mostPlayers < tournamentList.get(j).getParticipantsNumber()){
+                        mostPlayers = tournamentList.get(j).getParticipantsNumber();
+                        nombreTorneo = tournamentList.get(j).getTournamentName();
+                    }
+                }
+            }
+        } catch (NullPointerException error){
+            System.out.println("ERROR. Lista vacia. Funcion mostParticipansTournament");
+        }
+        return nombreTorneo;
+    }
+    
 }
