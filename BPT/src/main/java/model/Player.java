@@ -4,7 +4,6 @@
  */
 package model;
 
-import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
@@ -164,17 +163,13 @@ public class Player extends Person{
     // Validation Methods
     
     public boolean validatePlayer(){
-        try{
-            return validateName(name) && validateId(id) && validatePhoneNumber(phoneNumber) && validateEmail(email) && !validateName(teamName) && !validateDateBirth(String.valueOf(dateBirth));
-        } catch (NullPointerException error){
-            return false;
-        }
+        return validateName(name) && validateId(id) && validatePhoneNumber(phoneNumber) && validateEmail(email) && validateName(teamName) && validateDateBirth(String.valueOf(dateBirth));
     }
     
     // Read Methods
     
     public void readTeamName(JTextField teamName){
-        if (validateName(teamName.getText())) this.teamName = teamName.getText();
+        if (validateName(teamName.getText())) this.teamName = teamName.getText().trim();
         else{
             teamName.setText("Nombre invalido");
             teamName.setForeground(Color.red);

@@ -92,15 +92,18 @@ public abstract class Person {
     } 
     
     public boolean validateEmail(String email){
-        return email.matches("^[\\\\w.-]+@[a-zA-Z\\\\d.-]+\\\\.[a-zA-Z]{2,}$");
+        return email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,63}$");
     } 
     
     public boolean validateDateBirth(String date){
-        return date.matches("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$") && date.length() == 10;
+        String regexOne = "^(?:(?:31[-/.](?:0?[13578]|1[02]))|(?:(?:29|30)[-/.](?:0?[13-9]|1[0-2]))|(?:0?[1-9]|1\\d|2[0-8])[-/.](?:0?[1-9]|1[0-2]))[-/.](?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
+        String regexTwo = "^(?:(?:1[6-9]|[2-9]\\d)?\\d{2})[-/.](?:0?[1-9]|1[0-2])[-/.](?:0?[1-9]|[12]\\d|3[01])$";
+        return (date.matches(regexOne) || date.matches(regexTwo));
     } 
     
     public boolean validatePhoneNumber(String numberString){
-        return numberString.matches("^(\\\\+58|0)?(4(12|14|16|24|26))[0-9]{7}$");
+        return numberString.matches("^(\\+58|0)?(4(12|14|16|24|26))[0-9]{7}$");
+
     } 
     
     // Read Methods
@@ -126,7 +129,7 @@ public abstract class Person {
     }
     
     public void readEmail(JTextField email){
-        if (validateName(email.getText())) this.name = email.getText();
+        if (validateEmail(email.getText())) this.email = email.getText().trim();
         else{
             email.setText("Email invalido");
             email.setForeground(Color.red);
@@ -142,7 +145,7 @@ public abstract class Person {
     }
     
         public void readPhoneNumber(JTextField phone){
-        if (validatePhoneNumber(phone.getText())) this.phoneNumber = phone.getText();
+        if (validatePhoneNumber(phone.getText())) this.phoneNumber = phone.getText().trim();
         else{
             phone.setText("Numero de telefono invalida");
             phone.setForeground(Color.red);

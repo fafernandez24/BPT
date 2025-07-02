@@ -4,7 +4,6 @@
  */
 package model;
 
-import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
@@ -51,6 +50,13 @@ public class DoubleTennis extends Player{
 
     public void setPlayerB(Player playerB) {
         this.playerB = playerB;
+    }
+    
+    // Validation Methods
+    
+    @Override
+    public boolean validatePlayer(){
+        return playerA.validatePlayer() && playerB.validatePlayer();
     }
     
     public void readPlayerA(JTextField name,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){

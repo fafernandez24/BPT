@@ -171,13 +171,15 @@ public class Tournament {
         return new Player();
     } 
     
+    @SuppressWarnings("empty-statement")
     public boolean findPlayerById(String id){
         try{
             for (int i = 0; i < participantsList.size(); i++){
                 if (participantsList.get(i).getId().equals(id)) return false;
             }
         } catch (NullPointerException error){
-            System.out.println("AVISO. Lista vacia");;
+            System.out.println("AVISO. Lista vacia");
+            return true;
         }
         return true;
     } 
