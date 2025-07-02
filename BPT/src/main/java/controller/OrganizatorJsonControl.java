@@ -79,6 +79,7 @@ public class OrganizatorJsonControl {
             foundOrganizator.setEmail(org.getEmail());
             foundOrganizator.setDateBirth(org.getDateBirth());
             foundOrganizator.setPlayerList(org.getPlayerList());
+            foundOrganizator.setTournamentList(org.getTournamentList());
             return updateDocument();
         }
         return false;

@@ -145,7 +145,8 @@ public class MenuOrganizatorControl {
     }
     
     public static void organizatorSeeTournament(JTabbedPane tabs, int tournamentNumber, List<Tournament> tournamentList){
-        if ((tournamentNumber) <  tournamentList.size()) organizatorTabbedPanelSeeTournaments(tabs, tournamentList.get(tournamentNumber).getGroupsNumber());
+        if ((tournamentNumber) <  tournamentList.size()) 
+            organizatorTabbedPanelSeeTournaments(tabs, tournamentList.get(tournamentNumber).getGroupsNumber());
     }
     
     public static void loadPlayerIntoTableGroup(JTable table, List<Player> playerList){

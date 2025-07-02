@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import model.Player;
 import model.Tournament;
@@ -53,6 +54,23 @@ public class MenuPlayerControl {
     
     public static void changePanelColor(JPanel panel, int r, int g, int b){
         panel.setBackground(new Color(r,g,b));
+    }
+    
+    public static void playerTabbedPanelSeeTournaments(JTabbedPane tabs, int option){
+        switch(option){
+            case 1 -> tabs.setSelectedIndex(3);
+            case 2 -> tabs.setSelectedIndex(4);
+            case 3 -> tabs.setSelectedIndex(5);
+            case 4 -> tabs.setSelectedIndex(6);
+            case 5 -> tabs.setSelectedIndex(7);
+            case 6 -> tabs.setSelectedIndex(8);
+            default -> tabs.setSelectedIndex(0);
+        }
+    }
+    
+    public static void playerSeeTournament(JTabbedPane tabs, int tournamentNumber, List<Tournament> tournamentList){
+        if ((tournamentNumber) <  tournamentList.size()) 
+            playerTabbedPanelSeeTournaments(tabs, tournamentList.get(tournamentNumber).getGroupsNumber());
     }
     
 }
