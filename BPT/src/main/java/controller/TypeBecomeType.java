@@ -6,8 +6,6 @@ package controller;
 
 import static controller.ValidationControl.validateJFieldTextInt;
 import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
@@ -19,10 +17,19 @@ import javax.swing.JTextField;
 public class TypeBecomeType {
     
     public static LocalDate StringBecomeLocalDate(String date){
-        int year = Integer.parseInt(date.substring(6,10));
-        int month = Integer.parseInt(date.substring(3,5));
-        int day = Integer.parseInt(date.substring(0,2));
-        return LocalDate.of(year, month, day);  
+        try {
+            int year = Integer.parseInt(date.substring(6,10));
+            int month = Integer.parseInt(date.substring(3,5));
+            int day = Integer.parseInt(date.substring(0,2));
+            // DD/MM/YYYY   
+            return LocalDate.of(year, month, day);
+        } catch (NumberFormatException error){
+            int year = Integer.parseInt(date.substring(0,4));
+            int month = Integer.parseInt(date.substring(5,7));
+            int day = Integer.parseInt(date.substring(8,10));
+            // YYYY/MM/DD
+            return LocalDate.of(year, month, day);
+        }
     }
     
     public static String JTextFieldBecomeString(JTextField textField){

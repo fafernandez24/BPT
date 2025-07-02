@@ -4,6 +4,10 @@
  */
 package model;
 
+import controller.MatchJsonControl;
+import controller.OrganizatorJsonControl;
+import controller.PlayerJsonControl;
+import controller.TournamentJsonControl;
 import java.time.LocalDate;
 import java.util.List;
 import javax.swing.JTextField;
@@ -52,7 +56,7 @@ public class Organizator extends Person implements PlayerInterface {
     
     @Override
     public Player searchPlayer(JTextField dataEnterId){
-        Player player = new Player();
+        Player player = null;
         for (int i = 0; i < playerList.size(); i++){
             if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
         }
@@ -84,6 +88,23 @@ public class Organizator extends Person implements PlayerInterface {
             }
             player.updatePlayer(dataPlayer);
         }
+    }
+    
+    public void updatePlayersJson(){
+        PlayerJsonControl jsonPlayer = new PlayerJsonControl(); 
+        for (Player p: playerList){jsonPlayer.updatePerson(p);}
+    }
+    
+    public void updateTournamentsJson(){
+        TournamentJsonControl jsonTour = new TournamentJsonControl();
+        for (Tournament t: tournamentList){jsonTour.updatePerson(t);}
+    }
+    
+    public void updateJsonOrganizator(){
+        OrganizatorJsonControl jsonOrganizator = new OrganizatorJsonControl();
+        updatePlayersJson();
+        updateTournamentsJson();
+        jsonOrganizator.addPerson(this);
     }
     
 }

@@ -53,7 +53,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
     private final Organizator organizator;
     private Tournament newTournament = new Tournament();
-    private List<Match> matchList = jsonMatch.allMatches();
+    private final List<Match> matchList = jsonMatch.allMatches();
     private Tournament currentTournament = new Tournament();
     
     //////////////////
@@ -387,6 +387,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         botonSeguirIngresarJugador = new javax.swing.JButton();
         opcionesCategoriaJugador = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jPanel8 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -3053,6 +3054,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel6.add(opcionesCategoriaJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 350, 30));
 
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search.png"))); // NOI18N
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 260, -1, -1));
+
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 1260));
 
         jScrollPane1.setViewportView(jPanel5);
@@ -5289,6 +5298,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseExited
 
     private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
+        organizator.updateJsonOrganizator();
         System.exit(0);
     }//GEN-LAST:event_botonSalidaMouseClicked
 
@@ -6918,6 +6928,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        try{
+            Player player = organizator.searchPlayer(entradaIDJugador);
+            organizatorShowPlayerInformation(entradaNombreJugador, entradaNumeroTelefonoJugador, entradaFechaNacimientoJugador, entradaIDJugador, entradaEmailJugador, entradaEquipoJugador, player);
+        } catch (NullPointerException error) {
+            System.err.println("AVISO. No se encontro el jugador en la lista global");
+        }
+    }//GEN-LAST:event_jLabel12MouseClicked
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -7037,6 +7056,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel117;
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;

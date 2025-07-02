@@ -72,6 +72,15 @@ public class MenuOrganizatorControl {
         matchesWonField.setText(String.valueOf(player.getMatchesWon()));
     }
     
+    public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField teamField, Player player){
+        nameField.setText(player.getName());
+        phoneField.setText(player.getPhoneNumber());
+        dateBirthField.setText(player.getDateBirth().toString());
+        idField.setText(player.getId());
+        email.setText(player.getEmail());
+        teamField.setText(player.getTeamName());
+    }
+    
     public static void organizatorCleanTable(JTable table){
         DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
         defaultTable.setRowCount(0);

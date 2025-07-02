@@ -98,7 +98,7 @@
         "email": "jfreddyf@hotmail.com",
         "dateBirth": "1972-04-03",
         "phoneNumber": "0263213594",
-        "TournamentList": [],
+        "tournamentList": [],
         "playerList": [
             {
                 "id": 31703150,
