@@ -16,7 +16,6 @@ import static controller.MenuConfigurationsControl.editPlayer;
 import java.awt.Image;
 import java.util.List;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
 import model.Match;
 import model.Player;
 
@@ -29,7 +28,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
     // Attributes
     private List<Player> player;
     private List<Match> matchList;
-    private JTextField oldName;
 
     /**
      * Creates new form start
@@ -119,11 +117,11 @@ public class MenuConfigurations extends javax.swing.JFrame {
         agregarIngresarEquipo = new javax.swing.JTextField();
         jSeparator15 = new javax.swing.JSeparator();
         opcionesCategoriasAgregar = new javax.swing.JComboBox<>();
+        jSeparator17 = new javax.swing.JSeparator();
+        fechaNacimientoJugadorAgregar = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jSeparator14 = new javax.swing.JSeparator();
-        nombreJugadorEliminar = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
         botonEliminarJugador = new javax.swing.JButton();
         botonVolverEliminarJugador = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
@@ -726,19 +724,49 @@ public class MenuConfigurations extends javax.swing.JFrame {
             }
         });
 
+        fechaNacimientoJugadorAgregar.setFont(new java.awt.Font("Bebas Neue", 0, 14)); // NOI18N
+        fechaNacimientoJugadorAgregar.setForeground(new java.awt.Color(153, 153, 153));
+        fechaNacimientoJugadorAgregar.setText("Fecha a agregar");
+        fechaNacimientoJugadorAgregar.setBorder(null);
+        fechaNacimientoJugadorAgregar.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fechaNacimientoJugadorAgregarFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                fechaNacimientoJugadorAgregarFocusLost(evt);
+            }
+        });
+        fechaNacimientoJugadorAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fechaNacimientoJugadorAgregarActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
+        jLabel28.setText("FEcha nacimiento");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addGap(102, 102, 102)
                 .addComponent(botonVolverAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
                 .addComponent(botonAgregarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jSeparator17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(fechaNacimientoJugadorAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(37, 37, 37))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -802,11 +830,17 @@ public class MenuConfigurations extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(fechaNacimientoJugadorAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolverAgregar)
                     .addComponent(botonAgregarJugador))
-                .addGap(104, 104, 104))
+                .addGap(64, 64, 64))
         );
 
         jTabbedPane1.addTab("tab3", jPanel4);
@@ -815,27 +849,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        nombreJugadorEliminar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        nombreJugadorEliminar.setForeground(new java.awt.Color(153, 153, 153));
-        nombreJugadorEliminar.setText("Nombre del jugador");
-        nombreJugadorEliminar.setBorder(null);
-        nombreJugadorEliminar.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminarFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                nombreJugadorEliminarFocusLost(evt);
-            }
-        });
-        nombreJugadorEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nombreJugadorEliminarActionPerformed(evt);
-            }
-        });
-
-        jLabel22.setFont(new java.awt.Font("Bebas Neue", 0, 30)); // NOI18N
-        jLabel22.setText("Nombre");
 
         botonEliminarJugador.setBackground(new java.awt.Color(0, 51, 255));
         botonEliminarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -888,46 +901,35 @@ public class MenuConfigurations extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(botonVolverEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(botonEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 114, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cedulaJugadorEliminar)
+                                .addComponent(jSeparator19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(cedulaJugadorEliminar)
-                            .addComponent(jSeparator19, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nombreJugadorEliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
-                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(91, 91, 91)
+                        .addComponent(botonVolverEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(botonEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 114, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(nombreJugadorEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addContainerGap(142, Short.MAX_VALUE)
                 .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cedulaJugadorEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonVolverEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonEliminarJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(120, 120, 120))
+                .addGap(206, 206, 206))
         );
 
         jPanel6.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 540));
@@ -1437,10 +1439,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_equipoJugadorModificarActionPerformed
 
-    private void nombreJugadorEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreJugadorEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nombreJugadorEliminarActionPerformed
-
     private void botonEliminarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarJugadorActionPerformed
         // eliminar jugador
     }//GEN-LAST:event_botonEliminarJugadorActionPerformed
@@ -1613,14 +1611,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
         configurationFocusLost (agregarIngresarEquipo, "Equipo del jugador");
     }//GEN-LAST:event_agregarIngresarEquipoFocusLost
 
-    private void nombreJugadorEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminarFocusGained
-        configurationFocusGained (nombreJugadorEliminar, "Nombre del jugador");
-    }//GEN-LAST:event_nombreJugadorEliminarFocusGained
-
-    private void nombreJugadorEliminarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nombreJugadorEliminarFocusLost
-        configurationFocusLost (nombreJugadorEliminar, "Nombre del jugador");
-    }//GEN-LAST:event_nombreJugadorEliminarFocusLost
-
     private void cedulaJugadorEliminarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cedulaJugadorEliminarFocusGained
         configurationFocusGained (cedulaJugadorEliminar, "Cedula del jugador");
     }//GEN-LAST:event_cedulaJugadorEliminarFocusGained
@@ -1769,7 +1759,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
     }//GEN-LAST:event_botonPartidoEliminarMouseClicked
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
-        addPlayer(player, agregarIngresarNombre, agregarIngresarCedula, agregarIngresarCorreo, agregarIngresarTelefono, agregarIngresarEquipo, opcionesCategoriasAgregar);
+        addPlayer(agregarIngresarNombre, agregarIngresarCedula, agregarIngresarCorreo, agregarIngresarTelefono, agregarIngresarEquipo, opcionesCategoriasAgregar, fechaNacimientoJugadorAgregar);
         agregarIngresarNombre.setText("");
         agregarIngresarCedula.setText("");
         agregarIngresarCorreo.setText("");
@@ -1779,13 +1769,12 @@ public class MenuConfigurations extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAgregarJugadorMouseClicked
 
     private void botonEliminarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarJugadorMouseClicked
-        deletePlayer(player, nombreJugadorEliminar, cedulaJugadorEliminar);
-        nombreJugadorEliminar.setText("");
+        deletePlayer(cedulaJugadorEliminar);
         cedulaJugadorEliminar.setText("");
     }//GEN-LAST:event_botonEliminarJugadorMouseClicked
 
     private void botonCambiarNombreTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCambiarNombreTorneoMouseClicked
-        changeNameTournament(entradaNombreTorneoModificar, oldName);
+        changeNameTournament(entradaNombreTorneoModificar);
     }//GEN-LAST:event_botonCambiarNombreTorneoMouseClicked
 
     private void botonModificarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarJugadorMouseClicked
@@ -1800,7 +1789,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
     }//GEN-LAST:event_botonModificarJugadorMouseClicked
 
     private void botonGuardarModificarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarModificarJugadorMouseClicked
-        editPlayer(player, entradaCedulaJugadorModificar, nombreJugadorModificar, correoJugadorModificar, telefonoJugadorModificar, cedulaJugadorModificar, equipoJugadorModificar, opcionesCategoriasModificar, fechaNacimientoJugadorModificar);
+        editPlayer(entradaCedulaJugadorModificar, nombreJugadorModificar, correoJugadorModificar, telefonoJugadorModificar, cedulaJugadorModificar, equipoJugadorModificar, opcionesCategoriasModificar, fechaNacimientoJugadorModificar);
         nombreJugadorModificar.setText("");
         correoJugadorModificar.setText("");
         telefonoJugadorModificar.setText("");
@@ -1823,6 +1812,18 @@ public class MenuConfigurations extends javax.swing.JFrame {
         nombreJugadorBPartidoAgregar.setText("");
         FechaPartidoAgregar.setText("");
     }//GEN-LAST:event_botonPartidoAgregarMouseClicked
+
+    private void fechaNacimientoJugadorAgregarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoJugadorAgregarFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechaNacimientoJugadorAgregarFocusGained
+
+    private void fechaNacimientoJugadorAgregarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoJugadorAgregarFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechaNacimientoJugadorAgregarFocusLost
+
+    private void fechaNacimientoJugadorAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fechaNacimientoJugadorAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fechaNacimientoJugadorAgregarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField FechaPartidoAgregar;
@@ -1858,6 +1859,7 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JTextField entradaCedulaJugadorModificar;
     private javax.swing.JTextField entradaNombreTorneoModificar;
     private javax.swing.JTextField equipoJugadorModificar;
+    private javax.swing.JTextField fechaNacimientoJugadorAgregar;
     private javax.swing.JTextField fechaNacimientoJugadorModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1872,12 +1874,12 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel39;
@@ -1904,9 +1906,9 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator18;
     private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
@@ -1931,7 +1933,6 @@ public class MenuConfigurations extends javax.swing.JFrame {
     private javax.swing.JTextField nombreJugadorBPartidoAgregar;
     private javax.swing.JTextField nombreJugadorBPartidoEliminar;
     private javax.swing.JTextField nombreJugadorBPartidoModificar;
-    private javax.swing.JTextField nombreJugadorEliminar;
     private javax.swing.JTextField nombreJugadorModificar;
     private javax.swing.JComboBox<String> opcionesCategoriasAgregar;
     private javax.swing.JComboBox<String> opcionesCategoriasModificar;
