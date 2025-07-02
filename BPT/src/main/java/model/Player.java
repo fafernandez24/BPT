@@ -160,6 +160,30 @@ public class Player extends Person{
         this.gameAverage = gameAverage;
     }
     
+    public void calculateMatchAverage(){
+        try {
+            matchAverage = (matchesWon/matchesPlayed);
+        } catch (ArithmeticException error) {
+            matchAverage = 0;
+        }
+    }
+    
+    public void calculateSetAverage(){
+        try {
+            setAverage = (setsWon/(setsWon+setsLost));
+        } catch (ArithmeticException error){
+            setAverage = 0;
+        }
+    }
+    
+    public void calculateGameAverage(){
+        try {
+            gameAverage = (gamesWon/(gamesWon+gamesLost));
+        } catch (ArithmeticException error) {
+            gameAverage = 0; 
+        }
+    }
+    
     public void readPlayer(JTextField nombre,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
         this.name = nombre.getText();
         this.id = id.getText();
@@ -188,6 +212,45 @@ public class Player extends Person{
         cells[1] = id;
         cells[2] = matchesWon;
         defaultTable.addRow(cells);
+    }
+    
+    public void recolectDataPlayer(Player player){
+        matchesPlayed += player.getMatchesPlayed();
+        matchesWon += player.getMatchesWon();
+        matchesLost += player.getMatchesLost();
+        setsWon += player.getSetsWon();
+        setsLost += player.getSetsLost();
+        gamesWon += player.getGamesWon();
+        gamesLost += player.getGamesLost();
+        calculateMatchAverage();
+        calculateSetAverage();
+        calculateGameAverage();
+    }
+    
+    public void updatePlayer(Player player){
+        matchesPlayed = player.getMatchesPlayed();
+        matchesWon = player.getMatchesWon();
+        matchesLost = player.getMatchesLost();
+        setsWon = player.getSetsWon();
+        setsLost = player.getSetsLost();
+        gamesWon = player.getGamesWon();
+        gamesLost = player.getGamesLost();
+        calculateMatchAverage();
+        calculateSetAverage();
+        calculateGameAverage();
+    }
+        
+    public void updatePlayer(int pj, int pg, int pp, int sg, int sp, int gg, int gp){
+        matchesPlayed = pj;
+        matchesWon = pg;
+        matchesLost = pp;
+        setsWon = sg;
+        setsLost = sp;
+        gamesWon = gg;
+        gamesLost = gp;
+        calculateMatchAverage();
+        calculateSetAverage();
+        calculateGameAverage();
     }
     
 }

@@ -31,7 +31,7 @@ public class MenuPlayerControl {
         int i = 0;
         Player player = new Player();
         while (i < tournamentList.size()){
-            player = tournamentList.get(i).searchPlayerTournament(id);
+            player = tournamentList.get(i).searchPlayerById(id);
             if (player.getName().equals(id)) return player;
             ++i;
         }

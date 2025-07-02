@@ -5,12 +5,13 @@
 package model;
 
 import java.util.List;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Freddy A. Fernández
  */
-public class Group {
+public class Group implements PlayerInterface{
     
     // Attributes
     
@@ -56,6 +57,32 @@ public class Group {
 
     public void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;
+    }
+    
+    @Override
+    public Player searchPlayer(JTextField dataEnterId){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getId().equals(dataEnterId.getText())) player = playerList.get(i);
+        }
+        return player;
+    }
+    
+    @Override
+    public Player searchPlayer(String dataEnterId){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getId().equals(dataEnterId)) player = playerList.get(i);
+        }
+        return player;
+    }
+    
+    public Player searchPlayerByName(String name){
+        Player player = new Player();
+        for (int i = 0; i < playerList.size(); i++){
+            if(playerList.get(i).getName().equals(name)) player = playerList.get(i);
+        }
+        return player;
     }
     
 }

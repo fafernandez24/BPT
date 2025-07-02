@@ -12,10 +12,10 @@ import static controller.ValidationControl.validateTournamentName;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
@@ -150,8 +150,8 @@ public class MenuOrganizatorControl {
     
     public static void loadPlayerIntoTableGroup(JTable table, List<Player> playerList){
         DefaultTableModel group = (DefaultTableModel) table.getModel();
-        Object[] cells = new Object[11];
             for (int i = 0; i < playerList.size(); i++){
+            Object[] cells = new Object[11];
             cells[0] = playerList.get(i).getName();
             cells[1] = playerList.get(i).getMatchesPlayed();
             cells[2] = playerList.get(i).getMatchesWon();
@@ -170,6 +170,15 @@ public class MenuOrganizatorControl {
     public static int whichTournamentShow(int tournamentNumber, List<Tournament> tournamentList){
         if (tournamentNumber <  tournamentList.size()) return tournamentList.get(tournamentNumber).getGroupsNumber();
         return 0;    
+    }
+    
+    public static void showTournamentName(JLabel tZero, JLabel tOne, JLabel tTwo, JLabel tThree, JLabel tFour, JLabel tFive, String tName){
+        tZero.setText(tName);
+        tOne.setText(tName);
+        tTwo.setText(tName);
+        tThree.setText(tName);
+        tFour.setText(tName);
+        tFive.setText(tName);
     }
     
     public static void loadTournamentTypeZero(JTable generalTable, List<Player> playerList){
@@ -240,25 +249,7 @@ public class MenuOrganizatorControl {
         loadPlayerIntoTableGroup(tableFive, groupsList.get(4).getPlayerList());
         loadPlayerIntoTableGroup(tableSix, groupsList.get(5).getPlayerList());
         loadPlayerIntoTableGroup(generalTable, playerList);    
-    }
-    
-    public static Object[][] readPlayerListTournament(List<Player> listPlayer){
-        HashSet<String> playersNames= new HashSet<>();
-        int n= listPlayer.size();  
-        Object playersTable[][]= new Object[n][3];
-        int index= 0;
-        for(Player playerA : listPlayer){
-            String nameA= nameCharacters(playerA.getName());
-            if(playersNames.add(nameA)){
-                String nameB= findDifferentName(listPlayer, nameA);
-                playersTable[index][0]= nameA;
-                playersTable[index][1]= nameB;
-                playersTable[index][2]= "07/02/2005";
-                index++;
-            }
-        }
-        return playersTable;
-    }
+    }    
     
     public static String nameCharacters(String name){
         return name.length() > 9 ? name.substring(0, 9) : name;
@@ -285,5 +276,32 @@ public class MenuOrganizatorControl {
         }
     }
     
+    public static int getNumberOfRows(JTable table){
+        return table.getRowCount();
+    }
+    
+    public static int getNumberOfColumns(JTable table){
+        return table.getColumnCount();
+    }
+    
+    public static void organizatorUpdatePlayerTable(JTable table, Tournament tour, int rowIndex){
+        String playerName = table.getValueAt(rowIndex, 0).toString();
+        int pj = Integer.parseInt(table.getValueAt(rowIndex, 1).toString());
+        int pg = Integer.parseInt(table.getValueAt(rowIndex, 2).toString());
+        int pp = Integer.parseInt(table.getValueAt(rowIndex, 3).toString());
+        int sg = Integer.parseInt(table.getValueAt(rowIndex, 5).toString());
+        int sp = Integer.parseInt(table.getValueAt(rowIndex, 6).toString());
+        int gg = Integer.parseInt(table.getValueAt(rowIndex, 8).toString());
+        int gp = Integer.parseInt(table.getValueAt(rowIndex, 9).toString());
+        tour.updatePlayerGroup(playerName, pj, pg, pp, sg, sp, gg, gp);
+        if (tour.getGroupsNumber() == 0) tour.updatePlayerInGroup(playerName, pj, pg, pp, sg, sp, gg, gp);
+    }
+    
+    public static void saveDataPlayerTable(JTable table, Tournament tour){
+        int rows = getNumberOfRows(table);
+        for (int i = 0; i < rows; i++){
+            organizatorUpdatePlayerTable(table, tour, i);
+        }
+    }
     
 }

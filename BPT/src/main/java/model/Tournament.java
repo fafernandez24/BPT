@@ -164,11 +164,38 @@ public class Tournament {
         ticketPlayOff = playOff.get(JComboBoxBecomeString(comboBox));
     }
     
-    public Player searchPlayerTournament(String id){
+    public Player searchPlayerById(String id){
         for (int i = 0; i < participantsList.size(); i++){
             if (participantsList.get(i).getId().equals(id)) return participantsList.get(i);
         }
         return new Player();
     } 
+    
+    public Player updatePlayerGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
+        for (int i = 0; i < participantsList.size(); i++){
+            if (participantsList.get(i).getName().equals(name)) participantsList.get(i).updatePlayer(pj, pg, pp, sg, sp, gg, gp);
+        }
+        return new Player();
+    } 
+    
+    public void updatePlayerInGeneralTable(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
+        try {
+            for (Player player: participantsList){
+                if (player.getName().equals(name)) player.updatePlayer(pj, pg, pp, sg, sp, gg, gp);
+            }
+        } catch (NullPointerException error){
+            System.err.println("ERROR. No se guardaron correctamente los datos en la tabla general");
+        } 
+    }
+    
+    public void updatePlayerInGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
+       try {
+            for (Group group: groupsList){
+                group.searchPlayerByName(name).updatePlayer(pj, pg, pp, sg, sp, gg, gp);
+            }
+       } catch (NullPointerException error) {
+           System.err.println("Error. No se guardaron correctamente los datos en los grupos");
+       }
+    }
 
 }

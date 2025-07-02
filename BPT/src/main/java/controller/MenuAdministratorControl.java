@@ -61,9 +61,5 @@ public class MenuAdministratorControl {
         DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
         defaultTable.setRowCount(0);
     }
-    
-    public static int totalPlayers(List<Player> players){
-        return players.size();
-    }
             
 }
