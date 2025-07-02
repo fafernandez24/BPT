@@ -68,6 +68,13 @@ public class Organizator extends Person implements PlayerInterface {
         return player;
     }
     
+    public boolean findPlayer(String id){
+        for (Player player: playerList){
+            return player.getId().equals(id);
+        }
+        return false;
+    }
+    
     public void updatePlayers(){
         Player dataPlayer = new Player();
         for (Player player: playerList){
