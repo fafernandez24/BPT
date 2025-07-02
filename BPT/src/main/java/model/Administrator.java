@@ -6,6 +6,7 @@ package model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 /**
  *
@@ -57,12 +58,17 @@ public class Administrator extends Person {
         return true;
     }
     
+    Random random = new Random();
+    
     public Object[][] readPlayerList(){
         Object playersTable[][] = new Object[playerList.size()][3];
         for (int i = 0; i < playerList.size(); i++){
+            int numeroEnRango = random.nextInt(2); // Genera entre 0 y 99
             playersTable[i][0] = playerList.get(i).getName();
             playersTable[i][1] = playerList.get(i).getId();
-            playersTable[i][2] = "Pendiente";
+            if(numeroEnRango ==  0) playersTable[i][2] = "Pendiente";
+            if(numeroEnRango ==  1) playersTable[i][2] = "Abonado";
+            if(numeroEnRango ==  2) playersTable[i][2] = "Al dia";
         }
         return playersTable;
     }
