@@ -52,11 +52,13 @@ public class StartControl {
     
     public static void startFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
+        dataEnter.setForeground(new Color(153,153,153));
     }
     
     public static void startFocusGained(JPasswordField dataEnter, String message){
         String password = new String(dataEnter.getPassword());
         if (password.equals(message)) dataEnter.setText("");
+        dataEnter.setForeground(new Color(153,153,153));
     }
      
     public static void startFocusLost(JTextField dataEnter, String message){

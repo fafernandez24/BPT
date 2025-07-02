@@ -17,7 +17,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -35,21 +34,12 @@ public class MenuOrganizatorControl {
    
     public static void organizatorFocusGained(JTextField dataEnter, String message){
         if (dataEnter.getText().equals(message)) dataEnter.setText("");
-    }
-    
-    public static void organizatorFocusGained(JPasswordField dataEnter, String message){
-        String password = new String(dataEnter.getPassword());
-        if (password.equals(message)) dataEnter.setText("");
+        dataEnter.setForeground(new Color(153,153,153));
     }
     
     public static void organizatorFocusLost(JTextField dataEnter, String message){
         String id = dataEnter.getText();
         if (id.trim().isEmpty()) dataEnter.setText(message);
-    }
-    
-    public static void organizatorFocusLost(JPasswordField dataEnter, String message){
-        String password = new String(dataEnter.getPassword());
-        if (password.trim().isEmpty()) dataEnter.setText(message);
     }
     
     public static void changeButtonColor(JButton button, int r, int g, int b){
