@@ -5316,15 +5316,26 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaNombreJugadorBFocusGained
 
     private void botonSeguirDuplasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirDuplasActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
     }//GEN-LAST:event_botonSeguirDuplasActionPerformed
 
     private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
         DoubleTennis doubleTennis = new DoubleTennis();
         doubleTennis.readPlayerA(entradaNombreJugadorA, entradaIdJugadorA, entradaNumeroTelefonoJugadorA, entradaEmailJugadorA, opcionesCategoriaJugadorA, entradaEquipoJugadorA, entradaFechaNacimientoJugadorA);
         doubleTennis.readPlayerB(entradaNombreJugadorB, entradaIdJugadorB, entradaNumeroTelefonoJugadorB, entradaEmailJugadorB, opcionesCategoriaJugadorB, entradaEquipoJugadorB, entradaFechaNacimientoJugadorB);
-        doubleTennis.addPlayerTable(tablaDuplasAgregadas);
-        newTournament.addPlayerTournament(doubleTennis);
+        
+        if (doubleTennis.validatePlayer()){
+            doubleTennis.addPlayerTable(tablaDuplasAgregadas);
+            if (organizator.findPlayer(doubleTennis.getPlayerA().getId()) == true && organizator.findPlayer(doubleTennis.getPlayerB().getId()) == true){
+                newTournament.addPlayerTournament(doubleTennis);
+                System.out.println("Jugador ingresado correctamente");
+            } else{
+                organizator.getPlayerList().add(doubleTennis.getPlayerA());
+                organizator.getPlayerList().add(doubleTennis.getPlayerB());
+                newTournament.addPlayerTournament(doubleTennis);
+                System.out.println("Jugador nuevo registrado");
+            }
+        } 
     }//GEN-LAST:event_botonAgregarJugadoresDuplaActionPerformed
 
     private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
@@ -5402,7 +5413,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
         Player player = new Player();
         player.readPlayer(entradaNombreJugador, entradaIDJugador, entradaNumeroTelefonoJugador, entradaEmailJugador, opcionesCategoriaJugador, entradaEquipoJugador, entradaFechaNacimientoJugador);
-        if (!player.validatePlayer()){
+        if (player.validatePlayer()){
             player.addPlayerTable(tablaJugadoresAgregados);
             if (organizator.findPlayer(player.getId()) == true){
                 newTournament.getParticipantsList().add(player);
