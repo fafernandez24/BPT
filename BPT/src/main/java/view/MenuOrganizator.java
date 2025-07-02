@@ -132,6 +132,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         pestania = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -186,15 +187,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel163 = new javax.swing.JLabel();
         jLabel164 = new javax.swing.JLabel();
         jLabel165 = new javax.swing.JLabel();
-        botonCrearTorneoDoble3 = new javax.swing.JPanel();
+        verTorneo5 = new javax.swing.JPanel();
         jLabel166 = new javax.swing.JLabel();
         jLabel167 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo3 = new javax.swing.JPanel();
+        verTorneo6 = new javax.swing.JPanel();
         jLabel168 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
         jLabel169 = new javax.swing.JLabel();
         jLabel170 = new javax.swing.JLabel();
-        botonCrearTorneoSingle3 = new javax.swing.JPanel();
+        verTorneo4 = new javax.swing.JPanel();
         jLabel171 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
         jLabel172 = new javax.swing.JLabel();
@@ -205,15 +206,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel177 = new javax.swing.JLabel();
         jLabel178 = new javax.swing.JLabel();
         jLabel179 = new javax.swing.JLabel();
-        botonCrearTorneoDoble4 = new javax.swing.JPanel();
+        verTorneo8 = new javax.swing.JPanel();
         jLabel180 = new javax.swing.JLabel();
         jLabel181 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo4 = new javax.swing.JPanel();
+        verTorneo9 = new javax.swing.JPanel();
         jLabel182 = new javax.swing.JLabel();
         jPanel42 = new javax.swing.JPanel();
         jLabel183 = new javax.swing.JLabel();
         jLabel184 = new javax.swing.JLabel();
-        botonCrearTorneoSingle4 = new javax.swing.JPanel();
+        verTorneo7 = new javax.swing.JPanel();
         jLabel185 = new javax.swing.JLabel();
         jPanel43 = new javax.swing.JPanel();
         jLabel186 = new javax.swing.JLabel();
@@ -225,15 +226,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel191 = new javax.swing.JLabel();
         jLabel192 = new javax.swing.JLabel();
         jLabel193 = new javax.swing.JLabel();
-        botonCrearTorneoDoble5 = new javax.swing.JPanel();
+        verTorneo11 = new javax.swing.JPanel();
         jLabel194 = new javax.swing.JLabel();
         jLabel195 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo5 = new javax.swing.JPanel();
+        verTorneo12 = new javax.swing.JPanel();
         jLabel196 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
         jLabel197 = new javax.swing.JLabel();
         jLabel198 = new javax.swing.JLabel();
-        botonCrearTorneoSingle5 = new javax.swing.JPanel();
+        verTorneo10 = new javax.swing.JPanel();
         jLabel199 = new javax.swing.JLabel();
         jPanel45 = new javax.swing.JPanel();
         jLabel200 = new javax.swing.JLabel();
@@ -244,15 +245,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
         jLabel207 = new javax.swing.JLabel();
-        botonCrearTorneoDoble6 = new javax.swing.JPanel();
+        verTorneo14 = new javax.swing.JPanel();
         jLabel208 = new javax.swing.JLabel();
         jLabel209 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo6 = new javax.swing.JPanel();
+        verTorneo15 = new javax.swing.JPanel();
         jLabel210 = new javax.swing.JLabel();
         jPanel46 = new javax.swing.JPanel();
         jLabel211 = new javax.swing.JLabel();
         jLabel212 = new javax.swing.JLabel();
-        botonCrearTorneoSingle6 = new javax.swing.JPanel();
+        verTorneo13 = new javax.swing.JPanel();
         jLabel213 = new javax.swing.JLabel();
         jPanel47 = new javax.swing.JPanel();
         jLabel214 = new javax.swing.JLabel();
@@ -263,15 +264,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel219 = new javax.swing.JLabel();
         jLabel220 = new javax.swing.JLabel();
         jLabel221 = new javax.swing.JLabel();
-        botonCrearTorneoDoble7 = new javax.swing.JPanel();
+        verTorneo17 = new javax.swing.JPanel();
         jLabel222 = new javax.swing.JLabel();
         jLabel223 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo7 = new javax.swing.JPanel();
+        verTorneo18 = new javax.swing.JPanel();
         jLabel224 = new javax.swing.JLabel();
         jPanel48 = new javax.swing.JPanel();
         jLabel225 = new javax.swing.JLabel();
         jLabel226 = new javax.swing.JLabel();
-        botonCrearTorneoSingle7 = new javax.swing.JPanel();
+        verTorneo16 = new javax.swing.JPanel();
         jLabel227 = new javax.swing.JLabel();
         jPanel49 = new javax.swing.JPanel();
         jLabel228 = new javax.swing.JLabel();
@@ -282,15 +283,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel233 = new javax.swing.JLabel();
         jLabel234 = new javax.swing.JLabel();
         jLabel235 = new javax.swing.JLabel();
-        botonCrearTorneoDoble8 = new javax.swing.JPanel();
+        verTorneo20 = new javax.swing.JPanel();
         jLabel236 = new javax.swing.JLabel();
         jLabel237 = new javax.swing.JLabel();
-        botonCrearTorneoEquipo8 = new javax.swing.JPanel();
+        verTorneo21 = new javax.swing.JPanel();
         jLabel238 = new javax.swing.JLabel();
         jPanel50 = new javax.swing.JPanel();
         jLabel239 = new javax.swing.JLabel();
         jLabel240 = new javax.swing.JLabel();
-        botonCrearTorneoSingle8 = new javax.swing.JPanel();
+        verTorneo19 = new javax.swing.JPanel();
         jLabel241 = new javax.swing.JLabel();
         jPanel51 = new javax.swing.JPanel();
         jLabel242 = new javax.swing.JLabel();
@@ -665,7 +666,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator69 = new javax.swing.JSeparator();
         jLabel287 = new javax.swing.JLabel();
         actuGeneralTableUno3 = new javax.swing.JButton();
-        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1067,6 +1067,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         pestania.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel25.setBackground(new java.awt.Color(250, 250, 250));
@@ -1397,21 +1408,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel165.setText("TORNEO #4");
         jPanel15.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 810, -1, 60));
 
-        botonCrearTorneoDoble3.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo5.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble3MouseMoved(evt);
+                verTorneo5MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble3.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble3MouseClicked(evt);
+                verTorneo5MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble3MouseExited(evt);
+                verTorneo5MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel166.setBackground(new java.awt.Color(255, 255, 255));
         jLabel166.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1419,28 +1430,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel166.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel166.setText("VER TORNEO");
         jLabel166.setToolTipText("");
-        botonCrearTorneoDoble3.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo5.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 940, 130, 40));
+        jPanel15.add(verTorneo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 940, 130, 40));
 
         jLabel167.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 620, 315, 389));
 
-        botonCrearTorneoEquipo3.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo6.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo3MouseMoved(evt);
+                verTorneo6MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo3.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo3MouseClicked(evt);
+                verTorneo6MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo3MouseExited(evt);
+                verTorneo6MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel168.setBackground(new java.awt.Color(255, 255, 255));
         jLabel168.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1448,7 +1459,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel168.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel168.setText("VER TORNEO");
         jLabel168.setToolTipText("");
-        botonCrearTorneoEquipo3.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo6.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel40.setBackground(new java.awt.Color(30, 25, 161));
         jPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1458,28 +1469,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel169.setText("CREAR TORNEO");
         jPanel40.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo3.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo6.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 940, 130, 40));
+        jPanel15.add(verTorneo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 940, 130, 40));
 
         jLabel170.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel170, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 620, 315, 389));
 
-        botonCrearTorneoSingle3.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo4.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseMoved(evt);
+                verTorneo4MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle3.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseClicked(evt);
+                verTorneo4MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseExited(evt);
+                verTorneo4MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel171.setBackground(new java.awt.Color(255, 255, 255));
         jLabel171.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1487,7 +1498,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel171.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel171.setText("VER TORNEO");
         jLabel171.setToolTipText("");
-        botonCrearTorneoSingle3.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo4.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel41.setBackground(new java.awt.Color(30, 25, 161));
         jPanel41.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1497,9 +1508,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel172.setText("CREAR TORNEO");
         jPanel41.add(jLabel172, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle3.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo4.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 940, 130, 40));
+        jPanel15.add(verTorneo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 940, 130, 40));
 
         jLabel173.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel173, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, 315, 389));
@@ -1534,21 +1545,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel179.setText("TORNEO #7");
         jPanel15.add(jLabel179, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1240, -1, 60));
 
-        botonCrearTorneoDoble4.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo8.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble4MouseMoved(evt);
+                verTorneo8MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble4.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble4MouseClicked(evt);
+                verTorneo8MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble4MouseExited(evt);
+                verTorneo8MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel180.setBackground(new java.awt.Color(255, 255, 255));
         jLabel180.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1556,28 +1567,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel180.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel180.setText("VER TORNEO");
         jLabel180.setToolTipText("");
-        botonCrearTorneoDoble4.add(jLabel180, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo8.add(jLabel180, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 1370, 130, 40));
+        jPanel15.add(verTorneo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 1370, 130, 40));
 
         jLabel181.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel181, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1050, 315, 389));
 
-        botonCrearTorneoEquipo4.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo9.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo9.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo4MouseMoved(evt);
+                verTorneo9MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo4.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo4MouseClicked(evt);
+                verTorneo9MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo4MouseExited(evt);
+                verTorneo9MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel182.setBackground(new java.awt.Color(255, 255, 255));
         jLabel182.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1585,7 +1596,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel182.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel182.setText("VER TORNEO");
         jLabel182.setToolTipText("");
-        botonCrearTorneoEquipo4.add(jLabel182, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo9.add(jLabel182, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel42.setBackground(new java.awt.Color(30, 25, 161));
         jPanel42.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1595,28 +1606,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel183.setText("CREAR TORNEO");
         jPanel42.add(jLabel183, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo4.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo9.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1370, 130, 40));
+        jPanel15.add(verTorneo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1370, 130, 40));
 
         jLabel184.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel184, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 1050, 315, 389));
 
-        botonCrearTorneoSingle4.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo7.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseMoved(evt);
+                verTorneo7MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle4.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseClicked(evt);
+                verTorneo7MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseExited(evt);
+                verTorneo7MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel185.setBackground(new java.awt.Color(255, 255, 255));
         jLabel185.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1624,7 +1635,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel185.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel185.setText("VER TORNEO");
         jLabel185.setToolTipText("");
-        botonCrearTorneoSingle4.add(jLabel185, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo7.add(jLabel185, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel43.setBackground(new java.awt.Color(30, 25, 161));
         jPanel43.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1634,9 +1645,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel186.setText("CREAR TORNEO");
         jPanel43.add(jLabel186, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle4.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo7.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1370, 130, 40));
+        jPanel15.add(verTorneo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1370, 130, 40));
 
         jLabel187.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel187, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1050, 315, 389));
@@ -1675,21 +1686,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel193.setText("TORNEO #10");
         jPanel15.add(jLabel193, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1660, -1, 60));
 
-        botonCrearTorneoDoble5.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo11.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo11.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble5MouseMoved(evt);
+                verTorneo11MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble5.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble5MouseClicked(evt);
+                verTorneo11MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble5MouseExited(evt);
+                verTorneo11MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel194.setBackground(new java.awt.Color(255, 255, 255));
         jLabel194.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1697,28 +1708,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel194.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel194.setText("VER TORNEO");
         jLabel194.setToolTipText("");
-        botonCrearTorneoDoble5.add(jLabel194, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo11.add(jLabel194, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 1790, 130, 40));
+        jPanel15.add(verTorneo11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 1790, 130, 40));
 
         jLabel195.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel195, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1470, 315, 389));
 
-        botonCrearTorneoEquipo5.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo12.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo12.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo5MouseMoved(evt);
+                verTorneo12MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo5.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo5MouseClicked(evt);
+                verTorneo12MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo5MouseExited(evt);
+                verTorneo12MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel196.setBackground(new java.awt.Color(255, 255, 255));
         jLabel196.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1726,7 +1737,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel196.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel196.setText("VER TORNEO");
         jLabel196.setToolTipText("");
-        botonCrearTorneoEquipo5.add(jLabel196, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo12.add(jLabel196, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel44.setBackground(new java.awt.Color(30, 25, 161));
         jPanel44.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1736,28 +1747,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel197.setText("CREAR TORNEO");
         jPanel44.add(jLabel197, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo5.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo12.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1790, 130, 40));
+        jPanel15.add(verTorneo12, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 1790, 130, 40));
 
         jLabel198.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel198, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 1470, 315, 389));
 
-        botonCrearTorneoSingle5.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo10.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo10.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle5MouseMoved(evt);
+                verTorneo10MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle5.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle5MouseClicked(evt);
+                verTorneo10MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle5MouseExited(evt);
+                verTorneo10MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel199.setBackground(new java.awt.Color(255, 255, 255));
         jLabel199.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1765,7 +1776,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel199.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel199.setText("VER TORNEO");
         jLabel199.setToolTipText("");
-        botonCrearTorneoSingle5.add(jLabel199, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo10.add(jLabel199, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel45.setBackground(new java.awt.Color(30, 25, 161));
         jPanel45.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1775,9 +1786,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel200.setText("CREAR TORNEO");
         jPanel45.add(jLabel200, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle5.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo10.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1790, 130, 40));
+        jPanel15.add(verTorneo10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 1790, 130, 40));
 
         jLabel201.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel201, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1470, 315, 389));
@@ -1812,21 +1823,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel207.setText("TORNEO #13");
         jPanel15.add(jLabel207, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 2090, -1, 60));
 
-        botonCrearTorneoDoble6.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo14.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo14.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble6MouseMoved(evt);
+                verTorneo14MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble6.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble6MouseClicked(evt);
+                verTorneo14MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble6MouseExited(evt);
+                verTorneo14MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel208.setBackground(new java.awt.Color(255, 255, 255));
         jLabel208.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1834,28 +1845,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel208.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel208.setText("VER TORNEO");
         jLabel208.setToolTipText("");
-        botonCrearTorneoDoble6.add(jLabel208, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo14.add(jLabel208, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 2220, 130, 40));
+        jPanel15.add(verTorneo14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 2220, 130, 40));
 
         jLabel209.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel209, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 1900, 315, 389));
 
-        botonCrearTorneoEquipo6.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo15.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo15.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo6MouseMoved(evt);
+                verTorneo15MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo6.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo15.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo6MouseClicked(evt);
+                verTorneo15MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo6MouseExited(evt);
+                verTorneo15MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel210.setBackground(new java.awt.Color(255, 255, 255));
         jLabel210.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1863,7 +1874,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel210.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel210.setText("VER TORNEO");
         jLabel210.setToolTipText("");
-        botonCrearTorneoEquipo6.add(jLabel210, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo15.add(jLabel210, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel46.setBackground(new java.awt.Color(30, 25, 161));
         jPanel46.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1873,28 +1884,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel211.setText("CREAR TORNEO");
         jPanel46.add(jLabel211, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo6.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo15.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 2220, 130, 40));
+        jPanel15.add(verTorneo15, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 2220, 130, 40));
 
         jLabel212.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel212, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 1900, 315, 389));
 
-        botonCrearTorneoSingle6.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo13.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo13.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle6MouseMoved(evt);
+                verTorneo13MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle6.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle6MouseClicked(evt);
+                verTorneo13MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle6MouseExited(evt);
+                verTorneo13MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel213.setBackground(new java.awt.Color(255, 255, 255));
         jLabel213.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1902,7 +1913,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel213.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel213.setText("VER TORNEO");
         jLabel213.setToolTipText("");
-        botonCrearTorneoSingle6.add(jLabel213, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo13.add(jLabel213, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel47.setBackground(new java.awt.Color(30, 25, 161));
         jPanel47.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1912,9 +1923,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel214.setText("CREAR TORNEO");
         jPanel47.add(jLabel214, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle6.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo13.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2220, 130, 40));
+        jPanel15.add(verTorneo13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2220, 130, 40));
 
         jLabel215.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel215, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 1900, 315, 389));
@@ -1949,21 +1960,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel221.setText("TORNEO #16");
         jPanel15.add(jLabel221, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 2510, -1, 60));
 
-        botonCrearTorneoDoble7.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo17.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo17.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble7MouseMoved(evt);
+                verTorneo17MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble7.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble7MouseClicked(evt);
+                verTorneo17MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble7MouseExited(evt);
+                verTorneo17MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel222.setBackground(new java.awt.Color(255, 255, 255));
         jLabel222.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -1971,28 +1982,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel222.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel222.setText("VER TORNEO");
         jLabel222.setToolTipText("");
-        botonCrearTorneoDoble7.add(jLabel222, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo17.add(jLabel222, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 2640, 130, 40));
+        jPanel15.add(verTorneo17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 2640, 130, 40));
 
         jLabel223.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel223, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 2320, 315, 389));
 
-        botonCrearTorneoEquipo7.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo18.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo18.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo7MouseMoved(evt);
+                verTorneo18MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo7.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo7MouseClicked(evt);
+                verTorneo18MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo7MouseExited(evt);
+                verTorneo18MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel224.setBackground(new java.awt.Color(255, 255, 255));
         jLabel224.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -2000,7 +2011,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel224.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel224.setText("VER TORNEO");
         jLabel224.setToolTipText("");
-        botonCrearTorneoEquipo7.add(jLabel224, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo18.add(jLabel224, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel48.setBackground(new java.awt.Color(30, 25, 161));
         jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2010,28 +2021,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel225.setText("CREAR TORNEO");
         jPanel48.add(jLabel225, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo7.add(jPanel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo18.add(jPanel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 2640, 130, 40));
+        jPanel15.add(verTorneo18, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 2640, 130, 40));
 
         jLabel226.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel226, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 2320, 315, 389));
 
-        botonCrearTorneoSingle7.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo16.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo16.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseMoved(evt);
+                verTorneo16MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle7.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseClicked(evt);
+                verTorneo16MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseExited(evt);
+                verTorneo16MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel227.setBackground(new java.awt.Color(255, 255, 255));
         jLabel227.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -2039,7 +2050,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel227.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel227.setText("VER TORNEO");
         jLabel227.setToolTipText("");
-        botonCrearTorneoSingle7.add(jLabel227, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo16.add(jLabel227, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel49.setBackground(new java.awt.Color(30, 25, 161));
         jPanel49.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2049,9 +2060,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel228.setText("CREAR TORNEO");
         jPanel49.add(jLabel228, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle7.add(jPanel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo16.add(jPanel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2640, 130, 40));
+        jPanel15.add(verTorneo16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 2640, 130, 40));
 
         jLabel229.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel229, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2320, 315, 389));
@@ -2086,21 +2097,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel235.setText("TORNEO #19");
         jPanel15.add(jLabel235, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 2940, -1, 60));
 
-        botonCrearTorneoDoble8.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoDoble8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo20.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo20.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble8MouseMoved(evt);
+                verTorneo20MouseMoved(evt);
             }
         });
-        botonCrearTorneoDoble8.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo20.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble8MouseClicked(evt);
+                verTorneo20MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoDoble8MouseExited(evt);
+                verTorneo20MouseExited(evt);
             }
         });
-        botonCrearTorneoDoble8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel236.setBackground(new java.awt.Color(255, 255, 255));
         jLabel236.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -2108,28 +2119,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel236.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel236.setText("VER TORNEO");
         jLabel236.setToolTipText("");
-        botonCrearTorneoDoble8.add(jLabel236, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo20.add(jLabel236, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
-        jPanel15.add(botonCrearTorneoDoble8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 3070, 130, 40));
+        jPanel15.add(verTorneo20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 3070, 130, 40));
 
         jLabel237.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel237, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 2750, 315, 389));
 
-        botonCrearTorneoEquipo8.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoEquipo8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo21.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo21.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo8MouseMoved(evt);
+                verTorneo21MouseMoved(evt);
             }
         });
-        botonCrearTorneoEquipo8.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo8MouseClicked(evt);
+                verTorneo21MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoEquipo8MouseExited(evt);
+                verTorneo21MouseExited(evt);
             }
         });
-        botonCrearTorneoEquipo8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel238.setBackground(new java.awt.Color(255, 255, 255));
         jLabel238.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -2137,7 +2148,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel238.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel238.setText("VER TORNEO");
         jLabel238.setToolTipText("");
-        botonCrearTorneoEquipo8.add(jLabel238, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo21.add(jLabel238, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel50.setBackground(new java.awt.Color(30, 25, 161));
         jPanel50.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2147,28 +2158,28 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel239.setText("CREAR TORNEO");
         jPanel50.add(jLabel239, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoEquipo8.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo21.add(jPanel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoEquipo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 3070, 130, 40));
+        jPanel15.add(verTorneo21, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 3070, 130, 40));
 
         jLabel240.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel240, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 2750, 315, 389));
 
-        botonCrearTorneoSingle8.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        verTorneo19.setBackground(new java.awt.Color(30, 25, 161));
+        verTorneo19.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle8MouseMoved(evt);
+                verTorneo19MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle8.addMouseListener(new java.awt.event.MouseAdapter() {
+        verTorneo19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle8MouseClicked(evt);
+                verTorneo19MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle8MouseExited(evt);
+                verTorneo19MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        verTorneo19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel241.setBackground(new java.awt.Color(255, 255, 255));
         jLabel241.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
@@ -2176,7 +2187,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel241.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel241.setText("VER TORNEO");
         jLabel241.setToolTipText("");
-        botonCrearTorneoSingle8.add(jLabel241, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
+        verTorneo19.add(jLabel241, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 90, -1));
 
         jPanel51.setBackground(new java.awt.Color(30, 25, 161));
         jPanel51.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2186,9 +2197,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel242.setText("CREAR TORNEO");
         jPanel51.add(jLabel242, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle8.add(jPanel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        verTorneo19.add(jPanel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel15.add(botonCrearTorneoSingle8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 3070, 130, 40));
+        jPanel15.add(verTorneo19, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 3070, 130, 40));
 
         jLabel243.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel15.add(jLabel243, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 2750, 315, 389));
@@ -2553,7 +2564,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 botonModificarPartidoActionPerformed(evt);
             }
         });
-        jPanel32.add(botonModificarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 140, 40));
+        jPanel32.add(botonModificarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 160, 40));
 
         calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -5226,17 +5237,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -5903,11 +5903,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_ingresarCantidadDeGruposActionPerformed
 
     private void botonSeguirFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonSeguirFaseGrupos,102,102,255);
     }//GEN-LAST:event_botonSeguirFaseGruposMouseMoved
 
     private void botonSeguirFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonSeguirFaseGrupos,30,25,161);
     }//GEN-LAST:event_botonSeguirFaseGruposMouseExited
 
     private void botonSeguirFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposActionPerformed
@@ -5918,7 +5918,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirFaseGruposActionPerformed
 
     private void botonRegresarConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarConfigurarFaseGrupos,102,102,255);
     }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseMoved
 
     private void botonRegresarConfigurarFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseClicked
@@ -5926,7 +5926,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseClicked
 
     private void botonRegresarConfigurarFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarConfigurarFaseGrupos,30,25,161);
     }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseExited
 
     private void entradaCantidadJugadoresEliminacionDirectaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaFocusGained
@@ -5998,7 +5998,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_verTorneo3MouseClicked
 
     private void verTorneo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseExited
-        changePanelColor(verTorneo3,102,102,255);
+        changePanelColor(verTorneo3,30,25,161);
     }//GEN-LAST:event_verTorneo3MouseExited
 
     private void verTorneo1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseMoved
@@ -6031,11 +6031,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
         changePanelColor(verTorneo1,30,25,161);
     }//GEN-LAST:event_verTorneo1MouseExited
 
-    private void botonCrearTorneoDoble3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble3MouseMoved
+    private void verTorneo5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseMoved
+        changePanelColor(verTorneo5,102,102,255);
+    }//GEN-LAST:event_verTorneo5MouseMoved
 
-    private void botonCrearTorneoDoble3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble3MouseClicked
+    private void verTorneo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseClicked
         int index = 4, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6055,17 +6055,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble3MouseClicked
+    }//GEN-LAST:event_verTorneo5MouseClicked
 
-    private void botonCrearTorneoDoble3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble3MouseExited
+    private void verTorneo5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseExited
+        changePanelColor(verTorneo5,30,25,161);
+    }//GEN-LAST:event_verTorneo5MouseExited
 
-    private void botonCrearTorneoEquipo3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo3MouseMoved
+    private void verTorneo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseMoved
+        changePanelColor(verTorneo6,102,102,255);
+    }//GEN-LAST:event_verTorneo6MouseMoved
 
-    private void botonCrearTorneoEquipo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo3MouseClicked
+    private void verTorneo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseClicked
         int index = 5, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6085,17 +6085,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo3MouseClicked
+    }//GEN-LAST:event_verTorneo6MouseClicked
 
-    private void botonCrearTorneoEquipo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo3MouseExited
+    private void verTorneo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseExited
+        changePanelColor(verTorneo6,30,25,161);
+    }//GEN-LAST:event_verTorneo6MouseExited
 
-    private void botonCrearTorneoSingle3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseMoved
+    private void verTorneo4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseMoved
+        changePanelColor(verTorneo4,102,102,255);
+    }//GEN-LAST:event_verTorneo4MouseMoved
 
-    private void botonCrearTorneoSingle3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseClicked
+    private void verTorneo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseClicked
         int index = 3, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6115,17 +6115,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseClicked
+    }//GEN-LAST:event_verTorneo4MouseClicked
 
-    private void botonCrearTorneoSingle3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseExited
+    private void verTorneo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseExited
+        changePanelColor(verTorneo4,30,25,161);
+    }//GEN-LAST:event_verTorneo4MouseExited
 
-    private void botonCrearTorneoDoble4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble4MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble4MouseMoved
+    private void verTorneo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseMoved
+        changePanelColor(verTorneo8,102,102,255);
+    }//GEN-LAST:event_verTorneo8MouseMoved
 
-    private void botonCrearTorneoDoble4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble4MouseClicked
+    private void verTorneo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseClicked
         int index = 7, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6145,17 +6145,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble4MouseClicked
+    }//GEN-LAST:event_verTorneo8MouseClicked
 
-    private void botonCrearTorneoDoble4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble4MouseExited
+    private void verTorneo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseExited
+        changePanelColor(verTorneo8,30,25,161);
+    }//GEN-LAST:event_verTorneo8MouseExited
 
-    private void botonCrearTorneoEquipo4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo4MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo4MouseMoved
+    private void verTorneo9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseMoved
+        changePanelColor(verTorneo9,102,102,255);
+    }//GEN-LAST:event_verTorneo9MouseMoved
 
-    private void botonCrearTorneoEquipo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo4MouseClicked
+    private void verTorneo9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseClicked
         int index = 8, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6175,17 +6175,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo4MouseClicked
+    }//GEN-LAST:event_verTorneo9MouseClicked
 
-    private void botonCrearTorneoEquipo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo4MouseExited
+    private void verTorneo9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseExited
+        changePanelColor(verTorneo9,30,25,161);
+    }//GEN-LAST:event_verTorneo9MouseExited
 
-    private void botonCrearTorneoSingle4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseMoved
+    private void verTorneo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseMoved
+        changePanelColor(verTorneo7,102,102,255);
+    }//GEN-LAST:event_verTorneo7MouseMoved
 
-    private void botonCrearTorneoSingle4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseClicked
+    private void verTorneo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseClicked
         int index = 6, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6205,17 +6205,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseClicked
+    }//GEN-LAST:event_verTorneo7MouseClicked
 
-    private void botonCrearTorneoSingle4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseExited
+    private void verTorneo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseExited
+        changePanelColor(verTorneo7,30,25,161);
+    }//GEN-LAST:event_verTorneo7MouseExited
 
-    private void botonCrearTorneoDoble5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble5MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble5MouseMoved
+    private void verTorneo11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseMoved
+        changePanelColor(verTorneo11,102,102,255);
+    }//GEN-LAST:event_verTorneo11MouseMoved
 
-    private void botonCrearTorneoDoble5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble5MouseClicked
+    private void verTorneo11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseClicked
         int index = 10, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6235,17 +6235,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble5MouseClicked
+    }//GEN-LAST:event_verTorneo11MouseClicked
 
-    private void botonCrearTorneoDoble5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble5MouseExited
+    private void verTorneo11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseExited
+        changePanelColor(verTorneo11,30,25,161);
+    }//GEN-LAST:event_verTorneo11MouseExited
 
-    private void botonCrearTorneoEquipo5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo5MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo5MouseMoved
+    private void verTorneo12MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseMoved
+        changePanelColor(verTorneo12,102,102,255);
+    }//GEN-LAST:event_verTorneo12MouseMoved
 
-    private void botonCrearTorneoEquipo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo5MouseClicked
+    private void verTorneo12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseClicked
         int index = 11, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6265,17 +6265,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo5MouseClicked
+    }//GEN-LAST:event_verTorneo12MouseClicked
 
-    private void botonCrearTorneoEquipo5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo5MouseExited
+    private void verTorneo12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseExited
+        changePanelColor(verTorneo12,30,25,161);
+    }//GEN-LAST:event_verTorneo12MouseExited
 
-    private void botonCrearTorneoSingle5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle5MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle5MouseMoved
+    private void verTorneo10MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseMoved
+        changePanelColor(verTorneo10,102,102,255);
+    }//GEN-LAST:event_verTorneo10MouseMoved
 
-    private void botonCrearTorneoSingle5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle5MouseClicked
+    private void verTorneo10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseClicked
         int index = 9, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6295,17 +6295,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle5MouseClicked
+    }//GEN-LAST:event_verTorneo10MouseClicked
 
-    private void botonCrearTorneoSingle5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle5MouseExited
+    private void verTorneo10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseExited
+        changePanelColor(verTorneo10,30,25,161);
+    }//GEN-LAST:event_verTorneo10MouseExited
 
-    private void botonCrearTorneoDoble6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseMoved
+    private void verTorneo14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseMoved
+        changePanelColor(verTorneo14,102,102,255);
+    }//GEN-LAST:event_verTorneo14MouseMoved
 
-    private void botonCrearTorneoDoble6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseClicked
+    private void verTorneo14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseClicked
         int index = 13, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6325,17 +6325,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseClicked
+    }//GEN-LAST:event_verTorneo14MouseClicked
 
-    private void botonCrearTorneoDoble6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble6MouseExited
+    private void verTorneo14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseExited
+        changePanelColor(verTorneo14,30,25,161);
+    }//GEN-LAST:event_verTorneo14MouseExited
 
-    private void botonCrearTorneoEquipo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseMoved
+    private void verTorneo15MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseMoved
+        changePanelColor(verTorneo15,102,102,255);
+    }//GEN-LAST:event_verTorneo15MouseMoved
 
-    private void botonCrearTorneoEquipo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseClicked
+    private void verTorneo15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseClicked
         int index = 14, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6355,17 +6355,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseClicked
+    }//GEN-LAST:event_verTorneo15MouseClicked
 
-    private void botonCrearTorneoEquipo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo6MouseExited
+    private void verTorneo15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseExited
+        changePanelColor(verTorneo15,30,25,161);
+    }//GEN-LAST:event_verTorneo15MouseExited
 
-    private void botonCrearTorneoSingle6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseMoved
+    private void verTorneo13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseMoved
+        changePanelColor(verTorneo13,102,102,255);
+    }//GEN-LAST:event_verTorneo13MouseMoved
 
-    private void botonCrearTorneoSingle6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseClicked
+    private void verTorneo13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseClicked
         int index = 12, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6385,17 +6385,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseClicked
+    }//GEN-LAST:event_verTorneo13MouseClicked
 
-    private void botonCrearTorneoSingle6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle6MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle6MouseExited
+    private void verTorneo13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseExited
+        changePanelColor(verTorneo13,30,25,161);
+    }//GEN-LAST:event_verTorneo13MouseExited
 
-    private void botonCrearTorneoDoble7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseMoved
+    private void verTorneo17MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseMoved
+        changePanelColor(verTorneo17,102,102,255);
+    }//GEN-LAST:event_verTorneo17MouseMoved
 
-    private void botonCrearTorneoDoble7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseClicked
+    private void verTorneo17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseClicked
         int index = 16, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6415,17 +6415,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseClicked
+    }//GEN-LAST:event_verTorneo17MouseClicked
 
-    private void botonCrearTorneoDoble7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble7MouseExited
+    private void verTorneo17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseExited
+        changePanelColor(verTorneo17,30,25,161);
+    }//GEN-LAST:event_verTorneo17MouseExited
 
-    private void botonCrearTorneoEquipo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseMoved
+    private void verTorneo18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseMoved
+        changePanelColor(verTorneo18,102,102,255);
+    }//GEN-LAST:event_verTorneo18MouseMoved
 
-    private void botonCrearTorneoEquipo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseClicked
+    private void verTorneo18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseClicked
         int index = 17, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6445,17 +6445,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseClicked
+    }//GEN-LAST:event_verTorneo18MouseClicked
 
-    private void botonCrearTorneoEquipo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo7MouseExited
+    private void verTorneo18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseExited
+        changePanelColor(verTorneo18,30,25,161);
+    }//GEN-LAST:event_verTorneo18MouseExited
 
-    private void botonCrearTorneoSingle7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseMoved
+    private void verTorneo16MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseMoved
+        changePanelColor(verTorneo16,102,102,255);
+    }//GEN-LAST:event_verTorneo16MouseMoved
 
-    private void botonCrearTorneoSingle7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseClicked
+    private void verTorneo16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseClicked
         int index = 15, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6475,17 +6475,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseClicked
+    }//GEN-LAST:event_verTorneo16MouseClicked
 
-    private void botonCrearTorneoSingle7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseExited
+    private void verTorneo16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseExited
+        changePanelColor(verTorneo16,30,25,161);
+    }//GEN-LAST:event_verTorneo16MouseExited
 
-    private void botonCrearTorneoDoble8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseMoved
+    private void verTorneo20MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseMoved
+        changePanelColor(verTorneo20,102,102,255);
+    }//GEN-LAST:event_verTorneo20MouseMoved
 
-    private void botonCrearTorneoDoble8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseClicked
+    private void verTorneo20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseClicked
         int index = 19, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6505,17 +6505,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseClicked
+    }//GEN-LAST:event_verTorneo20MouseClicked
 
-    private void botonCrearTorneoDoble8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDoble8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoDoble8MouseExited
+    private void verTorneo20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseExited
+        changePanelColor(verTorneo20,30,25,161);
+    }//GEN-LAST:event_verTorneo20MouseExited
 
-    private void botonCrearTorneoEquipo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseMoved
+    private void verTorneo21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseMoved
+        changePanelColor(verTorneo21,102,102,255);
+    }//GEN-LAST:event_verTorneo21MouseMoved
 
-    private void botonCrearTorneoEquipo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseClicked
+    private void verTorneo21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseClicked
         int index = 20, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6535,17 +6535,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseClicked
+    }//GEN-LAST:event_verTorneo21MouseClicked
 
-    private void botonCrearTorneoEquipo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoEquipo8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoEquipo8MouseExited
+    private void verTorneo21MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseExited
+        changePanelColor(verTorneo21,30,25,161);
+    }//GEN-LAST:event_verTorneo21MouseExited
 
-    private void botonCrearTorneoSingle8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseMoved
+    private void verTorneo19MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseMoved
+        changePanelColor(verTorneo19,102,102,255);
+    }//GEN-LAST:event_verTorneo19MouseMoved
 
-    private void botonCrearTorneoSingle8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseClicked
+    private void verTorneo19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseClicked
         int index = 18, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
         organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
         organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
@@ -6565,11 +6565,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
             currentTournament = organizator.getTournamentList().get(index);
             showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
         }
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseClicked
+    }//GEN-LAST:event_verTorneo19MouseClicked
 
-    private void botonCrearTorneoSingle8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle8MouseExited
+    private void verTorneo19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseExited
+        changePanelColor(verTorneo19,30,25,161);
+    }//GEN-LAST:event_verTorneo19MouseExited
 
     private void botonSeguirIngresarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseClicked
         pestania.setSelectedIndex(8);
@@ -6913,7 +6913,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_actuGeneralTableActionPerformed
 
     private void actuGeneralTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseExited
-        // TODO add your handling code here:
+        changeButtonColor(actuGeneralTable,30,25,161);
     }//GEN-LAST:event_actuGeneralTableMouseExited
 
     private void actuGeneralTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseClicked
@@ -6922,7 +6922,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_actuGeneralTableMouseClicked
 
     private void actuGeneralTableMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(actuGeneralTable,102,102,255);
     }//GEN-LAST:event_actuGeneralTableMouseMoved
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
@@ -6955,26 +6955,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonBuscarJugador;
     private javax.swing.JPanel botonConfigurarFaseGrupos;
     private javax.swing.JPanel botonCrearTorneoDoble;
-    private javax.swing.JPanel botonCrearTorneoDoble3;
-    private javax.swing.JPanel botonCrearTorneoDoble4;
-    private javax.swing.JPanel botonCrearTorneoDoble5;
-    private javax.swing.JPanel botonCrearTorneoDoble6;
-    private javax.swing.JPanel botonCrearTorneoDoble7;
-    private javax.swing.JPanel botonCrearTorneoDoble8;
     private javax.swing.JPanel botonCrearTorneoEquipo;
-    private javax.swing.JPanel botonCrearTorneoEquipo3;
-    private javax.swing.JPanel botonCrearTorneoEquipo4;
-    private javax.swing.JPanel botonCrearTorneoEquipo5;
-    private javax.swing.JPanel botonCrearTorneoEquipo6;
-    private javax.swing.JPanel botonCrearTorneoEquipo7;
-    private javax.swing.JPanel botonCrearTorneoEquipo8;
     private javax.swing.JPanel botonCrearTorneoSingle;
-    private javax.swing.JPanel botonCrearTorneoSingle3;
-    private javax.swing.JPanel botonCrearTorneoSingle4;
-    private javax.swing.JPanel botonCrearTorneoSingle5;
-    private javax.swing.JPanel botonCrearTorneoSingle6;
-    private javax.swing.JPanel botonCrearTorneoSingle7;
-    private javax.swing.JPanel botonCrearTorneoSingle8;
     private javax.swing.JButton botonEliminarPartido;
     private javax.swing.JPanel botonFormatoLiga;
     private javax.swing.JButton botonFotoCapitan;
@@ -7522,8 +7504,26 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTextField textoBuscarJugador;
     private javax.swing.JLabel tituloSuperior;
     private javax.swing.JPanel verTorneo1;
+    private javax.swing.JPanel verTorneo10;
+    private javax.swing.JPanel verTorneo11;
+    private javax.swing.JPanel verTorneo12;
+    private javax.swing.JPanel verTorneo13;
+    private javax.swing.JPanel verTorneo14;
+    private javax.swing.JPanel verTorneo15;
+    private javax.swing.JPanel verTorneo16;
+    private javax.swing.JPanel verTorneo17;
+    private javax.swing.JPanel verTorneo18;
+    private javax.swing.JPanel verTorneo19;
     private javax.swing.JPanel verTorneo2;
+    private javax.swing.JPanel verTorneo20;
+    private javax.swing.JPanel verTorneo21;
     private javax.swing.JPanel verTorneo3;
+    private javax.swing.JPanel verTorneo4;
+    private javax.swing.JPanel verTorneo5;
+    private javax.swing.JPanel verTorneo6;
+    private javax.swing.JPanel verTorneo7;
+    private javax.swing.JPanel verTorneo8;
+    private javax.swing.JPanel verTorneo9;
     // End of variables declaration//GEN-END:variables
 
 }
