@@ -85,7 +85,7 @@ public class MenuAdministratorControl {
     }
     
     public static String lessPlayersTournament (List<Tournament> tournamentList){
-        String nombreTorneo = "";
+        String nombreTorneo;
         try{
             nombreTorneo = tournamentList.get(0).getTournamentName();
             int lessPlayers = tournamentList.get(0).getParticipantsNumber();
@@ -104,7 +104,7 @@ public class MenuAdministratorControl {
     }
     
     public static String mostGameAveragePlayer(List<Player> playertList){
-        String name = "";
+        String name;
         try{
             name = playertList.get(0).getName();
             double mostGameAverage = playertList.get(0).getGameAverage();

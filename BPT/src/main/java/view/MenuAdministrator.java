@@ -556,10 +556,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jPanel15.setToolTipText("");
         jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelTorneoMasJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelTorneoMasJugadores.setForeground(new java.awt.Color(255, 51, 51));
+        labelTorneoMasJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelTorneoMasJugadores.setForeground(new java.awt.Color(153, 153, 153));
         labelTorneoMasJugadores.setText("<nombre>");
-        jPanel15.add(labelTorneoMasJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, -1, 60));
+        jPanel15.add(labelTorneoMasJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 100, 60));
 
         jLabel89.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel89.setForeground(new java.awt.Color(255, 51, 51));
@@ -609,8 +609,8 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel92.setText("Total de");
         jPanel15.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, 60));
 
-        labelTotalJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelTotalJugadores.setForeground(new java.awt.Color(255, 51, 51));
+        labelTotalJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelTotalJugadores.setForeground(new java.awt.Color(153, 153, 153));
         labelTotalJugadores.setText("n");
         jPanel15.add(labelTotalJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, 60));
 
@@ -624,10 +624,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel97.setText("jugadores:");
         jPanel15.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, -1, 60));
 
-        labelTorneoMenosJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelTorneoMenosJugadores.setForeground(new java.awt.Color(255, 51, 51));
+        labelTorneoMenosJugadores.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelTorneoMenosJugadores.setForeground(new java.awt.Color(153, 153, 153));
         labelTorneoMenosJugadores.setText("<nombre>");
-        jPanel15.add(labelTorneoMenosJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, 60));
+        jPanel15.add(labelTorneoMenosJugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, 100, 60));
 
         panelTotalJugadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         panelTotalJugadores.setToolTipText("");
@@ -649,10 +649,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel91.setText("partidos ganados:");
         jPanel15.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 550, -1, 60));
 
-        labelJugadorPartidosGanados.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelJugadorPartidosGanados.setForeground(new java.awt.Color(255, 51, 51));
+        labelJugadorPartidosGanados.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelJugadorPartidosGanados.setForeground(new java.awt.Color(153, 153, 153));
         labelJugadorPartidosGanados.setText("<nombre>");
-        jPanel15.add(labelJugadorPartidosGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, -1, 60));
+        jPanel15.add(labelJugadorPartidosGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 630, 100, 60));
 
         panelTotalJugadores2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         panelTotalJugadores2.setToolTipText("");
@@ -669,10 +669,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel98.setText("juegos ganados:");
         jPanel15.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, 60));
 
-        labelJugadorJuegosGanados.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelJugadorJuegosGanados.setForeground(new java.awt.Color(255, 51, 51));
+        labelJugadorJuegosGanados.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelJugadorJuegosGanados.setForeground(new java.awt.Color(153, 153, 153));
         labelJugadorJuegosGanados.setText("<nombre>");
-        jPanel15.add(labelJugadorJuegosGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, -1, 60));
+        jPanel15.add(labelJugadorJuegosGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 390, 100, 60));
 
         panelTotalJugadores3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         panelTotalJugadores3.setToolTipText("");
@@ -689,10 +689,10 @@ public class MenuAdministrator extends javax.swing.JFrame {
         jLabel99.setText("sets ganados:");
         jPanel15.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, 60));
 
-        labelJugadorSetsGanados.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        labelJugadorSetsGanados.setForeground(new java.awt.Color(255, 51, 51));
+        labelJugadorSetsGanados.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        labelJugadorSetsGanados.setForeground(new java.awt.Color(153, 153, 153));
         labelJugadorSetsGanados.setText("<nombre>");
-        jPanel15.add(labelJugadorSetsGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, -1, 60));
+        jPanel15.add(labelJugadorSetsGanados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, 90, 60));
 
         panelTotalJugadores4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         panelTotalJugadores4.setToolTipText("");
