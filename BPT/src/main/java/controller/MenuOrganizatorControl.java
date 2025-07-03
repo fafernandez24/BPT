@@ -267,6 +267,7 @@ public class MenuOrganizatorControl {
     
     public static void loadMatchesInTable(List<Match> listMatch, JTable table){      
         try{
+            organizatorCleanTable(table);
             for (int i = 0; i < listMatch.size(); i++){
                 System.out.println(listMatch.get(i).getResultFirstSet());
                 listMatch.get(i).addMatchTableByDate(table);

@@ -38,6 +38,7 @@ import static controller.MenuOrganizatorControl.saveDataPlayerTable;
 import static controller.MenuOrganizatorControl.showTournamentName;
 import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.time.LocalDate;
+import model.Group;
 import model.Match;
 import model.Team;
 
@@ -5780,12 +5781,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirEquipoActionPerformed
 
     private void botonAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEquipoActionPerformed
-        Player captain = new Player();
-        captain.readPlayer(entradaNombreCapitan, entradaCedulaCapitan, entradaNumeroTelefonoCapitan, entradaCorreoCapitan, opcionesCategoriaCapitan, entradaNombreEquipo, entradaFechaNacimientoCapitan);
-        Team team = new Team();
-        team.readTeam(entradaNombreEquipo, captain);
+         Team team = new Team();
+        team.getCaptain().readPlayer(entradaNombreCapitan, entradaCedulaCapitan, entradaNumeroTelefonoCapitan, entradaCorreoCapitan, opcionesCategoriaCapitan, entradaNombreEquipo, entradaFechaNacimientoCapitan);
         team.addPlayerTable(tablaEquiposAgregados);
         newTournament.addPlayerTournament(team);
+        if (team.getCaptain().validatePlayer()){
+            team.addPlayerTable(tablaEquiposAgregados);
+            if (organizator.findPlayer(team.getCaptain().getId()) == true){
+                newTournament.addPlayerTournament(team);
+                System.out.println("Equipo ingresado correctamente");
+            } else{
+                organizator.getPlayerList().add(team.getCaptain());
+                team.getCaptain().addPlayersJson();
+                newTournament.addPlayerTournament(team);
+                System.out.println("Jugador nuevo registrado");
+            }
+        } 
     }//GEN-LAST:event_botonAgregarEquipoActionPerformed
 
     private void botonRegresarIngresarDatosEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoActionPerformed
@@ -6354,7 +6365,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirFaseGruposMouseExited
 
     private void botonSeguirFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposActionPerformed
+        List<Group> groupList = new ArrayList<>();
         int numberGroups = organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos);
+        newTournament.setGroupsList(groupList);
         newTournament.drawGroups(numberGroups);
         newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
         organizator.getTournamentList().add(newTournament);

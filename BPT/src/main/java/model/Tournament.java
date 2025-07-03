@@ -147,11 +147,26 @@ public class Tournament {
         participantsList.add(player);
     }
     
+    private void createGroups(){
+        for (int i = 0; i < groupsNumber; i++){
+            Group group = new Group();
+            group.setGroupNumber(i+1);
+            groupsList.add(group);
+        }
+        
+    }
+    
     public void drawGroups(int numberGroups){
+        try{ 
+        createGroups();
         int group;
         for (int i = 0; i < participantsList.size(); i++){
             group = (int) (Math.random() * (numberGroups-1));
+            System.out.println(group);
             groupsList.get(group).getPlayerList().add(participantsList.get(i));
+        }
+        } catch (NullPointerException error){
+            System.err.println("ERROR. No hay grupos");
         }
     }
     
