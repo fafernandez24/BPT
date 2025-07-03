@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTextField;
 
@@ -17,7 +18,7 @@ public class Group implements PlayerInterface{
     
     private int groupNumber;
     private int playersNumber;
-    private List<Player> playerList;
+    private List<Player> playerList = new ArrayList<>();
     
     // Methods
     

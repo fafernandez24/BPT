@@ -147,27 +147,18 @@ public class Tournament {
         participantsList.add(player);
     }
     
-    private void createGroups(){
+    public void createGroups(){
         for (int i = 0; i < groupsNumber; i++){
             Group group = new Group();
             group.setGroupNumber(i+1);
             groupsList.add(group);
         }
-        
     }
     
-    public void drawGroups(int numberGroups){
-        try{ 
-        createGroups();
-        int group;
+    public void drawGroups(){
         for (int i = 0; i < participantsList.size(); i++){
-            group = (int) (Math.random() * (numberGroups-1));
-            System.out.println(group);
-            groupsList.get(group).getPlayerList().add(participantsList.get(i));
-        }
-        } catch (NullPointerException error){
-            System.err.println("ERROR. No hay grupos");
-        }
+            int index = (int) (Math.random() * groupsList.size());
+            groupsList.get(index).getPlayerList().add(participantsList.get(i));        }
     }
     
     public void ticketsForPlayOffJComboBox(JComboBox comboBox){

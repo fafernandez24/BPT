@@ -4093,9 +4093,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
             }
         });
         botonSeguirFaseGrupos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonSeguirFaseGruposMouseClicked(evt);
-            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 botonSeguirFaseGruposMouseExited(evt);
             }
@@ -6368,9 +6365,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
         List<Group> groupList = new ArrayList<>();
         int numberGroups = organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos);
         newTournament.setGroupsList(groupList);
-        newTournament.drawGroups(numberGroups);
-        newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
+        newTournament.setGroupsNumber(numberGroups);
+        newTournament.createGroups();
+        newTournament.drawGroups();
         organizator.getTournamentList().add(newTournament);
+        newTournament.addTournamentsJson();
+        pestania.setSelectedIndex(1);
     }//GEN-LAST:event_botonSeguirFaseGruposActionPerformed
 
     private void botonRegresarConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseMoved
@@ -7030,15 +7030,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonSeguirIngresarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseClicked
         pestania.setSelectedIndex(8);
     }//GEN-LAST:event_botonSeguirIngresarJugadorMouseClicked
-
-    private void botonSeguirFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseClicked
-        pestania.setSelectedIndex(1);
-        newTournament.setGroupsNumber(organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos));
-        newTournament.setTicketPlayOff(Integer.parseInt(entradaCantidadJugadoresEliminacionDirecta.getText()));
-        newTournament.drawGroups(organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos));
-        organizator.getTournamentList().add(newTournament);
-        newTournament.addTournamentsJson();
-    }//GEN-LAST:event_botonSeguirFaseGruposMouseClicked
 
     private void NombreOrganizadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseMoved
         NombreOrganizador.setText("ORGANIZADOR");
