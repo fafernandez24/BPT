@@ -130,6 +130,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         pestania = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -716,7 +717,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator78 = new javax.swing.JSeparator();
         jSeparator79 = new javax.swing.JSeparator();
         jLabel289 = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1117,6 +1117,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         pestania.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -5611,7 +5622,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         botonSeguirIngresarDatosTorneo2.setBackground(new java.awt.Color(36, 20, 188));
         botonSeguirIngresarDatosTorneo2.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonSeguirIngresarDatosTorneo2.setForeground(new java.awt.Color(255, 255, 255));
-        botonSeguirIngresarDatosTorneo2.setText("Agregar");
+        botonSeguirIngresarDatosTorneo2.setText("ELIMINAR");
         botonSeguirIngresarDatosTorneo2.setBorder(null);
         botonSeguirIngresarDatosTorneo2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -5690,17 +5701,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         pestania.addTab("tab19", pestaniaCrearTorneoInicio6);
 
         jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -6023,11 +6023,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaNombreJugadorActionPerformed
 
     private void botonModificarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarPartidoActionPerformed
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(17);
     }//GEN-LAST:event_botonModificarPartidoActionPerformed
 
     private void botonEliminarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarPartidoActionPerformed
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(18);
     }//GEN-LAST:event_botonEliminarPartidoActionPerformed
 
     private void botonAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPartidoActionPerformed
@@ -7515,7 +7515,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo2MouseExited
 
     private void botonRegresarIngresarDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo2ActionPerformed
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(3);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo2ActionPerformed
 
     private void entradaNombreTorneo4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo4FocusGained
@@ -7622,7 +7622,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo3MouseExited
 
     private void botonRegresarIngresarDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo3ActionPerformed
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(3);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo3ActionPerformed
 
     private void entradaNombreTorneo9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo9FocusGained
