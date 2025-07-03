@@ -5,7 +5,6 @@
 package model;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,7 +29,7 @@ public class Match {
     public Match(){}
     
     // Constructor #2
-    public Match(Player playerA, Player playerB, Player winner, String resultFirstSet, String resultSecondSet, LocalDate matchDate, LocalTime Timehour) {
+    public Match(Player playerA, Player playerB, Player winner, String resultFirstSet, String resultSecondSet, LocalDate matchDate) {
         this.playerA = playerA;
         this.playerB = playerB;
         this.winner = winner;

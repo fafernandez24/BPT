@@ -304,4 +304,28 @@ public class MenuOrganizatorControl {
         }
     }
     
+        
+    public static void foundMatch(List<Match> matchList, String IdOne, String IdTwo, Match edited){
+        try{
+            for(Match m: matchList){
+                if(m.getPlayerA().getId().equals(IdOne) && m.getPlayerA().getId().equals(IdTwo)) m = edited;
+            }
+            System.out.println("Patido editado con exito");
+        } catch (NullPointerException error){
+            System.err.println("AVISO. Lista de partidos vacia");
+        }
+    }
+    
+    public static void deleteMatch(List<Match> matchList, String IdOne, String IdTwo){
+        try{
+            for(Match m: matchList){
+                if(m.getPlayerA().getId().equals(IdOne) && m.getPlayerA().getId().equals(IdTwo)) matchList.remove(m);
+            }
+            System.out.println("Patido editado con exito");
+        } catch (NullPointerException error){
+            System.err.println("AVISO. Lista de partidos vacia");
+        }
+    }
+    
+    
 }

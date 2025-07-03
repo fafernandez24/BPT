@@ -83,7 +83,7 @@ public class MatchJsonControl {
         return false;
     }
 
-    public boolean deletePerson(String id) {
+    public boolean deleteMatch(String id) {
         Match foundMatch = searchElementByDate(id);
         if (foundMatch != null) {
             matches.remove(foundMatch);

@@ -4,6 +4,7 @@
  */
 package model;
 
+import controller.TournamentJsonControl;
 import static controller.TypeBecomeType.JComboBoxBecomeString;
 import java.util.HashMap;
 import java.util.List;
@@ -209,6 +210,11 @@ public class Tournament {
        } catch (NullPointerException error) {
            System.err.println("Error. No se guardaron correctamente los datos en los grupos");
        }
+    }
+    
+    public void addTournamentsJson(){
+        TournamentJsonControl jsonTour = new TournamentJsonControl();
+        jsonTour.addTournament(this);
     }
 
 }

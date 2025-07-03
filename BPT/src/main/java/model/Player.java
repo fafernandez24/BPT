@@ -4,6 +4,7 @@
  */
 package model;
 
+import controller.PlayerJsonControl;
 import java.awt.Color;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
@@ -267,6 +268,11 @@ public class Player extends Person{
         calculateMatchAverage();
         calculateSetAverage();
         calculateGameAverage();
+    }
+    
+    public void addPlayersJson(){
+        PlayerJsonControl jsonPlayer = new PlayerJsonControl(); 
+        jsonPlayer.addPerson(this);
     }
     
 }

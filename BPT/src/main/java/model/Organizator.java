@@ -4,7 +4,6 @@
  */
 package model;
 
-import controller.MatchJsonControl;
 import controller.OrganizatorJsonControl;
 import controller.PlayerJsonControl;
 import controller.TournamentJsonControl;
@@ -74,7 +73,7 @@ public class Organizator extends Person implements PlayerInterface {
     
     public boolean findPlayer(String id){
         for (Player player: playerList){
-            return player.getId().equals(id);
+            if (player.getId().equals(id)) return true;
         }
         return false;
     }
