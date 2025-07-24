@@ -129,5 +129,3 @@ _Ya te dimos un pequeño repaso por cada espacio de nuestro programa, espero que
 ## Autores ✒️
 
 * Freddy Fernandez
-* Carlos Hernandez
-* Carlos Pinto
