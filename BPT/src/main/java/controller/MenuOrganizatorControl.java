@@ -150,19 +150,20 @@ public class MenuOrganizatorControl {
     
     public static void loadPlayerIntoTableGroup(JTable table, List<Player> playerList){
         DefaultTableModel group = (DefaultTableModel) table.getModel();
-            for (int i = 0; i < playerList.size(); i++){
+        for (int i = 0; i < playerList.size(); i++){
+            Player player = playerList.get(i);
             Object[] cells = new Object[11];
-            cells[0] = playerList.get(i).getName();
-            cells[1] = playerList.get(i).getMatchesPlayed();
-            cells[2] = playerList.get(i).getMatchesWon();
-            cells[3] = playerList.get(i).getMatchesLost();
-            cells[4] = playerList.get(i).getMatchAverage();
-            cells[5] = playerList.get(i).getSetsWon();
-            cells[6] = playerList.get(i).getSetsLost();
-            cells[7] = playerList.get(i).getSetAverage();
-            cells[8] = playerList.get(i).getGamesWon();
-            cells[9] = playerList.get(i).getGamesLost();
-            cells[10] = playerList.get(i).getGameAverage();
+            cells[0] = player.getName();
+            cells[1] = player.getMatchesPlayed();
+            cells[2] = player.getMatchesWon();
+            cells[3] = player.getMatchesLost();
+            cells[4] = String.format("%.2f", player.getMatchAverage());
+            cells[5] = player.getSetsWon();
+            cells[6] = player.getSetsLost();
+            cells[7] = String.format("%.2f", player.getSetAverage());
+            cells[8] = player.getGamesWon();
+            cells[9] = player.getGamesLost();
+            cells[10] = String.format("%.2f", player.getGameAverage());
             group.addRow(cells);
         }
     }

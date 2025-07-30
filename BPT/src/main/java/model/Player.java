@@ -179,7 +179,7 @@ public class Player extends Person{
     
     public void calculateMatchAverage(){
         try {
-            matchAverage = (matchesWon/matchesPlayed);
+            matchAverage = (double)matchesWon/matchesPlayed;
         } catch (ArithmeticException error) {
             matchAverage = 0;
         }
@@ -187,7 +187,7 @@ public class Player extends Person{
     
     public void calculateSetAverage(){
         try {
-            setAverage = (setsWon/(setsWon+setsLost));
+            setAverage = (double)setsWon/(setsWon+setsLost);
         } catch (ArithmeticException error){
             setAverage = 0;
         }
@@ -195,7 +195,7 @@ public class Player extends Person{
     
     public void calculateGameAverage(){
         try {
-            gameAverage = (gamesWon/(gamesWon+gamesLost));
+            gameAverage = (double)gamesWon/(gamesWon+gamesLost);
         } catch (ArithmeticException error) {
             gameAverage = 0; 
         }
