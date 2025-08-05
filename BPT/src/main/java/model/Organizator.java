@@ -9,7 +9,9 @@ import controller.PlayerJsonControl;
 import controller.TournamentJsonControl;
 import java.time.LocalDate;
 import java.util.List;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,6 +24,13 @@ public class Organizator extends Person implements PlayerInterface {
     private List<Player> playerList;
     
     // Methods
+    
+    // Private Methods
+    
+    private void cleanTable(JTable table){
+        DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
+        defaultTable.setRowCount(0);
+    }
     
     // Constructor #1
     public Organizator(){}
@@ -104,6 +113,17 @@ public class Organizator extends Person implements PlayerInterface {
         updatePlayersJson();
         updateTournamentsJson();
         jsonOrganizator.addPerson(this);
+    }
+    
+    public void loadPlayerList(JTable table){
+        cleanTable(table);
+        DefaultTableModel playersTable = (DefaultTableModel) table.getModel();
+        for (Player player: playerList){
+            Object[] cells = new Object[2];
+            cells[0] = player.getName();
+            cells[1] = player.getId();
+            playersTable.addRow(cells);
+        }
     }
     
 }

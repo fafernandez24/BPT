@@ -22,7 +22,6 @@ import static controller.MenuOrganizatorControl.organizatorFocusGained;
 import static controller.MenuOrganizatorControl.organizatorFocusLost;
 import static controller.MenuOrganizatorControl.organizatorGetNumberOfGroupsJComboBox;
 import static controller.MenuOrganizatorControl.organizatorSeeTournament;
-import static controller.MenuOrganizatorControl.organizatorShowPlayerInformation;
 import static controller.MenuOrganizatorControl.organizatorTabbedPanelSeeTournaments;
 import static controller.MenuOrganizatorControl.whichTournamentShow;
 import java.awt.Image;
@@ -36,8 +35,6 @@ import model.Tournament;
 import static controller.MenuOrganizatorControl.organizatorCleanTable;
 import static controller.MenuOrganizatorControl.saveDataPlayerTable;
 import static controller.MenuOrganizatorControl.showTournamentName;
-import static controller.TypeBecomeType.StringBecomeLocalDate;
-import java.time.LocalDate;
 import model.Group;
 import model.Match;
 import model.Team;
@@ -128,6 +125,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         pestania = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -295,33 +293,30 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel31 = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
         jScrollPane38 = new javax.swing.JScrollPane();
-        tablaJugadoresAgregados30 = new javax.swing.JTable();
-        botonBuscarJugador1 = new javax.swing.JButton();
-        textoBuscarJugador1 = new javax.swing.JTextField();
+        playersListTable = new javax.swing.JTable();
+        bottomSearchPlayer = new javax.swing.JButton();
+        searchTextField = new javax.swing.JTextField();
         jLabel288 = new javax.swing.JLabel();
         jLabel290 = new javax.swing.JLabel();
-        jSeparator57 = new javax.swing.JSeparator();
         IconoCalendario2 = new javax.swing.JLabel();
         jLabel291 = new javax.swing.JLabel();
         jLabel292 = new javax.swing.JLabel();
         jLabel293 = new javax.swing.JLabel();
         jLabel294 = new javax.swing.JLabel();
         jLabel295 = new javax.swing.JLabel();
-        jLabel296 = new javax.swing.JLabel();
         jLabel298 = new javax.swing.JLabel();
         jLabel299 = new javax.swing.JLabel();
         jLabel300 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        mostrarNombre1 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
+        showDateBirth = new javax.swing.JTextField();
+        showEmail = new javax.swing.JTextField();
+        showPlayerName = new javax.swing.JTextField();
+        showTeam = new javax.swing.JTextField();
+        showId = new javax.swing.JTextField();
+        showMatchWon = new javax.swing.JTextField();
+        showCategory = new javax.swing.JTextField();
+        showMatchPlayed = new javax.swing.JTextField();
         jLabel301 = new javax.swing.JLabel();
-        jTextField19 = new javax.swing.JTextField();
+        showPhoneNumber = new javax.swing.JTextField();
         jLabel302 = new javax.swing.JLabel();
         jSeparator80 = new javax.swing.JSeparator();
         jLabel303 = new javax.swing.JLabel();
@@ -662,7 +657,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator69 = new javax.swing.JSeparator();
         jLabel287 = new javax.swing.JLabel();
         actuGeneralTableUno3 = new javax.swing.JButton();
-        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1037,6 +1031,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         pestania.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2179,9 +2184,9 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel53.setBackground(new java.awt.Color(255, 255, 255));
         jPanel53.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tablaJugadoresAgregados30.setAutoCreateRowSorter(true);
-        tablaJugadoresAgregados30.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        tablaJugadoresAgregados30.setModel(new javax.swing.table.DefaultTableModel(
+        playersListTable.setAutoCreateRowSorter(true);
+        playersListTable.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        playersListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -2189,60 +2194,60 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 "Nombre", "Cedula"
             }
         ));
-        tablaJugadoresAgregados30.setAutoscrolls(false);
-        tablaJugadoresAgregados30.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tablaJugadoresAgregados30.setGridColor(new java.awt.Color(204, 204, 204));
-        tablaJugadoresAgregados30.setSelectionBackground(new java.awt.Color(153, 153, 255));
-        tablaJugadoresAgregados30.setSelectionForeground(new java.awt.Color(30, 25, 161));
-        jScrollPane38.setViewportView(tablaJugadoresAgregados30);
+        playersListTable.setAutoscrolls(false);
+        playersListTable.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        playersListTable.setGridColor(new java.awt.Color(204, 204, 204));
+        playersListTable.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        playersListTable.setSelectionForeground(new java.awt.Color(30, 25, 161));
+        jScrollPane38.setViewportView(playersListTable);
 
         jPanel53.add(jScrollPane38, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 930, 310));
 
-        botonBuscarJugador1.setBackground(new java.awt.Color(30, 25, 161));
-        botonBuscarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        botonBuscarJugador1.setForeground(new java.awt.Color(255, 255, 255));
-        botonBuscarJugador1.setText("Buscar");
-        botonBuscarJugador1.setBorder(null);
-        botonBuscarJugador1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        bottomSearchPlayer.setBackground(new java.awt.Color(30, 25, 161));
+        bottomSearchPlayer.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        bottomSearchPlayer.setForeground(new java.awt.Color(255, 255, 255));
+        bottomSearchPlayer.setText("Buscar");
+        bottomSearchPlayer.setBorder(null);
+        bottomSearchPlayer.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonBuscarJugador1MouseMoved(evt);
+                bottomSearchPlayerMouseMoved(evt);
             }
         });
-        botonBuscarJugador1.addMouseListener(new java.awt.event.MouseAdapter() {
+        bottomSearchPlayer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonBuscarJugador1MouseClicked(evt);
+                bottomSearchPlayerMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonBuscarJugador1MouseExited(evt);
+                bottomSearchPlayerMouseExited(evt);
             }
         });
-        botonBuscarJugador1.addActionListener(new java.awt.event.ActionListener() {
+        bottomSearchPlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonBuscarJugador1ActionPerformed(evt);
+                bottomSearchPlayerActionPerformed(evt);
             }
         });
-        jPanel53.add(botonBuscarJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 130, 40));
+        jPanel53.add(bottomSearchPlayer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 130, 40));
 
-        textoBuscarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        textoBuscarJugador1.setForeground(new java.awt.Color(153, 153, 153));
-        textoBuscarJugador1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        textoBuscarJugador1.setText("Ingresar cedula del jugador a buscar...");
-        textoBuscarJugador1.setToolTipText("");
-        textoBuscarJugador1.setBorder(null);
-        textoBuscarJugador1.addFocusListener(new java.awt.event.FocusAdapter() {
+        searchTextField.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        searchTextField.setForeground(new java.awt.Color(153, 153, 153));
+        searchTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        searchTextField.setText("Ingresar cedula del jugador a buscar...");
+        searchTextField.setToolTipText("");
+        searchTextField.setBorder(null);
+        searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                textoBuscarJugador1FocusGained(evt);
+                searchTextFieldFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                textoBuscarJugador1FocusLost(evt);
+                searchTextFieldFocusLost(evt);
             }
         });
-        textoBuscarJugador1.addActionListener(new java.awt.event.ActionListener() {
+        searchTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textoBuscarJugador1ActionPerformed(evt);
+                searchTextFieldActionPerformed(evt);
             }
         });
-        jPanel53.add(textoBuscarJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 770, 40));
+        jPanel53.add(searchTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 770, 40));
 
         jLabel288.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
         jPanel53.add(jLabel288, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
@@ -2251,16 +2256,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel290.setForeground(new java.awt.Color(153, 153, 153));
         jLabel290.setText("BUSCAR JUGADOR...");
         jPanel53.add(jLabel290, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, 60));
-        jPanel53.add(jSeparator57, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1070, 820, 10));
 
         IconoCalendario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fotoPerfilPequenio.png"))); // NOI18N
-        jPanel53.add(IconoCalendario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 230, 200));
+        jPanel53.add(IconoCalendario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 880, 230, 200));
 
         jLabel291.setBackground(new java.awt.Color(51, 51, 51));
         jLabel291.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel291.setForeground(new java.awt.Color(102, 102, 102));
         jLabel291.setText("Equipo en otro torneo");
-        jPanel53.add(jLabel291, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 940, -1, 30));
+        jPanel53.add(jLabel291, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 1000, -1, 30));
 
         jLabel292.setBackground(new java.awt.Color(51, 51, 51));
         jLabel292.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
@@ -2272,170 +2276,152 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel293.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel293.setForeground(new java.awt.Color(102, 102, 102));
         jLabel293.setText("FECHA DE NACIMIENTO");
-        jPanel53.add(jLabel293, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 780, -1, 30));
+        jPanel53.add(jLabel293, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 840, -1, 30));
 
         jLabel294.setBackground(new java.awt.Color(51, 51, 51));
         jLabel294.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel294.setForeground(new java.awt.Color(102, 102, 102));
         jLabel294.setText("NÚMERO DE CEDULA");
-        jPanel53.add(jLabel294, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 860, -1, 30));
+        jPanel53.add(jLabel294, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 920, -1, 30));
 
         jLabel295.setBackground(new java.awt.Color(51, 51, 51));
         jLabel295.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel295.setForeground(new java.awt.Color(102, 102, 102));
         jLabel295.setText("CORREO ELECTRÓNICO");
-        jPanel53.add(jLabel295, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 860, -1, 30));
-
-        jLabel296.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel296.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
-        jLabel296.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel296.setText("TORNEOS EN LOS QUE PARTICIPA:");
-        jPanel53.add(jLabel296, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1100, -1, 30));
+        jPanel53.add(jLabel295, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 920, -1, 30));
 
         jLabel298.setBackground(new java.awt.Color(51, 51, 51));
         jLabel298.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel298.setForeground(new java.awt.Color(102, 102, 102));
         jLabel298.setText("CATEGORIA");
-        jPanel53.add(jLabel298, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 940, -1, 30));
+        jPanel53.add(jLabel298, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1000, -1, 30));
 
         jLabel299.setBackground(new java.awt.Color(51, 51, 51));
         jLabel299.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel299.setForeground(new java.awt.Color(102, 102, 102));
         jLabel299.setText("Partidos JUGADOS:");
-        jPanel53.add(jLabel299, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 1020, -1, 30));
+        jPanel53.add(jLabel299, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1080, -1, 30));
 
         jLabel300.setBackground(new java.awt.Color(51, 51, 51));
         jLabel300.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel300.setForeground(new java.awt.Color(102, 102, 102));
         jLabel300.setText("Partidos GANADOS:");
-        jPanel53.add(jLabel300, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 1020, -1, 30));
+        jPanel53.add(jLabel300, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 1080, -1, 30));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField4.setText("DD/MM/YYYY");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        showDateBirth.setEditable(false);
+        showDateBirth.setBackground(new java.awt.Color(255, 255, 255));
+        showDateBirth.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showDateBirth.setText("DD/MM/YYYY");
+        showDateBirth.setBorder(null);
+        showDateBirth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                showDateBirthActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 820, 140, -1));
+        jPanel53.add(showDateBirth, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 880, 140, -1));
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField12.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField12.setText("CORREO ELECTRONICO");
-        jTextField12.setBorder(null);
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        showEmail.setEditable(false);
+        showEmail.setBackground(new java.awt.Color(255, 255, 255));
+        showEmail.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showEmail.setText("CORREO ELECTRONICO");
+        showEmail.setBorder(null);
+        showEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                showEmailActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 900, 190, -1));
+        jPanel53.add(showEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 960, 190, -1));
 
-        mostrarNombre1.setEditable(false);
-        mostrarNombre1.setBackground(new java.awt.Color(255, 255, 255));
-        mostrarNombre1.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
-        mostrarNombre1.setText("Nombre del Jugador");
-        mostrarNombre1.setToolTipText("");
-        mostrarNombre1.setBorder(null);
-        mostrarNombre1.addActionListener(new java.awt.event.ActionListener() {
+        showPlayerName.setEditable(false);
+        showPlayerName.setBackground(new java.awt.Color(255, 255, 255));
+        showPlayerName.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
+        showPlayerName.setText("Nombre del Jugador");
+        showPlayerName.setToolTipText("");
+        showPlayerName.setBorder(null);
+        showPlayerName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarNombre1ActionPerformed(evt);
+                showPlayerNameActionPerformed(evt);
             }
         });
-        jPanel53.add(mostrarNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 660, 660, -1));
+        jPanel53.add(showPlayerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 660, 660, -1));
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField13.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField13.setText("TAMANACO TEAM");
-        jTextField13.setBorder(null);
-        jTextField13.addActionListener(new java.awt.event.ActionListener() {
+        showTeam.setEditable(false);
+        showTeam.setBackground(new java.awt.Color(255, 255, 255));
+        showTeam.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showTeam.setText("TAMANACO TEAM");
+        showTeam.setBorder(null);
+        showTeam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField13ActionPerformed(evt);
+                showTeamActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 980, 140, -1));
+        jPanel53.add(showTeam, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 1040, 140, -1));
 
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField14.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField14.setText("CEDULA DE IDENTIDAD");
-        jTextField14.setBorder(null);
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        showId.setEditable(false);
+        showId.setBackground(new java.awt.Color(255, 255, 255));
+        showId.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showId.setText("CEDULA DE IDENTIDAD");
+        showId.setBorder(null);
+        showId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                showIdActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 900, 140, -1));
+        jPanel53.add(showId, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 960, 140, -1));
 
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField15.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField15.setText("999");
-        jTextField15.setBorder(null);
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        showMatchWon.setEditable(false);
+        showMatchWon.setBackground(new java.awt.Color(255, 255, 255));
+        showMatchWon.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showMatchWon.setText("999");
+        showMatchWon.setBorder(null);
+        showMatchWon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                showMatchWonActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 1020, 40, 30));
+        jPanel53.add(showMatchWon, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1080, 40, 30));
 
-        jTextField16.setEditable(false);
-        jTextField16.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField16.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField16.setText("CATEGORIA");
-        jTextField16.setBorder(null);
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        showCategory.setEditable(false);
+        showCategory.setBackground(new java.awt.Color(255, 255, 255));
+        showCategory.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showCategory.setText("CATEGORIA");
+        showCategory.setBorder(null);
+        showCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                showCategoryActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 980, 140, -1));
+        jPanel53.add(showCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 1040, 140, -1));
 
-        jTextField17.setEditable(false);
-        jTextField17.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField17.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField17.setText("TORNEOS EN LOS QUE PARTICIPA EL JUGADOR");
-        jTextField17.setBorder(null);
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+        showMatchPlayed.setEditable(false);
+        showMatchPlayed.setBackground(new java.awt.Color(255, 255, 255));
+        showMatchPlayed.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showMatchPlayed.setText("999");
+        showMatchPlayed.setBorder(null);
+        showMatchPlayed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
+                showMatchPlayedActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 1100, 370, 30));
-
-        jTextField18.setEditable(false);
-        jTextField18.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField18.setText("999");
-        jTextField18.setBorder(null);
-        jTextField18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField18ActionPerformed(evt);
-            }
-        });
-        jPanel53.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 1020, 50, 30));
+        jPanel53.add(showMatchPlayed, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 1080, 50, 30));
 
         jLabel301.setBackground(new java.awt.Color(51, 51, 51));
         jLabel301.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel301.setForeground(new java.awt.Color(102, 102, 102));
         jLabel301.setText("Número de telefono");
-        jPanel53.add(jLabel301, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 780, -1, 30));
+        jPanel53.add(jLabel301, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 840, -1, 30));
 
-        jTextField19.setEditable(false);
-        jTextField19.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField19.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jTextField19.setText("Numero de telefono");
-        jTextField19.setBorder(null);
-        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+        showPhoneNumber.setEditable(false);
+        showPhoneNumber.setBackground(new java.awt.Color(255, 255, 255));
+        showPhoneNumber.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        showPhoneNumber.setText("Numero de telefono");
+        showPhoneNumber.setBorder(null);
+        showPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField19ActionPerformed(evt);
+                showPhoneNumberActionPerformed(evt);
             }
         });
-        jPanel53.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 820, 140, -1));
+        jPanel53.add(showPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 880, 140, -1));
 
         jLabel302.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel302.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cuadradoMasGrande.png"))); // NOI18N
@@ -5161,17 +5147,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -5222,6 +5197,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         pestania.setSelectedIndex(2);
         tituloSuperior.setText("Buscar Jugador");
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoBuscarJugador.png")));
+        organizator.loadPlayerList(playersListTable);
     }//GEN-LAST:event_botonMenuBuscarJugadorMouseClicked
 
     private void botonMenuBuscarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMenuBuscarJugadorMouseMoved
@@ -5241,16 +5217,251 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setExtendedState(1);
     }//GEN-LAST:event_botonMinimizarMouseClicked
 
+    private void NombreOrganizadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseMoved
+        NombreOrganizador.setText("ORGANIZADOR");
+    }//GEN-LAST:event_NombreOrganizadorMouseMoved
+
+    private void NombreOrganizadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseExited
+        NombreOrganizador.setText(organizator.getName());
+    }//GEN-LAST:event_NombreOrganizadorMouseExited
+
+    private void actuGeneralTableUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno3ActionPerformed
+
+    private void actuGeneralTableUno3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno3MouseExited
+
+    private void actuGeneralTableUno3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno3MouseClicked
+
+    private void actuGeneralTableUno3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno3MouseMoved
+
+    private void actuGeneralTableUno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno2ActionPerformed
+
+    private void actuGeneralTableUno2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno2MouseExited
+
+    private void actuGeneralTableUno2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno2MouseClicked
+
+    private void actuGeneralTableUno2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno2MouseMoved
+
+    private void actuGeneralTableUno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno1ActionPerformed
+
+    private void actuGeneralTableUno1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno1MouseExited
+
+    private void actuGeneralTableUno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno1MouseClicked
+
+    private void actuGeneralTableUno1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUno1MouseMoved
+
+    private void actuGeneralTableUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUnoActionPerformed
+
+    private void actuGeneralTableUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUnoMouseExited
+
+    private void actuGeneralTableUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseClicked
+        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
+        organizator.updatePlayers();
+    }//GEN-LAST:event_actuGeneralTableUnoMouseClicked
+
+    private void actuGeneralTableUnoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableUnoMouseMoved
+
+    private void actuGeneralTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actuGeneralTableActionPerformed
+
+    private void actuGeneralTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseExited
+        changeButtonColor(actuGeneralTable,30,25,161);
+    }//GEN-LAST:event_actuGeneralTableMouseExited
+
+    private void actuGeneralTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseClicked
+        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
+        organizator.updatePlayers();
+    }//GEN-LAST:event_actuGeneralTableMouseClicked
+
+    private void actuGeneralTableMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseMoved
+        changeButtonColor(actuGeneralTable,102,102,255);
+    }//GEN-LAST:event_actuGeneralTableMouseMoved
+
+    private void entradaCantidadJugadoresEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaActionPerformed
+
+    private void entradaCantidadJugadoresEliminacionDirectaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaFocusLost
+        organizatorFocusLost (entradaCantidadJugadoresEliminacionDirecta, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaFocusLost
+
+    private void entradaCantidadJugadoresEliminacionDirectaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaFocusGained
+        organizatorFocusGained (entradaCantidadJugadoresEliminacionDirecta, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaFocusGained
+
+    private void botonRegresarConfigurarFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposActionPerformed
+
+    private void botonRegresarConfigurarFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseExited
+        changeButtonColor(botonRegresarConfigurarFaseGrupos,30,25,161);
+    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseExited
+
+    private void botonRegresarConfigurarFaseGruposMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseEntered
+
+    private void botonRegresarConfigurarFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseClicked
+        pestania.setSelectedIndex(8);
+    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseClicked
+
+    private void botonRegresarConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseMoved
+        changeButtonColor(botonRegresarConfigurarFaseGrupos,102,102,255);
+    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseMoved
+
+    private void botonSeguirFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposActionPerformed
+        List<Group> groupList = new ArrayList<>();
+        int numberGroups = organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos);
+        newTournament.setGroupsList(groupList);
+        newTournament.setGroupsNumber(numberGroups);
+        newTournament.createGroups();
+        newTournament.drawGroups();
+        organizator.getTournamentList().add(newTournament);
+        newTournament.addTournamentsJson();
+        pestania.setSelectedIndex(1);
+    }//GEN-LAST:event_botonSeguirFaseGruposActionPerformed
+
+    private void botonSeguirFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseExited
+        changeButtonColor(botonSeguirFaseGrupos,30,25,161);
+    }//GEN-LAST:event_botonSeguirFaseGruposMouseExited
+
+    private void botonSeguirFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseMoved
+        changeButtonColor(botonSeguirFaseGrupos,102,102,255);
+    }//GEN-LAST:event_botonSeguirFaseGruposMouseMoved
+
+    private void ingresarCantidadDeGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarCantidadDeGruposActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresarCantidadDeGruposActionPerformed
+
+    private void entradaCantidadJugadoresPorGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoActionPerformed
+
+    private void entradaCantidadJugadoresPorGrupoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoFocusLost
+        organizatorFocusLost (entradaCantidadJugadoresPorGrupo, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoFocusLost
+
+    private void entradaCantidadJugadoresPorGrupoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoFocusGained
+        organizatorFocusGained (entradaCantidadJugadoresPorGrupo, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoFocusGained
+
+    private void botonFormatoLigaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseExited
+        changePanelColor(botonFormatoLiga,30,25,161);
+    }//GEN-LAST:event_botonFormatoLigaMouseExited
+
+    private void botonFormatoLigaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseClicked
+        pestania.setSelectedIndex(1);
+        newTournament.setGroupsNumber(1);
+        newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
+        organizator.getTournamentList().add(newTournament);
+        newTournament.addTournamentsJson();
+    }//GEN-LAST:event_botonFormatoLigaMouseClicked
+
+    private void botonFormatoLigaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseMoved
+        changePanelColor(botonFormatoLiga,102,102,255);
+    }//GEN-LAST:event_botonFormatoLigaMouseMoved
+
+    private void botonTorneoMuerteSubitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseExited
+        changePanelColor(botonTorneoMuerteSubita,30,25,161);
+    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseExited
+
+    private void botonTorneoMuerteSubitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseClicked
+        pestania.setSelectedIndex(1);
+        newTournament.setGroupsNumber(1);
+        newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
+        organizator.getTournamentList().add(newTournament);
+        newTournament.addTournamentsJson();
+    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseClicked
+
+    private void botonTorneoMuerteSubitaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseMoved
+        changePanelColor(botonTorneoMuerteSubita,102,102,255);
+    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseMoved
+
+    private void botonConfigurarFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseExited
+        changePanelColor(botonConfigurarFaseGrupos,30,25,161);
+    }//GEN-LAST:event_botonConfigurarFaseGruposMouseExited
+
+    private void botonConfigurarFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseClicked
+        pestania.setSelectedIndex(9);
+    }//GEN-LAST:event_botonConfigurarFaseGruposMouseClicked
+
+    private void botonConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseMoved
+        changePanelColor(botonConfigurarFaseGrupos,102,102,255);
+    }//GEN-LAST:event_botonConfigurarFaseGruposMouseMoved
+
+    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
+        try{
+            Player player = organizator.searchPlayer(entradaCedulaCapitan);
+            player.showPlayerInformation(entradaNombreCapitan, entradaNumeroTelefonoCapitan, entradaFechaNacimientoCapitan, entradaCedulaCapitan, entradaCorreoCapitan, entradaNombreEquipo);
+        } catch (NullPointerException error) {
+            System.err.println("AVISO. No se encontro el jugador en la lista global");
+        }
+    }//GEN-LAST:event_jLabel18MouseClicked
+
+    private void opcionesCategoriaCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_opcionesCategoriaCapitanActionPerformed
+
     private void entradaFechaNacimientoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaFechaNacimientoCapitanActionPerformed
+
+    private void entradaFechaNacimientoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusLost
+        organizatorFocusLost (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusLost
+
+    private void entradaFechaNacimientoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusGained
+        organizatorFocusGained (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusGained
 
     private void botonSeguirEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirEquipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonSeguirEquipoActionPerformed
 
+    private void botonSeguirEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseExited
+        changeButtonColor(botonSeguirEquipo,30,25,161);
+    }//GEN-LAST:event_botonSeguirEquipoMouseExited
+
+    private void botonSeguirEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseClicked
+        pestania.setSelectedIndex(8);
+    }//GEN-LAST:event_botonSeguirEquipoMouseClicked
+
+    private void botonSeguirEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseMoved
+        changeButtonColor(botonSeguirEquipo,102,102,255);
+    }//GEN-LAST:event_botonSeguirEquipoMouseMoved
+
     private void botonAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarEquipoActionPerformed
-         Team team = new Team();
+        Team team = new Team();
         team.getCaptain().readPlayer(entradaNombreCapitan, entradaCedulaCapitan, entradaNumeroTelefonoCapitan, entradaCorreoCapitan, opcionesCategoriaCapitan, entradaNombreEquipo, entradaFechaNacimientoCapitan);
         team.addPlayerTable(tablaEquiposAgregados);
         newTournament.addPlayerTournament(team);
@@ -5265,36 +5476,110 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 newTournament.addPlayerTournament(team);
                 System.out.println("Jugador nuevo registrado");
             }
-        } 
+        }
     }//GEN-LAST:event_botonAgregarEquipoActionPerformed
+
+    private void botonAgregarEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarEquipoMouseExited
+        changeButtonColor(botonAgregarEquipo,30,25,161);
+    }//GEN-LAST:event_botonAgregarEquipoMouseExited
+
+    private void botonAgregarEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarEquipoMouseMoved
+        changeButtonColor(botonAgregarEquipo,102,102,255);
+    }//GEN-LAST:event_botonAgregarEquipoMouseMoved
 
     private void botonRegresarIngresarDatosEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosEquipoActionPerformed
 
+    private void botonRegresarIngresarDatosEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseExited
+        changeButtonColor(botonRegresarIngresarDatosEquipo,30,25,161);
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseExited
+
     private void botonRegresarIngresarDatosEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseClicked
         pestania.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseClicked
+
+    private void botonRegresarIngresarDatosEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseMoved
+        changeButtonColor(botonRegresarIngresarDatosEquipo,102,102,255);
+    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseMoved
 
     private void entradaNombreEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreEquipoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNombreEquipoActionPerformed
 
+    private void entradaNombreEquipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusLost
+        organizatorFocusLost (entradaNombreEquipo, "Ingresar nombre del equipo");
+    }//GEN-LAST:event_entradaNombreEquipoFocusLost
+
+    private void entradaNombreEquipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusGained
+        organizatorFocusGained (entradaNombreEquipo, "Ingresar nombre del equipo");
+    }//GEN-LAST:event_entradaNombreEquipoFocusGained
+
     private void entradaCorreoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCorreoCapitanActionPerformed
+
+    private void entradaCorreoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusLost
+        organizatorFocusLost (entradaCorreoCapitan, "Ingresar correo capitan");
+    }//GEN-LAST:event_entradaCorreoCapitanFocusLost
+
+    private void entradaCorreoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusGained
+        organizatorFocusGained (entradaCorreoCapitan, "Ingresar correo capitan");
+    }//GEN-LAST:event_entradaCorreoCapitanFocusGained
 
     private void entradaNumeroTelefonoCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNumeroTelefonoCapitanActionPerformed
 
+    private void entradaNumeroTelefonoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
+    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusLost
+
+    private void entradaNumeroTelefonoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
+    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusGained
+
     private void entradaCedulaCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaCedulaCapitanActionPerformed
 
+    private void entradaCedulaCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusLost
+        organizatorFocusLost (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
+    }//GEN-LAST:event_entradaCedulaCapitanFocusLost
+
+    private void entradaCedulaCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusGained
+        organizatorFocusGained (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
+    }//GEN-LAST:event_entradaCedulaCapitanFocusGained
+
     private void entradaNombreCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNombreCapitanActionPerformed
+
+    private void entradaNombreCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusLost
+        organizatorFocusLost (entradaNombreCapitan, "Ingresar nombre del capitan");
+    }//GEN-LAST:event_entradaNombreCapitanFocusLost
+
+    private void entradaNombreCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusGained
+        organizatorFocusGained (entradaNombreCapitan, "Ingresar nombre del capitan");
+    }//GEN-LAST:event_entradaNombreCapitanFocusGained
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        try{
+            Player player = organizator.searchPlayer(entradaIdJugadorB);
+            player.showPlayerInformation(entradaNombreJugadorB, entradaNumeroTelefonoJugadorB, entradaFechaNacimientoJugadorB, entradaIdJugadorB, entradaEmailJugadorB, entradaEquipoJugadorB);
+        } catch (NullPointerException error) {
+            System.err.println("AVISO. No se encontro el jugador en la lista global");
+        }
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        try{
+            Player player = organizator.searchPlayer(entradaIdJugadorA);
+            player.showPlayerInformation(entradaNombreJugadorA, entradaNumeroTelefonoJugadorA, entradaFechaNacimientoJugadorA, entradaIdJugadorA, entradaEmailJugadorA, entradaEquipoJugadorA);
+        } catch (NullPointerException error) {
+            System.err.println("AVISO. No se encontro el jugador en la lista global");
+        }
+    }//GEN-LAST:event_jLabel13MouseClicked
 
     private void opcionesCategoriaJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorBActionPerformed
         // TODO add your handling code here:
@@ -5308,9 +5593,25 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaFechaNacimientoJugadorBActionPerformed
 
+    private void entradaFechaNacimientoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusLost
+
+    private void entradaFechaNacimientoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusGained
+
     private void entradaEquipoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaEquipoJugadorBActionPerformed
+
+    private void entradaEquipoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusLost
+        organizatorFocusLost (entradaEquipoJugadorB, "Ingresar equipo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorBFocusLost
+
+    private void entradaEquipoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusGained
+        organizatorFocusGained (entradaEquipoJugadorB, "Ingresar equipo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorBFocusGained
 
     private void entradaEmailJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorBActionPerformed
         // TODO add your handling code here:
@@ -5327,6 +5628,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void entradaNumeroTelefonoJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNumeroTelefonoJugadorBActionPerformed
+
+    private void entradaNumeroTelefonoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusLost
+
+    private void entradaNumeroTelefonoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusGained
 
     private void entradaIdJugadorBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorBActionPerformed
         // TODO add your handling code here:
@@ -5353,14 +5662,26 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_entradaNombreJugadorBFocusGained
 
     private void botonSeguirDuplasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirDuplasActionPerformed
-        // TODO add your handling code here: 
+        // TODO add your handling code here:
     }//GEN-LAST:event_botonSeguirDuplasActionPerformed
+
+    private void botonSeguirDuplasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseExited
+        changeButtonColor(botonSeguirDuplas,30,25,161);
+    }//GEN-LAST:event_botonSeguirDuplasMouseExited
+
+    private void botonSeguirDuplasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseClicked
+        pestania.setSelectedIndex(8);
+    }//GEN-LAST:event_botonSeguirDuplasMouseClicked
+
+    private void botonSeguirDuplasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseMoved
+        changeButtonColor(botonSeguirDuplas,102,102,255);
+    }//GEN-LAST:event_botonSeguirDuplasMouseMoved
 
     private void botonAgregarJugadoresDuplaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaActionPerformed
         DoubleTennis doubleTennis = new DoubleTennis();
         doubleTennis.readPlayerA(entradaNombreJugadorA, entradaIdJugadorA, entradaNumeroTelefonoJugadorA, entradaEmailJugadorA, opcionesCategoriaJugadorA, entradaEquipoJugadorA, entradaFechaNacimientoJugadorA);
         doubleTennis.readPlayerB(entradaNombreJugadorB, entradaIdJugadorB, entradaNumeroTelefonoJugadorB, entradaEmailJugadorB, opcionesCategoriaJugadorB, entradaEquipoJugadorB, entradaFechaNacimientoJugadorB);
-        
+
         if (doubleTennis.validatePlayer()){
             doubleTennis.addPlayerTable(tablaDuplasAgregadas);
             if (organizator.findPlayer(doubleTennis.getPlayerA().getId()) == true && organizator.findPlayer(doubleTennis.getPlayerB().getId()) == true){
@@ -5374,20 +5695,48 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 newTournament.addPlayerTournament(doubleTennis);
                 System.out.println("Jugador nuevo registrado");
             }
-        } 
+        }
     }//GEN-LAST:event_botonAgregarJugadoresDuplaActionPerformed
+
+    private void botonAgregarJugadoresDuplaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseExited
+        changeButtonColor(botonAgregarJugadoresDupla,30,25,161);
+    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseExited
+
+    private void botonAgregarJugadoresDuplaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseClicked
+
+    private void botonAgregarJugadoresDuplaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseMoved
+        changeButtonColor(botonAgregarJugadoresDupla,102,102,255);
+    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseMoved
 
     private void botonRegresarIngresarDatosDoblesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosDoblesActionPerformed
 
+    private void botonRegresarIngresarDatosDoblesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseExited
+        changeButtonColor(botonRegresarIngresarDatosDobles,30,25,161);
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseExited
+
     private void botonRegresarIngresarDatosDoblesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseClicked
         pestania.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseClicked
 
+    private void botonRegresarIngresarDatosDoblesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseMoved
+        changeButtonColor(botonRegresarIngresarDatosDobles,102,102,255);
+    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseMoved
+
     private void entradaFechaNacimientoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaFechaNacimientoJugadorAActionPerformed
+
+    private void entradaFechaNacimientoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusLost
+
+    private void entradaFechaNacimientoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusGained
 
     private void entradaEquipoJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorAActionPerformed
         // TODO add your handling code here:
@@ -5417,6 +5766,14 @@ public class MenuOrganizator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNumeroTelefonoJugadorAActionPerformed
 
+    private void entradaNumeroTelefonoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusLost
+
+    private void entradaNumeroTelefonoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusGained
+
     private void entradaIdJugadorAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIdJugadorAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaIdJugadorAActionPerformed
@@ -5441,6 +5798,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         organizatorFocusGained (entradaNombreJugadorA, "Ingresar nombre del jugador");
     }//GEN-LAST:event_entradaNombreJugadorAFocusGained
 
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        try{
+            Player player = organizator.searchPlayer(entradaIDJugador);
+            player.showPlayerInformation(entradaNombreJugador, entradaNumeroTelefonoJugador, entradaFechaNacimientoJugador, entradaIDJugador, entradaEmailJugador, entradaEquipoJugador);
+        } catch (NullPointerException error) {
+            System.err.println("AVISO. No se encontro el jugador en la lista global");
+        }
+    }//GEN-LAST:event_jLabel12MouseClicked
+
     private void opcionesCategoriaJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaJugadorActionPerformed
 
     }//GEN-LAST:event_opcionesCategoriaJugadorActionPerformed
@@ -5448,6 +5814,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonSeguirIngresarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonSeguirIngresarJugadorActionPerformed
+
+    private void botonSeguirIngresarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseExited
+        changeButtonColor(botonSeguirIngresarJugador,30,25,161);
+    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseExited
+
+    private void botonSeguirIngresarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseClicked
+        pestania.setSelectedIndex(8);
+    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseClicked
+
+    private void botonSeguirIngresarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseMoved
+        changeButtonColor(botonSeguirIngresarJugador,102,102,255);
+    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseMoved
 
     private void botonAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarJugadorActionPerformed
         Player player = new Player();
@@ -5463,56 +5841,949 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 player.addPlayersJson();
                 System.out.println("Jugador nuevo registrado");
             }
-        } 
+        }
     }//GEN-LAST:event_botonAgregarJugadorActionPerformed
+
+    private void botonAgregarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseExited
+        changeButtonColor(botonAgregarJugador,30,25,161);
+    }//GEN-LAST:event_botonAgregarJugadorMouseExited
 
     private void botonAgregarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_botonAgregarJugadorMouseClicked
 
+    private void botonAgregarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseMoved
+        changeButtonColor(botonAgregarJugador,102,102,255);
+    }//GEN-LAST:event_botonAgregarJugadorMouseMoved
+
     private void botonRegresarIngresarDatosSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosSingleActionPerformed
+
+    private void botonRegresarIngresarDatosSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseExited
+        changeButtonColor(botonRegresarIngresarDatosSingle,30,25,161);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseExited
 
     private void botonRegresarIngresarDatosSingleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseClicked
         pestania.setSelectedIndex(4);
     }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseClicked
 
+    private void botonRegresarIngresarDatosSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseMoved
+        changeButtonColor(botonRegresarIngresarDatosSingle,102,102,255);
+    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseMoved
+
     private void entradaFechaNacimientoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaFechaNacimientoJugadorActionPerformed
+
+    private void entradaFechaNacimientoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusLost
+        organizatorFocusLost (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusLost
+
+    private void entradaFechaNacimientoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusGained
+        organizatorFocusGained (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
+    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusGained
 
     private void entradaEquipoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaEquipoJugadorActionPerformed
 
+    private void entradaEquipoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusLost
+        organizatorFocusLost (entradaEquipoJugador, "Ingresar equipo externo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorFocusLost
+
+    private void entradaEquipoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusGained
+        organizatorFocusGained (entradaEquipoJugador, "Ingresar equipo externo del jugador");
+    }//GEN-LAST:event_entradaEquipoJugadorFocusGained
+
     private void entradaEmailJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaEmailJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaEmailJugadorActionPerformed
+
+    private void entradaEmailJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusLost
+        organizatorFocusLost (entradaEmailJugador, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorFocusLost
+
+    private void entradaEmailJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusGained
+        organizatorFocusGained (entradaEmailJugador, "Ingresar correo del jugador");
+    }//GEN-LAST:event_entradaEmailJugadorFocusGained
 
     private void entradaNumeroTelefonoJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNumeroTelefonoJugadorActionPerformed
 
+    private void entradaNumeroTelefonoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusLost
+        organizatorFocusLost (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusLost
+
+    private void entradaNumeroTelefonoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusGained
+        organizatorFocusGained (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
+    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusGained
+
     private void entradaIDJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaIDJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaIDJugadorActionPerformed
+
+    private void entradaIDJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusLost
+        organizatorFocusLost (entradaIDJugador, "Ingresar numero de cedula del jugador");
+    }//GEN-LAST:event_entradaIDJugadorFocusLost
+
+    private void entradaIDJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusGained
+        organizatorFocusGained (entradaIDJugador, "Ingresar numero de cedula del jugador");
+    }//GEN-LAST:event_entradaIDJugadorFocusGained
 
     private void entradaNombreJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreJugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNombreJugadorActionPerformed
 
+    private void entradaNombreJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusLost
+        organizatorFocusLost (entradaNombreJugador, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorFocusLost
+
+    private void entradaNombreJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusGained
+        organizatorFocusGained (entradaNombreJugador, "Ingresar nombre del jugador");
+    }//GEN-LAST:event_entradaNombreJugadorFocusGained
+
+    private void ingresarRondaEliminacionDirecta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresarRondaEliminacionDirecta3ActionPerformed
+
+    private void ingresarRondaEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirectaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ingresarRondaEliminacionDirectaActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoActionPerformed
+
+    private void botonRegresarIngresarDatosTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseExited
+        changeButtonColor(botonRegresarIngresarDatosTorneo,30,25,161);
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseExited
+
+    private void botonRegresarIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseClicked
+        pestania.setSelectedIndex(0);
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
+
+    private void botonRegresarIngresarDatosTorneoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseMoved
+        changeButtonColor(botonRegresarIngresarDatosTorneo,102,102,255);
+    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseMoved
+
+    private void botonSeguirIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoActionPerformed
+
+    private void botonSeguirIngresarDatosTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseExited
+        changeButtonColor(botonSeguirIngresarDatosTorneo,30,25,161);
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseExited
+
+    private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
+        newTournament = CreateTournament(entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);
+        List<Player> playerList = new ArrayList<>();
+        newTournament.setParticipantsList(playerList);
+        organizatorCleanTable(tablaJugadoresAgregados);
+        organizatorCleanTable(tablaDuplasAgregadas);
+        organizatorCleanTable(tablaEquiposAgregados);
+        GetUpTournamentFromPartOne(pestania, opcionCrearTorneo, entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
+
+    private void botonSeguirIngresarDatosTorneoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseMoved
+        changeButtonColor(botonSeguirIngresarDatosTorneo,102,102,255);
+    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseMoved
+
+    private void entradaCantidadJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCantidadJugadoresActionPerformed
+
+    private void entradaCantidadJugadoresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusLost
+        organizatorFocusLost (entradaCantidadJugadores, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresFocusLost
+
+    private void entradaCantidadJugadoresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusGained
+        organizatorFocusGained (entradaCantidadJugadores, "Ingresar un numero");
+    }//GEN-LAST:event_entradaCantidadJugadoresFocusGained
+
+    private void entradaCostoTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCostoTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaCostoTorneoActionPerformed
+
+    private void entradaCostoTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusLost
+        organizatorFocusLost (entradaCostoTorneo, "Ingresar costo del torneo");
+    }//GEN-LAST:event_entradaCostoTorneoFocusLost
+
+    private void entradaCostoTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusGained
+        organizatorFocusGained (entradaCostoTorneo, "Ingresar costo del torneo");
+    }//GEN-LAST:event_entradaCostoTorneoFocusGained
+
+    private void entradaNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entradaNombreTorneoActionPerformed
+
+    private void entradaNombreTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusLost
+        organizatorFocusLost (entradaNombreTorneo, "Ingresar nombre del torneo");
+    }//GEN-LAST:event_entradaNombreTorneoFocusLost
+
+    private void entradaNombreTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusGained
+        organizatorFocusGained (entradaNombreTorneo, "Ingresar nombre del torneo");
+    }//GEN-LAST:event_entradaNombreTorneoFocusGained
+
+    private void jPanel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel32MouseClicked
+
+    private void calendar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calendar1PropertyChange
+
+    }//GEN-LAST:event_calendar1PropertyChange
+
+    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
+
+    }//GEN-LAST:event_calendar1MouseClicked
+
     private void botonModificarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarPartidoActionPerformed
         pestania.setSelectedIndex(17);
     }//GEN-LAST:event_botonModificarPartidoActionPerformed
+
+    private void botonModificarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseExited
+        changeButtonColor(botonModificarPartido,30,25,161);
+    }//GEN-LAST:event_botonModificarPartidoMouseExited
+
+    private void botonModificarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonModificarPartidoMouseClicked
+
+    private void botonModificarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseMoved
+        changeButtonColor(botonModificarPartido,102,102,255);
+    }//GEN-LAST:event_botonModificarPartidoMouseMoved
 
     private void botonEliminarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarPartidoActionPerformed
         pestania.setSelectedIndex(18);
     }//GEN-LAST:event_botonEliminarPartidoActionPerformed
 
+    private void botonEliminarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseExited
+        changeButtonColor(botonEliminarPartido,30,25,161);
+    }//GEN-LAST:event_botonEliminarPartidoMouseExited
+
+    private void botonEliminarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonEliminarPartidoMouseClicked
+
+    private void botonEliminarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseMoved
+        changeButtonColor(botonEliminarPartido,102,102,255);
+    }//GEN-LAST:event_botonEliminarPartidoMouseMoved
+
     private void botonAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPartidoActionPerformed
         pestania.setSelectedIndex(16);
     }//GEN-LAST:event_botonAgregarPartidoActionPerformed
+
+    private void botonAgregarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseExited
+        changeButtonColor(botonAgregarPartido,30,25,161);
+    }//GEN-LAST:event_botonAgregarPartidoMouseExited
+
+    private void botonAgregarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonAgregarPartidoMouseClicked
+
+    private void botonAgregarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseMoved
+        changeButtonColor(botonAgregarPartido,102,102,255);
+    }//GEN-LAST:event_botonAgregarPartidoMouseMoved
+
+    private void showPhoneNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPhoneNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showPhoneNumberActionPerformed
+
+    private void showMatchPlayedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMatchPlayedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showMatchPlayedActionPerformed
+
+    private void showCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showCategoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showCategoryActionPerformed
+
+    private void showMatchWonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMatchWonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showMatchWonActionPerformed
+
+    private void showIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showIdActionPerformed
+
+    private void showTeamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTeamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showTeamActionPerformed
+
+    private void showPlayerNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPlayerNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showPlayerNameActionPerformed
+
+    private void showEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showEmailActionPerformed
+
+    private void showDateBirthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showDateBirthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_showDateBirthActionPerformed
+
+    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTextFieldActionPerformed
+
+    private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
+        organizatorFocusLost(searchTextField, "Ingresar cedula del jugador a buscar...");
+    }//GEN-LAST:event_searchTextFieldFocusLost
+
+    private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
+        organizatorFocusGained(searchTextField, "Ingresar cedula del jugador a buscar...");
+    }//GEN-LAST:event_searchTextFieldFocusGained
+
+    private void bottomSearchPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSearchPlayerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bottomSearchPlayerActionPerformed
+
+    private void bottomSearchPlayerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bottomSearchPlayerMouseExited
+        changeButtonColor(bottomSearchPlayer,30,25,161);
+    }//GEN-LAST:event_bottomSearchPlayerMouseExited
+
+    private void bottomSearchPlayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bottomSearchPlayerMouseClicked
+        try{
+            Player player = organizator.searchPlayer(searchTextField);
+            player.showPlayerInformation(showPlayerName, showPhoneNumber, showDateBirth, showId, showEmail, showTeam, showCategory, showMatchPlayed, showMatchWon);
+        } catch (NullPointerException error){
+            showPlayerName.setText("Error, jugador no encontrado");
+        }
+    }//GEN-LAST:event_bottomSearchPlayerMouseClicked
+
+    private void bottomSearchPlayerMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bottomSearchPlayerMouseMoved
+        changeButtonColor(bottomSearchPlayer,102,102,255);
+    }//GEN-LAST:event_bottomSearchPlayerMouseMoved
+
+    private void verTorneo19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseExited
+        changePanelColor(verTorneo19,30,25,161);
+    }//GEN-LAST:event_verTorneo19MouseExited
+
+    private void verTorneo19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseClicked
+        int index = 18, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo19MouseClicked
+
+    private void verTorneo19MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseMoved
+        changePanelColor(verTorneo19,102,102,255);
+    }//GEN-LAST:event_verTorneo19MouseMoved
+
+    private void verTorneo21MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseExited
+        changePanelColor(verTorneo21,30,25,161);
+    }//GEN-LAST:event_verTorneo21MouseExited
+
+    private void verTorneo21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseClicked
+        int index = 20, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo21MouseClicked
+
+    private void verTorneo21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseMoved
+        changePanelColor(verTorneo21,102,102,255);
+    }//GEN-LAST:event_verTorneo21MouseMoved
+
+    private void verTorneo20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseExited
+        changePanelColor(verTorneo20,30,25,161);
+    }//GEN-LAST:event_verTorneo20MouseExited
+
+    private void verTorneo20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseClicked
+        int index = 19, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo20MouseClicked
+
+    private void verTorneo20MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseMoved
+        changePanelColor(verTorneo20,102,102,255);
+    }//GEN-LAST:event_verTorneo20MouseMoved
+
+    private void verTorneo16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseExited
+        changePanelColor(verTorneo16,30,25,161);
+    }//GEN-LAST:event_verTorneo16MouseExited
+
+    private void verTorneo16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseClicked
+        int index = 15, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo16MouseClicked
+
+    private void verTorneo16MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseMoved
+        changePanelColor(verTorneo16,102,102,255);
+    }//GEN-LAST:event_verTorneo16MouseMoved
+
+    private void verTorneo18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseExited
+        changePanelColor(verTorneo18,30,25,161);
+    }//GEN-LAST:event_verTorneo18MouseExited
+
+    private void verTorneo18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseClicked
+        int index = 17, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo18MouseClicked
+
+    private void verTorneo18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseMoved
+        changePanelColor(verTorneo18,102,102,255);
+    }//GEN-LAST:event_verTorneo18MouseMoved
+
+    private void verTorneo17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseExited
+        changePanelColor(verTorneo17,30,25,161);
+    }//GEN-LAST:event_verTorneo17MouseExited
+
+    private void verTorneo17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseClicked
+        int index = 16, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo17MouseClicked
+
+    private void verTorneo17MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseMoved
+        changePanelColor(verTorneo17,102,102,255);
+    }//GEN-LAST:event_verTorneo17MouseMoved
+
+    private void verTorneo13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseExited
+        changePanelColor(verTorneo13,30,25,161);
+    }//GEN-LAST:event_verTorneo13MouseExited
+
+    private void verTorneo13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseClicked
+        int index = 12, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo13MouseClicked
+
+    private void verTorneo13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseMoved
+        changePanelColor(verTorneo13,102,102,255);
+    }//GEN-LAST:event_verTorneo13MouseMoved
+
+    private void verTorneo15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseExited
+        changePanelColor(verTorneo15,30,25,161);
+    }//GEN-LAST:event_verTorneo15MouseExited
+
+    private void verTorneo15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseClicked
+        int index = 14, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo15MouseClicked
+
+    private void verTorneo15MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseMoved
+        changePanelColor(verTorneo15,102,102,255);
+    }//GEN-LAST:event_verTorneo15MouseMoved
+
+    private void verTorneo14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseExited
+        changePanelColor(verTorneo14,30,25,161);
+    }//GEN-LAST:event_verTorneo14MouseExited
+
+    private void verTorneo14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseClicked
+        int index = 13, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo14MouseClicked
+
+    private void verTorneo14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseMoved
+        changePanelColor(verTorneo14,102,102,255);
+    }//GEN-LAST:event_verTorneo14MouseMoved
+
+    private void verTorneo10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseExited
+        changePanelColor(verTorneo10,30,25,161);
+    }//GEN-LAST:event_verTorneo10MouseExited
+
+    private void verTorneo10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseClicked
+        int index = 9, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo10MouseClicked
+
+    private void verTorneo10MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseMoved
+        changePanelColor(verTorneo10,102,102,255);
+    }//GEN-LAST:event_verTorneo10MouseMoved
+
+    private void verTorneo12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseExited
+        changePanelColor(verTorneo12,30,25,161);
+    }//GEN-LAST:event_verTorneo12MouseExited
+
+    private void verTorneo12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseClicked
+        int index = 11, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo12MouseClicked
+
+    private void verTorneo12MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseMoved
+        changePanelColor(verTorneo12,102,102,255);
+    }//GEN-LAST:event_verTorneo12MouseMoved
+
+    private void verTorneo11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseExited
+        changePanelColor(verTorneo11,30,25,161);
+    }//GEN-LAST:event_verTorneo11MouseExited
+
+    private void verTorneo11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseClicked
+        int index = 10, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo11MouseClicked
+
+    private void verTorneo11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseMoved
+        changePanelColor(verTorneo11,102,102,255);
+    }//GEN-LAST:event_verTorneo11MouseMoved
+
+    private void verTorneo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseExited
+        changePanelColor(verTorneo7,30,25,161);
+    }//GEN-LAST:event_verTorneo7MouseExited
+
+    private void verTorneo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseClicked
+        int index = 6, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo7MouseClicked
+
+    private void verTorneo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseMoved
+        changePanelColor(verTorneo7,102,102,255);
+    }//GEN-LAST:event_verTorneo7MouseMoved
+
+    private void verTorneo9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseExited
+        changePanelColor(verTorneo9,30,25,161);
+    }//GEN-LAST:event_verTorneo9MouseExited
+
+    private void verTorneo9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseClicked
+        int index = 8, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo9MouseClicked
+
+    private void verTorneo9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseMoved
+        changePanelColor(verTorneo9,102,102,255);
+    }//GEN-LAST:event_verTorneo9MouseMoved
+
+    private void verTorneo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseExited
+        changePanelColor(verTorneo8,30,25,161);
+    }//GEN-LAST:event_verTorneo8MouseExited
+
+    private void verTorneo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseClicked
+        int index = 7, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo8MouseClicked
+
+    private void verTorneo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseMoved
+        changePanelColor(verTorneo8,102,102,255);
+    }//GEN-LAST:event_verTorneo8MouseMoved
+
+    private void verTorneo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseExited
+        changePanelColor(verTorneo4,30,25,161);
+    }//GEN-LAST:event_verTorneo4MouseExited
+
+    private void verTorneo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseClicked
+        int index = 3, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo4MouseClicked
+
+    private void verTorneo4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseMoved
+        changePanelColor(verTorneo4,102,102,255);
+    }//GEN-LAST:event_verTorneo4MouseMoved
+
+    private void verTorneo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseExited
+        changePanelColor(verTorneo6,30,25,161);
+    }//GEN-LAST:event_verTorneo6MouseExited
+
+    private void verTorneo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseClicked
+        int index = 5, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo6MouseClicked
+
+    private void verTorneo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseMoved
+        changePanelColor(verTorneo6,102,102,255);
+    }//GEN-LAST:event_verTorneo6MouseMoved
+
+    private void verTorneo5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseExited
+        changePanelColor(verTorneo5,30,25,161);
+    }//GEN-LAST:event_verTorneo5MouseExited
+
+    private void verTorneo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseClicked
+        int index = 4, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo5MouseClicked
+
+    private void verTorneo5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseMoved
+        changePanelColor(verTorneo5,102,102,255);
+    }//GEN-LAST:event_verTorneo5MouseMoved
+
+    private void verTorneo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseExited
+        changePanelColor(verTorneo1,30,25,161);
+    }//GEN-LAST:event_verTorneo1MouseExited
+
+    private void verTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseClicked
+        int index = 0, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo1MouseClicked
+
+    private void verTorneo1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseMoved
+        changePanelColor(verTorneo1,102,102,255);
+    }//GEN-LAST:event_verTorneo1MouseMoved
+
+    private void verTorneo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseExited
+        changePanelColor(verTorneo3,30,25,161);
+    }//GEN-LAST:event_verTorneo3MouseExited
+
+    private void verTorneo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseClicked
+        int index = 2, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo3MouseClicked
+
+    private void verTorneo3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseMoved
+        changePanelColor(verTorneo3,102,102,255);
+    }//GEN-LAST:event_verTorneo3MouseMoved
+
+    private void verTorneo2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseExited
+        changePanelColor(verTorneo2,30,25,161);
+    }//GEN-LAST:event_verTorneo2MouseExited
+
+    private void verTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseClicked
+        int index = 1, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
+        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList());
+        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
+        try{
+            switch(numberGroups){
+                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
+                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
+                default -> pestania.setSelectedIndex(0);
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException error){
+            pestania.setSelectedIndex(0);
+        } finally {
+            currentTournament = organizator.getTournamentList().get(index);
+            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+        }
+    }//GEN-LAST:event_verTorneo2MouseClicked
+
+    private void verTorneo2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseMoved
+        changePanelColor(verTorneo2,102,102,255);
+    }//GEN-LAST:event_verTorneo2MouseMoved
 
     private void botonCrearTorneoSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingleMouseExited
         changePanelColor(botonCrearTorneoSingle,30,25,161);
@@ -5552,1301 +6823,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonCrearTorneoDobleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseMoved
         changePanelColor(botonCrearTorneoDoble,102,102,255);
     }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
-
-    private void entradaEquipoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusGained
-        organizatorFocusGained (entradaEquipoJugadorB, "Ingresar equipo del jugador");
-    }//GEN-LAST:event_entradaEquipoJugadorBFocusGained
-
-    private void entradaEquipoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorBFocusLost
-        organizatorFocusLost (entradaEquipoJugadorB, "Ingresar equipo del jugador");
-    }//GEN-LAST:event_entradaEquipoJugadorBFocusLost
-
-    private void entradaNumeroTelefonoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusGained
-        organizatorFocusGained (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusGained
-
-    private void entradaNumeroTelefonoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorAFocusLost
-        organizatorFocusLost (entradaNumeroTelefonoJugadorA, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorAFocusLost
-
-    private void entradaNumeroTelefonoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusGained
-        organizatorFocusGained (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusGained
-
-    private void entradaNumeroTelefonoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorBFocusLost
-        organizatorFocusLost (entradaNumeroTelefonoJugadorB, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorBFocusLost
-
-    private void entradaFechaNacimientoJugadorAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusGained
-        organizatorFocusGained (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusGained
-
-    private void entradaFechaNacimientoJugadorAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorAFocusLost
-        organizatorFocusLost (entradaFechaNacimientoJugadorA, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorAFocusLost
-
-    private void entradaFechaNacimientoJugadorBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusGained
-        organizatorFocusGained (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusGained
-
-    private void entradaFechaNacimientoJugadorBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorBFocusLost
-        organizatorFocusLost (entradaFechaNacimientoJugadorB, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorBFocusLost
-
-    private void entradaNombreJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusGained
-        organizatorFocusGained (entradaNombreJugador, "Ingresar nombre del jugador");
-    }//GEN-LAST:event_entradaNombreJugadorFocusGained
-
-    private void entradaNombreJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreJugadorFocusLost
-        organizatorFocusLost (entradaNombreJugador, "Ingresar nombre del jugador");
-    }//GEN-LAST:event_entradaNombreJugadorFocusLost
-
-    private void entradaIDJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusGained
-        organizatorFocusGained (entradaIDJugador, "Ingresar numero de cedula del jugador");
-    }//GEN-LAST:event_entradaIDJugadorFocusGained
-
-    private void entradaIDJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaIDJugadorFocusLost
-        organizatorFocusLost (entradaIDJugador, "Ingresar numero de cedula del jugador");
-    }//GEN-LAST:event_entradaIDJugadorFocusLost
-
-    private void entradaNumeroTelefonoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusGained
-        organizatorFocusGained (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusGained
-
-    private void entradaNumeroTelefonoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoJugadorFocusLost
-        organizatorFocusLost (entradaNumeroTelefonoJugador, "Ingresar numero de telefono del jugador");
-    }//GEN-LAST:event_entradaNumeroTelefonoJugadorFocusLost
-
-    private void entradaEmailJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusGained
-        organizatorFocusGained (entradaEmailJugador, "Ingresar correo del jugador");
-    }//GEN-LAST:event_entradaEmailJugadorFocusGained
-
-    private void entradaEmailJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEmailJugadorFocusLost
-        organizatorFocusLost (entradaEmailJugador, "Ingresar correo del jugador");
-    }//GEN-LAST:event_entradaEmailJugadorFocusLost
-
-    private void entradaEquipoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusGained
-        organizatorFocusGained (entradaEquipoJugador, "Ingresar equipo externo del jugador");
-    }//GEN-LAST:event_entradaEquipoJugadorFocusGained
-
-    private void entradaEquipoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaEquipoJugadorFocusLost
-        organizatorFocusLost (entradaEquipoJugador, "Ingresar equipo externo del jugador");
-    }//GEN-LAST:event_entradaEquipoJugadorFocusLost
-
-    private void entradaFechaNacimientoJugadorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusGained
-        organizatorFocusGained (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusGained
-
-    private void entradaFechaNacimientoJugadorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoJugadorFocusLost
-        organizatorFocusLost (entradaFechaNacimientoJugador, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoJugadorFocusLost
-
-    private void opcionesCategoriaCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcionesCategoriaCapitanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_opcionesCategoriaCapitanActionPerformed
-
-    private void entradaNumeroTelefonoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusGained
-        organizatorFocusGained (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
-    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusGained
-
-    private void entradaNumeroTelefonoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNumeroTelefonoCapitanFocusLost
-        organizatorFocusLost (entradaNumeroTelefonoCapitan, "Ingresar numero de telefono del capitan");
-    }//GEN-LAST:event_entradaNumeroTelefonoCapitanFocusLost
-
-    private void entradaCorreoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusGained
-        organizatorFocusGained (entradaCorreoCapitan, "Ingresar correo capitan");
-    }//GEN-LAST:event_entradaCorreoCapitanFocusGained
-
-    private void entradaCorreoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCorreoCapitanFocusLost
-        organizatorFocusLost (entradaCorreoCapitan, "Ingresar correo capitan");
-    }//GEN-LAST:event_entradaCorreoCapitanFocusLost
-
-    private void entradaFechaNacimientoCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusGained
-        organizatorFocusGained (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusGained
-
-    private void entradaFechaNacimientoCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaFechaNacimientoCapitanFocusLost
-        organizatorFocusLost (entradaFechaNacimientoCapitan, "Ingresar fecha de nacimiento (DD-MM-YYYY)");
-    }//GEN-LAST:event_entradaFechaNacimientoCapitanFocusLost
-
-    private void entradaNombreEquipoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusGained
-        organizatorFocusGained (entradaNombreEquipo, "Ingresar nombre del equipo");
-    }//GEN-LAST:event_entradaNombreEquipoFocusGained
-
-    private void entradaNombreEquipoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreEquipoFocusLost
-        organizatorFocusLost (entradaNombreEquipo, "Ingresar nombre del equipo");
-    }//GEN-LAST:event_entradaNombreEquipoFocusLost
-
-    private void entradaNombreCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusGained
-        organizatorFocusGained (entradaNombreCapitan, "Ingresar nombre del capitan");
-    }//GEN-LAST:event_entradaNombreCapitanFocusGained
-
-    private void entradaNombreCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreCapitanFocusLost
-        organizatorFocusLost (entradaNombreCapitan, "Ingresar nombre del capitan");
-    }//GEN-LAST:event_entradaNombreCapitanFocusLost
-
-    private void entradaCedulaCapitanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusGained
-        organizatorFocusGained (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
-    }//GEN-LAST:event_entradaCedulaCapitanFocusGained
-
-    private void entradaCedulaCapitanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCedulaCapitanFocusLost
-        organizatorFocusLost (entradaCedulaCapitan, "Ingresar numero de cedula capitan");
-    }//GEN-LAST:event_entradaCedulaCapitanFocusLost
-
-    private void botonAgregarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseMoved
-        changeButtonColor(botonAgregarJugador,102,102,255);
-    }//GEN-LAST:event_botonAgregarJugadorMouseMoved
-
-    private void botonRegresarIngresarDatosSingleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseMoved
-        changeButtonColor(botonRegresarIngresarDatosSingle,102,102,255);
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseMoved
-
-    private void botonSeguirIngresarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseMoved
-        changeButtonColor(botonSeguirIngresarJugador,102,102,255);
-    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseMoved
-
-    private void botonSeguirIngresarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseExited
-        changeButtonColor(botonSeguirIngresarJugador,30,25,161);
-    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseExited
-
-    private void botonAgregarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadorMouseExited
-        changeButtonColor(botonAgregarJugador,30,25,161);
-    }//GEN-LAST:event_botonAgregarJugadorMouseExited
-
-    private void botonRegresarIngresarDatosSingleMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosSingleMouseExited
-        changeButtonColor(botonRegresarIngresarDatosSingle,30,25,161);
-    }//GEN-LAST:event_botonRegresarIngresarDatosSingleMouseExited
-
-    private void botonConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseMoved
-        changePanelColor(botonConfigurarFaseGrupos,102,102,255);
-    }//GEN-LAST:event_botonConfigurarFaseGruposMouseMoved
-
-    private void botonConfigurarFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseClicked
-        pestania.setSelectedIndex(9);
-    }//GEN-LAST:event_botonConfigurarFaseGruposMouseClicked
-
-    private void botonConfigurarFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonConfigurarFaseGruposMouseExited
-        changePanelColor(botonConfigurarFaseGrupos,30,25,161);
-    }//GEN-LAST:event_botonConfigurarFaseGruposMouseExited
-
-    private void botonTorneoMuerteSubitaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseMoved
-        changePanelColor(botonTorneoMuerteSubita,102,102,255);
-    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseMoved
-
-    private void botonTorneoMuerteSubitaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseClicked
-        pestania.setSelectedIndex(1);
-        newTournament.setGroupsNumber(1);
-        newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
-        organizator.getTournamentList().add(newTournament);
-        newTournament.addTournamentsJson();
-    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseClicked
-
-    private void botonTorneoMuerteSubitaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonTorneoMuerteSubitaMouseExited
-        changePanelColor(botonTorneoMuerteSubita,30,25,161);
-    }//GEN-LAST:event_botonTorneoMuerteSubitaMouseExited
-
-    private void botonFormatoLigaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseMoved
-        changePanelColor(botonFormatoLiga,102,102,255);
-    }//GEN-LAST:event_botonFormatoLigaMouseMoved
-
-    private void botonFormatoLigaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseClicked
-        pestania.setSelectedIndex(1);
-        newTournament.setGroupsNumber(1);
-        newTournament.ticketsForPlayOffJComboBox(ingresarRondaEliminacionDirecta);
-        organizator.getTournamentList().add(newTournament);
-        newTournament.addTournamentsJson();
-    }//GEN-LAST:event_botonFormatoLigaMouseClicked
-
-    private void botonFormatoLigaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonFormatoLigaMouseExited
-        changePanelColor(botonFormatoLiga,30,25,161);
-    }//GEN-LAST:event_botonFormatoLigaMouseExited
-
-    private void entradaCantidadJugadoresPorGrupoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoFocusGained
-        organizatorFocusGained (entradaCantidadJugadoresPorGrupo, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoFocusGained
-
-    private void entradaCantidadJugadoresPorGrupoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoFocusLost
-        organizatorFocusLost (entradaCantidadJugadoresPorGrupo, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoFocusLost
-
-    private void entradaCantidadJugadoresPorGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresPorGrupoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadoresPorGrupoActionPerformed
-
-    private void ingresarCantidadDeGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarCantidadDeGruposActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarCantidadDeGruposActionPerformed
-
-    private void botonSeguirFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseMoved
-        changeButtonColor(botonSeguirFaseGrupos,102,102,255);
-    }//GEN-LAST:event_botonSeguirFaseGruposMouseMoved
-
-    private void botonSeguirFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposMouseExited
-        changeButtonColor(botonSeguirFaseGrupos,30,25,161);
-    }//GEN-LAST:event_botonSeguirFaseGruposMouseExited
-
-    private void botonSeguirFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirFaseGruposActionPerformed
-        List<Group> groupList = new ArrayList<>();
-        int numberGroups = organizatorGetNumberOfGroupsJComboBox(ingresarCantidadDeGrupos);
-        newTournament.setGroupsList(groupList);
-        newTournament.setGroupsNumber(numberGroups);
-        newTournament.createGroups();
-        newTournament.drawGroups();
-        organizator.getTournamentList().add(newTournament);
-        newTournament.addTournamentsJson();
-        pestania.setSelectedIndex(1);
-    }//GEN-LAST:event_botonSeguirFaseGruposActionPerformed
-
-    private void botonRegresarConfigurarFaseGruposMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseMoved
-        changeButtonColor(botonRegresarConfigurarFaseGrupos,102,102,255);
-    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseMoved
-
-    private void botonRegresarConfigurarFaseGruposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseClicked
-        pestania.setSelectedIndex(8);
-    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseClicked
-
-    private void botonRegresarConfigurarFaseGruposMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseExited
-        changeButtonColor(botonRegresarConfigurarFaseGrupos,30,25,161);
-    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseExited
-
-    private void entradaCantidadJugadoresEliminacionDirectaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaFocusGained
-        organizatorFocusGained (entradaCantidadJugadoresEliminacionDirecta, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaFocusGained
-
-    private void entradaCantidadJugadoresEliminacionDirectaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaFocusLost
-        organizatorFocusLost (entradaCantidadJugadoresEliminacionDirecta, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaFocusLost
-
-    private void entradaCantidadJugadoresEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresEliminacionDirectaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadoresEliminacionDirectaActionPerformed
-
-    private void verTorneo2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseMoved
-        changePanelColor(verTorneo2,102,102,255);
-    }//GEN-LAST:event_verTorneo2MouseMoved
-
-    private void verTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseClicked
-        int index = 1, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo2MouseClicked
-
-    private void verTorneo2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo2MouseExited
-        changePanelColor(verTorneo2,30,25,161);
-    }//GEN-LAST:event_verTorneo2MouseExited
-
-    private void verTorneo3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseMoved
-        changePanelColor(verTorneo3,102,102,255);
-    }//GEN-LAST:event_verTorneo3MouseMoved
-
-    private void verTorneo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseClicked
-        int index = 2, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo3MouseClicked
-
-    private void verTorneo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo3MouseExited
-        changePanelColor(verTorneo3,30,25,161);
-    }//GEN-LAST:event_verTorneo3MouseExited
-
-    private void verTorneo1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseMoved
-        changePanelColor(verTorneo1,102,102,255);
-    }//GEN-LAST:event_verTorneo1MouseMoved
-
-    private void verTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseClicked
-        int index = 0, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo1MouseClicked
-
-    private void verTorneo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo1MouseExited
-        changePanelColor(verTorneo1,30,25,161);
-    }//GEN-LAST:event_verTorneo1MouseExited
-
-    private void verTorneo5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseMoved
-        changePanelColor(verTorneo5,102,102,255);
-    }//GEN-LAST:event_verTorneo5MouseMoved
-
-    private void verTorneo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseClicked
-        int index = 4, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo5MouseClicked
-
-    private void verTorneo5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo5MouseExited
-        changePanelColor(verTorneo5,30,25,161);
-    }//GEN-LAST:event_verTorneo5MouseExited
-
-    private void verTorneo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseMoved
-        changePanelColor(verTorneo6,102,102,255);
-    }//GEN-LAST:event_verTorneo6MouseMoved
-
-    private void verTorneo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseClicked
-        int index = 5, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo6MouseClicked
-
-    private void verTorneo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo6MouseExited
-        changePanelColor(verTorneo6,30,25,161);
-    }//GEN-LAST:event_verTorneo6MouseExited
-
-    private void verTorneo4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseMoved
-        changePanelColor(verTorneo4,102,102,255);
-    }//GEN-LAST:event_verTorneo4MouseMoved
-
-    private void verTorneo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseClicked
-        int index = 3, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo4MouseClicked
-
-    private void verTorneo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo4MouseExited
-        changePanelColor(verTorneo4,30,25,161);
-    }//GEN-LAST:event_verTorneo4MouseExited
-
-    private void verTorneo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseMoved
-        changePanelColor(verTorneo8,102,102,255);
-    }//GEN-LAST:event_verTorneo8MouseMoved
-
-    private void verTorneo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseClicked
-        int index = 7, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo8MouseClicked
-
-    private void verTorneo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo8MouseExited
-        changePanelColor(verTorneo8,30,25,161);
-    }//GEN-LAST:event_verTorneo8MouseExited
-
-    private void verTorneo9MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseMoved
-        changePanelColor(verTorneo9,102,102,255);
-    }//GEN-LAST:event_verTorneo9MouseMoved
-
-    private void verTorneo9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseClicked
-        int index = 8, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo9MouseClicked
-
-    private void verTorneo9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo9MouseExited
-        changePanelColor(verTorneo9,30,25,161);
-    }//GEN-LAST:event_verTorneo9MouseExited
-
-    private void verTorneo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseMoved
-        changePanelColor(verTorneo7,102,102,255);
-    }//GEN-LAST:event_verTorneo7MouseMoved
-
-    private void verTorneo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseClicked
-        int index = 6, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo7MouseClicked
-
-    private void verTorneo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo7MouseExited
-        changePanelColor(verTorneo7,30,25,161);
-    }//GEN-LAST:event_verTorneo7MouseExited
-
-    private void verTorneo11MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseMoved
-        changePanelColor(verTorneo11,102,102,255);
-    }//GEN-LAST:event_verTorneo11MouseMoved
-
-    private void verTorneo11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseClicked
-        int index = 10, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo11MouseClicked
-
-    private void verTorneo11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo11MouseExited
-        changePanelColor(verTorneo11,30,25,161);
-    }//GEN-LAST:event_verTorneo11MouseExited
-
-    private void verTorneo12MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseMoved
-        changePanelColor(verTorneo12,102,102,255);
-    }//GEN-LAST:event_verTorneo12MouseMoved
-
-    private void verTorneo12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseClicked
-        int index = 11, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo12MouseClicked
-
-    private void verTorneo12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo12MouseExited
-        changePanelColor(verTorneo12,30,25,161);
-    }//GEN-LAST:event_verTorneo12MouseExited
-
-    private void verTorneo10MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseMoved
-        changePanelColor(verTorneo10,102,102,255);
-    }//GEN-LAST:event_verTorneo10MouseMoved
-
-    private void verTorneo10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseClicked
-        int index = 9, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo10MouseClicked
-
-    private void verTorneo10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo10MouseExited
-        changePanelColor(verTorneo10,30,25,161);
-    }//GEN-LAST:event_verTorneo10MouseExited
-
-    private void verTorneo14MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseMoved
-        changePanelColor(verTorneo14,102,102,255);
-    }//GEN-LAST:event_verTorneo14MouseMoved
-
-    private void verTorneo14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseClicked
-        int index = 13, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo14MouseClicked
-
-    private void verTorneo14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo14MouseExited
-        changePanelColor(verTorneo14,30,25,161);
-    }//GEN-LAST:event_verTorneo14MouseExited
-
-    private void verTorneo15MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseMoved
-        changePanelColor(verTorneo15,102,102,255);
-    }//GEN-LAST:event_verTorneo15MouseMoved
-
-    private void verTorneo15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseClicked
-        int index = 14, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo15MouseClicked
-
-    private void verTorneo15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo15MouseExited
-        changePanelColor(verTorneo15,30,25,161);
-    }//GEN-LAST:event_verTorneo15MouseExited
-
-    private void verTorneo13MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseMoved
-        changePanelColor(verTorneo13,102,102,255);
-    }//GEN-LAST:event_verTorneo13MouseMoved
-
-    private void verTorneo13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseClicked
-        int index = 12, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo13MouseClicked
-
-    private void verTorneo13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo13MouseExited
-        changePanelColor(verTorneo13,30,25,161);
-    }//GEN-LAST:event_verTorneo13MouseExited
-
-    private void verTorneo17MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseMoved
-        changePanelColor(verTorneo17,102,102,255);
-    }//GEN-LAST:event_verTorneo17MouseMoved
-
-    private void verTorneo17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseClicked
-        int index = 16, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo17MouseClicked
-
-    private void verTorneo17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo17MouseExited
-        changePanelColor(verTorneo17,30,25,161);
-    }//GEN-LAST:event_verTorneo17MouseExited
-
-    private void verTorneo18MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseMoved
-        changePanelColor(verTorneo18,102,102,255);
-    }//GEN-LAST:event_verTorneo18MouseMoved
-
-    private void verTorneo18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseClicked
-        int index = 17, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo18MouseClicked
-
-    private void verTorneo18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo18MouseExited
-        changePanelColor(verTorneo18,30,25,161);
-    }//GEN-LAST:event_verTorneo18MouseExited
-
-    private void verTorneo16MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseMoved
-        changePanelColor(verTorneo16,102,102,255);
-    }//GEN-LAST:event_verTorneo16MouseMoved
-
-    private void verTorneo16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseClicked
-        int index = 15, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo16MouseClicked
-
-    private void verTorneo16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo16MouseExited
-        changePanelColor(verTorneo16,30,25,161);
-    }//GEN-LAST:event_verTorneo16MouseExited
-
-    private void verTorneo20MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseMoved
-        changePanelColor(verTorneo20,102,102,255);
-    }//GEN-LAST:event_verTorneo20MouseMoved
-
-    private void verTorneo20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseClicked
-        int index = 19, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo20MouseClicked
-
-    private void verTorneo20MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo20MouseExited
-        changePanelColor(verTorneo20,30,25,161);
-    }//GEN-LAST:event_verTorneo20MouseExited
-
-    private void verTorneo21MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseMoved
-        changePanelColor(verTorneo21,102,102,255);
-    }//GEN-LAST:event_verTorneo21MouseMoved
-
-    private void verTorneo21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseClicked
-        int index = 20, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo21MouseClicked
-
-    private void verTorneo21MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo21MouseExited
-        changePanelColor(verTorneo21,30,25,161);
-    }//GEN-LAST:event_verTorneo21MouseExited
-
-    private void verTorneo19MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseMoved
-        changePanelColor(verTorneo19,102,102,255);
-    }//GEN-LAST:event_verTorneo19MouseMoved
-
-    private void verTorneo19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseClicked
-        int index = 18, numberGroups = whichTournamentShow(index, organizator.getTournamentList());
-        organizatorSeeTournament(pestania, index+1, organizator.getTournamentList()); 
-        organizatorTabbedPanelSeeTournaments(pestania, numberGroups);
-        try{
-            switch(numberGroups){
-                case 1 -> loadTournamentTypeZero(tablaGeneralLiga, organizator.getTournamentList().get(index).getParticipantsList());
-                case 2 -> loadTournamentTypeOne(tablaJugadoresAgregados1, tablaJugadoresAgregados2, tablaJugadoresAgregados3, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 3 -> loadTournamentTypeTwo(tablaJugadoresAgregados4, tablaJugadoresAgregados5, tablaJugadoresAgregados8, tablaJugadoresAgregados9, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 4 -> loadTournamentTypeThree(tablaJugadoresAgregados6, tablaJugadoresAgregados10, tablaJugadoresAgregados12, tablaJugadoresAgregados13, tablaJugadoresAgregados14, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 5 -> loadTournamentTypeFour(tablaJugadoresAgregados15, tablaJugadoresAgregados16, tablaJugadoresAgregados18, tablaJugadoresAgregados21, tablaJugadoresAgregados22, tablaJugadoresAgregados20, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                case 6 -> loadTournamentTypeFive(tablaJugadoresAgregados19, tablaJugadoresAgregados23, tablaJugadoresAgregados25, tablaJugadoresAgregados27, tablaJugadoresAgregados28, tablaJugadoresAgregados29, tablaJugadoresAgregados26, organizator.getTournamentList().get(index).getParticipantsList(), organizator.getTournamentList().get(index).getGroupsList());
-                default -> pestania.setSelectedIndex(0);
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException error){
-            pestania.setSelectedIndex(0);
-        } finally { 
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
-        }
-    }//GEN-LAST:event_verTorneo19MouseClicked
-
-    private void verTorneo19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_verTorneo19MouseExited
-        changePanelColor(verTorneo19,30,25,161);
-    }//GEN-LAST:event_verTorneo19MouseExited
-
-    private void botonSeguirIngresarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarJugadorMouseClicked
-        pestania.setSelectedIndex(8);
-    }//GEN-LAST:event_botonSeguirIngresarJugadorMouseClicked
-
-    private void NombreOrganizadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseMoved
-        NombreOrganizador.setText("ORGANIZADOR");
-    }//GEN-LAST:event_NombreOrganizadorMouseMoved
-
-    private void NombreOrganizadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NombreOrganizadorMouseExited
-        NombreOrganizador.setText(organizator.getName());
-    }//GEN-LAST:event_NombreOrganizadorMouseExited
-
-    private void botonRegresarConfigurarFaseGruposMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposMouseEntered
-
-    private void botonSeguirDuplasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseClicked
-        pestania.setSelectedIndex(8);
-    }//GEN-LAST:event_botonSeguirDuplasMouseClicked
-
-    private void botonSeguirEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseClicked
-        pestania.setSelectedIndex(8);
-    }//GEN-LAST:event_botonSeguirEquipoMouseClicked
-
-    private void botonRegresarConfigurarFaseGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarConfigurarFaseGruposActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarConfigurarFaseGruposActionPerformed
-
-    private void ingresarRondaEliminacionDirectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirectaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirectaActionPerformed
-
-    private void botonRegresarIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoActionPerformed
-
-    private void botonRegresarIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseClicked
-        pestania.setSelectedIndex(0);
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseClicked
-
-    private void botonSeguirIngresarDatosTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoActionPerformed
-
-    private void botonSeguirIngresarDatosTorneoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseClicked
-        newTournament = CreateTournament(entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);
-        List<Player> playerList = new ArrayList<>();
-        newTournament.setParticipantsList(playerList);
-        organizatorCleanTable(tablaJugadoresAgregados);
-        organizatorCleanTable(tablaDuplasAgregadas);
-        organizatorCleanTable(tablaEquiposAgregados);
-        GetUpTournamentFromPartOne(pestania, opcionCrearTorneo, entradaNombreTorneo, entradaCostoTorneo, entradaCantidadJugadores, ingresarRondaEliminacionDirecta);     
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseClicked
-
-    private void entradaCantidadJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadoresActionPerformed
-
-    private void entradaCantidadJugadoresFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusLost
-        organizatorFocusLost (entradaCantidadJugadores, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresFocusLost
-
-    private void entradaCantidadJugadoresFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadoresFocusGained
-        organizatorFocusGained (entradaCantidadJugadores, "Ingresar un numero");
-    }//GEN-LAST:event_entradaCantidadJugadoresFocusGained
-
-    private void entradaCostoTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCostoTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCostoTorneoActionPerformed
-
-    private void entradaCostoTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusLost
-        organizatorFocusLost (entradaCostoTorneo, "Ingresar costo del torneo");
-    }//GEN-LAST:event_entradaCostoTorneoFocusLost
-
-    private void entradaCostoTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCostoTorneoFocusGained
-        organizatorFocusGained (entradaCostoTorneo, "Ingresar costo del torneo");
-    }//GEN-LAST:event_entradaCostoTorneoFocusGained
-
-    private void entradaNombreTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneoActionPerformed
-
-    private void entradaNombreTorneoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusLost
-        organizatorFocusLost (entradaNombreTorneo, "Ingresar nombre del torneo");
-    }//GEN-LAST:event_entradaNombreTorneoFocusLost
-
-    private void entradaNombreTorneoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneoFocusGained
-        organizatorFocusGained (entradaNombreTorneo, "Ingresar nombre del torneo");
-    }//GEN-LAST:event_entradaNombreTorneoFocusGained
-
-    private void ingresarRondaEliminacionDirecta3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirecta3ActionPerformed
-
-    private void botonAgregarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseExited
-        changeButtonColor(botonAgregarPartido,30,25,161);
-    }//GEN-LAST:event_botonAgregarPartidoMouseExited
-
-    private void botonAgregarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseMoved
-        changeButtonColor(botonAgregarPartido,102,102,255);
-    }//GEN-LAST:event_botonAgregarPartidoMouseMoved
-
-    private void botonModificarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseExited
-        changeButtonColor(botonModificarPartido,30,25,161);
-    }//GEN-LAST:event_botonModificarPartidoMouseExited
-
-    private void botonModificarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseMoved
-        changeButtonColor(botonModificarPartido,102,102,255);
-    }//GEN-LAST:event_botonModificarPartidoMouseMoved
-
-    private void botonEliminarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseExited
-        changeButtonColor(botonEliminarPartido,30,25,161);
-    }//GEN-LAST:event_botonEliminarPartidoMouseExited
-
-    private void botonEliminarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseMoved
-        changeButtonColor(botonEliminarPartido,102,102,255);
-    }//GEN-LAST:event_botonEliminarPartidoMouseMoved
-
-    private void botonRegresarIngresarDatosTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseExited
-        changeButtonColor(botonRegresarIngresarDatosTorneo,30,25,161);
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseExited
-
-    private void botonRegresarIngresarDatosTorneoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneoMouseMoved
-        changeButtonColor(botonRegresarIngresarDatosTorneo,102,102,255);
-    }//GEN-LAST:event_botonRegresarIngresarDatosTorneoMouseMoved
-
-    private void botonSeguirIngresarDatosTorneoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseExited
-        changeButtonColor(botonSeguirIngresarDatosTorneo,30,25,161);
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseExited
-
-    private void botonSeguirIngresarDatosTorneoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneoMouseMoved
-        changeButtonColor(botonSeguirIngresarDatosTorneo,102,102,255);
-    }//GEN-LAST:event_botonSeguirIngresarDatosTorneoMouseMoved
-
-    private void botonRegresarIngresarDatosDoblesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseExited
-        changeButtonColor(botonRegresarIngresarDatosDobles,30,25,161);
-    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseExited
-
-    private void botonRegresarIngresarDatosDoblesMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosDoblesMouseMoved
-        changeButtonColor(botonRegresarIngresarDatosDobles,102,102,255);
-    }//GEN-LAST:event_botonRegresarIngresarDatosDoblesMouseMoved
-
-    private void botonAgregarJugadoresDuplaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseExited
-        changeButtonColor(botonAgregarJugadoresDupla,30,25,161);
-    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseExited
-
-    private void botonAgregarJugadoresDuplaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseMoved
-        changeButtonColor(botonAgregarJugadoresDupla,102,102,255);
-    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseMoved
-
-    private void botonSeguirDuplasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseExited
-        changeButtonColor(botonSeguirDuplas,30,25,161);
-    }//GEN-LAST:event_botonSeguirDuplasMouseExited
-
-    private void botonSeguirDuplasMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirDuplasMouseMoved
-        changeButtonColor(botonSeguirDuplas,102,102,255);
-    }//GEN-LAST:event_botonSeguirDuplasMouseMoved
-
-    private void botonRegresarIngresarDatosEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseExited
-        changeButtonColor(botonRegresarIngresarDatosEquipo,30,25,161);
-    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseExited
-
-    private void botonRegresarIngresarDatosEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosEquipoMouseMoved
-        changeButtonColor(botonRegresarIngresarDatosEquipo,102,102,255);
-    }//GEN-LAST:event_botonRegresarIngresarDatosEquipoMouseMoved
-
-    private void botonAgregarEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarEquipoMouseExited
-        changeButtonColor(botonAgregarEquipo,30,25,161);
-    }//GEN-LAST:event_botonAgregarEquipoMouseExited
-
-    private void botonAgregarEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarEquipoMouseMoved
-        changeButtonColor(botonAgregarEquipo,102,102,255);
-    }//GEN-LAST:event_botonAgregarEquipoMouseMoved
-
-    private void botonSeguirEquipoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseExited
-        changeButtonColor(botonSeguirEquipo,30,25,161);
-    }//GEN-LAST:event_botonSeguirEquipoMouseExited
-
-    private void botonSeguirEquipoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirEquipoMouseMoved
-        changeButtonColor(botonSeguirEquipo,102,102,255);
-    }//GEN-LAST:event_botonSeguirEquipoMouseMoved
-
-    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
-
-    }//GEN-LAST:event_calendar1MouseClicked
-   
-    private void jPanel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel32MouseClicked
-
-    private void calendar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calendar1PropertyChange
-   
-    }//GEN-LAST:event_calendar1PropertyChange
-
-    private void botonAgregarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseClicked
- 
-    }//GEN-LAST:event_botonAgregarPartidoMouseClicked
-
-    private void botonModificarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseClicked
-
-    }//GEN-LAST:event_botonModificarPartidoMouseClicked
-
-    private void botonEliminarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseClicked
- 
-    }//GEN-LAST:event_botonEliminarPartidoMouseClicked
-
-    private void actuGeneralTableUnoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUnoMouseMoved
-
-    private void actuGeneralTableUnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseClicked
-        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
-        organizator.updatePlayers();
-    }//GEN-LAST:event_actuGeneralTableUnoMouseClicked
-
-    private void actuGeneralTableUnoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUnoMouseExited
-
-    private void actuGeneralTableUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUnoActionPerformed
-
-    private void actuGeneralTableUno1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno1MouseMoved
-
-    private void actuGeneralTableUno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno1MouseClicked
-
-    private void actuGeneralTableUno1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno1MouseExited
-
-    private void actuGeneralTableUno1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno1ActionPerformed
-
-    private void actuGeneralTableUno2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno2MouseMoved
-
-    private void actuGeneralTableUno2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno2MouseClicked
-
-    private void actuGeneralTableUno2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno2MouseExited
-
-    private void actuGeneralTableUno2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno2ActionPerformed
-
-    private void actuGeneralTableUno3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno3MouseMoved
-
-    private void actuGeneralTableUno3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno3MouseClicked
-
-    private void actuGeneralTableUno3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno3MouseExited
-
-    private void actuGeneralTableUno3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableUno3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableUno3ActionPerformed
-
-    private void actuGeneralTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actuGeneralTableActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actuGeneralTableActionPerformed
-
-    private void actuGeneralTableMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseExited
-        changeButtonColor(actuGeneralTable,30,25,161);
-    }//GEN-LAST:event_actuGeneralTableMouseExited
-
-    private void actuGeneralTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseClicked
-        saveDataPlayerTable(tablaGeneralLiga, currentTournament);
-        organizator.updatePlayers();
-    }//GEN-LAST:event_actuGeneralTableMouseClicked
-
-    private void actuGeneralTableMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actuGeneralTableMouseMoved
-        changeButtonColor(actuGeneralTable,102,102,255);
-    }//GEN-LAST:event_actuGeneralTableMouseMoved
-
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        try{
-            Player player = organizator.searchPlayer(entradaIDJugador);
-            organizatorShowPlayerInformation(entradaNombreJugador, entradaNumeroTelefonoJugador, entradaFechaNacimientoJugador, entradaIDJugador, entradaEmailJugador, entradaEquipoJugador, player);
-        } catch (NullPointerException error) {
-            System.err.println("AVISO. No se encontro el jugador en la lista global");
-        }
-    }//GEN-LAST:event_jLabel12MouseClicked
-
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
-        try{
-            Player player = organizator.searchPlayer(entradaIdJugadorA);
-            organizatorShowPlayerInformation(entradaNombreJugadorA, entradaNumeroTelefonoJugadorA, entradaFechaNacimientoJugadorA, entradaIdJugadorA, entradaEmailJugadorA, entradaEquipoJugadorA, player);
-        } catch (NullPointerException error) {
-            System.err.println("AVISO. No se encontro el jugador en la lista global");
-        }
-    }//GEN-LAST:event_jLabel13MouseClicked
-
-    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        try{
-            Player player = organizator.searchPlayer(entradaIdJugadorB);
-            organizatorShowPlayerInformation(entradaNombreJugadorB, entradaNumeroTelefonoJugadorB, entradaFechaNacimientoJugadorB, entradaIdJugadorB, entradaEmailJugadorB, entradaEquipoJugadorB, player);
-        } catch (NullPointerException error) {
-            System.err.println("AVISO. No se encontro el jugador en la lista global");
-        }  
-    }//GEN-LAST:event_jLabel17MouseClicked
-
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        try{
-            Player player = organizator.searchPlayer(entradaCedulaCapitan);
-            organizatorShowPlayerInformation(entradaNombreCapitan, entradaNumeroTelefonoCapitan, entradaFechaNacimientoCapitan, entradaCedulaCapitan, entradaCorreoCapitan, entradaNombreEquipo, player);
-        } catch (NullPointerException error) {
-            System.err.println("AVISO. No se encontro el jugador en la lista global");
-        }  
-    }//GEN-LAST:event_jLabel18MouseClicked
-
-    private void botonAgregarJugadoresDuplaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarJugadoresDuplaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonAgregarJugadoresDuplaMouseClicked
-
-    private void botonBuscarJugador1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscarJugador1MouseMoved
-
-    private void botonBuscarJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscarJugador1MouseClicked
-
-    private void botonBuscarJugador1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscarJugador1MouseExited
-
-    private void botonBuscarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarJugador1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscarJugador1ActionPerformed
-
-    private void textoBuscarJugador1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugador1FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoBuscarJugador1FocusGained
-
-    private void textoBuscarJugador1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugador1FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoBuscarJugador1FocusLost
-
-    private void textoBuscarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugador1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textoBuscarJugador1ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
-
-    private void mostrarNombre1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNombre1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mostrarNombre1ActionPerformed
-
-    private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField13ActionPerformed
-
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
-
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
-
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
-
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
-
-    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField19ActionPerformed
-  
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JLabel IconoCalendario;
@@ -6861,7 +6838,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonAgregarJugador;
     private javax.swing.JButton botonAgregarJugadoresDupla;
     private javax.swing.JButton botonAgregarPartido;
-    private javax.swing.JButton botonBuscarJugador1;
     private javax.swing.JPanel botonConfigurarFaseGrupos;
     private javax.swing.JPanel botonCrearTorneoDoble;
     private javax.swing.JPanel botonCrearTorneoEquipo;
@@ -6885,6 +6861,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JButton botonSeguirIngresarDatosTorneo;
     private javax.swing.JButton botonSeguirIngresarJugador;
     private javax.swing.JPanel botonTorneoMuerteSubita;
+    private javax.swing.JButton bottomSearchPlayer;
     private raven.calendar.Calendar calendar1;
     private javax.swing.JTextField entradaCantidadJugadores;
     private javax.swing.JTextField entradaCantidadJugadoresEliminacionDirecta;
@@ -7111,7 +7088,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel293;
     private javax.swing.JLabel jLabel294;
     private javax.swing.JLabel jLabel295;
-    private javax.swing.JLabel jLabel296;
     private javax.swing.JLabel jLabel298;
     private javax.swing.JLabel jLabel299;
     private javax.swing.JLabel jLabel30;
@@ -7335,7 +7311,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator54;
     private javax.swing.JSeparator jSeparator55;
     private javax.swing.JSeparator jSeparator56;
-    private javax.swing.JSeparator jSeparator57;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator63;
     private javax.swing.JSeparator jSeparator64;
@@ -7349,16 +7324,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator80;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField mostrarNombre1;
     private javax.swing.JLabel nombreTorneoCero;
     private javax.swing.JLabel nombreTorneoCinco;
     private javax.swing.JLabel nombreTorneoCuatro;
@@ -7372,7 +7337,18 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTabbedPane pestania;
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
+    private javax.swing.JTable playersListTable;
     private javax.swing.JScrollPane searchTab;
+    private javax.swing.JTextField searchTextField;
+    private javax.swing.JTextField showCategory;
+    private javax.swing.JTextField showDateBirth;
+    private javax.swing.JTextField showEmail;
+    private javax.swing.JTextField showId;
+    private javax.swing.JTextField showMatchPlayed;
+    private javax.swing.JTextField showMatchWon;
+    private javax.swing.JTextField showPhoneNumber;
+    private javax.swing.JTextField showPlayerName;
+    private javax.swing.JTextField showTeam;
     private javax.swing.JTable tablaDuplasAgregadas;
     private javax.swing.JTable tablaEquiposAgregados;
     private javax.swing.JTable tablaGeneralLiga;
@@ -7400,7 +7376,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTable tablaJugadoresAgregados28;
     private javax.swing.JTable tablaJugadoresAgregados29;
     private javax.swing.JTable tablaJugadoresAgregados3;
-    private javax.swing.JTable tablaJugadoresAgregados30;
     private javax.swing.JTable tablaJugadoresAgregados4;
     private javax.swing.JTable tablaJugadoresAgregados5;
     private javax.swing.JTable tablaJugadoresAgregados6;
@@ -7408,7 +7383,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTable tablaJugadoresAgregados8;
     private javax.swing.JTable tablaJugadoresAgregados9;
     private javax.swing.JTable tablaPartidos;
-    private javax.swing.JTextField textoBuscarJugador1;
     private javax.swing.JLabel tituloSuperior;
     private javax.swing.JPanel verTorneo1;
     private javax.swing.JPanel verTorneo10;

@@ -50,27 +50,6 @@ public class MenuOrganizatorControl {
         panel.setBackground(new Color(r,g,b));
     }
     
-    public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField categoryField, JTextField teamField, JTextField mathPlayedField, JTextField matchesWonField, Player player){
-        nameField.setText(player.getName());
-        phoneField.setText(player.getPhoneNumber());
-        dateBirthField.setText(player.getDateBirth().toString());
-        idField.setText(player.getId());
-        email.setText(player.getEmail());
-        categoryField.setText(player.getCategory());
-        teamField.setText(player.getTeamName());
-        mathPlayedField.setText(String.valueOf(player.getMatchesPlayed()));
-        matchesWonField.setText(String.valueOf(player.getMatchesWon()));
-    }
-    
-    public static void organizatorShowPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField email, JTextField teamField, Player player){
-        nameField.setText(player.getName());
-        phoneField.setText(player.getPhoneNumber());
-        dateBirthField.setText(player.getDateBirth().toString());
-        idField.setText(player.getId());
-        email.setText(player.getEmail());
-        teamField.setText(player.getTeamName());
-    }
-    
     public static void organizatorCleanTable(JTable table){
         DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();
         defaultTable.setRowCount(0);

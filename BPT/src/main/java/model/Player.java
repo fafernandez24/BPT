@@ -275,4 +275,25 @@ public class Player extends Person{
         jsonPlayer.addPerson(this);
     }
     
+    public void showPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField emailField, JTextField teamField, JTextField categoryField, JTextField matchPlayedField, JTextField matchWonField){
+        nameField.setText(name);
+        phoneField.setText(phoneNumber);
+        dateBirthField.setText(dateBirth.toString());
+        idField.setText(id);
+        emailField.setText(email);
+        teamField.setText(teamName);
+        categoryField.setText(category);
+        matchPlayedField.setText(String.valueOf(matchesPlayed));
+        matchWonField.setText(String.valueOf(matchesWon));
+    }
+    
+    public void showPlayerInformation(JTextField nameField, JTextField phoneField, JTextField dateBirthField, JTextField idField, JTextField emailField, JTextField teamField){
+        nameField.setText(name);
+        phoneField.setText(phoneNumber);
+        dateBirthField.setText(dateBirth.toString());
+        idField.setText(id);
+        emailField.setText(email);
+        teamField.setText(teamName);
+    }
+    
 }
