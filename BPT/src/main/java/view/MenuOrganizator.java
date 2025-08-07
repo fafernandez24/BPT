@@ -8,9 +8,8 @@ import controller.MatchJsonControl;
 import static controller.MenuOrganizatorControl.CreateTournament;
 import static controller.MenuOrganizatorControl.GetUpTournamentFromPartOne;
 import static controller.MenuOrganizatorControl.changeButtonColor;
+import static controller.MenuOrganizatorControl.changeLabelIcon;
 import static controller.MenuOrganizatorControl.changePanelColor;
-import static controller.MenuOrganizatorControl.deleteMatch;
-import static controller.MenuOrganizatorControl.foundMatch;
 import static controller.MenuOrganizatorControl.loadMatchesInTable;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFive;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFour;
@@ -18,6 +17,7 @@ import static controller.MenuOrganizatorControl.loadTournamentTypeOne;
 import static controller.MenuOrganizatorControl.loadTournamentTypeThree;
 import static controller.MenuOrganizatorControl.loadTournamentTypeTwo;
 import static controller.MenuOrganizatorControl.loadTournamentTypeZero;
+import static controller.MenuOrganizatorControl.openMenuDriveTournament;
 import static controller.MenuOrganizatorControl.organizatorFocusGained;
 import static controller.MenuOrganizatorControl.organizatorFocusLost;
 import static controller.MenuOrganizatorControl.organizatorGetNumberOfGroupsJComboBox;
@@ -40,16 +40,12 @@ import model.Match;
 import model.Team;
 
 public class MenuOrganizator extends javax.swing.JFrame {
-        
-    // JSON
-    private final MatchJsonControl jsonMatch = new MatchJsonControl();
 
     // Atributtes
       
     private int opcionCrearTorneo = 0; // 1: single, 2: dobles, 3: equipos
     private final Organizator organizator;
     private Tournament newTournament = new Tournament();
-    private final List<Match> matchList = jsonMatch.allMatches();
     private Tournament currentTournament = new Tournament();
     
     //////////////////
@@ -65,7 +61,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         this.setResizable(true);
         this.setLocationRelativeTo(null);
         this.newIcon();
-        loadMatchesInTable(matchList, tablaPartidos);
     }
 
     private void newIcon(){
@@ -506,6 +501,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel138 = new javax.swing.JLabel();
         entradaCantidadJugadoresEliminacionDirecta = new javax.swing.JTextField();
         jSeparator14 = new javax.swing.JSeparator();
+        jScrollPane6 = new javax.swing.JScrollPane();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane36 = new javax.swing.JScrollPane();
         tablaGeneralLiga = new javax.swing.JTable();
@@ -515,6 +511,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel142 = new javax.swing.JLabel();
         jLabel143 = new javax.swing.JLabel();
         actuGeneralTable = new javax.swing.JButton();
+        jPanel30 = new javax.swing.JPanel();
+        matchBottom = new javax.swing.JPanel();
+        jLabel247 = new javax.swing.JLabel();
+        matchIcon = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -534,6 +534,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel146 = new javax.swing.JLabel();
         jLabel244 = new javax.swing.JLabel();
         actuGeneralTableUno = new javax.swing.JButton();
+        jPanel54 = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
         jPanel18 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
@@ -558,6 +559,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados9 = new javax.swing.JTable();
         jSeparator45 = new javax.swing.JSeparator();
         jLabel251 = new javax.swing.JLabel();
+        jPanel57 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
         jPanel27 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
@@ -620,6 +622,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator56 = new javax.swing.JSeparator();
         jLabel268 = new javax.swing.JLabel();
         actuGeneralTableUno2 = new javax.swing.JButton();
+        jPanel58 = new javax.swing.JPanel();
         jScrollPane43 = new javax.swing.JScrollPane();
         jPanel55 = new javax.swing.JPanel();
         jPanel56 = new javax.swing.JPanel();
@@ -657,6 +660,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator69 = new javax.swing.JSeparator();
         jLabel287 = new javax.swing.JLabel();
         actuGeneralTableUno3 = new javax.swing.JButton();
+        jPanel59 = new javax.swing.JPanel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4095,8 +4099,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         pestania.addTab("tab10", jPanel13);
 
+        jScrollPane6.setBorder(null);
+        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane6.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
         jPanel16.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel16.setPreferredSize(new java.awt.Dimension(1010, 1850));
+        jPanel16.setPreferredSize(new java.awt.Dimension(1010, 780));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaGeneralLiga.setAutoCreateRowSorter(true);
@@ -4123,7 +4131,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaGeneralLiga.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane36.setViewportView(tablaGeneralLiga);
 
-        jPanel16.add(jScrollPane36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, 390));
+        jPanel16.add(jScrollPane36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 940, 410));
 
         jSeparator27.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 940, 30));
@@ -4171,7 +4179,40 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel16.add(actuGeneralTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 190, 140, 40));
 
-        pestania.addTab("tab11", jPanel16);
+        jPanel30.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        matchBottom.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottomMouseMoved(evt);
+            }
+        });
+        matchBottom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottomMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottomMouseExited(evt);
+            }
+        });
+        matchBottom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel247.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel247.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel247.setText("VER PARTIDOS");
+        matchBottom.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom.add(matchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel30.add(matchBottom, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        jPanel16.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 700, 1010, 80));
+
+        jScrollPane6.setViewportView(jPanel16);
+
+        pestania.addTab("tab11", jScrollPane6);
 
         jScrollPane9.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane9.setBorder(null);
@@ -4181,7 +4222,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel17.setPreferredSize(new java.awt.Dimension(1010, 1850));
+        jPanel17.setPreferredSize(new java.awt.Dimension(1010, 1930));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaJugadoresAgregados1.setAutoCreateRowSorter(true);
@@ -4300,6 +4341,21 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel17.add(actuGeneralTableUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1290, 140, 40));
 
+        jPanel54.setBackground(new java.awt.Color(30, 25, 161));
+
+        javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
+        jPanel54.setLayout(jPanel54Layout);
+        jPanel54Layout.setHorizontalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+        );
+        jPanel54Layout.setVerticalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel17.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1850, 1040, 80));
+
         jPanel3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 1800));
 
         jScrollPane9.setViewportView(jPanel3);
@@ -4310,11 +4366,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jScrollPane13.setBorder(null);
         jScrollPane13.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane13.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane13.setPreferredSize(new java.awt.Dimension(1042, 2480));
 
         jPanel18.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel26.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel26.setPreferredSize(new java.awt.Dimension(1010, 2397));
+        jPanel26.setMinimumSize(new java.awt.Dimension(1010, 2480));
+        jPanel26.setPreferredSize(new java.awt.Dimension(1010, 2480));
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaJugadoresAgregados4.setAutoCreateRowSorter(true);
@@ -4452,7 +4510,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel251.setText("TABLA GENERAL");
         jPanel26.add(jLabel251, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
 
-        jPanel18.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1030, 2400));
+        jPanel57.setBackground(new java.awt.Color(30, 25, 161));
+
+        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
+        jPanel57.setLayout(jPanel57Layout);
+        jPanel57Layout.setHorizontalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        jPanel57Layout.setVerticalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel26.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2400, 1030, 80));
+
+        jPanel18.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1030, 2480));
 
         jScrollPane13.setViewportView(jPanel18);
 
@@ -4884,7 +4957,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel52.add(actuGeneralTableUno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 2920, 140, 40));
 
-        jPanel33.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 3500));
+        jPanel58.setBackground(new java.awt.Color(30, 25, 161));
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel52.add(jPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3500, 1030, 80));
+
+        jPanel33.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 3580));
 
         jScrollPane26.setViewportView(jPanel33);
 
@@ -5139,7 +5227,22 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel56.add(actuGeneralTableUno3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 3430, 140, 40));
 
-        jPanel55.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 4000));
+        jPanel59.setBackground(new java.awt.Color(30, 25, 161));
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+
+        jPanel56.add(jPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4000, 1030, 80));
+
+        jPanel55.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 4080));
 
         jScrollPane43.setViewportView(jPanel55);
 
@@ -6823,6 +6926,20 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private void botonCrearTorneoDobleMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoDobleMouseMoved
         changePanelColor(botonCrearTorneoDoble,102,102,255);
     }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
+
+    private void matchBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseExited
+        changePanelColor(matchBottom,0,0,0);
+        changeLabelIcon(matchIcon, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottomMouseExited
+
+    private void matchBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseMoved
+        changePanelColor(matchBottom,102,102,255);
+        changeLabelIcon(matchIcon, "tennis-court.png");
+    }//GEN-LAST:event_matchBottomMouseMoved
+
+    private void matchBottomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseClicked
+        openMenuDriveTournament(currentTournament);
+    }//GEN-LAST:event_matchBottomMouseClicked
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -7051,6 +7168,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel244;
     private javax.swing.JLabel jLabel245;
     private javax.swing.JLabel jLabel246;
+    private javax.swing.JLabel jLabel247;
     private javax.swing.JLabel jLabel248;
     private javax.swing.JLabel jLabel249;
     private javax.swing.JLabel jLabel250;
@@ -7187,6 +7305,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
@@ -7212,8 +7331,12 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel51;
     private javax.swing.JPanel jPanel52;
     private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -7259,6 +7382,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane48;
     private javax.swing.JScrollPane jScrollPane49;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
@@ -7324,6 +7448,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator80;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JPanel matchBottom;
+    private javax.swing.JLabel matchIcon;
     private javax.swing.JLabel nombreTorneoCero;
     private javax.swing.JLabel nombreTorneoCinco;
     private javax.swing.JLabel nombreTorneoCuatro;

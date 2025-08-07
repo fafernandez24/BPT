@@ -42,7 +42,6 @@ public class BPT {
         UIManager.setLookAndFeel(new FlatLightLaf());
         ///////////////////////////////////////////////////////////
        
-        System.out.println(organizatorList.get(0).getTournamentList().get(0).getTournamentName());
         MenuStart openStart = new MenuStart(organizatorList, players, administratorList);
         openStart.setVisible(true);
         

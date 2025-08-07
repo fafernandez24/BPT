@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ import model.Group;
 import model.Match;
 import model.Player;
 import model.Tournament;
+import view.MenuDriveTournament;
 
 /**
  *
@@ -48,6 +50,17 @@ public class MenuOrganizatorControl {
     
     public static void changePanelColor(JPanel panel, int r, int g, int b){
         panel.setBackground(new Color(r,g,b));
+    }
+    
+    public static void changeLabelIcon(JLabel label, String imageName){
+        String url = "/images/"+imageName;
+        ImageIcon icon = new ImageIcon(MenuOrganizatorControl.class.getResource(url));
+        label.setIcon(icon);
+    }
+    
+    public static void openMenuDriveTournament(Tournament tour){
+        MenuDriveTournament openMenu = new MenuDriveTournament(tour);
+        openMenu.setVisible(true);
     }
     
     public static void organizatorCleanTable(JTable table){

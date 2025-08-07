@@ -29,6 +29,7 @@ public class Tournament {
     private List<Player> participantsList;
     private List<Group> groupsList;
     private List<Player> knockOutStage;
+    private List<Match> matchList;
     
     // Methods
     
@@ -49,6 +50,7 @@ public class Tournament {
         this.participantsList = participantsList;
         this.groupsList = groupsList;
         this.knockOutStage = knockOutStage;
+        this.matchList = null;
     }
 
     // Getter Methods
@@ -96,6 +98,10 @@ public class Tournament {
     public int getTicketPlayOff() {
         return ticketPlayOff;
     }
+
+    public List<Match> getMatchList() {
+        return matchList;
+    }
     
     // Setter Methods
 
@@ -142,7 +148,11 @@ public class Tournament {
     public void setTicketPlayOff(int ticketPlayOff) {
         this.ticketPlayOff = ticketPlayOff;
     }
-    
+
+    public void setMatchList(List<Match> matchList) {
+        this.matchList = matchList;
+    }
+
     public void addPlayerTournament(Player player){
         participantsList.add(player);
     }

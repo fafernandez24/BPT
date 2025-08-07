@@ -5,16 +5,18 @@
 package view;
 
 import controller.MatchJsonControl;
+import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.deleteMatch;
 import static controller.MenuOrganizatorControl.foundMatch;
+import static controller.MenuOrganizatorControl.loadMatchesInTable;
 import static controller.TypeBecomeType.StringBecomeLocalDate;
 import java.awt.Image;
 import java.time.LocalDate;
 import java.util.List;
 import javax.swing.ImageIcon;
 import model.Match;
-import model.Organizator;
 import model.Player;
+import model.Tournament;
 
 /**
  *
@@ -27,23 +29,17 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     private final MatchJsonControl jsonMatch = new MatchJsonControl();
     
     // ATTRIBUTES
-    private Organizator organizator;
-    private final List<Player> player;
+    private Tournament tour;
     private final List<Match> matchList = jsonMatch.allMatches();
-
-    /**
-     * Creates new form start
-     * @param organizator
-     * @param player
-     */
-    public MenuDriveTournament(Organizator organizator, List<Player> player) {
-        this.organizator = organizator;
-        this.player = player;
+    
+    public MenuDriveTournament(Tournament tour) {
+        this.tour = tour;
         this.setUndecorated(true);
         initComponents();
         this.setResizable(true);
         this.setLocationRelativeTo(null);
         this.newIcon();
+        loadMatchesInTable(tour.getMatchList(), tablaPartidos);
     }
     
     private void newIcon(){
@@ -59,6 +55,9 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        botonSalida = new javax.swing.JLabel();
+        botonMinimizar = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         tabPanel = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -112,7 +111,16 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         botonRegresarIngresarDatosTorneo3 = new javax.swing.JButton();
         entradaNombreTorneo9 = new javax.swing.JTextField();
         jLabel280 = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaPartidos = new javax.swing.JTable();
+        botonAgregarPartido = new javax.swing.JButton();
+        botonEliminarPartido = new javax.swing.JButton();
+        botonModificarPartido = new javax.swing.JButton();
+        calendar1 = new raven.calendar.Calendar();
 
         jLabel4.setText("jLabel4");
 
@@ -131,6 +139,40 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jLabel9.setText("Break Point Tamanaco");
         jLabel9.setToolTipText("");
         background.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 150, -1));
+
+        botonSalida.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonSalida.setForeground(new java.awt.Color(255, 255, 255));
+        botonSalida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botonSalida.setText("X");
+        botonSalida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSalidaMouseClicked(evt);
+            }
+        });
+        background.add(botonSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, 20, 40));
+
+        botonMinimizar.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonMinimizar.setForeground(new java.awt.Color(255, 255, 255));
+        botonMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        botonMinimizar.setText("__");
+        botonMinimizar.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        botonMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonMinimizarMouseClicked(evt);
+            }
+        });
+        background.add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 50, 40));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
 
         tabPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -609,18 +651,137 @@ public class MenuDriveTournament extends javax.swing.JFrame {
 
         tabPanel.addTab("tab3", jPanel3);
 
-        background.add(tabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 970, 610));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel32.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
+                jPanel32MouseClicked(evt);
             }
         });
-        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel43.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel43.setText("Ver CALENDARIO...");
+        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 920, 10));
+
+        tablaPartidos.setAutoCreateRowSorter(true);
+        tablaPartidos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaPartidos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "JugadorA", "JugadorB", "Primer set", "SegundoSet", "Fecha"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaPartidos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(tablaPartidos);
+
+        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 380, 320));
+
+        botonAgregarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonAgregarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonAgregarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregarPartido.setText("AGREGAR PARTIDO");
+        botonAgregarPartido.setBorder(null);
+        botonAgregarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseMoved(evt);
+            }
+        });
+        botonAgregarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseExited(evt);
+            }
+        });
+        botonAgregarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonAgregarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 140, 40));
+
+        botonEliminarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonEliminarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonEliminarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarPartido.setText("ELIMINAR PARTIDO");
+        botonEliminarPartido.setBorder(null);
+        botonEliminarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseMoved(evt);
+            }
+        });
+        botonEliminarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseExited(evt);
+            }
+        });
+        botonEliminarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonEliminarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
+
+        botonModificarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonModificarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonModificarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonModificarPartido.setText("MODIFICAR PARTIDO");
+        botonModificarPartido.setBorder(null);
+        botonModificarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseMoved(evt);
+            }
+        });
+        botonModificarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseExited(evt);
+            }
+        });
+        botonModificarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonModificarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 160, 40));
+
+        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendar1MouseClicked(evt);
+            }
+        });
+        calendar1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                calendar1PropertyChange(evt);
+            }
+        });
+        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 520, 420));
+
+        tabPanel.addTab("tab0", jPanel32);
+
+        background.add(tabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 970, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -665,14 +826,14 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo1MouseExited
 
     private void botonSeguirIngresarDatosTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo1ActionPerformed
-        Player playerOne = organizator.searchPlayer(entradaNombreTorneo1);
-        Player playerTwo = organizator.searchPlayer(entradaNombreTorneo3);
+        Player playerOne = tour.searchPlayerById(entradaNombreTorneo1.getText());
+        Player playerTwo = tour.searchPlayerById(entradaNombreTorneo3.getText());
         Match match = new Match(playerOne, playerTwo, playerOne, "0-0", "0-0", StringBecomeLocalDate(entradaFechaNacimientoJugador1.getText()));
         jsonMatch.addPerson(match);
         matchList.add(match);
-        tabPanel.setSelectedIndex(3);
+        tabPanel.setSelectedIndex(0);
 
-        // loadMatchesInTable(matchList, tablaPartidos);
+        //loadMatchesInTable(matchList, tablaPartidos);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo1ActionPerformed
 
     private void botonRegresarIngresarDatosTorneo1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo1MouseMoved
@@ -764,15 +925,15 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_modificarMatchMouseExited
 
     private void modificarMatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarMatchActionPerformed
-        Player playerA = organizator.searchPlayer(entradaNombreTorneo2);
-        Player playerB = organizator.searchPlayer(entradaNombreTorneo4);
-        Player winner = organizator.searchPlayer(entradaNombreTorneo5);
+        Player playerA = tour.searchPlayerById(entradaNombreTorneo2.getText());
+        Player playerB = tour.searchPlayerById(entradaNombreTorneo4.getText());
+        Player winner = tour.searchPlayerById(entradaNombreTorneo5.getText());
         String setOne = entradaNombreTorneo6.getText(), setTwo = entradaNombreTorneo7.getText();
         LocalDate date = StringBecomeLocalDate(entradaFechaNacimientoJugador2.getText());
         Match match = new Match(playerA, playerB, winner, setOne, setTwo, date);
         foundMatch(matchList, playerA.getId(), playerB.getId(), match);
         jsonMatch.updatePerson(match);
-        tabPanel.setSelectedIndex(3);
+        tabPanel.setSelectedIndex(0);
 
     }//GEN-LAST:event_modificarMatchActionPerformed
 
@@ -853,10 +1014,10 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo2MouseExited
 
     private void botonSeguirIngresarDatosTorneo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo2ActionPerformed
-        Player playerA = organizator.searchPlayer(entradaNombreTorneo2);
-        Player playerB = organizator.searchPlayer(entradaNombreTorneo4);
+        Player playerA = tour.searchPlayerById(entradaNombreTorneo2.getText());
+        Player playerB = tour.searchPlayerById(entradaNombreTorneo4.getText());
         deleteMatch(matchList, playerA.getId(), playerB.getId());
-        tabPanel.setSelectedIndex(3);
+        tabPanel.setSelectedIndex(0);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo2ActionPerformed
 
     private void botonRegresarIngresarDatosTorneo3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo3MouseMoved
@@ -886,6 +1047,74 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     private void entradaNombreTorneo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_entradaNombreTorneo9ActionPerformed
+
+    private void botonAgregarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseMoved
+        changeButtonColor(botonAgregarPartido,102,102,255);
+    }//GEN-LAST:event_botonAgregarPartidoMouseMoved
+
+    private void botonAgregarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonAgregarPartidoMouseClicked
+
+    private void botonAgregarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAgregarPartidoMouseExited
+        changeButtonColor(botonAgregarPartido,30,25,161);
+    }//GEN-LAST:event_botonAgregarPartidoMouseExited
+
+    private void botonAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPartidoActionPerformed
+        tabPanel.setSelectedIndex(1);
+    }//GEN-LAST:event_botonAgregarPartidoActionPerformed
+
+    private void botonEliminarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseMoved
+        changeButtonColor(botonEliminarPartido,102,102,255);
+    }//GEN-LAST:event_botonEliminarPartidoMouseMoved
+
+    private void botonEliminarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonEliminarPartidoMouseClicked
+
+    private void botonEliminarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEliminarPartidoMouseExited
+        changeButtonColor(botonEliminarPartido,30,25,161);
+    }//GEN-LAST:event_botonEliminarPartidoMouseExited
+
+    private void botonEliminarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarPartidoActionPerformed
+        tabPanel.setSelectedIndex(3);
+    }//GEN-LAST:event_botonEliminarPartidoActionPerformed
+
+    private void botonModificarPartidoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseMoved
+        changeButtonColor(botonModificarPartido,102,102,255);
+    }//GEN-LAST:event_botonModificarPartidoMouseMoved
+
+    private void botonModificarPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseClicked
+
+    }//GEN-LAST:event_botonModificarPartidoMouseClicked
+
+    private void botonModificarPartidoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonModificarPartidoMouseExited
+        changeButtonColor(botonModificarPartido,30,25,161);
+    }//GEN-LAST:event_botonModificarPartidoMouseExited
+
+    private void botonModificarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarPartidoActionPerformed
+        tabPanel.setSelectedIndex(2);
+    }//GEN-LAST:event_botonModificarPartidoActionPerformed
+
+    private void calendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calendar1MouseClicked
+
+    }//GEN-LAST:event_calendar1MouseClicked
+
+    private void calendar1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_calendar1PropertyChange
+
+    }//GEN-LAST:event_calendar1PropertyChange
+
+    private void jPanel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel32MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel32MouseClicked
+
+    private void botonSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalidaMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_botonSalidaMouseClicked
+
+    private void botonMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizarMouseClicked
+        this.setExtendedState(1);
+    }//GEN-LAST:event_botonMinimizarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -940,11 +1169,17 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
     private javax.swing.JPanel background;
+    private javax.swing.JButton botonAgregarPartido;
+    private javax.swing.JButton botonEliminarPartido;
+    private javax.swing.JLabel botonMinimizar;
+    private javax.swing.JButton botonModificarPartido;
     private javax.swing.JButton botonRegresarIngresarDatosTorneo1;
     private javax.swing.JButton botonRegresarIngresarDatosTorneo2;
     private javax.swing.JButton botonRegresarIngresarDatosTorneo3;
+    private javax.swing.JLabel botonSalida;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo1;
     private javax.swing.JButton botonSeguirIngresarDatosTorneo2;
+    private raven.calendar.Calendar calendar1;
     private javax.swing.JTextField entradaFechaNacimientoJugador1;
     private javax.swing.JTextField entradaFechaNacimientoJugador2;
     private javax.swing.JTextField entradaNombreTorneo1;
@@ -975,6 +1210,8 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel6;
@@ -982,6 +1219,8 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel32;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator58;
     private javax.swing.JSeparator jSeparator59;
     private javax.swing.JSeparator jSeparator60;
@@ -994,7 +1233,9 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator75;
     private javax.swing.JSeparator jSeparator76;
     private javax.swing.JSeparator jSeparator77;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JButton modificarMatch;
     private javax.swing.JTabbedPane tabPanel;
+    private javax.swing.JTable tablaPartidos;
     // End of variables declaration//GEN-END:variables
 }

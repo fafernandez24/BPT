@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -178,27 +179,18 @@ public class Player extends Person{
     }
     
     public void calculateMatchAverage(){
-        try {
-            matchAverage = (double)matchesWon/matchesPlayed;
-        } catch (ArithmeticException error) {
-            matchAverage = 0;
-        }
+        if (matchesPlayed != 0) matchAverage = (double)matchesWon/matchesPlayed;
+        else matchAverage = 0.0;
     }
     
     public void calculateSetAverage(){
-        try {
-            setAverage = (double)setsWon/(setsWon+setsLost);
-        } catch (ArithmeticException error){
-            setAverage = 0;
-        }
+        if ((setsWon+setsLost) != 0) setAverage = (double)setsWon/(setsWon+setsLost);
+        else setAverage = 0.0;
     }
     
     public void calculateGameAverage(){
-        try {
-            gameAverage = (double)gamesWon/(gamesWon+gamesLost);
-        } catch (ArithmeticException error) {
-            gameAverage = 0; 
-        }
+        if ((gamesWon+gamesLost) != 0) gameAverage = (double)gamesWon/(gamesWon+gamesLost);
+        else gameAverage = 0.0; 
     }
     
     public void readPlayer(JTextField name,JTextField id, JTextField phoneNumber, JTextField email, JComboBox<String> category, JTextField team, JTextField dateBirth){
