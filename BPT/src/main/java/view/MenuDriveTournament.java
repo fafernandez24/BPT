@@ -59,6 +59,16 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         botonMinimizar = new javax.swing.JLabel();
         Banner = new javax.swing.JLabel();
         tabPanel = new javax.swing.JTabbedPane();
+        jPanel32 = new javax.swing.JPanel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaPartidos = new javax.swing.JTable();
+        botonAgregarPartido = new javax.swing.JButton();
+        botonEliminarPartido = new javax.swing.JButton();
+        botonModificarPartido = new javax.swing.JButton();
+        calendar1 = new raven.calendar.Calendar();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
@@ -111,16 +121,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         botonRegresarIngresarDatosTorneo3 = new javax.swing.JButton();
         entradaNombreTorneo9 = new javax.swing.JTextField();
         jLabel280 = new javax.swing.JLabel();
-        jPanel32 = new javax.swing.JPanel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jSeparator9 = new javax.swing.JSeparator();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tablaPartidos = new javax.swing.JTable();
-        botonAgregarPartido = new javax.swing.JButton();
-        botonEliminarPartido = new javax.swing.JButton();
-        botonModificarPartido = new javax.swing.JButton();
-        calendar1 = new raven.calendar.Calendar();
 
         jLabel4.setText("jLabel4");
 
@@ -176,6 +176,136 @@ public class MenuDriveTournament extends javax.swing.JFrame {
 
         tabPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabPanel.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel32MouseClicked(evt);
+            }
+        });
+        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel43.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
+        jLabel43.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel43.setText("Ver CALENDARIO...");
+        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
+
+        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
+        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 920, 10));
+
+        tablaPartidos.setAutoCreateRowSorter(true);
+        tablaPartidos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        tablaPartidos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "JugadorA", "JugadorB", "Primer set", "SegundoSet", "Fecha"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaPartidos.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(tablaPartidos);
+
+        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 380, 320));
+
+        botonAgregarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonAgregarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonAgregarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonAgregarPartido.setText("AGREGAR PARTIDO");
+        botonAgregarPartido.setBorder(null);
+        botonAgregarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseMoved(evt);
+            }
+        });
+        botonAgregarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonAgregarPartidoMouseExited(evt);
+            }
+        });
+        botonAgregarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonAgregarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 140, 40));
+
+        botonEliminarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonEliminarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonEliminarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonEliminarPartido.setText("ELIMINAR PARTIDO");
+        botonEliminarPartido.setBorder(null);
+        botonEliminarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseMoved(evt);
+            }
+        });
+        botonEliminarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonEliminarPartidoMouseExited(evt);
+            }
+        });
+        botonEliminarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonEliminarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
+
+        botonModificarPartido.setBackground(new java.awt.Color(36, 20, 188));
+        botonModificarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        botonModificarPartido.setForeground(new java.awt.Color(255, 255, 255));
+        botonModificarPartido.setText("MODIFICAR PARTIDO");
+        botonModificarPartido.setBorder(null);
+        botonModificarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseMoved(evt);
+            }
+        });
+        botonModificarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonModificarPartidoMouseExited(evt);
+            }
+        });
+        botonModificarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarPartidoActionPerformed(evt);
+            }
+        });
+        jPanel32.add(botonModificarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 160, 40));
+
+        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                calendar1MouseClicked(evt);
+            }
+        });
+        calendar1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                calendar1PropertyChange(evt);
+            }
+        });
+        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 520, 420));
+
+        tabPanel.addTab("tab0", jPanel32);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -650,136 +780,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jPanel3.add(jLabel280, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, -1, 30));
 
         tabPanel.addTab("tab3", jPanel3);
-
-        jPanel32.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel32.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel32MouseClicked(evt);
-            }
-        });
-        jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel43.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel43.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
-        jLabel43.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel43.setText("Ver CALENDARIO...");
-        jPanel32.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, -1, 60));
-
-        jLabel44.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
-        jPanel32.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-        jPanel32.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 920, 10));
-
-        tablaPartidos.setAutoCreateRowSorter(true);
-        tablaPartidos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        tablaPartidos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "JugadorA", "JugadorB", "Primer set", "SegundoSet", "Fecha"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaPartidos.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(tablaPartidos);
-
-        jPanel32.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 380, 320));
-
-        botonAgregarPartido.setBackground(new java.awt.Color(36, 20, 188));
-        botonAgregarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonAgregarPartido.setForeground(new java.awt.Color(255, 255, 255));
-        botonAgregarPartido.setText("AGREGAR PARTIDO");
-        botonAgregarPartido.setBorder(null);
-        botonAgregarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonAgregarPartidoMouseMoved(evt);
-            }
-        });
-        botonAgregarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonAgregarPartidoMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonAgregarPartidoMouseExited(evt);
-            }
-        });
-        botonAgregarPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAgregarPartidoActionPerformed(evt);
-            }
-        });
-        jPanel32.add(botonAgregarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, 140, 40));
-
-        botonEliminarPartido.setBackground(new java.awt.Color(36, 20, 188));
-        botonEliminarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonEliminarPartido.setForeground(new java.awt.Color(255, 255, 255));
-        botonEliminarPartido.setText("ELIMINAR PARTIDO");
-        botonEliminarPartido.setBorder(null);
-        botonEliminarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonEliminarPartidoMouseMoved(evt);
-            }
-        });
-        botonEliminarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonEliminarPartidoMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonEliminarPartidoMouseExited(evt);
-            }
-        });
-        botonEliminarPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonEliminarPartidoActionPerformed(evt);
-            }
-        });
-        jPanel32.add(botonEliminarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 630, 140, 40));
-
-        botonModificarPartido.setBackground(new java.awt.Color(36, 20, 188));
-        botonModificarPartido.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        botonModificarPartido.setForeground(new java.awt.Color(255, 255, 255));
-        botonModificarPartido.setText("MODIFICAR PARTIDO");
-        botonModificarPartido.setBorder(null);
-        botonModificarPartido.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonModificarPartidoMouseMoved(evt);
-            }
-        });
-        botonModificarPartido.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonModificarPartidoMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonModificarPartidoMouseExited(evt);
-            }
-        });
-        botonModificarPartido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonModificarPartidoActionPerformed(evt);
-            }
-        });
-        jPanel32.add(botonModificarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 630, 160, 40));
-
-        calendar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                calendar1MouseClicked(evt);
-            }
-        });
-        calendar1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                calendar1PropertyChange(evt);
-            }
-        });
-        jPanel32.add(calendar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 520, 420));
-
-        tabPanel.addTab("tab0", jPanel32);
 
         background.add(tabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 970, 610));
 

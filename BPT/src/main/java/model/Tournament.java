@@ -6,6 +6,8 @@ package model;
 
 import controller.TournamentJsonControl;
 import static controller.TypeBecomeType.JComboBoxBecomeString;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JComboBox;
@@ -29,7 +31,7 @@ public class Tournament {
     private List<Player> participantsList;
     private List<Group> groupsList;
     private List<Player> knockOutStage;
-    private List<Match> matchList;
+    private List<Match> matchList = new ArrayList<>();
     
     // Methods
     
@@ -50,7 +52,6 @@ public class Tournament {
         this.participantsList = participantsList;
         this.groupsList = groupsList;
         this.knockOutStage = knockOutStage;
-        this.matchList = null;
     }
 
     // Getter Methods
@@ -166,9 +167,10 @@ public class Tournament {
     }
     
     public void drawGroups(){
-        for (int i = 0; i < participantsList.size(); i++){
+        for (Player player : participantsList) {
             int index = (int) (Math.random() * groupsList.size());
-            groupsList.get(index).getPlayerList().add(participantsList.get(i));        }
+            groupsList.get(index).getPlayerList().add(player);
+        }
     }
     
     public void ticketsForPlayOffJComboBox(JComboBox comboBox){
@@ -182,8 +184,8 @@ public class Tournament {
     }
     
     public Player searchPlayerById(String id){
-        for (int i = 0; i < participantsList.size(); i++){
-            if (participantsList.get(i).getId().equals(id)) return participantsList.get(i);
+        for (Player player : participantsList) {
+            if (player.getId().equals(id)) return player;
         }
         return new Player();
     } 
@@ -191,8 +193,8 @@ public class Tournament {
     @SuppressWarnings("empty-statement")
     public boolean findPlayerById(String id){
         try{
-            for (int i = 0; i < participantsList.size(); i++){
-                if (participantsList.get(i).getId().equals(id)) return false;
+            for (Player player : participantsList) {
+                if (player.getId().equals(id)) return false;
             }
         } catch (NullPointerException error){
             System.out.println("AVISO. Lista vacia");
@@ -202,8 +204,8 @@ public class Tournament {
     } 
     
     public Player updatePlayerGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
-        for (int i = 0; i < participantsList.size(); i++){
-            if (participantsList.get(i).getName().equals(name)) participantsList.get(i).updatePlayer(pj, pg, pp, sg, sp, gg, gp);
+        for (Player player : participantsList) {
+            if (player.getName().equals(name)) player.updatePlayer(pj, pg, pp, sg, sp, gg, gp);
         }
         return new Player();
     } 
