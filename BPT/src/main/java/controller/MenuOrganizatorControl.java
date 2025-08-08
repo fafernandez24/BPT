@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.Group;
 import model.Match;
+import model.Organizator;
 import model.Player;
 import model.Tournament;
 import view.MenuDriveTournament;
@@ -58,9 +59,15 @@ public class MenuOrganizatorControl {
         label.setIcon(icon);
     }
     
-    public static void openMenuDriveTournament(Tournament tour){
-        MenuDriveTournament openMenu = new MenuDriveTournament(tour);
+    public static void openMenuDriveTournament(Tournament tour, Organizator org){
+        MenuDriveTournament openMenu = new MenuDriveTournament(tour, org);
         openMenu.setVisible(true);
+    }
+    
+    public static void openMenuDriveTournamentDeleteTour(Tournament tour, Organizator org){
+        MenuDriveTournament openMenu = new MenuDriveTournament(tour, org);
+        openMenu.setVisible(true);
+        openMenu.getDeleteTournamentTab(4);
     }
     
     public static void organizatorCleanTable(JTable table){

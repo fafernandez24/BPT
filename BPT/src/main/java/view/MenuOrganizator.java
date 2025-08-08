@@ -4,13 +4,11 @@
  */
 package view;
 
-import controller.MatchJsonControl;
 import static controller.MenuOrganizatorControl.CreateTournament;
 import static controller.MenuOrganizatorControl.GetUpTournamentFromPartOne;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.changeLabelIcon;
 import static controller.MenuOrganizatorControl.changePanelColor;
-import static controller.MenuOrganizatorControl.loadMatchesInTable;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFive;
 import static controller.MenuOrganizatorControl.loadTournamentTypeFour;
 import static controller.MenuOrganizatorControl.loadTournamentTypeOne;
@@ -18,6 +16,7 @@ import static controller.MenuOrganizatorControl.loadTournamentTypeThree;
 import static controller.MenuOrganizatorControl.loadTournamentTypeTwo;
 import static controller.MenuOrganizatorControl.loadTournamentTypeZero;
 import static controller.MenuOrganizatorControl.openMenuDriveTournament;
+import static controller.MenuOrganizatorControl.openMenuDriveTournamentDeleteTour;
 import static controller.MenuOrganizatorControl.organizatorFocusGained;
 import static controller.MenuOrganizatorControl.organizatorFocusLost;
 import static controller.MenuOrganizatorControl.organizatorGetNumberOfGroupsJComboBox;
@@ -36,7 +35,6 @@ import static controller.MenuOrganizatorControl.organizatorCleanTable;
 import static controller.MenuOrganizatorControl.saveDataPlayerTable;
 import static controller.MenuOrganizatorControl.showTournamentName;
 import model.Group;
-import model.Match;
 import model.Team;
 
 public class MenuOrganizator extends javax.swing.JFrame {
@@ -120,7 +118,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
         iconoSuperior = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         pestania = new javax.swing.JTabbedPane();
         jPanel25 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -512,9 +509,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel143 = new javax.swing.JLabel();
         actuGeneralTable = new javax.swing.JButton();
         jPanel30 = new javax.swing.JPanel();
-        matchBottom = new javax.swing.JPanel();
+        trashBottom = new javax.swing.JPanel();
         jLabel247 = new javax.swing.JLabel();
+        trashIcon = new javax.swing.JLabel();
+        matchBottom = new javax.swing.JPanel();
+        jLabel254 = new javax.swing.JLabel();
         matchIcon = new javax.swing.JLabel();
+        playersBottom = new javax.swing.JPanel();
+        jLabel269 = new javax.swing.JLabel();
+        playersIcon = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -661,6 +664,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel287 = new javax.swing.JLabel();
         actuGeneralTableUno3 = new javax.swing.JButton();
         jPanel59 = new javax.swing.JPanel();
+        Banner = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1035,17 +1039,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         iconoSuperior.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iconoTorneoMasGrande.png"))); // NOI18N
         jPanel1.add(iconoSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, 80));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
 
         pestania.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4182,6 +4175,32 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel30.setBackground(new java.awt.Color(30, 25, 161));
         jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        trashBottom.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottomMouseMoved(evt);
+            }
+        });
+        trashBottom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottomMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottomMouseExited(evt);
+            }
+        });
+        trashBottom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel247.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel247.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel247.setText("BORRAR TORNEO");
+        trashBottom.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom.add(trashIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel30.add(trashBottom, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
         matchBottom.setBackground(new java.awt.Color(0, 0, 0));
         matchBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -4198,15 +4217,41 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         matchBottom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel247.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jLabel247.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel247.setText("VER PARTIDOS");
-        matchBottom.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+        jLabel254.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel254.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel254.setText("VER PARTIDOS");
+        matchBottom.add(jLabel254, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
 
         matchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
         matchBottom.add(matchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
 
         jPanel30.add(matchBottom, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        playersBottom.setBackground(new java.awt.Color(0, 0, 0));
+        playersBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                playersBottomMouseMoved(evt);
+            }
+        });
+        playersBottom.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                playersBottomMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                playersBottomMouseExited(evt);
+            }
+        });
+        playersBottom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel269.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel269.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel269.setText("JUGADORES");
+        playersBottom.add(jLabel269, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        playersIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-player_1.png"))); // NOI18N
+        playersBottom.add(playersIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel30.add(playersBottom, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 130, -1));
 
         jPanel16.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 700, 1010, 80));
 
@@ -5250,6 +5295,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
 
         jPanel1.add(pestania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 1010, 730));
 
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 1030, 90));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -6279,8 +6335,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo19MouseClicked
 
@@ -6309,8 +6367,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo21MouseClicked
 
@@ -6339,8 +6399,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo20MouseClicked
 
@@ -6369,8 +6431,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo16MouseClicked
 
@@ -6399,8 +6463,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo18MouseClicked
 
@@ -6429,8 +6495,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo17MouseClicked
 
@@ -6459,8 +6527,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo13MouseClicked
 
@@ -6489,8 +6559,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo15MouseClicked
 
@@ -6519,8 +6591,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo14MouseClicked
 
@@ -6549,8 +6623,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo10MouseClicked
 
@@ -6579,8 +6655,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo12MouseClicked
 
@@ -6609,8 +6687,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo11MouseClicked
 
@@ -6639,8 +6719,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo7MouseClicked
 
@@ -6669,8 +6751,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo9MouseClicked
 
@@ -6699,8 +6783,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo8MouseClicked
 
@@ -6729,8 +6815,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo4MouseClicked
 
@@ -6759,8 +6847,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo6MouseClicked
 
@@ -6789,8 +6879,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo5MouseClicked
 
@@ -6819,8 +6911,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo1MouseClicked
 
@@ -6849,8 +6943,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo3MouseClicked
 
@@ -6879,8 +6975,10 @@ public class MenuOrganizator extends javax.swing.JFrame {
         } catch (NullPointerException | IndexOutOfBoundsException error){
             pestania.setSelectedIndex(0);
         } finally {
-            currentTournament = organizator.getTournamentList().get(index);
-            showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            if (index < organizator.getTournamentList().size()){
+                currentTournament = organizator.getTournamentList().get(index);
+                showTournamentName(nombreTorneoCero, nombreTorneoUno, nombreTorneoDos, nombreTorneoTres, nombreTorneoCuatro, nombreTorneoCinco, currentTournament.getTournamentName());
+            }
         }
     }//GEN-LAST:event_verTorneo2MouseClicked
 
@@ -6927,10 +7025,19 @@ public class MenuOrganizator extends javax.swing.JFrame {
         changePanelColor(botonCrearTorneoDoble,102,102,255);
     }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
 
-    private void matchBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseExited
-        changePanelColor(matchBottom,0,0,0);
-        changeLabelIcon(matchIcon, "tennis-court(1).png");
-    }//GEN-LAST:event_matchBottomMouseExited
+    private void trashBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottomMouseExited
+        changePanelColor(trashBottom,0,0,0);
+        changeLabelIcon(trashIcon, "trash.png");
+    }//GEN-LAST:event_trashBottomMouseExited
+
+    private void trashBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottomMouseMoved
+        changePanelColor(trashBottom,102,102,255);
+        changeLabelIcon(trashIcon, "trash(1).png");
+    }//GEN-LAST:event_trashBottomMouseMoved
+
+    private void trashBottomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottomMouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottomMouseClicked
 
     private void matchBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseMoved
         changePanelColor(matchBottom,102,102,255);
@@ -6938,8 +7045,27 @@ public class MenuOrganizator extends javax.swing.JFrame {
     }//GEN-LAST:event_matchBottomMouseMoved
 
     private void matchBottomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseClicked
-        openMenuDriveTournament(currentTournament);
+        openMenuDriveTournament(currentTournament, organizator);
     }//GEN-LAST:event_matchBottomMouseClicked
+
+    private void matchBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseExited
+        changePanelColor(matchBottom,0,0,0);
+        changeLabelIcon(matchIcon, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottomMouseExited
+
+    private void playersBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playersBottomMouseMoved
+        changePanelColor(playersBottom,102,102,255);
+        changeLabelIcon(playersIcon, "tennis-player(1).png");
+    }//GEN-LAST:event_playersBottomMouseMoved
+
+    private void playersBottomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playersBottomMouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_playersBottomMouseClicked
+
+    private void playersBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playersBottomMouseExited
+        changePanelColor(playersBottom,0,0,0);
+        changeLabelIcon(playersIcon, "tennis-player.png");
+    }//GEN-LAST:event_playersBottomMouseExited
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -7175,6 +7301,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel251;
     private javax.swing.JLabel jLabel252;
     private javax.swing.JLabel jLabel253;
+    private javax.swing.JLabel jLabel254;
     private javax.swing.JLabel jLabel255;
     private javax.swing.JLabel jLabel256;
     private javax.swing.JLabel jLabel257;
@@ -7188,6 +7315,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel266;
     private javax.swing.JLabel jLabel267;
     private javax.swing.JLabel jLabel268;
+    private javax.swing.JLabel jLabel269;
     private javax.swing.JLabel jLabel278;
     private javax.swing.JLabel jLabel279;
     private javax.swing.JLabel jLabel28;
@@ -7463,6 +7591,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTabbedPane pestania;
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
+    private javax.swing.JPanel playersBottom;
+    private javax.swing.JLabel playersIcon;
     private javax.swing.JTable playersListTable;
     private javax.swing.JScrollPane searchTab;
     private javax.swing.JTextField searchTextField;
@@ -7510,6 +7640,8 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTable tablaJugadoresAgregados9;
     private javax.swing.JTable tablaPartidos;
     private javax.swing.JLabel tituloSuperior;
+    private javax.swing.JPanel trashBottom;
+    private javax.swing.JLabel trashIcon;
     private javax.swing.JPanel verTorneo1;
     private javax.swing.JPanel verTorneo10;
     private javax.swing.JPanel verTorneo11;
