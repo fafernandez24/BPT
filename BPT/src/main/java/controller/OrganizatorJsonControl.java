@@ -1,26 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import com.google.gson.Gson;
 import static com.fatboyindustrial.gsonjavatime.Converters.registerAll;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import model.Person;
 import model.Organizator;
 
-/**
- *
- * @author Freddy A. Fernández
- */
 public class OrganizatorJsonControl {
     
     private final String fileLocation;
@@ -28,12 +23,29 @@ public class OrganizatorJsonControl {
     private final Gson gson = registerAll(new GsonBuilder()).create();
 
     public OrganizatorJsonControl() {
-        this.fileLocation = "src/main/resources/files/json_organizators.json";
-        try (FileReader reader = new FileReader(fileLocation)) {
-            Type listType = new TypeToken<List<Organizator>>() {}.getType();
-            this.organizators = gson.fromJson(reader, listType);
-            if (this.organizators == null) {
-                this.organizators = new ArrayList<>();
+        // Para ESCRITURA: el archivo estará fuera del JAR, en el home del usuario
+        String userHome = System.getProperty("user.home");
+        this.fileLocation = userHome + File.separator + "BPT" + File.separator + "json_organizators.json";
+
+        try {
+            File file = new File(fileLocation);
+            // Si el archivo no existe, crea una copia desde el recurso empaquetado
+            if (!file.exists()) {
+                file.getParentFile().mkdirs();
+                try (InputStream is = getClass().getResourceAsStream("/files/json_organizators.json")) {
+                    if (is != null) {
+                        Files.copy(is, file.toPath());
+                    } else {
+                        System.err.println("No se encontró el recurso /files/json_organizators.json en el JAR.");
+                    }
+                }
+            }
+            try (FileReader reader = new FileReader(fileLocation)) {
+                Type listType = new TypeToken<List<Organizator>>() {}.getType();
+                this.organizators = gson.fromJson(reader, listType);
+                if (this.organizators == null) {
+                    this.organizators = new ArrayList<>();
+                }
             }
         } catch (IOException e) {
             System.err.println("Error al cargar o parsear el archivo JSON: " + e.getMessage());
@@ -51,7 +63,7 @@ public class OrganizatorJsonControl {
         }
     }
 
-     public boolean addPerson(Person nOrganizator) {
+    public boolean addPerson(Person nOrganizator) {
         organizators.add((Organizator) nOrganizator);
         return updateDocument();
     }

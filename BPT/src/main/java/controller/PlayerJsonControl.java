@@ -8,10 +8,13 @@ import com.google.gson.Gson;
 import static com.fatboyindustrial.gsonjavatime.Converters.registerAll;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import model.Person;
@@ -28,12 +31,29 @@ public class PlayerJsonControl {
     private final Gson gson = registerAll(new GsonBuilder()).create();
 
     public PlayerJsonControl() {
-        this.fileLocation = "src/main/resources/files/json_players.json";
-        try (FileReader reader = new FileReader(fileLocation)) {
-            Type listType = new TypeToken<List<Player>>() {}.getType();
-            this.players = gson.fromJson(reader, listType);
-            if (this.players == null) {
-                this.players = new ArrayList<>();
+        // Archivo editable fuera del JAR, en el home del usuario
+        String userHome = System.getProperty("user.home");
+        this.fileLocation = userHome + File.separator + "BPT" + File.separator + "json_players.json";
+
+        try {
+            File file = new File(fileLocation);
+            // Si no existe, crea una copia desde el recurso empaquetado
+            if (!file.exists()) {
+                file.getParentFile().mkdirs();
+                try (InputStream is = getClass().getResourceAsStream("/files/json_players.json")) {
+                    if (is != null) {
+                        Files.copy(is, file.toPath());
+                    } else {
+                        System.err.println("No se encontró el recurso /files/json_players.json en el JAR.");
+                    }
+                }
+            }
+            try (FileReader reader = new FileReader(fileLocation)) {
+                Type listType = new TypeToken<List<Player>>() {}.getType();
+                this.players = gson.fromJson(reader, listType);
+                if (this.players == null) {
+                    this.players = new ArrayList<>();
+                }
             }
         } catch (IOException e) {
             System.err.println("Error al cargar o parsear el archivo JSON: " + e.getMessage());

@@ -8,10 +8,13 @@ import com.google.gson.Gson;
 import static com.fatboyindustrial.gsonjavatime.Converters.registerAll;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import model.Match;
@@ -27,12 +30,27 @@ public class MatchJsonControl {
     private final Gson gson = registerAll(new GsonBuilder()).create();
 
     public MatchJsonControl() {
-        this.fileLocation = "src/main/resources/files/json_matches.json";
-        try (FileReader reader = new FileReader(fileLocation)) {
-            Type listType = new TypeToken<List<Match>>() {}.getType();
-            this.matches = gson.fromJson(reader, listType);
-            if (this.matches == null) {
-                this.matches = new ArrayList<>();
+        String userHome = System.getProperty("user.home");
+        this.fileLocation = userHome + File.separator + "BPT" + File.separator + "json_matches.json";
+
+        try {
+            File file = new File(fileLocation);
+            if (!file.exists()) {
+                file.getParentFile().mkdirs();
+                try (InputStream is = getClass().getResourceAsStream("/files/json_matches.json")) {
+                    if (is != null) {
+                        Files.copy(is, file.toPath());
+                    } else {
+                        System.err.println("No se encontró el recurso /files/json_matches.json en el JAR.");
+                    }
+                }
+            }
+            try (FileReader reader = new FileReader(fileLocation)) {
+                Type listType = new TypeToken<List<Match>>() {}.getType();
+                this.matches = gson.fromJson(reader, listType);
+                if (this.matches == null) {
+                    this.matches = new ArrayList<>();
+                }
             }
         } catch (IOException e) {
             System.err.println("Error al cargar o parsear el archivo JSON: " + e.getMessage());
@@ -43,6 +61,7 @@ public class MatchJsonControl {
     private boolean updateDocument() {
         try (FileWriter writer = new FileWriter(fileLocation)) {
             gson.toJson(matches, writer);
+            
             return true;
         } catch (IOException e) {
             System.err.println("Error al guardar el archivo JSON: " + e.getMessage());
