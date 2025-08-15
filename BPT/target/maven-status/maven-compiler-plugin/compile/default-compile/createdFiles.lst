@@ -60,7 +60,6 @@ view\MenuOrganizator$28.class
 view\MenuDriveTournament$44.class
 view\MenuOrganizator$2.class
 view\MenuOrganizator$133.class
-view\MenuDriveTournament$59.class
 view\MenuOrganizator$141.class
 view\MenuDriveTournament$36.class
 view\MenuOrganizator$36.class
@@ -269,7 +268,6 @@ view\MenuOrganizator$164.class
 view\MenuOrganizator$5.class
 view\MenuOrganizator$217.class
 view\MenuDriveTournament$7.class
-view\MenuDriveTournament$64.class
 view\MenuOrganizator$88.class
 view\MenuOrganizator$179.class
 view\MenuOrganizator$93.class
@@ -330,7 +328,6 @@ view\MenuOrganizator$61.class
 view\MenuOrganizator$41.class
 view\MenuOrganizator$107.class
 model\DoubleTennis.class
-view\MenuDriveTournament$63.class
 view\MenuOrganizator$219.class
 view\MenuOrganizator$167.class
 view\MenuAdministrator$12.class
@@ -349,7 +346,6 @@ view\MenuOrganizator$108.class
 view\MenuOrganizator$170.class
 view\MenuOrganizator$130.class
 view\MenuDriveTournament$6.class
-view\MenuDriveTournament$62.class
 view\MenuAdministrator$5.class
 view\MenuOrganizator$7.class
 view\MenuStart$5.class
@@ -360,7 +356,6 @@ view\MenuPlayer$52.class
 view\MenuStart$2.class
 view\MenuDriveTournament$51.class
 controller\AdministratorJsonControl$1.class
-view\MenuDriveTournament$61.class
 view\MenuAdministrator$13.class
 view\MenuOrganizator$48.class
 view\MenuOrganizator$96.class
@@ -385,7 +380,6 @@ view\MenuOrganizator$117.class
 view\MenuAdministrator$2.class
 view\MenuOrganizator$99.class
 view\MenuOrganizator$173.class
-view\MenuDriveTournament$60.class
 view\MenuOrganizator$118.class
 view\MenuDriveTournament$3.class
 view\MenuOrganizator$180.class
