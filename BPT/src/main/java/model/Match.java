@@ -161,6 +161,15 @@ public class Match {
         this.finalScore = "0-0";
         readMatchDate(date);  
     }
+    
+    public void getUpdateMatchData(String firstSet, String secondSet, String superTie, String finalScore, boolean tie, Player winner){
+        this.resultFirstSet = firstSet;
+        this.resultSecondSet = secondSet;
+        this.resultSuperTie = superTie;
+        this.finalScore = finalScore;
+        this.superTie = tie;
+        this.winner = winner;  
+    }
      
     public void addMatchTableByDate(JTable table){
         DefaultTableModel defaultTable = (DefaultTableModel) table.getModel();

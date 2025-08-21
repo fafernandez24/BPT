@@ -269,7 +269,6 @@ public class MenuOrganizatorControl {
         try{
             organizatorCleanTable(table);
             for (int i = 0; i < listMatch.size(); i++){
-                System.out.println(listMatch.get(i).getResultFirstSet());
                 listMatch.get(i).addMatchTableByDate(table);
             }
         } catch (NullPointerException error){
@@ -304,29 +303,5 @@ public class MenuOrganizatorControl {
             organizatorUpdatePlayerTable(table, tour, i);
         }
     }
-    
-        
-    public static void foundMatch(List<Match> matchList, String IdOne, String IdTwo, Match edited){
-        try{
-            for(Match m: matchList){
-                if(m.getPlayerA().getId().equals(IdOne) && m.getPlayerA().getId().equals(IdTwo)) m = edited;
-            }
-            System.out.println("Patido editado con exito");
-        } catch (NullPointerException error){
-            System.err.println("AVISO. Lista de partidos vacia");
-        }
-    }
-    
-    public static void deleteMatch(List<Match> matchList, String IdOne, String IdTwo){
-        try{
-            for(Match m: matchList){
-                if(m.getPlayerA().getId().equals(IdOne) && m.getPlayerA().getId().equals(IdTwo)) matchList.remove(m);
-            }
-            System.out.println("Patido editado con exito");
-        } catch (NullPointerException error){
-            System.err.println("AVISO. Lista de partidos vacia");
-        }
-    }
-    
-    
+
 }

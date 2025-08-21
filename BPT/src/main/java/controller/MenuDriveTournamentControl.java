@@ -111,6 +111,8 @@ public class MenuDriveTournamentControl {
         matchDate.setText(String.valueOf(match.getMatchDate()));
         playerASetOne.setSelectedItem(getScoreSetPlayerA(match.getResultFirstSet()));
         playerBSetOne.setSelectedItem(getScoreSetPlayerB(match.getResultFirstSet()));
+        playerASetTwo.setSelectedItem(getScoreSetPlayerA(match.getResultSecondSet()));
+        playerBSetTwo.setSelectedItem(getScoreSetPlayerB(match.getResultSecondSet()));
         getWinner(match, checkWinMatchPlayer1, checkWinMatchPlayer2);
         getSuperTie(match, superTieCheckBox, tiePlayerA, tiePlayerB);
         tiePlayerA.setText(getScoreSetPlayerA(match.getResultSuperTie()));
@@ -134,6 +136,18 @@ public class MenuDriveTournamentControl {
         } catch (NullPointerException error){
             System.err.println("ERROR. No se guardaron correctamente los datos en la tabla general");
         }     
+    }
+    
+    public static void safeMatch(Match match, JComboBox playerASetOne, JComboBox playerBSetOne, JComboBox playerASetTwo, JComboBox playerBSetTwo, JCheckBox checkWinMatchPlayer1, JCheckBox checkWinMatchPlayer2, JCheckBox superTieCheckBox, JTextField playerASuperTie, JTextField playerBSuperTie){
+        String firstSet = JComboBoxBecomeString(playerASetOne) + "-" + JComboBoxBecomeString(playerBSetOne);
+        String secondSet = JComboBoxBecomeString(playerASetTwo) + "-" + JComboBoxBecomeString(playerBSetTwo);
+        String superTieScore = "0-0";
+        boolean superTieBol = superTieCheckBox.isSelected();
+        Player winner = null;
+        if (superTieBol == true) superTieScore = playerASuperTie.getText() + "-" + playerBSuperTie.getText();
+        if (checkWinMatchPlayer1.isSelected() == true && checkWinMatchPlayer2.isSelected() == false) winner = match.getPlayerA();
+        else if (checkWinMatchPlayer1.isSelected() == false && checkWinMatchPlayer2.isSelected() == true) winner = match.getPlayerB();
+        match.getUpdateMatchData(firstSet, secondSet, superTieScore, firstSet, superTieBol, winner);
     }
     
 }

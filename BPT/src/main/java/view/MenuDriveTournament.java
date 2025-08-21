@@ -5,10 +5,14 @@
 package view;
 
 import static controller.MenuDriveTournamentControl.deleteTournament;
+import static controller.MenuDriveTournamentControl.getSuperTie;
 import static controller.MenuDriveTournamentControl.safeChangesOfMatch;
+import static controller.MenuDriveTournamentControl.safeMatch;
 import static controller.MenuOrganizatorControl.changeButtonColor;
 import static controller.MenuOrganizatorControl.loadMatchesInTable;
 import static controller.MenuDriveTournamentControl.showMatch;
+import static controller.MenuOrganizatorControl.organizatorFocusGained;
+import static controller.MenuOrganizatorControl.organizatorFocusLost;
 import java.awt.Color;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -331,7 +335,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 idPlayer1AddMatchActionPerformed(evt);
             }
         });
-        jPanel1.add(idPlayer1AddMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel1.add(idPlayer1AddMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, -1));
         jPanel1.add(jSeparator58, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 350, 10));
         jPanel1.add(jSeparator60, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 330, 10));
 
@@ -402,7 +406,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 idPlayer2AddMatchActionPerformed(evt);
             }
         });
-        jPanel1.add(idPlayer2AddMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        jPanel1.add(idPlayer2AddMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 220, -1));
 
         jLabel145.setBackground(new java.awt.Color(51, 51, 51));
         jLabel145.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -428,7 +432,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 addMatchDateActionPerformed(evt);
             }
         });
-        jPanel1.add(addMatchDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
+        jPanel1.add(addMatchDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 220, -1));
 
         jLabel254.setBackground(new java.awt.Color(51, 51, 51));
         jLabel254.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -465,7 +469,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 dataEnterIdPlayerAActionPerformed(evt);
             }
         });
-        jPanel2.add(dataEnterIdPlayerA, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jPanel2.add(dataEnterIdPlayerA, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 230, -1));
         jPanel2.add(jSeparator59, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 230, 10));
 
         jLabel247.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tamanacoLogoPequenio.png"))); // NOI18N
@@ -498,7 +502,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 dataEnterIdPlayerBActionPerformed(evt);
             }
         });
-        jPanel2.add(dataEnterIdPlayerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, 20));
+        jPanel2.add(dataEnterIdPlayerB, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 230, 20));
         jPanel2.add(jSeparator63, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 230, 10));
 
         modificarMatch.setBackground(new java.awt.Color(36, 20, 188));
@@ -558,7 +562,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
 
         dataEnterDate.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         dataEnterDate.setForeground(new java.awt.Color(153, 153, 153));
-        dataEnterDate.setText("INGRESAR FECHA");
+        dataEnterDate.setText("INGRESAR FECHA (YYYY-MM-DD)");
         dataEnterDate.setBorder(null);
         dataEnterDate.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -573,7 +577,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
                 dataEnterDateActionPerformed(evt);
             }
         });
-        jPanel2.add(dataEnterDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
+        jPanel2.add(dataEnterDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 230, -1));
         jPanel2.add(jSeparator64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 230, 10));
 
         jLabel56.setBackground(new java.awt.Color(51, 51, 51));
@@ -1074,11 +1078,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_BannerMouseClicked
 
     private void idPlayer1AddMatchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idPlayer1AddMatchFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(idPlayer1AddMatch, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_idPlayer1AddMatchFocusGained
 
     private void idPlayer1AddMatchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idPlayer1AddMatchFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(idPlayer1AddMatch, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_idPlayer1AddMatchFocusLost
 
     private void idPlayer1AddMatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlayer1AddMatchActionPerformed
@@ -1126,11 +1130,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_backBottomInAddMatchActionPerformed
 
     private void idPlayer2AddMatchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idPlayer2AddMatchFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(idPlayer2AddMatch, "Ingresar numero de cedula");
     }//GEN-LAST:event_idPlayer2AddMatchFocusGained
 
     private void idPlayer2AddMatchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idPlayer2AddMatchFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(idPlayer2AddMatch, "Ingresar numero de cedula");
     }//GEN-LAST:event_idPlayer2AddMatchFocusLost
 
     private void idPlayer2AddMatchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idPlayer2AddMatchActionPerformed
@@ -1138,11 +1142,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_idPlayer2AddMatchActionPerformed
 
     private void addMatchDateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addMatchDateFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(addMatchDate, "Ingresar fecha (DD-MM-YYYY)");
     }//GEN-LAST:event_addMatchDateFocusGained
 
     private void addMatchDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addMatchDateFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(addMatchDate, "Ingresar fecha (DD-MM-YYYY)");
     }//GEN-LAST:event_addMatchDateFocusLost
 
     private void addMatchDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMatchDateActionPerformed
@@ -1150,11 +1154,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_addMatchDateActionPerformed
 
     private void dataEnterIdPlayerAFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerAFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(dataEnterIdPlayerA, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_dataEnterIdPlayerAFocusGained
 
     private void dataEnterIdPlayerAFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerAFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(dataEnterIdPlayerA, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_dataEnterIdPlayerAFocusLost
 
     private void dataEnterIdPlayerAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerAActionPerformed
@@ -1162,11 +1166,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_dataEnterIdPlayerAActionPerformed
 
     private void dataEnterIdPlayerBFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerBFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(dataEnterIdPlayerB, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_dataEnterIdPlayerBFocusGained
 
     private void dataEnterIdPlayerBFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerBFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(dataEnterIdPlayerB, "Ingresar Numero de Cedula");
     }//GEN-LAST:event_dataEnterIdPlayerBFocusLost
 
     private void dataEnterIdPlayerBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataEnterIdPlayerBActionPerformed
@@ -1374,7 +1378,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo4MouseMoved
 
     private void checkWinMatchPlayer3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkWinMatchPlayer3MouseClicked
-        // TODO add your handling code here:
+        getSuperTie(currentMatch,checkWinMatchPlayer3,dataEnterDeleteTour2,dataEnterDeleteTour1);
     }//GEN-LAST:event_checkWinMatchPlayer3MouseClicked
 
     private void checkWinMatchPlayer3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkWinMatchPlayer3ActionPerformed
@@ -1406,11 +1410,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_dataEnterDeleteTour2ActionPerformed
 
     private void dataEnterDateFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterDateFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(dataEnterDate, "INGRESAR FECHA (YYYY-MM-DD)");
     }//GEN-LAST:event_dataEnterDateFocusGained
 
     private void dataEnterDateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterDateFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(dataEnterDate, "INGRESAR FECHA (YYYY-MM-DD)");
     }//GEN-LAST:event_dataEnterDateFocusLost
 
     private void dataEnterDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataEnterDateActionPerformed
@@ -1422,7 +1426,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7MouseMoved
 
     private void botonRegresarIngresarDatosTorneo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo7MouseClicked
-        this.tour.deleteMatch(playerNameMatch1.getText(), playerNameMatch2.getText(), matchDateLabel.getText());
+        this.tour.deleteMatch(currentMatch);
         loadMatchesInTable(tour.getMatchList(), matchTable);
         tabPanel.setSelectedIndex(0);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7MouseClicked
@@ -1441,6 +1445,9 @@ public class MenuDriveTournament extends javax.swing.JFrame {
 
     private void botonRegresarIngresarDatosTorneo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8MouseClicked
         safeChangesOfMatch(this.tour, this.currentMatch, gamesWonFirstSetPlayer1, gamesWonFirstSetPlayer2, gamesWonSecondSetPlayer1, gamesWonSecondSetPlayer2, checkWinMatchPlayer1, checkWinMatchPlayer2, checkWinMatchPlayer3);
+        safeMatch(this.currentMatch, gamesWonFirstSetPlayer1, gamesWonFirstSetPlayer2, gamesWonSecondSetPlayer1, gamesWonSecondSetPlayer2, checkWinMatchPlayer1, checkWinMatchPlayer2, checkWinMatchPlayer3, dataEnterDeleteTour2, dataEnterDeleteTour1);
+        loadMatchesInTable(tour.getMatchList(), matchTable);
+        tabPanel.setSelectedIndex(0);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo8MouseClicked
 
     private void botonRegresarIngresarDatosTorneo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8MouseExited

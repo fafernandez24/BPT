@@ -236,12 +236,9 @@ public class Tournament {
         return null;
     }
     
-    public void deleteMatch(String idA, String idB, String date){
+    public void deleteMatch(Match match){
         try{
-            for (Match m: this.matchList){
-                String playerAId = m.getPlayerA().getId(), playerBId = m.getPlayerB().getId(), matchDate = String.valueOf(m.getMatchDate());
-                if (playerAId.equals(idA) && playerBId.equals(idB) && matchDate.equals(date)) this.matchList.remove(m);
-            }
+            this.matchList.remove(match);
         } catch (NullPointerException error){
             System.err.println("ERROR. No se pudo borrar el partido");
         }
