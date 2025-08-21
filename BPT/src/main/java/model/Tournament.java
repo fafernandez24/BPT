@@ -201,7 +201,40 @@ public class Tournament {
             return true;
         }
         return true;
-    } 
+    }
+    
+    public void addMatch(Match match){
+        try{
+            matchList.add(match);
+        } catch (NullPointerException error){
+           matchList = new ArrayList<>(); 
+           matchList.add(match);
+        }
+    }
+    
+    public boolean findMatch(String idA, String idB, String date){
+        try{
+            for (Match m: this.matchList){
+                String playerAId = m.getPlayerA().getId(), playerBId = m.getPlayerB().getId(), matchDate = String.valueOf(m.getMatchDate());
+                if (playerAId.equals(idA) && playerBId.equals(idB) && matchDate.equals(date)) return true;
+            }
+        } catch (NullPointerException error){
+            return false;
+        }
+        return false;
+    }
+    
+    public Match searchMatch(String idA, String idB, String date){
+        try{
+            for (Match m: this.matchList){
+                String playerAId = m.getPlayerA().getId(), playerBId = m.getPlayerB().getId(), matchDate = String.valueOf(m.getMatchDate());
+                if (playerAId.equals(idA) && playerBId.equals(idB) && matchDate.equals(date)) return m;
+            }
+        } catch (NullPointerException error){
+            return null;
+        }
+        return null;
+    }
     
     public Player updatePlayerGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
         for (Player player : participantsList) {
