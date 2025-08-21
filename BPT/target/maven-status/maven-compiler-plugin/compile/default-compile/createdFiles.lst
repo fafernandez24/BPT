@@ -53,6 +53,7 @@ controller\MenuDriveTournamentControl.class
 view\MenuOrganizator$60.class
 view\MenuPlayer$42.class
 view\MenuOrganizator$90.class
+view\MenuDriveTournament$71.class
 model\Group.class
 view\MenuDriveTournament$41.class
 view\MenuPlayer$12.class
@@ -66,6 +67,7 @@ view\MenuOrganizator$141.class
 view\MenuDriveTournament$36.class
 view\MenuOrganizator$36.class
 view\MenuOrganizator$136.class
+view\MenuDriveTournament$67.class
 view\MenuOrganizator$10.class
 view\MenuOrganizator$159.class
 view\MenuOrganizator$214.class
@@ -118,6 +120,7 @@ view\MenuOrganizator$188.class
 view\MenuOrganizator$27.class
 view\MenuOrganizator$14.class
 view\MenuOrganizator$195.class
+view\MenuDriveTournament$68.class
 view\MenuDriveTournament$28.class
 view\MenuOrganizator$148.class
 view\MenuPlayer$33.class
@@ -136,6 +139,7 @@ view\MenuPlayer$9.class
 view\MenuPlayer$40.class
 view\MenuOrganizator$82.class
 view\MenuDriveTournament$23.class
+view\MenuDriveTournament$69.class
 tamanaco\tennis\league\bpt\BPT.class
 view\MenuOrganizator$213.class
 view\MenuDriveTournament$34.class
@@ -225,6 +229,7 @@ view\MenuOrganizator$198.class
 view\MenuOrganizator$105.class
 view\MenuOrganizator$37.class
 view\MenuPlayer$7.class
+view\MenuDriveTournament$72.class
 view\MenuStart$11.class
 view\MenuStart$3.class
 view\MenuDriveTournament$32.class
@@ -283,6 +288,7 @@ view\MenuOrganizator$85.class
 view\MenuDriveTournament$66.class
 view\MenuPlayer$37.class
 view\MenuOrganizator$215.class
+view\MenuDriveTournament$70.class
 view\MenuDriveTournament$13.class
 view\MenuAdministrator$9.class
 view\MenuDriveTournament$43.class

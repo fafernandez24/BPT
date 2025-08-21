@@ -236,6 +236,17 @@ public class Tournament {
         return null;
     }
     
+    public void deleteMatch(String idA, String idB, String date){
+        try{
+            for (Match m: this.matchList){
+                String playerAId = m.getPlayerA().getId(), playerBId = m.getPlayerB().getId(), matchDate = String.valueOf(m.getMatchDate());
+                if (playerAId.equals(idA) && playerBId.equals(idB) && matchDate.equals(date)) this.matchList.remove(m);
+            }
+        } catch (NullPointerException error){
+            System.err.println("ERROR. No se pudo borrar el partido");
+        }
+    }
+    
     public Player updatePlayerGroup(String name, int pj, int pg, int pp, int sg, int sp, int gg, int gp){
         for (Player player : participantsList) {
             if (player.getName().equals(name)) player.updatePlayer(pj, pg, pp, sg, sp, gg, gp);

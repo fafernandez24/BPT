@@ -262,6 +262,23 @@ public class Player extends Person{
         calculateGameAverage();
     }
     
+    public void updateMatchesWonAndLostForGame(boolean bol){
+        if (bol == false) matchesLost += 1; 
+        else matchesWon += 1;
+    }
+    
+    public void updatePlayerForMatch(int gamesWon, int gamesLost, boolean win, int setsWon, int setsLost){
+        matchesPlayed =+ 1;
+        updateMatchesWonAndLostForGame(win);
+        this.setsWon = setsWon;
+        this.setsLost = setsLost;
+        this.gamesWon = gamesWon;
+        this.gamesLost = gamesLost;
+        calculateMatchAverage();
+        calculateSetAverage();
+        calculateGameAverage();
+    }
+    
     public void addPlayersJson(){
         PlayerJsonControl jsonPlayer = new PlayerJsonControl(); 
         jsonPlayer.addPerson(this);
