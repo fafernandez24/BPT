@@ -510,9 +510,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel143 = new javax.swing.JLabel();
         actuGeneralTable = new javax.swing.JButton();
         jPanel30 = new javax.swing.JPanel();
-        playerBottom = new javax.swing.JPanel();
-        jLabel247 = new javax.swing.JLabel();
-        playerIcon = new javax.swing.JLabel();
         matchBottom = new javax.swing.JPanel();
         jLabel254 = new javax.swing.JLabel();
         matchIcon = new javax.swing.JLabel();
@@ -539,6 +536,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel244 = new javax.swing.JLabel();
         actuGeneralTableUno = new javax.swing.JButton();
         jPanel54 = new javax.swing.JPanel();
+        jPanel61 = new javax.swing.JPanel();
+        matchBottom2 = new javax.swing.JPanel();
+        jLabel271 = new javax.swing.JLabel();
+        matchIcon2 = new javax.swing.JLabel();
+        trashBottom2 = new javax.swing.JPanel();
+        jLabel272 = new javax.swing.JLabel();
+        trashIcon2 = new javax.swing.JLabel();
         jScrollPane13 = new javax.swing.JScrollPane();
         jPanel18 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
@@ -563,7 +567,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados9 = new javax.swing.JTable();
         jSeparator45 = new javax.swing.JSeparator();
         jLabel251 = new javax.swing.JLabel();
-        jPanel57 = new javax.swing.JPanel();
+        jPanel60 = new javax.swing.JPanel();
+        matchBottom1 = new javax.swing.JPanel();
+        jLabel269 = new javax.swing.JLabel();
+        matchIcon1 = new javax.swing.JLabel();
+        trashBottom1 = new javax.swing.JPanel();
+        jLabel270 = new javax.swing.JLabel();
+        trashIcon1 = new javax.swing.JLabel();
         jScrollPane19 = new javax.swing.JScrollPane();
         jPanel27 = new javax.swing.JPanel();
         jPanel28 = new javax.swing.JPanel();
@@ -593,6 +603,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator50 = new javax.swing.JSeparator();
         jLabel259 = new javax.swing.JLabel();
         actuGeneralTableUno1 = new javax.swing.JButton();
+        jPanel57 = new javax.swing.JPanel();
+        matchBottom3 = new javax.swing.JPanel();
+        jLabel273 = new javax.swing.JLabel();
+        matchIcon3 = new javax.swing.JLabel();
+        trashBottom3 = new javax.swing.JPanel();
+        jLabel274 = new javax.swing.JLabel();
+        trashIcon3 = new javax.swing.JLabel();
         jScrollPane26 = new javax.swing.JScrollPane();
         jPanel33 = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
@@ -626,7 +643,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator56 = new javax.swing.JSeparator();
         jLabel268 = new javax.swing.JLabel();
         actuGeneralTableUno2 = new javax.swing.JButton();
-        jPanel58 = new javax.swing.JPanel();
+        jPanel62 = new javax.swing.JPanel();
+        matchBottom4 = new javax.swing.JPanel();
+        jLabel275 = new javax.swing.JLabel();
+        matchIcon4 = new javax.swing.JLabel();
+        trashBottom4 = new javax.swing.JPanel();
+        jLabel276 = new javax.swing.JLabel();
+        trashIcon4 = new javax.swing.JLabel();
         jScrollPane43 = new javax.swing.JScrollPane();
         jPanel55 = new javax.swing.JPanel();
         jPanel56 = new javax.swing.JPanel();
@@ -664,7 +687,13 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jSeparator69 = new javax.swing.JSeparator();
         jLabel287 = new javax.swing.JLabel();
         actuGeneralTableUno3 = new javax.swing.JButton();
-        jPanel59 = new javax.swing.JPanel();
+        jPanel63 = new javax.swing.JPanel();
+        matchBottom5 = new javax.swing.JPanel();
+        jLabel277 = new javax.swing.JLabel();
+        matchIcon5 = new javax.swing.JLabel();
+        trashBottom5 = new javax.swing.JPanel();
+        jLabel280 = new javax.swing.JLabel();
+        trashIcon5 = new javax.swing.JLabel();
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -4186,32 +4215,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jPanel30.setBackground(new java.awt.Color(30, 25, 161));
         jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        playerBottom.setBackground(new java.awt.Color(0, 0, 0));
-        playerBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                playerBottomMouseMoved(evt);
-            }
-        });
-        playerBottom.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                playerBottomMouseClicked(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                playerBottomMouseExited(evt);
-            }
-        });
-        playerBottom.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel247.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        jLabel247.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel247.setText(" VER JUGADORES");
-        playerBottom.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
-
-        playerIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-player.png"))); // NOI18N
-        playerBottom.add(playerIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
-
-        jPanel30.add(playerBottom, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 50));
-
         matchBottom.setBackground(new java.awt.Color(0, 0, 0));
         matchBottom.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -4323,7 +4326,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados2.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane11.setViewportView(tablaJugadoresAgregados2);
 
-        jPanel17.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, -1));
+        jPanel17.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, 940, 310));
 
         jSeparator20.setForeground(new java.awt.Color(0, 0, 0));
         jPanel17.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 800, 940, 30));
@@ -4349,15 +4352,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados3.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane12.setViewportView(tablaJugadoresAgregados3);
 
-        jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1360, 940, 430));
+        jPanel17.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1260, 940, 400));
 
         jSeparator35.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel17.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1340, 940, 30));
+        jPanel17.add(jSeparator35, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1240, 940, 30));
 
         jLabel144.setBackground(new java.awt.Color(255, 255, 255));
         jLabel144.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
         jLabel144.setText("Tabla General");
-        jPanel17.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1290, -1, 60));
+        jPanel17.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1190, -1, 60));
 
         nombreTorneoUno.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
         nombreTorneoUno.setForeground(new java.awt.Color(30, 25, 161));
@@ -4395,7 +4398,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 actuGeneralTableUnoActionPerformed(evt);
             }
         });
-        jPanel17.add(actuGeneralTableUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1290, 140, 40));
+        jPanel17.add(actuGeneralTableUno, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 1190, 140, 40));
 
         jPanel54.setBackground(new java.awt.Color(30, 25, 161));
 
@@ -4411,6 +4414,63 @@ public class MenuOrganizator extends javax.swing.JFrame {
         );
 
         jPanel17.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1850, 1040, 80));
+
+        jPanel61.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel61.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        matchBottom2.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottom2MouseMoved(evt);
+            }
+        });
+        matchBottom2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottom2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottom2MouseExited(evt);
+            }
+        });
+        matchBottom2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel271.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel271.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel271.setText("VER PARTIDOS");
+        matchBottom2.add(jLabel271, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom2.add(matchIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel61.add(matchBottom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        trashBottom2.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottom2MouseMoved(evt);
+            }
+        });
+        trashBottom2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottom2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottom2MouseExited(evt);
+            }
+        });
+        trashBottom2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel272.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel272.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel272.setText("BORRAR TORNEO");
+        trashBottom2.add(jLabel272, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom2.add(trashIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel61.add(trashBottom2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
+        jPanel17.add(jPanel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1720, 1040, 80));
 
         jPanel3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 1800));
 
@@ -4566,20 +4626,62 @@ public class MenuOrganizator extends javax.swing.JFrame {
         jLabel251.setText("TABLA GENERAL");
         jPanel26.add(jLabel251, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1850, -1, 60));
 
-        jPanel57.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel60.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel60.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
-        jPanel57.setLayout(jPanel57Layout);
-        jPanel57Layout.setHorizontalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
-        );
-        jPanel57Layout.setVerticalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
+        matchBottom1.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottom1MouseMoved(evt);
+            }
+        });
+        matchBottom1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottom1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottom1MouseExited(evt);
+            }
+        });
+        matchBottom1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel26.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2400, 1030, 80));
+        jLabel269.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel269.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel269.setText("VER PARTIDOS");
+        matchBottom1.add(jLabel269, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom1.add(matchIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel60.add(matchBottom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        trashBottom1.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottom1MouseMoved(evt);
+            }
+        });
+        trashBottom1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottom1MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottom1MouseExited(evt);
+            }
+        });
+        trashBottom1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel270.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel270.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel270.setText("BORRAR TORNEO");
+        trashBottom1.add(jLabel270, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom1.add(trashIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel60.add(trashBottom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
+        jPanel26.add(jPanel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2400, 1030, 80));
 
         jPanel18.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1030, 2480));
 
@@ -4723,7 +4825,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados13.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane24.setViewportView(tablaJugadoresAgregados13);
 
-        jPanel28.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, -1));
+        jPanel28.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1920, 940, 340));
 
         jSeparator49.setForeground(new java.awt.Color(0, 0, 0));
         jPanel28.add(jSeparator49, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1900, 940, 30));
@@ -4749,15 +4851,15 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados14.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane25.setViewportView(tablaJugadoresAgregados14);
 
-        jPanel28.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2480, 940, 470));
+        jPanel28.add(jScrollPane25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2380, 940, 470));
 
         jSeparator50.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel28.add(jSeparator50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2460, 940, 30));
+        jPanel28.add(jSeparator50, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2350, 940, 30));
 
         jLabel259.setBackground(new java.awt.Color(255, 255, 255));
         jLabel259.setFont(new java.awt.Font("Bebas Neue", 0, 48)); // NOI18N
         jLabel259.setText("TABLA GENERAL");
-        jPanel28.add(jLabel259, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2410, -1, 60));
+        jPanel28.add(jLabel259, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 2300, -1, 60));
 
         actuGeneralTableUno1.setBackground(new java.awt.Color(30, 25, 161));
         actuGeneralTableUno1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
@@ -4782,7 +4884,64 @@ public class MenuOrganizator extends javax.swing.JFrame {
                 actuGeneralTableUno1ActionPerformed(evt);
             }
         });
-        jPanel28.add(actuGeneralTableUno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 2410, 140, 40));
+        jPanel28.add(actuGeneralTableUno1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 2300, 140, 40));
+
+        jPanel57.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel57.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        matchBottom3.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottom3MouseMoved(evt);
+            }
+        });
+        matchBottom3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottom3MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottom3MouseExited(evt);
+            }
+        });
+        matchBottom3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel273.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel273.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel273.setText("VER PARTIDOS");
+        matchBottom3.add(jLabel273, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom3.add(matchIcon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel57.add(matchBottom3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        trashBottom3.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottom3MouseMoved(evt);
+            }
+        });
+        trashBottom3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottom3MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottom3MouseExited(evt);
+            }
+        });
+        trashBottom3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel274.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel274.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel274.setText("BORRAR TORNEO");
+        trashBottom3.add(jLabel274, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom3.add(trashIcon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel57.add(trashBottom3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
+        jPanel28.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2920, 1040, 80));
 
         jPanel27.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, 3000));
 
@@ -4934,7 +5093,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados20.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane31.setViewportView(tablaJugadoresAgregados20);
 
-        jPanel52.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2990, 940, 470));
+        jPanel52.add(jScrollPane31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2990, 940, 460));
 
         jSeparator55.setForeground(new java.awt.Color(0, 0, 0));
         jPanel52.add(jSeparator55, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 2970, 940, 30));
@@ -5013,20 +5172,62 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel52.add(actuGeneralTableUno2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 2920, 140, 40));
 
-        jPanel58.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel62.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel62.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
-        jPanel58.setLayout(jPanel58Layout);
-        jPanel58Layout.setHorizontalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
-        );
-        jPanel58Layout.setVerticalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
+        matchBottom4.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottom4MouseMoved(evt);
+            }
+        });
+        matchBottom4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottom4MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottom4MouseExited(evt);
+            }
+        });
+        matchBottom4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel52.add(jPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3500, 1030, 80));
+        jLabel275.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel275.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel275.setText("VER PARTIDOS");
+        matchBottom4.add(jLabel275, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom4.add(matchIcon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel62.add(matchBottom4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        trashBottom4.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottom4MouseMoved(evt);
+            }
+        });
+        trashBottom4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottom4MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottom4MouseExited(evt);
+            }
+        });
+        trashBottom4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel276.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel276.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel276.setText("BORRAR TORNEO");
+        trashBottom4.add(jLabel276, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom4.add(trashIcon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel62.add(trashBottom4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
+        jPanel52.add(jPanel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3500, 1030, 80));
 
         jPanel33.add(jPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 3580));
 
@@ -5178,7 +5379,7 @@ public class MenuOrganizator extends javax.swing.JFrame {
         tablaJugadoresAgregados26.setSelectionForeground(new java.awt.Color(102, 0, 102));
         jScrollPane48.setViewportView(tablaJugadoresAgregados26);
 
-        jPanel56.add(jScrollPane48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3500, 940, 470));
+        jPanel56.add(jScrollPane48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3500, 940, 450));
 
         jSeparator67.setForeground(new java.awt.Color(0, 0, 0));
         jPanel56.add(jSeparator67, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 3480, 940, 30));
@@ -5283,20 +5484,65 @@ public class MenuOrganizator extends javax.swing.JFrame {
         });
         jPanel56.add(actuGeneralTableUno3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 3430, 140, 40));
 
-        jPanel59.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel63.setBackground(new java.awt.Color(30, 25, 161));
+        jPanel63.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
-        jPanel59.setLayout(jPanel59Layout);
-        jPanel59Layout.setHorizontalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
-        );
-        jPanel59Layout.setVerticalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
+        matchBottom5.setBackground(new java.awt.Color(0, 0, 0));
+        matchBottom5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                matchBottom5MouseMoved(evt);
+            }
+        });
+        matchBottom5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                matchBottom5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                matchBottom5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                matchBottom5MouseExited(evt);
+            }
+        });
+        matchBottom5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel56.add(jPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4000, 1030, 80));
+        jLabel277.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel277.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel277.setText("VER PARTIDOS");
+        matchBottom5.add(jLabel277, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        matchIcon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tennis-court(1).png"))); // NOI18N
+        matchBottom5.add(matchIcon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel63.add(matchBottom5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 140, 50));
+
+        trashBottom5.setBackground(new java.awt.Color(0, 0, 0));
+        trashBottom5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                trashBottom5MouseMoved(evt);
+            }
+        });
+        trashBottom5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trashBottom5MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                trashBottom5MouseExited(evt);
+            }
+        });
+        trashBottom5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel280.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        jLabel280.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel280.setText("BORRAR TORNEO");
+        trashBottom5.add(jLabel280, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, -1, 50));
+
+        trashIcon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash.png"))); // NOI18N
+        trashBottom5.add(trashIcon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 50));
+
+        jPanel63.add(trashBottom5, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 150, 50));
+
+        jPanel56.add(jPanel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4000, 1030, 80));
 
         jPanel55.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 4080));
 
@@ -7025,20 +7271,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
         changePanelColor(botonCrearTorneoDoble,102,102,255);
     }//GEN-LAST:event_botonCrearTorneoDobleMouseMoved
 
-    private void playerBottomMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playerBottomMouseExited
-        changePanelColor(playerBottom,0,0,0);
-        changeLabelIcon(playerIcon, "tennis-player.png");
-    }//GEN-LAST:event_playerBottomMouseExited
-
-    private void playerBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playerBottomMouseMoved
-        changePanelColor(playerBottom,102,102,255);
-        changeLabelIcon(playerIcon, "tennis-player(1).png");
-    }//GEN-LAST:event_playerBottomMouseMoved
-
-    private void playerBottomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playerBottomMouseClicked
-        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
-    }//GEN-LAST:event_playerBottomMouseClicked
-
     private void matchBottomMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottomMouseMoved
         changePanelColor(matchBottom,102,102,255);
         changeLabelIcon(matchIcon, "tennis-court.png");
@@ -7066,6 +7298,150 @@ public class MenuOrganizator extends javax.swing.JFrame {
         changePanelColor(trashBottom,0,0,0);
         changeLabelIcon(trashIcon, "trash.png");
     }//GEN-LAST:event_trashBottomMouseExited
+
+    private void matchBottom1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom1MouseMoved
+        changePanelColor(matchBottom1,102,102,255);
+        changeLabelIcon(matchIcon1, "tennis-court.png");
+    }//GEN-LAST:event_matchBottom1MouseMoved
+
+    private void matchBottom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom1MouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_matchBottom1MouseClicked
+
+    private void matchBottom1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom1MouseExited
+        changePanelColor(matchBottom1,0,0,0);
+        changeLabelIcon(matchIcon1, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottom1MouseExited
+
+    private void trashBottom1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom1MouseMoved
+        changePanelColor(trashBottom1,102,102,255);
+        changeLabelIcon(trashIcon1, "trash(1).png");
+    }//GEN-LAST:event_trashBottom1MouseMoved
+
+    private void trashBottom1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom1MouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottom1MouseClicked
+
+    private void trashBottom1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom1MouseExited
+        changePanelColor(trashBottom1,0,0,0);
+        changeLabelIcon(trashIcon1, "trash.png");
+    }//GEN-LAST:event_trashBottom1MouseExited
+
+    private void matchBottom2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom2MouseMoved
+        changePanelColor(matchBottom2,102,102,255);
+        changeLabelIcon(matchIcon2, "tennis-court.png");
+    }//GEN-LAST:event_matchBottom2MouseMoved
+
+    private void matchBottom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom2MouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_matchBottom2MouseClicked
+
+    private void matchBottom2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom2MouseExited
+        changePanelColor(matchBottom2,0,0,0);
+        changeLabelIcon(matchIcon2, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottom2MouseExited
+
+    private void trashBottom2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom2MouseMoved
+        changePanelColor(trashBottom2,102,102,255);
+        changeLabelIcon(trashIcon2, "trash(1).png");
+    }//GEN-LAST:event_trashBottom2MouseMoved
+
+    private void trashBottom2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom2MouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottom2MouseClicked
+
+    private void trashBottom2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom2MouseExited
+        changePanelColor(trashBottom2,0,0,0);
+        changeLabelIcon(trashIcon2, "trash.png");
+    }//GEN-LAST:event_trashBottom2MouseExited
+
+    private void matchBottom3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom3MouseMoved
+        changePanelColor(matchBottom3,102,102,255);
+        changeLabelIcon(matchIcon3, "tennis-court.png");
+    }//GEN-LAST:event_matchBottom3MouseMoved
+
+    private void matchBottom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom3MouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_matchBottom3MouseClicked
+
+    private void matchBottom3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom3MouseExited
+        changePanelColor(matchBottom3,0,0,0);
+        changeLabelIcon(matchIcon3, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottom3MouseExited
+
+    private void trashBottom3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom3MouseMoved
+        changePanelColor(trashBottom3,102,102,255);
+        changeLabelIcon(trashIcon3, "trash(1).png");
+    }//GEN-LAST:event_trashBottom3MouseMoved
+
+    private void trashBottom3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom3MouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottom3MouseClicked
+
+    private void trashBottom3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom3MouseExited
+        changePanelColor(trashBottom3,0,0,0);
+        changeLabelIcon(trashIcon3, "trash.png");
+    }//GEN-LAST:event_trashBottom3MouseExited
+
+    private void matchBottom4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom4MouseMoved
+        changePanelColor(matchBottom4,102,102,255);
+        changeLabelIcon(matchIcon4, "tennis-court.png");
+    }//GEN-LAST:event_matchBottom4MouseMoved
+
+    private void matchBottom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom4MouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_matchBottom4MouseClicked
+
+    private void matchBottom4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom4MouseExited
+        changePanelColor(matchBottom4,0,0,0);
+        changeLabelIcon(matchIcon4, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottom4MouseExited
+
+    private void trashBottom4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom4MouseMoved
+        changePanelColor(trashBottom4,102,102,255);
+        changeLabelIcon(trashIcon4, "trash(1).png");
+    }//GEN-LAST:event_trashBottom4MouseMoved
+
+    private void trashBottom4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom4MouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottom4MouseClicked
+
+    private void trashBottom4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom4MouseExited
+        changePanelColor(trashBottom4,0,0,0);
+        changeLabelIcon(trashIcon4, "trash.png");
+    }//GEN-LAST:event_trashBottom4MouseExited
+
+    private void matchBottom5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom5MouseMoved
+        changePanelColor(matchBottom5,102,102,255);
+        changeLabelIcon(matchIcon5, "tennis-court.png");
+    }//GEN-LAST:event_matchBottom5MouseMoved
+
+    private void matchBottom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom5MouseClicked
+        openMenuDriveTournament(currentTournament, organizator);
+    }//GEN-LAST:event_matchBottom5MouseClicked
+
+    private void matchBottom5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom5MouseExited
+        changePanelColor(matchBottom5,0,0,0);
+        changeLabelIcon(matchIcon5, "tennis-court(1).png");
+    }//GEN-LAST:event_matchBottom5MouseExited
+
+    private void trashBottom5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom5MouseMoved
+        changePanelColor(trashBottom5,102,102,255);
+        changeLabelIcon(trashIcon5, "trash(1).png");
+    }//GEN-LAST:event_trashBottom5MouseMoved
+
+    private void trashBottom5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom5MouseClicked
+        openMenuDriveTournamentDeleteTour(currentTournament, organizator);
+    }//GEN-LAST:event_trashBottom5MouseClicked
+
+    private void trashBottom5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trashBottom5MouseExited
+        changePanelColor(trashBottom5,0,0,0);
+        changeLabelIcon(trashIcon5, "trash.png");
+    }//GEN-LAST:event_trashBottom5MouseExited
+
+    private void matchBottom5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_matchBottom5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_matchBottom5MouseEntered
      
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Banner;
@@ -7294,7 +7670,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel244;
     private javax.swing.JLabel jLabel245;
     private javax.swing.JLabel jLabel246;
-    private javax.swing.JLabel jLabel247;
     private javax.swing.JLabel jLabel248;
     private javax.swing.JLabel jLabel249;
     private javax.swing.JLabel jLabel250;
@@ -7316,9 +7691,19 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel266;
     private javax.swing.JLabel jLabel267;
     private javax.swing.JLabel jLabel268;
+    private javax.swing.JLabel jLabel269;
+    private javax.swing.JLabel jLabel270;
+    private javax.swing.JLabel jLabel271;
+    private javax.swing.JLabel jLabel272;
+    private javax.swing.JLabel jLabel273;
+    private javax.swing.JLabel jLabel274;
+    private javax.swing.JLabel jLabel275;
+    private javax.swing.JLabel jLabel276;
+    private javax.swing.JLabel jLabel277;
     private javax.swing.JLabel jLabel278;
     private javax.swing.JLabel jLabel279;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel280;
     private javax.swing.JLabel jLabel281;
     private javax.swing.JLabel jLabel282;
     private javax.swing.JLabel jLabel283;
@@ -7463,9 +7848,11 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel55;
     private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel57;
-    private javax.swing.JPanel jPanel58;
-    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
@@ -7577,7 +7964,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JPanel matchBottom;
+    private javax.swing.JPanel matchBottom1;
+    private javax.swing.JPanel matchBottom2;
+    private javax.swing.JPanel matchBottom3;
+    private javax.swing.JPanel matchBottom4;
+    private javax.swing.JPanel matchBottom5;
     private javax.swing.JLabel matchIcon;
+    private javax.swing.JLabel matchIcon1;
+    private javax.swing.JLabel matchIcon2;
+    private javax.swing.JLabel matchIcon3;
+    private javax.swing.JLabel matchIcon4;
+    private javax.swing.JLabel matchIcon5;
     private javax.swing.JLabel nombreTorneoCero;
     private javax.swing.JLabel nombreTorneoCinco;
     private javax.swing.JLabel nombreTorneoCuatro;
@@ -7591,8 +7988,6 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTabbedPane pestania;
     private javax.swing.JPanel pestaniaCrearTorneoInicio;
     private javax.swing.JPanel pestaniaCrearTorneoInicio1;
-    private javax.swing.JPanel playerBottom;
-    private javax.swing.JLabel playerIcon;
     private javax.swing.JTable playersListTable;
     private javax.swing.JScrollPane searchTab;
     private javax.swing.JTextField searchTextField;
@@ -7641,7 +8036,17 @@ public class MenuOrganizator extends javax.swing.JFrame {
     private javax.swing.JTable tablaPartidos;
     private javax.swing.JLabel tituloSuperior;
     private javax.swing.JPanel trashBottom;
+    private javax.swing.JPanel trashBottom1;
+    private javax.swing.JPanel trashBottom2;
+    private javax.swing.JPanel trashBottom3;
+    private javax.swing.JPanel trashBottom4;
+    private javax.swing.JPanel trashBottom5;
     private javax.swing.JLabel trashIcon;
+    private javax.swing.JLabel trashIcon1;
+    private javax.swing.JLabel trashIcon2;
+    private javax.swing.JLabel trashIcon3;
+    private javax.swing.JLabel trashIcon4;
+    private javax.swing.JLabel trashIcon5;
     private javax.swing.JPanel verTorneo1;
     private javax.swing.JPanel verTorneo10;
     private javax.swing.JPanel verTorneo11;

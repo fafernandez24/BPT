@@ -12,6 +12,7 @@ view\MenuAdministrator$1.class
 view\MenuOrganizator$44.class
 view\MenuOrganizator$84.class
 view\MenuOrganizator$97.class
+view\MenuOrganizator$230.class
 view\MenuOrganizator$17.class
 view\MenuOrganizator$178.class
 view\MenuOrganizator$125.class
@@ -24,6 +25,7 @@ view\MenuDriveTournament$52.class
 view\MenuDriveTournament$12.class
 view\MenuPlayer$36.class
 view\MenuOrganizator$104.class
+view\MenuOrganizator$229.class
 view\MenuAdministrator$6.class
 view\MenuOrganizator$49.class
 view\MenuOrganizator$65.class
@@ -32,6 +34,7 @@ controller\MenuOrganizatorControl.class
 model\Person.class
 view\MenuOrganizator$89.class
 view\MenuPlayer$17.class
+view\MenuOrganizator$235.class
 view\MenuPlayer$50.class
 view\MenuPlayer$10.class
 view\MenuDriveTournament$33.class
@@ -48,11 +51,13 @@ view\MenuOrganizator$31.class
 view\MenuDriveTournament$17.class
 view\MenuDriveTournament$57.class
 view\MenuOrganizator$78.class
+view\MenuOrganizator$224.class
 view\MenuOrganizator$109.class
 controller\MenuDriveTournamentControl.class
 view\MenuOrganizator$60.class
 view\MenuPlayer$42.class
 view\MenuOrganizator$90.class
+view\MenuOrganizator$237.class
 view\MenuDriveTournament$71.class
 model\Group.class
 view\MenuDriveTournament$41.class
@@ -228,7 +233,9 @@ view\MenuOrganizator$24.class
 view\MenuOrganizator$198.class
 view\MenuOrganizator$105.class
 view\MenuOrganizator$37.class
+view\MenuOrganizator$228.class
 view\MenuPlayer$7.class
+view\MenuOrganizator$223.class
 view\MenuDriveTournament$72.class
 view\MenuStart$11.class
 view\MenuStart$3.class
@@ -247,6 +254,7 @@ view\MenuAdministrator.class
 view\MenuOrganizator$72.class
 view\MenuOrganizator$166.class
 view\MenuDriveTournament$11.class
+view\MenuOrganizator$236.class
 view\MenuOrganizator$126.class
 view\MenuOrganizator$83.class
 view\MenuPlayer$11.class
@@ -283,6 +291,7 @@ view\MenuPlayer$14.class
 view\MenuOrganizator$209.class
 view\MenuOrganizator$187.class
 view\MenuOrganizator$29.class
+view\MenuOrganizator$239.class
 view\MenuOrganizator$62.class
 view\MenuOrganizator$85.class
 view\MenuDriveTournament$66.class
@@ -294,6 +303,7 @@ view\MenuAdministrator$9.class
 view\MenuDriveTournament$43.class
 view\MenuOrganizator.class
 view\MenuOrganizator$140.class
+view\MenuOrganizator$238.class
 view\MenuOrganizator$158.class
 view\MenuPlayer$43.class
 view\MenuStart$8.class
@@ -323,7 +333,9 @@ view\MenuDriveTournament.class
 view\MenuOrganizator$54.class
 view\MenuStart$6.class
 view\MenuOrganizator$94.class
+view\MenuOrganizator$240.class
 view\MenuOrganizator$175.class
+view\MenuOrganizator$233.class
 view\MenuOrganizator$115.class
 view\MenuOrganizator$87.class
 view\MenuAdministrator$4.class
@@ -333,6 +345,7 @@ controller\ValidationControl.class
 view\MenuAdministrator$11.class
 view\MenuOrganizator$168.class
 view\MenuOrganizator$128.class
+view\MenuOrganizator$226.class
 view\MenuPlayer$13.class
 view\MenuOrganizator$61.class
 view\MenuOrganizator$41.class
@@ -350,6 +363,7 @@ view\MenuPlayer$47.class
 controller\OrganizatorJsonControl$1.class
 view\MenuOrganizator$55.class
 view\MenuOrganizator$95.class
+view\MenuOrganizator$225.class
 view\MenuDriveTournament$56.class
 view\MenuOrganizator$183.class
 view\MenuDriveTournament$50.class
@@ -365,6 +379,7 @@ view\MenuPlayer$46.class
 view\MenuOrganizator$114.class
 view\MenuOrganizator$50.class
 view\MenuPlayer$52.class
+view\MenuOrganizator$227.class
 view\MenuStart$2.class
 view\MenuDriveTournament$51.class
 controller\AdministratorJsonControl$1.class
@@ -376,6 +391,7 @@ view\MenuDriveTournament$4.class
 view\MenuOrganizator$181.class
 view\MenuDriveTournament$1.class
 view\MenuOrganizator$176.class
+view\MenuOrganizator$231.class
 view\MenuPlayer$48.class
 model\Organizator.class
 view\MenuDriveTournament$47.class
@@ -384,9 +400,11 @@ view\MenuOrganizator$45.class
 view\MenuOrganizator$121.class
 view\MenuAdministrator$3.class
 view\MenuOrganizator$124.class
+view\MenuOrganizator$234.class
 view\MenuOrganizator$119.class
 view\MenuOrganizator$53.class
 view\MenuDriveTournament$53.class
+view\MenuOrganizator$232.class
 view\MenuOrganizator$52.class
 controller\MenuPlayerControl.class
 view\MenuOrganizator$117.class

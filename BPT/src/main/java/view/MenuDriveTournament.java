@@ -61,6 +61,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         botonSalida = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
         tabPanel = new javax.swing.JTabbedPane();
         jPanel0 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
@@ -148,7 +149,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jLabel282 = new javax.swing.JLabel();
         messageDelete = new javax.swing.JLabel();
         jLabel284 = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -190,6 +190,17 @@ public class MenuDriveTournament extends javax.swing.JFrame {
             }
         });
         background.add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 50, 40));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
 
         tabPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -1048,17 +1059,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
 
         background.add(tabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 970, 610));
 
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1270,7 +1270,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonMinimizarMouseClicked
 
     private void botonSeguirIngresarDatosTorneo3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo3MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonSeguirIngresarDatosTorneo3,102,102,255);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo3MouseMoved
 
     private void botonSeguirIngresarDatosTorneo3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo3MouseClicked
@@ -1278,7 +1278,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo3MouseClicked
 
     private void botonSeguirIngresarDatosTorneo3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo3MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonSeguirIngresarDatosTorneo3,30,25,161);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo3MouseExited
 
     private void botonSeguirIngresarDatosTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo3ActionPerformed
@@ -1286,11 +1286,11 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo3ActionPerformed
 
     private void dataEnterDeleteTourFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterDeleteTourFocusGained
-        // TODO add your handling code here:
+        organizatorFocusGained(dataEnterDeleteTour, "Ingresar nombre del torneo");
     }//GEN-LAST:event_dataEnterDeleteTourFocusGained
 
     private void dataEnterDeleteTourFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_dataEnterDeleteTourFocusLost
-        // TODO add your handling code here:
+        organizatorFocusLost(dataEnterDeleteTour, "Ingresar nombre del torneo");
     }//GEN-LAST:event_dataEnterDeleteTourFocusLost
 
     private void dataEnterDeleteTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataEnterDeleteTourActionPerformed
@@ -1346,7 +1346,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_gamesWonSecondSetPlayer1ActionPerformed
 
     private void botonRegresarIngresarDatosTorneo6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo6MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo6,102,102,255);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo6MouseMoved
 
     private void botonRegresarIngresarDatosTorneo6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo6MouseClicked
@@ -1354,7 +1354,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo6MouseClicked
 
     private void botonRegresarIngresarDatosTorneo6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo6MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo6,30,25,161);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo6MouseExited
 
     private void botonRegresarIngresarDatosTorneo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo6ActionPerformed
@@ -1366,7 +1366,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo4ActionPerformed
 
     private void botonRegresarIngresarDatosTorneo4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo4MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo4,30,25,161);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo4MouseExited
 
     private void botonRegresarIngresarDatosTorneo4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo4MouseClicked
@@ -1374,7 +1374,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo4MouseClicked
 
     private void botonRegresarIngresarDatosTorneo4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo4MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo4,102,102,255);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo4MouseMoved
 
     private void checkWinMatchPlayer3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkWinMatchPlayer3MouseClicked
@@ -1422,7 +1422,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_dataEnterDateActionPerformed
 
     private void botonRegresarIngresarDatosTorneo7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo7MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo7,102,102,255);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7MouseMoved
 
     private void botonRegresarIngresarDatosTorneo7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo7MouseClicked
@@ -1432,7 +1432,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7MouseClicked
 
     private void botonRegresarIngresarDatosTorneo7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo7MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo7,30,25,161);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7MouseExited
 
     private void botonRegresarIngresarDatosTorneo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo7ActionPerformed
@@ -1440,7 +1440,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo7ActionPerformed
 
     private void botonRegresarIngresarDatosTorneo8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo8,102,102,255);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo8MouseMoved
 
     private void botonRegresarIngresarDatosTorneo8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8MouseClicked
@@ -1451,7 +1451,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo8MouseClicked
 
     private void botonRegresarIngresarDatosTorneo8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonRegresarIngresarDatosTorneo8,30,25,161);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo8MouseExited
 
     private void botonRegresarIngresarDatosTorneo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo8ActionPerformed
