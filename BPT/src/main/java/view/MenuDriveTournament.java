@@ -61,7 +61,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         botonSalida = new javax.swing.JLabel();
         botonMinimizar = new javax.swing.JLabel();
-        Banner = new javax.swing.JLabel();
         tabPanel = new javax.swing.JTabbedPane();
         jPanel0 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
@@ -149,6 +148,7 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         jLabel282 = new javax.swing.JLabel();
         messageDelete = new javax.swing.JLabel();
         jLabel284 = new javax.swing.JLabel();
+        Banner = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -190,17 +190,6 @@ public class MenuDriveTournament extends javax.swing.JFrame {
             }
         });
         background.add(botonMinimizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 50, 40));
-
-        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
-        Banner.setText("jLabel1");
-        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BannerMouseClicked(evt);
-            }
-        });
-        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
 
         tabPanel.setBackground(new java.awt.Color(255, 255, 255));
         tabPanel.setForeground(new java.awt.Color(0, 0, 0));
@@ -1058,6 +1047,17 @@ public class MenuDriveTournament extends javax.swing.JFrame {
         tabPanel.addTab("tab4", jPanel4);
 
         background.add(tabPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 970, 610));
+
+        Banner.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Banner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        Banner.setText("jLabel1");
+        Banner.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Banner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BannerMouseClicked(evt);
+            }
+        });
+        background.add(Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 980, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -137,14 +137,30 @@ public class Organizator extends Person implements PlayerInterface {
         return false; 
     }
     
-    public void deleteTournament(String tourName){
+    public Tournament searchTournament(String tourName){
         try{
             for(Tournament t: tournamentList){
-                if (t.getTournamentName().toUpperCase().equals(tourName.toUpperCase())) tournamentList.remove(t);
+                if (t.getTournamentName().toUpperCase().equals(tourName.toUpperCase())){
+                    return t;
+                }
             }
         } catch (NullPointerException error){
             System.err.println("Lista de torneos vacia NullPointerException");
+            return null;
         }
+        return null;
     }
+    
+    public Tournament deleteTournament(String tourName){
+        try{
+            Tournament t = searchTournament(tourName);
+            tournamentList.remove(t);
+        } catch (NullPointerException error){
+            System.err.println("Lista de torneos vacia NullPointerException");
+            return null;
+        }
+        return null;
+    }
+    
     
 }
